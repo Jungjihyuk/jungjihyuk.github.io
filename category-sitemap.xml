@@ -8,22 +8,22 @@
     </url>
 
     <url>
-        <loc>http://jungjihyuk.github.io/categories/Git/</loc>
-        <lastmod>2021-12-29T04:02:46.890Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://jungjihyuk.github.io/categories/AI/Natural-Language-Processing/</loc>
-        <lastmod>2021-12-29T04:02:38.298Z</lastmod>
+        <lastmod>2021-12-29T04:05:03.652Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://jungjihyuk.github.io/categories/AI/</loc>
-        <lastmod>2021-12-29T04:02:38.298Z</lastmod>
+        <lastmod>2021-12-29T04:05:03.652Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://jungjihyuk.github.io/categories/Git/</loc>
+        <lastmod>2021-12-29T04:02:46.890Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
@@ -113,13 +113,6 @@
     </url>
 
     <url>
-        <loc>http://jungjihyuk.github.io/categories/Language/Java/</loc>
-        <lastmod>2021-12-29T03:24:01.867Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://jungjihyuk.github.io/categories/JSP-Servlet/</loc>
         <lastmod>2021-12-29T03:24:01.867Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -127,14 +120,21 @@
     </url>
 
     <url>
-        <loc>http://jungjihyuk.github.io/categories/Web/Flask/</loc>
-        <lastmod>2021-12-29T03:24:01.866Z</lastmod>
+        <loc>http://jungjihyuk.github.io/categories/Language/Java/</loc>
+        <lastmod>2021-12-29T03:24:01.867Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://jungjihyuk.github.io/categories/Web/Django/</loc>
+        <lastmod>2021-12-29T03:24:01.866Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://jungjihyuk.github.io/categories/Web/Flask/</loc>
         <lastmod>2021-12-29T03:24:01.866Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
