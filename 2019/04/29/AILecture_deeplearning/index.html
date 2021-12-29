@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  <title>AI 이노베이션 스퀘어 수업(기본반) - deeplearning | 지혁&#39;s Blog</title>
+  
+  
+
+  
+  <link rel="alternate" href="/feed.xml" title="지혁's Blog">
+  
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- meta -->
+  
+
+  <!-- Auto Canonical -->
+  <link rel="canonical" href="http://jungjihyuk.github.io/2019/04/29/ailecture_deeplearning/"/>
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.10.1/css/all.min.css">
+  
+
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
+  
+
+  
+    
+<link rel="stylesheet" href="/style.css">
+
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+
+  
+  
+
+  <!-- Google AdSense -->
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-143236286-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-143236286-2');
+</script>
+
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/feed.xml" title="지혁's Blog" type="application/rss+xml">
+</head>
+
+<body>
+  
+  
+  <div class="cover-wrapper">
+    <cover class='cover post half'>
+      
+        
+  <h1 class='title'>Imitation, Imagination, Integration</h1>
+
+
+  <div class="m_search">
+    <form name="searchform" class="form u-search-form">
+      <input type="text" class="input u-search-input" placeholder="search" />
+      <i class="icon fas fa-search fa-fw"></i>
+    </form>
+  </div>
+
+<div class='menu navgation'>
+  <ul class='h-list'>
+    
+      
+        <li>
+          <a class="nav home" href="/"
+            
+            
+            id="home">
+            <i class='fas fa-rss fa-fw'></i>&nbsp;Home
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="/about"
+            
+              rel="nofollow"
+            
+            
+            id="about">
+            <i class='fas fa-info-circle fa-fw'></i>&nbsp;About
+          </a>
+        </li>
+      
+    
+  </ul>
+</div>
+
+      
+    </cover>
+    <header class="l_header pure">
+  <div id="loading-bar-wrapper">
+    <div id="loading-bar" class="pure"></div>
+  </div>
+
+	<div class='wrapper'>
+		<div class="nav-main container container--flex">
+      <a class="logo flat-box" target="_self" href='/' >
+        
+          지혁's Blog
+        
+      </a>
+			<div class='menu navgation'>
+				<ul class='h-list'>
+          
+  					
+  						<li>
+								<a class="nav flat-box" href="/"
+                  
+                  
+                    target="_self"
+                  
+                  id="home">
+									<i class='fas fa-grin fa-fw'></i>&nbsp;Home
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/archives"
+                  
+                    rel="nofollow"
+                  
+                  
+                    target="_self"
+                  
+                  id="archives">
+									<i class='fas fa-archive fa-fw'></i>&nbsp;Archives
+								</a>
+							</li>
+      			
+      		
+				</ul>
+			</div>
+
+			
+				<div class="m_search">
+					<form name="searchform" class="form u-search-form">
+						<input type="text" class="input u-search-input" placeholder="search" />
+						<i class="icon fas fa-search fa-fw"></i>
+					</form>
+				</div>
+			
+			<ul class='switcher h-list'>
+				
+					<li class='s-search'><a class="fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
+				
+				<li class='s-menu'><a class="fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+
+		<div class='nav-sub container container--flex'>
+			<a class="logo flat-box"></a>
+			<ul class='switcher h-list'>
+				<li class='s-comment'><a class="flat-btn fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+          <li class='s-toc'><a class="flat-btn fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+			</ul>
+		</div>
+	</div>
+</header>
+	<aside class="menu-phone">
+    <header>
+		<nav class="menu navgation">
+      <ul>
+        
+          
+            <li>
+							<a class="nav flat-box" href="/"
+                
+                
+                id="home">
+								<i class='fas fa-clock fa-fw'></i>&nbsp;Home
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/archives"
+                
+                  rel="nofollow"
+                
+                
+                id="archives">
+								<i class='fas fa-archive fa-fw'></i>&nbsp;Archives
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/projects"
+                
+                
+                id="projects">
+								<i class='fas fa-code-branch fa-fw'></i>&nbsp;Projects
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="https://xaoxuu.com/wiki/material-x/"
+                
+                  rel="nofollow"
+                
+                
+                id="https:xaoxuu.comwikimaterial-x">
+								<i class='fas fa-book fa-fw'></i>&nbsp;Reference
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/about"
+                
+                  rel="nofollow"
+                
+                
+                id="about">
+								<i class='fas fa-info-circle fa-fw'></i>&nbsp;About
+							</a>
+            </li>
+          
+       
+      </ul>
+		</nav>
+    </header>
+	</aside>
+<script>setLoadingBarProgress(40);</script>
+
+  </div>
+
+
+  <div class="l_body">
+    <div class='body-wrapper'>
+      <div class='l_main'>
+  
+
+  
+    <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
+      
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  
+    <h1 class="title">
+      <a href="/2019/04/29/AILecture_deeplearning/">
+        AI 이노베이션 스퀘어 수업(기본반) - deeplearning
+      </a>
+    </h1>
+  
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    
+      <a href="http://jungjihyuk.github.io" rel="nofollow">
+        
+          <i class="fas fa-user" aria-hidden="true"></i>
+        
+        <p>Jihyuk Jung</p>
+      </a>
+    
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2019-04-29</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/AI/Deep-Learning/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>AI&nbsp;/&nbsp;Deep Learning</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+  
+
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          <p><a id = '30th'></a></p>
+<h1 id="2019년-6월-20일-목요일-30th"><a href="#2019년-6월-20일-목요일-30th" class="headerlink" title="2019년 6월 20일 목요일 30th"></a>2019년 6월 20일 목요일 30th</h1><h2 id="Deep-Learning"><a href="#Deep-Learning" class="headerlink" title="Deep Learning"></a>Deep Learning</h2><p><strong>2개 이상의</strong> <span  style="color: red; font-size:30px;">Perceptron</span> <strong>을 연결하여</strong> <br><br><strong>많은</strong> <span  style="color: red; font-size:30px;">Layer</span> <strong>로 구성된</strong>  <span  style="color: red; font-size:30px;">기계학습</span> <strong>을</strong> <br> <span  style="color: red; font-size:30px;">Deep Learning</span><strong>이라고 부른다</strong> <br></p>
+<h2 id="인공지능-발전에-기여한-인물들"><a href="#인공지능-발전에-기여한-인물들" class="headerlink" title="인공지능 발전에 기여한 인물들"></a>인공지능 발전에 기여한 인물들</h2><p><img src="https://user-images.githubusercontent.com/33630505/59897521-f6659a80-9427-11e9-8ca8-af5bcb252ea1.jpg" alt="ai_people_c"><br><br><br>사진 출처: <a href="https://brunch.co.kr/@hvnpoet/66#comment" target="_blank" rel="noopener">brunch</a><br><br><br></p>
+<h3 id="Frank-Rosenblatt’s-Perceptron"><a href="#Frank-Rosenblatt’s-Perceptron" class="headerlink" title="Frank Rosenblatt’s Perceptron"></a>Frank Rosenblatt’s Perceptron</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1957년 Frank Rosenblatt에 의해 고안된 인공신경망의 한 종류로써 Perceptron이 발표되었습니다</span><br><span class="line">이 Perceptron은 뉴런의 행동 방식을 모방하여 만들어졌습니다.</span><br><span class="line">Single Perceptron은 입력값의 연산 결과가 1이면 activate되고 0이되면 deactivate하는 방식의 선형 모델입니다.</span><br><span class="line">이렇게 하면 OR ,AND 연산이 가능하지만 XOR 연산을 할 수 없는 문제가 발생합니다</span><br><span class="line">XOR 연산을 하기 위해서는 Perceptron을 하나 더 연결하여 다층 퍼셉트론을 통해 해결 할 수 있습니다</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://user-images.githubusercontent.com/33630505/59901536-87437280-9436-11e9-994f-3bbfb1015d34.JPG" alt="선형 모델"></p>
+<p><img src="https://user-images.githubusercontent.com/33630505/59915021-a5b96600-9456-11e9-8752-c941d955ab8d.JPG" alt="xor"></p>
+<br>
+
+<h3 id="Perceptron-학습-방법"><a href="#Perceptron-학습-방법" class="headerlink" title="Perceptron 학습 방법"></a>Perceptron 학습 방법</h3><blockquote>
+<p>입력값의 결과값을 1과 0으로 분류하고 실제값과 예측값의 활성함수 리턴값이 다를 경우 가중치를 조정하며 최적의 가중치를 찾아간다</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">AND Gate를 만든다고 가정하자</span><br><span class="line">Data &#x3D;&gt; (0,0) &#x2F; Result &#x3D;&gt; 0</span><br><span class="line">        (0,1) &#x2F; Result &#x3D;&gt; 0</span><br><span class="line">	(1,0) &#x2F; Result &#x3D;&gt; 0</span><br><span class="line">	(1,1) &#x2F; Result &#x3D;&gt; 1</span><br><span class="line">위와 같은 dataset이 있을때 Perceptron 학습방법은 다음과 같다</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">활성함수: y &#x3D; 1 (x1*w1 + x2*w2 + w0 &gt;&#x3D; 0) or 0 (otherwise)</span><br><span class="line"># x1, x2는 입력값 w1,w2는 가중치 w0는 bias(절편)</span><br><span class="line"></span><br><span class="line">(0,0)일때</span><br><span class="line">w0 &lt; 0 이 되어야 결과값이 0이 나오기 때문에</span><br><span class="line">w0 값을 임의로 -1를 찾았음</span><br><span class="line"></span><br><span class="line">(0,1)일때</span><br><span class="line">w2 -1 &lt; 0을 만족하는 가중치를 임의로 0.5라고 한다</span><br><span class="line"></span><br><span class="line">(1,0)일때</span><br><span class="line">w1 -1 &lt; 0을 만족하는 가중치를 임의로 0.5라고 한다</span><br><span class="line"></span><br><span class="line">(1,1)일때</span><br><span class="line">0.5 + 0.5 - 1 &#x3D; 0 결과값이 0이기 때문에 y &#x3D; 1을 만족하므로</span><br><span class="line"></span><br><span class="line">학습된 Perceptron의 coefficient또는 weight값은 0.5, 0.5, intercept 또는 bias는 -1</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="Bernard-Widrow’s-Adaline"><a href="#Bernard-Widrow’s-Adaline" class="headerlink" title="Bernard Widrow’s Adaline"></a>Bernard Widrow’s Adaline</h3><blockquote>
+<p>Adaline(Adptive Linear Neuron)은 신경세포의 초기 모델.</p>
+</blockquote>
+<h3 id="Adaline"><a href="#Adaline" class="headerlink" title="Adaline"></a>Adaline</h3><blockquote>
+<p>입력값의 결과값과 실제 결과값을 비교하여 오차가 최소가 되도록 가중치를 찾아간다</p>
+</blockquote>
+<h3 id="예시"><a href="#예시" class="headerlink" title="예시"></a>예시</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">구구단에서 2단을 학습시키기 위한 딥러닝 이라고 가정 했을때</span><br><span class="line"></span><br><span class="line">data: 2 &#x3D;&gt; 2  X  0.5(가중치)  &#x3D;&gt; result: 1</span><br><span class="line">result &#x3D; 1</span><br><span class="line">real_result &#x3D; 2 X 2 &#x3D; 4</span><br><span class="line">오차 : real_result - result &#x3D; 3</span><br><span class="line">가중치를 높여야 겠군!</span><br><span class="line"></span><br><span class="line">data: 3 &#x3D;&gt; 3  X  3(가중치)    &#x3D;&gt; result: 9</span><br><span class="line">result &#x3D; 9</span><br><span class="line">real_result &#x3D; 3 X 2 &#x3D; 6</span><br><span class="line">오차: real_result - result &#x3D; -3</span><br><span class="line">가중치를 낮춰야 겠군!</span><br><span class="line"></span><br><span class="line">data: 4 &#x3D;&gt; 4  X  2(가중치)    &#x3D;&gt; result: 8</span><br><span class="line">result &#x3D; 8</span><br><span class="line">real_result &#x3D; 4 X 2 &#x3D; 8</span><br><span class="line">오차: real_result - result &#x3D; 0</span><br><span class="line">오차가 없군! 학습을 멈춰야겠어! 정확도가 100%네 ?!</span><br><span class="line">(실제로는 정확도 100%나오기 힘듦)</span><br></pre></td></tr></table></figure>
+
+<h3 id="Perceptron-vs-Adaline"><a href="#Perceptron-vs-Adaline" class="headerlink" title="Perceptron vs Adaline"></a>Perceptron vs Adaline</h3><p>요약하면 Perceptron은 임계값을 1로 잡고 입력값의 결과가 1이 넘어가면 활성함수에 의해 예측값이 나오고 실제값과 예측값이 다를 경우 가중치를 조정한다.<br><br>Adaline은 입력값의 결과가 예측값이 되고 활성함수(실제값-예측값)의 리턴값을 최소화 하는 방향으로 가중치를 찾아간다는 점에서 차이가 있다.</p>
+<h3 id="Neuron’s-communication"><a href="#Neuron’s-communication" class="headerlink" title="Neuron’s communication"></a>Neuron’s communication</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">뉴런이 휴지상태일때 막전류가 -70mv 극성을 띄는데 뉴런에 자극이 가해지면 이온통로가 열리고</span><br><span class="line">이온이 세포 안으로 들어오면 막전위의 변화를 알립니다.</span><br><span class="line">그러면서 막전류가 -55mv에 도달하게 되면 수 천개의 나트륨 통로가 열리면서 뉴런 내부에</span><br><span class="line">엄청난 양의 나트륨 이온이 세포 내부로 들어와 급격하게 양전하가 되거나 혹은 극성이 없어집니다.</span><br><span class="line">엄청난 나트륨 이온의 유입으로 뉴런의 내부가 +30mv가 될때, 뉴런은 항상성 유지를 위해 나트륨 통로는 닫히고</span><br><span class="line">칼륨 이온 통로가 열리면서 칼륨을 세포 밖으로 내보냅니다.</span><br><span class="line">이러한 방식으로 뉴런 가지안에서 연쇄 반응을 통해 탈분극과 재분극을 반복하여 활동 전위가 전도 됩니다.</span><br><span class="line">이때 활동 전위는 한 방향만으로 전도됩니다.</span><br><span class="line">그리고 끝에 시냅스라는 부분에서 신경 전달물질을 세포 밖으로 내보내 다른 세포를 자극하기 위해 이동합니다  </span><br><span class="line">이렇게 휴지상태 &#x3D;&gt; 활동전위 &#x3D;&gt; 신경전달 물질 &#x3D;&gt; 다른 세포 자극 사이클을 반복하여 뉴런과 소통하게 됩니다.</span><br></pre></td></tr></table></figure>
+
+<h3 id="Adaline과-Neuron"><a href="#Adaline과-Neuron" class="headerlink" title="Adaline과 Neuron"></a>Adaline과 Neuron</h3><p>Adaline | Neuron<br>Input Data | 타 뉴런들의 자극들<br>Weight | 수상돌기<br>Node | 세포체<br>Activation Function | 축삭돌기(휴지 상태=&gt;활동전위)<br>Output Data | 축삭돌기 말단, 신경전달 물질</p>
+<br>
+
+
+<h3 id="Paul-Werbos’s-MLP"><a href="#Paul-Werbos’s-MLP" class="headerlink" title="Paul Werbos’s MLP"></a>Paul Werbos’s MLP</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1974년 하버드대 폴 워보스는 다층 퍼셉트론환경에서 학습을 가능하게 해주는</span><br><span class="line">back-propagation 알고리즘을 고안해냈습니다.</span><br><span class="line">그러나 신경망에 대해 냉랭했던 분위기 때문에</span><br><span class="line">매장 당할까바 발표하지 못하고 8년 후 1982년에 저널에 발표하게 됩니다.</span><br></pre></td></tr></table></figure>
+
+<h3 id="Yann-LeCun-amp-David-Rumelhart-amp-Geoffrey-Everest-Hinton"><a href="#Yann-LeCun-amp-David-Rumelhart-amp-Geoffrey-Everest-Hinton" class="headerlink" title="Yann LeCun &amp; David Rumelhart &amp; Geoffrey Everest Hinton"></a>Yann LeCun &amp; David Rumelhart &amp; Geoffrey Everest Hinton</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">저널에 발표되고 2년뒤 1984년에 신경망 연구로 박사논문을 준비하던 얀 레쿤이</span><br><span class="line">논문을 발견하여 다시 세상에 나왔고, 1986년 럼멜하트와 힌튼교수에 의해 다시 부활하게 되었습니다</span><br><span class="line"></span><br><span class="line">힌튼 교수는 홉필드 네트워크에 신경망 알고리즘을 결합시켜 볼츠만 머신을 만들어냅니다.</span><br><span class="line">그리고 마침내 1998년 힌튼 교수 밑에서 박사과정을 밟고있던 얀쿤과 요수아 벤지오가</span><br><span class="line">볼츠만 머신에 back-propagation을 결합하여 CNN(Convolutional Neural Networks)알고리즘 만들어 냅니다.</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="Scikit-Perceptron"><a href="#Scikit-Perceptron" class="headerlink" title="Scikit Perceptron"></a>Scikit Perceptron</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</span><br><span class="line"><span class="keyword">from</span> sklearn.linear_model <span class="keyword">import</span> Perceptron</span><br><span class="line"><span class="keyword">from</span> sklearn.preprocessing <span class="keyword">import</span> MinMaxScaler</span><br><span class="line"></span><br><span class="line">mms = MinMaxScaler()</span><br><span class="line">pct = Perceptron()</span><br><span class="line">iris = sns.load_dataset(<span class="string">'iris'</span>)</span><br><span class="line"></span><br><span class="line">iris.iloc[:,:<span class="number">-1</span>] = mms.fit_transform(iris.iloc[:,:<span class="number">-1</span>])</span><br><span class="line">iris.species = iris.species.map(&#123;<span class="string">"setosa"</span>:<span class="number">0</span>,<span class="string">"versicolor"</span>:<span class="number">1</span>,<span class="string">"virginica"</span>:<span class="number">2</span>&#125;)</span><br><span class="line"></span><br><span class="line">pct.fit(iris.iloc[:,:<span class="number">-1</span>],iris.iloc[:,<span class="number">-1</span>])  </span><br><span class="line"></span><br><span class="line"><span class="comment"># 옵션 early_stopping =&gt; overfitting 막기위한 방법 / fit_intercept 가중치를 사용할지 말지</span></span><br><span class="line"></span><br><span class="line">vars(pct)</span><br><span class="line">:</span><br><span class="line">&#123;<span class="string">'loss'</span>: <span class="string">'perceptron'</span>,</span><br><span class="line"> <span class="string">'penalty'</span>: <span class="literal">None</span>,</span><br><span class="line"> <span class="string">'learning_rate'</span>: <span class="string">'constant'</span>,</span><br><span class="line"> <span class="string">'epsilon'</span>: <span class="number">0.1</span>,</span><br><span class="line"> <span class="string">'alpha'</span>: <span class="number">0.0001</span>,</span><br><span class="line"> <span class="string">'C'</span>: <span class="number">1.0</span>,</span><br><span class="line"> <span class="string">'l1_ratio'</span>: <span class="number">0</span>,</span><br><span class="line"> <span class="string">'fit_intercept'</span>: <span class="literal">True</span>,</span><br><span class="line"> <span class="string">'shuffle'</span>: <span class="literal">True</span>,</span><br><span class="line"> <span class="string">'random_state'</span>: <span class="number">0</span>,</span><br><span class="line"> <span class="string">'verbose'</span>: <span class="number">0</span>,</span><br><span class="line"> <span class="string">'eta0'</span>: <span class="number">1.0</span>,</span><br><span class="line"> <span class="string">'power_t'</span>: <span class="number">0.5</span>,</span><br><span class="line"> <span class="string">'early_stopping'</span>: <span class="literal">False</span>,</span><br><span class="line"> <span class="string">'validation_fraction'</span>: <span class="number">0.1</span>,</span><br><span class="line"> <span class="string">'n_iter_no_change'</span>: <span class="number">5</span>,</span><br><span class="line"> <span class="string">'warm_start'</span>: <span class="literal">False</span>,</span><br><span class="line"> <span class="string">'average'</span>: <span class="literal">False</span>,</span><br><span class="line"> <span class="string">'n_iter'</span>: <span class="literal">None</span>,</span><br><span class="line"> <span class="string">'max_iter'</span>: <span class="literal">None</span>,</span><br><span class="line"> <span class="string">'tol'</span>: <span class="literal">None</span>,</span><br><span class="line"> <span class="string">'class_weight'</span>: <span class="literal">None</span>,</span><br><span class="line"> <span class="string">'n_jobs'</span>: <span class="literal">None</span>,</span><br><span class="line"> <span class="string">'_tol'</span>: <span class="literal">None</span>,</span><br><span class="line"> <span class="string">'_max_iter'</span>: <span class="number">5</span>,</span><br><span class="line"> <span class="string">'coef_'</span>: array([[<span class="number">-0.80555556</span>,  <span class="number">1.54166667</span>, <span class="number">-1.57627119</span>, <span class="number">-1.75</span>      ],</span><br><span class="line">        [ <span class="number">0.11111111</span>, <span class="number">-5.75</span>      ,  <span class="number">1.45762712</span>, <span class="number">-2.70833333</span>],</span><br><span class="line">        [ <span class="number">0.52777778</span>, <span class="number">-2.41666667</span>,  <span class="number">4.13559322</span>,  <span class="number">5.875</span>     ]]),</span><br><span class="line"> <span class="string">'intercept_'</span>: array([ <span class="number">1.</span>,  <span class="number">1.</span>, <span class="number">-6.</span>]),</span><br><span class="line"> <span class="string">'t_'</span>: <span class="number">751.0</span>,</span><br><span class="line"> <span class="string">'classes_'</span>: array([<span class="string">'setosa'</span>, <span class="string">'versicolor'</span>, <span class="string">'virginica'</span>], dtype=<span class="string">'&lt;U10'</span>),</span><br><span class="line"> <span class="string">'_expanded_class_weight'</span>: array([<span class="number">1.</span>, <span class="number">1.</span>, <span class="number">1.</span>]),</span><br><span class="line"> <span class="string">'loss_function_'</span>: &lt;sklearn.linear_model.sgd_fast.Hinge at <span class="number">0x242aef05770</span>&gt;,</span><br><span class="line"> <span class="string">'n_iter_'</span>: <span class="number">5</span>&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="loss-cost-objective-function"><a href="#loss-cost-objective-function" class="headerlink" title="loss, cost, objective function"></a>loss, cost, objective function</h2><p>loss, cost : 실제값 - 예측값 <br><br>즉, 값이 작아질 수록 정확해진다는 의미 <br></p>
+<p>objective : 유사도 <br><br>즉, 비슷하면 비슷할 수록 값이 커지고 값이 크면 정확해진다는 의미</p>
+<blockquote>
+<p>오차를 구하는 방법도 여러가지이다.</p>
+</blockquote>
+<h2 id="Feed-forward-vs-Back-Propagation"><a href="#Feed-forward-vs-Back-Propagation" class="headerlink" title="Feed-forward vs Back-Propagation"></a>Feed-forward vs Back-Propagation</h2><p>Feed-forward: 벡터연산(행렬), 앞으로 나아가는 연산 <br><br>Back-Propagation: 미분(편미분) <br></p>
+<h2 id="Vanishing-gradient-problem"><a href="#Vanishing-gradient-problem" class="headerlink" title="Vanishing gradient problem"></a>Vanishing gradient problem</h2><blockquote>
+<p>기울기 값이 사라져 학습이 안되는 문제</p>
+</blockquote>
+<p>relu 알고리즘으로 이러한 문제 해결!</p>
+<h2 id="Neural-network-표현방식"><a href="#Neural-network-표현방식" class="headerlink" title="Neural network 표현방식"></a>Neural network 표현방식</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1. 전통적인 머신러닝 방식으로 표현</span><br><span class="line">2. Graphical neural network</span><br></pre></td></tr></table></figure>
+
+<h3 id="Graphical-neural-network"><a href="#Graphical-neural-network" class="headerlink" title="Graphical neural network"></a>Graphical neural network</h3><p><img src="https://user-images.githubusercontent.com/33630505/59913849-fbd8da00-9453-11e9-9d49-9dd0975e88b1.JPG" alt="graphical"></p>
+<h2 id="Tensorflow"><a href="#Tensorflow" class="headerlink" title="Tensorflow"></a>Tensorflow</h2><h3 id="절차"><a href="#절차" class="headerlink" title="절차"></a>절차</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">0. import</span><br><span class="line">1. Data 불러오기</span><br><span class="line">2. train-test-split</span><br><span class="line">3. 학습 가능하도록 차원 변환 (n차원 &#x3D;&gt; 1차원)</span><br><span class="line">4. Sequence 만들기 (Layer)</span><br><span class="line">5. 학습 (어떻게 학습시킬까 : compile)</span><br></pre></td></tr></table></figure>
+
+<h3 id="예시-1"><a href="#예시-1" class="headerlink" title="예시"></a>예시</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">!pip install tensorflow==<span class="number">2.0</span><span class="number">.0</span>b1 <span class="comment"># 설치</span></span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> sklearn.neighbors <span class="keyword">import</span> KNeighborsClassifier</span><br><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"></span><br><span class="line">knn = KNeighborsClassifier()</span><br><span class="line">mnist = tf.keras.datasets.mnist <span class="comment"># 가장많이 쓰이는 손글씨 데이터</span></span><br><span class="line">data=mnist.load_data()  <span class="comment"># 데이터 불러오기 / numpy 처럼 보이지만 tuple임</span></span><br><span class="line"></span><br><span class="line">data[<span class="number">0</span>][<span class="number">0</span>].shape  <span class="comment"># x</span></span><br><span class="line">: (<span class="number">60000</span>, <span class="number">28</span>, <span class="number">28</span>)</span><br><span class="line">data[<span class="number">0</span>][<span class="number">1</span>].shape <span class="comment"># y</span></span><br><span class="line">: (<span class="number">60000</span>,)</span><br><span class="line"></span><br><span class="line">plt.imshow(data[<span class="number">0</span>][<span class="number">0</span>][<span class="number">0</span>], cmap=<span class="string">'gray'</span>)</span><br><span class="line">data[<span class="number">0</span>][<span class="number">1</span>][<span class="number">0</span>]</span><br><span class="line">: <span class="number">5</span></span><br><span class="line"></span><br><span class="line">(X_train, y_train),(X_test, y_test) = mnist.load_data()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2차원 데이터 1차원으로 바꿔주기</span></span><br><span class="line"><span class="comment"># temp, result 방식 둘 중 원하는 방식으로</span></span><br><span class="line">temp = [x.flatten() <span class="keyword">for</span> x <span class="keyword">in</span> X_train]</span><br><span class="line">result = np.array(list(map(<span class="keyword">lambda</span> x:x.flatten(), X_train)))</span><br></pre></td></tr></table></figure>
+
+<h2 id="Keras쓰는-4가지-방식"><a href="#Keras쓰는-4가지-방식" class="headerlink" title="Keras쓰는 4가지 방식"></a>Keras쓰는 4가지 방식</h2><hr>
+
+
+<p><span style="color: red">아직 완벽하게 복습이 되지 않아 부정확한 내용이 있을 수 있음을 알려드립니다…</span><br></p>
+<hr>
+
+<p>Perceptron : <a href="https://sacko.tistory.com/10" target="_blank" rel="noopener">tistory</a><br><br>Adaline, gradient descent : <a href="https://m.blog.naver.com/samsjang/220959562205" target="_blank" rel="noopener">m_blog</a> <br><br>Vanishing gradient problem : <a href="https://ydseo.tistory.com/41" target="_blank" rel="noopener">tistory</a><br><br>ReLu: <a href="https://mongxmongx2.tistory.com/25" target="_blank" rel="noopener">tistory</a><br><br>인공지능 그림으로 배우기: <a href="https://brunch.co.kr/magazine/yamanin" target="_blank" rel="noopener">brunch</a><br><br>CNN: <a href="https://hamait.tistory.com/535" target="_blank" rel="noopener">tistory</a><br></p>
+<p><strong>복습시간</strong>   19시 10분 ~ 22시,  / 총 2시간 50분</p>
+<br>
+
+
+<p><a id = '34th'></a></p>
+<h1 id="2019년-6월-27일-목요일-34th"><a href="#2019년-6월-27일-목요일-34th" class="headerlink" title="2019년 6월 27일 목요일 34th"></a>2019년 6월 27일 목요일 34th</h1><h2 id="Pandas-시계열-분석"><a href="#Pandas-시계열-분석" class="headerlink" title="Pandas 시계열 분석"></a>Pandas 시계열 분석</h2><h2 id="Deep-Learning에서-Overfitting-막는-방법"><a href="#Deep-Learning에서-Overfitting-막는-방법" class="headerlink" title="Deep Learning에서 Overfitting 막는 방법"></a>Deep Learning에서 Overfitting 막는 방법</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1. 앙상블</span><br><span class="line">2. Regularization</span><br><span class="line">3. Drop out</span><br><span class="line">4. Early stopping</span><br><span class="line">5. 데이터 양을 많이</span><br></pre></td></tr></table></figure>
+
+<h2 id="Deep-Learning에서-중요한것은"><a href="#Deep-Learning에서-중요한것은" class="headerlink" title="Deep Learning에서 중요한것은?"></a>Deep Learning에서 중요한것은?</h2><p><span  style="color: skyblue; font-size:30px;">Data</span> &nbsp; <strong>vs</strong>  &nbsp; <span  style="color: skyblue; font-size:30px;">Algorithm</span>  <br></p>
+<p><img src="https://user-images.githubusercontent.com/33630505/60263814-98035500-991c-11e9-92d9-f6bfafbb0485.JPG" alt="data"></p>
+<p>출처: Peter Norvig’s The Unreasonable Effectiveness of Data 논문 <br></p>
+<blockquote>
+<p>Peter Norvig의 논문에서도 알 수 있듯이 복잡한 문제에서 딥러닝의 성능이 좋으려면 <br><br>좋은 알고리즘 보다는 더 많은 데이터가 중요하다는 것을 알 수 있다. <br><br>하지만 데이터 확보가 어려운 경우도 많고 중간 규모의 데이터는 매우 흔한 일 이기 때문에 <br><br>알고리즘의 중요성 또한 무시할 수 없다.</p>
+</blockquote>
+<br>
+
+<h2 id="당신의-데이터는-일반적입니까"><a href="#당신의-데이터는-일반적입니까" class="headerlink" title="당신의 데이터는 일반적입니까?"></a>당신의 데이터는 일반적입니까?</h2><blockquote>
+<p>Machine Learning, Deep Learning에서 학습시키는 Label data는 항상 정답이라는 가정을 했었습니다. <br><br>그런데 과연 그 정답 데이터가 진짜 현실세계에서 정답 데이터 인지 확신할 수 있을까요? <br><br>그리고 데이터를 수집한 사람이 혹은 시스템이 편향된 데이터를 수집하지는 않았을까요? <br><br>좋은 데이터를 갖고 있다고 가정하더라도 학습을 시키는 사람에 따라서 편향된 모델이 나올 수 있다는 것을 명심하자 <br></p>
+</blockquote>
+<br>
+
+<h3 id="데이터는-공정한-데이터-여야-한다"><a href="#데이터는-공정한-데이터-여야-한다" class="headerlink" title="데이터는 공정한 데이터 여야 한다."></a>데이터는 공정한 데이터 여야 한다.</h3><blockquote>
+<p>공정한 데이터… 기준이 불명확하고 사람마다 공정성의 기준이 다를 수 있으니 <br><br>사람이 저지르는 편향 유형을 살펴보고 편향된 데이터인지 판단하는 눈을 기르도록 하자.</p>
+</blockquote>
+<br>
+
+<h3 id="편향의-유형"><a href="#편향의-유형" class="headerlink" title="편향의 유형"></a>편향의 유형</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1. 보고편향</span><br><span class="line">2. 자동화 편향</span><br><span class="line">3. 표본 선택 편향</span><br><span class="line">4. 그룹 귀인 편향</span><br><span class="line">5. 내재적 편향</span><br></pre></td></tr></table></figure>
+
+<h4 id="1-보고-편향"><a href="#1-보고-편향" class="headerlink" title="1. 보고 편향"></a>1. 보고 편향</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">보고 편향은 수집된 데이터의 속성 및 결과의 빈도가 실제 빈도를 정확하게 반영하지 않을때 나타납니다.</span><br><span class="line">예를 들어 쇼핑몰 리뷰가 이러한 특징을 갖고 있다.</span><br><span class="line">사람들은 무언가 물건을 사고 정말 마음에 들때 혹은 정말 마음에 들지 않을때 리뷰를 남기는</span><br><span class="line">특징이 있다. 보통 정말 좋을때와 정말 나쁠떄 중간 지점의 리뷰는 수집되기 힘든걸 볼 수 있다.</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-자동화-편향"><a href="#2-자동화-편향" class="headerlink" title="2. 자동화 편향"></a>2. 자동화 편향</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">자동화 편향은 두 시스템의 오류율과 관계없이 자동화 시스템이 생성한 결과를 비 자동화 시스템이</span><br><span class="line">생성한 결과보다 선호하는 경향을 말합니다.</span><br><span class="line">예를 들어 병아리 성별을 감별하는 자동화 시스템과 사람이 직접 감별하는 것 두 가지가 있다는 사실을 알려 줬을 때 어느 것이 정확도가 높을까? 라고 질문을 한다면 보통 사람들은</span><br><span class="line">자동화 시스템을 더 신뢰할 것이다. 하지만 실제로는 병아리 성별 감별하는 전문가 즉 감별사는</span><br><span class="line">자동화 시스템의 부정확성 때문에 고액의 연봉을 받는 직종이라고 한다.</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-표본-선택-편향"><a href="#3-표본-선택-편향" class="headerlink" title="3. 표본 선택 편향"></a>3. 표본 선택 편향</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">1. 포함 편향</span><br><span class="line">- 선택된 데이터가 대표셩을 갖지 않는 경우</span><br><span class="line">- ex) A 고등학교의 영어 성적 데이터를 갖고 전국의 고등학생 영어 성적의 분포를 알려고 하는 경우</span><br><span class="line">2. 무응답 편향</span><br><span class="line">- 데이터 수집시 참여도의 격차로 인해 데이터가 대표성을 갖지 못하는 경우</span><br><span class="line">- ex) 대선운동 할때 유선전화로 여론조사를 시행한 결과로 대선 후보의 당선 예측을 하는 경우</span><br><span class="line">3. 표본 추출 편향</span><br><span class="line">- 데이터 수집 과정에서 적절한 무작위 선택이 적용되지 않았을 경우</span><br><span class="line">- ex)</span><br></pre></td></tr></table></figure>
+
+<h4 id="4-그룹-귀인-편향"><a href="#4-그룹-귀인-편향" class="headerlink" title="4. 그룹 귀인 편향"></a>4. 그룹 귀인 편향</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1. 내집단 편향</span><br><span class="line">- 자신이 소속된 그룹 또는 본인이 공유하는 특성을 가진 그룹의 구성원을 선호하는 경향을 나타내는 경우</span><br><span class="line">- ex) 유유상종, XX대를 졸업한 A라는 사람이 동문인 B를 만났을 때 A가 B를 더 챙겨주고 싶어하고 친해지려하는 심리</span><br><span class="line">2. 외부 집단 동질화 편향</span><br><span class="line">- 자신이 속하지 않은 그룹의 개별 구성원에 관해 고정 관념을 갖거나 그들이 모두 동일한 특징을 가진다고 판단하는 경향을 나타내는 경우</span><br><span class="line">- ex) 어떤 A라는 사람이 컴퓨터를 전공했고 어떤 B라는 사람은 영문과를 전공했다고 했을 때 B라는 사람이 A라는 사람을 보고 &quot;컴퓨터 수리 잘하겠네?&quot; 라는 생각을 갖는 경향</span><br></pre></td></tr></table></figure>
+
+
+<h4 id="5-내재적-편향"><a href="#5-내재적-편향" class="headerlink" title="5. 내재적 편향"></a>5. 내재적 편향</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">1. 확증 편향</span><br><span class="line">- 자신의 신념과 일치하는 정보는 받아들이고, 일치하지 않는 정보는 무시하는 경향</span><br><span class="line">- ex) 듣고싶은 것만 듣고 보고싶은 것만 보는 심리, 담배를 피는것은 몸에 해롭다는 것을</span><br><span class="line">- 알지만 일부 담배를 피고 오래 사는 사람을 보고 &#39;담배 아무리 적게 펴도 병걸릴 사람들은</span><br><span class="line">- 다 걸리고 안걸릴 사람은 아무리 많이펴도 안걸린다,</span><br><span class="line">- 100살 넘게 담배펴도 건강한 할아버지 봐라!&#39;라는 식의 사고방식</span><br><span class="line">2. 실험자 편향</span><br><span class="line">- 실험자가 바라는 방향대로 되기를 바라는 마음에서 발생되는 편향</span><br></pre></td></tr></table></figure>
+
+
+
+<p>머신러닝 단기집중과정 (편향 출처) : <a href="https://developers.google.com/machine-learning/crash-course/fairness/types-of-bias" target="_blank" rel="noopener">google</a><br><br></p>
+<hr>
+
+<h2 id="Tensor-board"><a href="#Tensor-board" class="headerlink" title="Tensor board"></a>Tensor board</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">%load_ext version_information</span><br><span class="line">%load_ext tensorboard</span><br><span class="line"></span><br><span class="line">version_information tensorflow</span><br><span class="line">:</span><br><span class="line">Software	Version</span><br><span class="line">Python	<span class="number">3.7</span><span class="number">.3</span> <span class="number">64</span>bit [MSC v<span class="number">.1915</span> <span class="number">64</span> bit (AMD64)]</span><br><span class="line">IPython	<span class="number">7.4</span><span class="number">.0</span></span><br><span class="line">OS	Windows <span class="number">10</span> <span class="number">10.0</span><span class="number">.17134</span> SP0</span><br><span class="line">tensorflow	<span class="number">2.0</span><span class="number">.0</span>-beta1</span><br><span class="line">Thu Jun <span class="number">27</span> <span class="number">17</span>:<span class="number">01</span>:<span class="number">13</span> <span class="number">2019</span> ¢¥eCN©öI¡¾©ö C¡ÍA¨ª¨öA</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line"></span><br><span class="line">mnist = tf.keras.datasets.mnist</span><br><span class="line"></span><br><span class="line">(x_train, y_train),(x_test, y_test) = mnist.load_data()</span><br><span class="line">x_train, x_test = x_train / <span class="number">255.0</span>, x_test / <span class="number">255.0</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">create_model</span><span class="params">()</span>:</span></span><br><span class="line">  <span class="keyword">return</span> tf.keras.models.Sequential([</span><br><span class="line">    tf.keras.layers.Flatten(input_shape=(<span class="number">28</span>, <span class="number">28</span>)),</span><br><span class="line">    tf.keras.layers.Dense(<span class="number">512</span>, activation=<span class="string">'relu'</span>),</span><br><span class="line">    tf.keras.layers.Dropout(<span class="number">0.2</span>),</span><br><span class="line">    tf.keras.layers.Dense(<span class="number">10</span>, activation=<span class="string">'softmax'</span>)</span><br><span class="line">  ])</span><br><span class="line"></span><br><span class="line">model = create_model()</span><br><span class="line">model.compile(optimizer=<span class="string">'adam'</span>,</span><br><span class="line">              loss=<span class="string">'sparse_categorical_crossentropy'</span>,</span><br><span class="line">              metrics=[<span class="string">'accuracy'</span>])</span><br><span class="line"></span><br><span class="line">log_dir=<span class="string">"log\\"</span> + datetime.datetime.now().strftime(<span class="string">"%Y%m%d-%H%M%S"</span>) <span class="comment"># 현재시간을 문자열로 바꿔서 저장</span></span><br><span class="line"></span><br><span class="line">tensorboard_callback = tf.keras.callbacks.TensorBoard(log_dir=log_dir, histogram_freq=<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">model.fit(x=x_train,</span><br><span class="line">          y=y_train,</span><br><span class="line">          epochs=<span class="number">5</span>,</span><br><span class="line">          validation_data=(x_test, y_test),</span><br><span class="line">          callbacks=[tensorboard_callback]</span><br><span class="line">         )</span><br><span class="line"></span><br><span class="line">%lsmagic  <span class="comment"># %load_ext tensorboard를 하면 %tensorboard가 생긴다</span></span><br><span class="line">: Available line magics:</span><br><span class="line">%alias  %alias_magic  %autoawait  %autocall ....%tensorboard.....</span><br><span class="line"></span><br><span class="line">%tensorboard --logdir log/</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://user-images.githubusercontent.com/33630505/60267850-187a8380-9926-11e9-84a8-654798556cd4.JPG" alt="tensorboard"></p>
+<p><a id = '35th'></a></p>
+<h1 id="2019년-6월-28일-금요일-35th-마지막-수업"><a href="#2019년-6월-28일-금요일-35th-마지막-수업" class="headerlink" title="2019년 6월 28일 금요일 35th (마지막 수업)"></a>2019년 6월 28일 금요일 35th (마지막 수업)</h1>
+          
+        </div>
+        
+          <br>
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-12-29T12:24:01+09:00">
+  <a class='notlink'>
+    <i class="fas fa-clock" aria-hidden="true"></i>
+    <p>Dec 29, 2021</p>
+    <!-- __('post.updated') + ' ' +  -->
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/AI/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>AI</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Lecture/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>Lecture</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Deep-Learning/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>Deep Learning</p></a></div>
+
+
+        
+      
+    </div>
+  </section>
+
+
+        
+
+        
+            <div class="prev-next">
+                
+                    <section class="prev">
+                        <span class="art-item-left">
+                            <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;prev</h6>
+                            <h4>
+                                <a href="/2019/05/18/flask/" rel="prev" title="Flask">
+                                  
+                                      Flask
+                                  
+                                </a>
+                            </h4>
+                            
+                                
+                                <h6 class="tags">
+                                    <a class="tag" href="/tags/Flask/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> Flask</a> <a class="tag" href="/tags/Python/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> Python</a> <a class="tag" href="/tags/Web/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> Web</a> <a class="tag" href="/tags/Programming/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> Programming</a>
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
+                
+                    <section class="next">
+                        <span class="art-item-right" aria-hidden="true">
+                            <h6>next&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
+                            <h4>
+                                <a href="/2019/04/29/AILecture_numpy/" rel="prev" title="AI 이노베이션 스퀘어 수업(기본반) - numpy">
+                                    
+                                        AI 이노베이션 스퀘어 수업(기본반) - numpy
+                                    
+                                </a>
+                            </h4>
+                            
+                                
+                                <h6 class="tags">
+                                    <a class="tag" href="/tags/AI/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> AI</a> <a class="tag" href="/tags/Lecture/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> Lecture</a> <a class="tag" href="/tags/Numpy/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> Numpy</a>
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
+            </div>
+        
+      </section>
+      <!-- Google AdSense -->
+      <!-- In post -->
+      <script data-ad-client="ca-pub-1288998211050792" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<!-- Google AdSense -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1288998211050792"
+     data-ad-slot="5437821794"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+    </article>
+  
+
+  
+    <!-- 显示推荐文章和评论 -->
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+  <script>
+    window.subData = {
+      title: 'AI 이노베이션 스퀘어 수업(기본반) - deeplearning',
+      tools: true
+    }
+  </script>
+
+
+  <div id="disqus_thread"></div>
+</div>
+<aside class='l_side'>
+  
+    
+    
+      
+        
+          <section class='widget blogger'>
+  <div class='content pure'>
+    
+      <div class='avatar'>
+        <img class='avatar' src='/jh.jpg'/>
+      </div>
+    
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="mailto:wlgur278@gmail.com"
+              class="social fas fa-envelope flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://github.com/Jungjihyuk"
+              class="social fab fa-github flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+      
+        
+      
+        
+          
+  <section class='widget toc-wrapper'>
+    <header class='pure'>
+  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Shortcuts</div>
+  
+    <!-- <div class='wrapper'><a class="s-toc rightBtn" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div> -->
+  
+</header>
+
+    <div class='content pure'>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Deep-Learning"><span class="toc-text">Deep Learning</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#인공지능-발전에-기여한-인물들"><span class="toc-text">인공지능 발전에 기여한 인물들</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Frank-Rosenblatt’s-Perceptron"><span class="toc-text">Frank Rosenblatt’s Perceptron</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Perceptron-학습-방법"><span class="toc-text">Perceptron 학습 방법</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Bernard-Widrow’s-Adaline"><span class="toc-text">Bernard Widrow’s Adaline</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Adaline"><span class="toc-text">Adaline</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#예시"><span class="toc-text">예시</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Perceptron-vs-Adaline"><span class="toc-text">Perceptron vs Adaline</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Neuron’s-communication"><span class="toc-text">Neuron’s communication</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Adaline과-Neuron"><span class="toc-text">Adaline과 Neuron</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Paul-Werbos’s-MLP"><span class="toc-text">Paul Werbos’s MLP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Yann-LeCun-amp-David-Rumelhart-amp-Geoffrey-Everest-Hinton"><span class="toc-text">Yann LeCun &amp; David Rumelhart &amp; Geoffrey Everest Hinton</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Scikit-Perceptron"><span class="toc-text">Scikit Perceptron</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#loss-cost-objective-function"><span class="toc-text">loss, cost, objective function</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Feed-forward-vs-Back-Propagation"><span class="toc-text">Feed-forward vs Back-Propagation</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Vanishing-gradient-problem"><span class="toc-text">Vanishing gradient problem</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Neural-network-표현방식"><span class="toc-text">Neural network 표현방식</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Graphical-neural-network"><span class="toc-text">Graphical neural network</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Tensorflow"><span class="toc-text">Tensorflow</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#절차"><span class="toc-text">절차</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#예시-1"><span class="toc-text">예시</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Keras쓰는-4가지-방식"><span class="toc-text">Keras쓰는 4가지 방식</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Pandas-시계열-분석"><span class="toc-text">Pandas 시계열 분석</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Deep-Learning에서-Overfitting-막는-방법"><span class="toc-text">Deep Learning에서 Overfitting 막는 방법</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Deep-Learning에서-중요한것은"><span class="toc-text">Deep Learning에서 중요한것은?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#당신의-데이터는-일반적입니까"><span class="toc-text">당신의 데이터는 일반적입니까?</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#데이터는-공정한-데이터-여야-한다"><span class="toc-text">데이터는 공정한 데이터 여야 한다.</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#편향의-유형"><span class="toc-text">편향의 유형</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-보고-편향"><span class="toc-text">1. 보고 편향</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-자동화-편향"><span class="toc-text">2. 자동화 편향</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-표본-선택-편향"><span class="toc-text">3. 표본 선택 편향</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-그룹-귀인-편향"><span class="toc-text">4. 그룹 귀인 편향</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-내재적-편향"><span class="toc-text">5. 내재적 편향</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Tensor-board"><span class="toc-text">Tensor board</span></a></li></ol>
+    </div>
+  </section>
+
+
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+      
+        
+      
+        
+      
+        
+          
+  <section class='widget category'>
+    <header class='pure'>
+  <div><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;category</div>
+  
+    <a class="rightBtn"
+    
+      rel="external nofollow noopener noreferrer"
+    
+    
+      target="_self"
+    
+    href="/categories/"
+    title="categories/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class='content pure'>
+      <ul class="entry">
+        
+          <li><a class="flat-box" title="/categories/AI/" href="/categories/AI/"><div class='name'>AI</div><div class='badge'>(10)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/AI/Data-Analysis/" href="/categories/AI/Data-Analysis/"><div class='name'>Data Analysis</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/AI/Deep-Learning/" href="/categories/AI/Deep-Learning/"><div class='name'>Deep Learning</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/AI/Machine-Learning/" href="/categories/AI/Machine-Learning/"><div class='name'>Machine Learning</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/AI/Natural-Language-Processing/" href="/categories/AI/Natural-Language-Processing/"><div class='name'>Natural Language Processing</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/AI/Numpy/" href="/categories/AI/Numpy/"><div class='name'>Numpy</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/AI/Pandas/" href="/categories/AI/Pandas/"><div class='name'>Pandas</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/AI/Python/" href="/categories/AI/Python/"><div class='name'>Python</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/Algorithm/" href="/categories/Algorithm/"><div class='name'>Algorithm</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/Algorithm/Arrays/" href="/categories/Algorithm/Arrays/"><div class='name'>Arrays</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/Data-Structure/" href="/categories/Data-Structure/"><div class='name'>Data Structure</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/English/" href="/categories/English/"><div class='name'>English</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/Git/" href="/categories/Git/"><div class='name'>Git</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/IT-Terms/" href="/categories/IT-Terms/"><div class='name'>IT Terms</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/JSP-Servlet/" href="/categories/JSP-Servlet/"><div class='name'>JSP & Servlet</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/Language/" href="/categories/Language/"><div class='name'>Language</div><div class='badge'>(8)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/Language/Java/" href="/categories/Language/Java/"><div class='name'>Java</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/Language/Markup-Language/" href="/categories/Language/Markup-Language/"><div class='name'>Markup Language</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/Language/Python/" href="/categories/Language/Python/"><div class='name'>Python</div><div class='badge'>(6)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/Web/" href="/categories/Web/"><div class='name'>Web</div><div class='badge'>(5)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/Web/Bootstrap4/" href="/categories/Web/Bootstrap4/"><div class='name'>Bootstrap4</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/Web/Django/" href="/categories/Web/Django/"><div class='name'>Django</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/Web/Flask/" href="/categories/Web/Flask/"><div class='name'>Flask</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/Web/Object-Model/" href="/categories/Web/Object-Model/"><div class='name'>Object Model</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/Web/Objectoriented/" href="/categories/Web/Objectoriented/"><div class='name'>Objectoriented</div><div class='badge'>(1)</div></a></li>
+        
+      </ul>
+    </div>
+  </section>
+
+
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+      
+        
+      
+        
+      
+        
+      
+        
+          
+  <section class='widget tagcloud'>
+    <header class='pure'>
+  <div><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Keywords</div>
+  
+    <a class="rightBtn"
+    
+      rel="external nofollow noopener noreferrer"
+    
+    
+      target="_self"
+    
+    href="/tags/"
+    title="tags/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class='content pure'>
+      <a href="/tags/AI/" style="font-size: 22px; color: #636363">AI</a> <a href="/tags/Algorithm/" style="font-size: 14px; color: #999">Algorithm</a> <a href="/tags/CodeSignal/" style="font-size: 16px; color: #8b8b8b">CodeSignal</a> <a href="/tags/CodeSignal2/" style="font-size: 14px; color: #999">CodeSignal2</a> <a href="/tags/Data-Analysis/" style="font-size: 14px; color: #999">Data Analysis</a> <a href="/tags/Deep-Learning/" style="font-size: 16px; color: #8b8b8b">Deep Learning</a> <a href="/tags/Django/" style="font-size: 14px; color: #999">Django</a> <a href="/tags/EDA/" style="font-size: 14px; color: #999">EDA</a> <a href="/tags/Flask/" style="font-size: 14px; color: #999">Flask</a> <a href="/tags/FrontEnd/" style="font-size: 14px; color: #999">FrontEnd</a> <a href="/tags/Git/" style="font-size: 14px; color: #999">Git</a> <a href="/tags/Git-Flow/" style="font-size: 14px; color: #999">Git-Flow</a> <a href="/tags/Github/" style="font-size: 14px; color: #999">Github</a> <a href="/tags/Gitlab/" style="font-size: 14px; color: #999">Gitlab</a> <a href="/tags/IT/" style="font-size: 14px; color: #999">IT</a> <a href="/tags/Java/" style="font-size: 14px; color: #999">Java</a> <a href="/tags/Jsp/" style="font-size: 14px; color: #999">Jsp</a> <a href="/tags/Lecture/" style="font-size: 22px; color: #636363">Lecture</a> <a href="/tags/Machine-Learning/" style="font-size: 16px; color: #8b8b8b">Machine Learning</a> <a href="/tags/NLP/" style="font-size: 14px; color: #999">NLP</a> <a href="/tags/Numpy/" style="font-size: 14px; color: #999">Numpy</a> <a href="/tags/Pandas/" style="font-size: 14px; color: #999">Pandas</a> <a href="/tags/Programming/" style="font-size: 14px; color: #999">Programming</a> <a href="/tags/Python/" style="font-size: 16px; color: #8b8b8b">Python</a> <a href="/tags/Servlet/" style="font-size: 14px; color: #999">Servlet</a> <a href="/tags/Web/" style="font-size: 14px; color: #999">Web</a> <a href="/tags/algorithm/" style="font-size: 20px; color: #707070">algorithm</a> <a href="/tags/api/" style="font-size: 14px; color: #999">api</a> <a href="/tags/array/" style="font-size: 14px; color: #999">array</a> <a href="/tags/bom/" style="font-size: 14px; color: #999">bom</a> <a href="/tags/bootstrap/" style="font-size: 14px; color: #999">bootstrap</a> <a href="/tags/class/" style="font-size: 14px; color: #999">class</a> <a href="/tags/clean-code/" style="font-size: 14px; color: #999">clean code</a> <a href="/tags/coding-test/" style="font-size: 14px; color: #999">coding test</a> <a href="/tags/crawling/" style="font-size: 14px; color: #999">crawling</a> <a href="/tags/css/" style="font-size: 14px; color: #999">css</a> <a href="/tags/data-mining/" style="font-size: 14px; color: #999">data mining</a> <a href="/tags/database/" style="font-size: 16px; color: #8b8b8b">database</a> <a href="/tags/deep-learning/" style="font-size: 16px; color: #8b8b8b">deep learning</a> <a href="/tags/deque/" style="font-size: 14px; color: #999">deque</a> <a href="/tags/dom/" style="font-size: 14px; color: #999">dom</a> <a href="/tags/generator/" style="font-size: 14px; color: #999">generator</a> <a href="/tags/git/" style="font-size: 14px; color: #999">git</a> <a href="/tags/helper-function/" style="font-size: 14px; color: #999">helper function</a> <a href="/tags/iris/" style="font-size: 14px; color: #999">iris</a> <a href="/tags/javascript/" style="font-size: 14px; color: #999">javascript</a> <a href="/tags/js/" style="font-size: 14px; color: #999">js</a> <a href="/tags/json/" style="font-size: 14px; color: #999">json</a> <a href="/tags/neural-network/" style="font-size: 14px; color: #999">neural network</a> <a href="/tags/object/" style="font-size: 14px; color: #999">object</a> <a href="/tags/object-model/" style="font-size: 14px; color: #999">object model</a> <a href="/tags/page-rank/" style="font-size: 14px; color: #999">page rank</a> <a href="/tags/python/" style="font-size: 24px; color: #555">python</a> <a href="/tags/queue/" style="font-size: 14px; color: #999">queue</a> <a href="/tags/scraping/" style="font-size: 14px; color: #999">scraping</a> <a href="/tags/send/" style="font-size: 14px; color: #999">send</a> <a href="/tags/stack/" style="font-size: 14px; color: #999">stack</a> <a href="/tags/tensorflow/" style="font-size: 14px; color: #999">tensorflow</a> <a href="/tags/xml/" style="font-size: 14px; color: #999">xml</a> <a href="/tags/yield/" style="font-size: 14px; color: #999">yield</a> <a href="/tags/%EB%AA%85%EB%A0%B9%EC%96%B4/" style="font-size: 14px; color: #999">명령어</a> <a href="/tags/%EB%AC%B8%EB%B2%95/" style="font-size: 14px; color: #999">문법</a> <a href="/tags/%EB%B0%B1%EC%A4%80/" style="font-size: 14px; color: #999">백준</a> <a href="/tags/%EC%82%B0%ED%83%80-%ED%86%A0%EC%9D%B5/" style="font-size: 14px; color: #999">산타 토익</a> <a href="/tags/%EC%84%A4%EA%B3%84/" style="font-size: 14px; color: #999">설계</a> <a href="/tags/%EC%8B%9C%EC%9B%90%EC%8A%A4%EC%BF%A8/" style="font-size: 14px; color: #999">시원스쿨</a> <a href="/tags/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/" style="font-size: 14px; color: #999">알고리즘</a> <a href="/tags/%EC%98%81%EC%96%B4/" style="font-size: 16px; color: #8b8b8b">영어</a> <a href="/tags/%EC%9A%A9%EC%96%B4/" style="font-size: 14px; color: #999">용어</a> <a href="/tags/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/" style="font-size: 14px; color: #999">자료구조</a> <a href="/tags/%EC%9E%90%EC%97%B0%EC%96%B4-%EC%B2%98%EB%A6%AC/" style="font-size: 14px; color: #999">자연어 처리</a> <a href="/tags/%EC%A0%95%EB%A6%AC/" style="font-size: 18px; color: #7e7e7e">정리</a> <a href="/tags/%EC%BD%94%EB%94%A9%EC%97%B0%EC%8A%B5/" style="font-size: 18px; color: #7e7e7e">코딩연습</a> <a href="/tags/%ED%86%A0%EC%9D%B5/" style="font-size: 14px; color: #999">토익</a> <a href="/tags/%ED%95%9C%EB%88%88%EC%97%90-%EB%B3%B4%EA%B8%B0/" style="font-size: 16px; color: #8b8b8b">한눈에 보기</a> <a href="/tags/%ED%95%9C%EB%88%88%EC%97%90-%EC%A0%95%EB%A6%AC/" style="font-size: 14px; color: #999">한눈에 정리</a> <a href="/tags/%ED%98%91%EC%97%85/" style="font-size: 14px; color: #999">협업</a> <a href="/tags/%ED%9A%8C%ED%99%94/" style="font-size: 14px; color: #999">회화</a>
+    </div>
+  </section>
+
+
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+  
+  <!-- Google AdSense -->
+  <div style="margin-top: 16px;">
+
+  </div>
+  <script data-ad-client="ca-pub-1288998211050792" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<!-- Google AdSense -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1288998211050792"
+     data-ad-slot="7750297977"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+</aside>
+
+<footer class="clearfix">
+  
+    <div class="social-wrapper">
+      
+        
+          <a href="mailto:wlgur278@gmail.com"
+            class="social fas fa-envelope flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="https://github.com/Jungjihyuk"
+            class="social fab fa-github flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+    </div>
+  
+  <br>
+  <!-- <div><- markdown(__('footer.license')) </div> -->
+  <div>
+    <!-- <- __('footer.use')  -->
+    <!-- a href = "<- theme.info.docs " -->
+    <span>Copyright. </span>
+    <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" class="codename">Material-X</a>
+    <!-- <- theme.info.name    -->
+    <!-- <- __('footer.theme')  -->
+    <br>
+    
+    . 
+  </div>
+  
+</footer>
+<script>setLoadingBarProgress(80);</script>
+
+<script>
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://https-jungjihyuk-github-io.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a></noscript>
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+
+  <script>
+    
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/" || "/";
+    if (!ROOT.endsWith('/')) ROOT += '/';
+  </script>
+
+<script async src="//instant.page/1.2.2" type="module" integrity="sha384-2xV8M5griQmzyiY3CDqh1dn4z3llDVqZDqzjzcY+jCBCk/a5fXJmuZ/40JJAPeoU"></script>
+
+  <script async src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js"></script>
+  <script async src="https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.5/dist/scrollreveal.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      const $reveal = $('.reveal');
+      if ($reveal.length === 0) return;
+      const sr = ScrollReveal({ distance: 0 });
+      sr.reveal('.reveal');
+    });
+  </script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+
+
+
+  
+  
+  
+    <script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@20.2/js/backstretch.min.js"></script>
+    <script type="text/javascript">
+      $(function(){
+        if ('') {
+          $('').backstretch(
+          ["unsplash.jpg", "jonathan.jpg", "flower.jpg"],
+          {
+            duration: "6000",
+            fade: "2500"
+          });
+        } else {
+          $.backstretch(
+          ["unsplash.jpg", "jonathan.jpg", "flower.jpg"],
+          {
+            duration: "6000",
+            fade: "2500"
+          });
+        }
+      });
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+<script src="/js/app.js"></script>
+
+
+
+  
+<script src="/js/search.js"></script>
+
+
+
+  
+    
+<script src="/js/commentTyping.js"></script>
+
+  
+
+
+
+
+
+<!-- 复制 -->
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  let COPY_SUCCESS = "Copied";
+  let COPY_FAILURE = "Copy failed";
+  /*页面载入完成后，创建复制按钮*/
+  !function (e, t, a) {
+    /* code */
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '  <i class="fa fa-copy"></i><span>Copy</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+
+      clipboard.on('success', function(e) {
+        //您可以加入成功提示
+        console.info('Action:', e.action);
+        console.info('Text:', e.text);
+        console.info('Trigger:', e.trigger);
+        success_prompt(COPY_SUCCESS);
+        e.clearSelection();
+      });
+      clipboard.on('error', function(e) {
+        //您可以加入失败提示
+        console.error('Action:', e.action);
+        console.error('Trigger:', e.trigger);
+        fail_prompt(COPY_FAILURE);
+      });
+    }
+    initCopyCode();
+
+  }(window, document);
+
+  /**
+   * 弹出式提示框，默认1.5秒自动消失
+   * @param message 提示信息
+   * @param style 提示样式，有alert-success、alert-danger、alert-warning、alert-info
+   * @param time 消失时间
+   */
+  var prompt = function (message, style, time)
+  {
+      style = (style === undefined) ? 'alert-success' : style;
+      time = (time === undefined) ? 1500 : time*1000;
+      $('<div>')
+          .appendTo('body')
+          .addClass('alert ' + style)
+          .html(message)
+          .show()
+          .delay(time)
+          .fadeOut();
+  };
+
+  // 成功提示
+  var success_prompt = function(message, time)
+  {
+      prompt(message, 'alert-success', time);
+  };
+
+  // 失败提示
+  var fail_prompt = function(message, time)
+  {
+      prompt(message, 'alert-danger', time);
+  };
+
+  // 提醒
+  var warning_prompt = function(message, time)
+  {
+      prompt(message, 'alert-warning', time);
+  };
+
+  // 信息提示
+  var info_prompt = function(message, time)
+  {
+      prompt(message, 'alert-info', time);
+  };
+
+</script>
+
+
+<!-- fancybox -->
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  let LAZY_LOAD_IMAGE = "";
+  $(".article-entry").find("fancybox").find("img").each(function () {
+      var element = document.createElement("a");
+      $(element).attr("data-fancybox", "gallery");
+      $(element).attr("href", $(this).attr("src"));
+      /* 图片采用懒加载处理时,
+       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
+       * 那么此处将原本的属性名src替换为对应属性名data-original,
+       * 修改如下
+       */
+       if (LAZY_LOAD_IMAGE) {
+         $(element).attr("href", $(this).attr("data-original"));
+       }
+      $(this).wrap(element);
+  });
+</script>
+
+
+
+
+
+  <script>setLoadingBarProgress(100);</script>
+</body>
+</html>

@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  <title>Helper Function for Clean code (Python) | 지혁&#39;s Blog</title>
+  
+  
+
+  
+  <link rel="alternate" href="/feed.xml" title="지혁's Blog">
+  
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- meta -->
+  
+
+  <!-- Auto Canonical -->
+  <link rel="canonical" href="http://jungjihyuk.github.io/2020/02/04/python-skills/"/>
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.10.1/css/all.min.css">
+  
+
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
+  
+
+  
+    
+<link rel="stylesheet" href="/style.css">
+
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+
+  
+  
+
+  <!-- Google AdSense -->
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-143236286-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-143236286-2');
+</script>
+
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/feed.xml" title="지혁's Blog" type="application/rss+xml">
+</head>
+
+<body>
+  
+  
+  <div class="cover-wrapper">
+    <cover class='cover post half'>
+      
+        
+  <h1 class='title'>Imitation, Imagination, Integration</h1>
+
+
+  <div class="m_search">
+    <form name="searchform" class="form u-search-form">
+      <input type="text" class="input u-search-input" placeholder="search" />
+      <i class="icon fas fa-search fa-fw"></i>
+    </form>
+  </div>
+
+<div class='menu navgation'>
+  <ul class='h-list'>
+    
+      
+        <li>
+          <a class="nav home" href="/"
+            
+            
+            id="home">
+            <i class='fas fa-rss fa-fw'></i>&nbsp;Home
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="/about"
+            
+              rel="nofollow"
+            
+            
+            id="about">
+            <i class='fas fa-info-circle fa-fw'></i>&nbsp;About
+          </a>
+        </li>
+      
+    
+  </ul>
+</div>
+
+      
+    </cover>
+    <header class="l_header pure">
+  <div id="loading-bar-wrapper">
+    <div id="loading-bar" class="pure"></div>
+  </div>
+
+	<div class='wrapper'>
+		<div class="nav-main container container--flex">
+      <a class="logo flat-box" target="_self" href='/' >
+        
+          지혁's Blog
+        
+      </a>
+			<div class='menu navgation'>
+				<ul class='h-list'>
+          
+  					
+  						<li>
+								<a class="nav flat-box" href="/"
+                  
+                  
+                    target="_self"
+                  
+                  id="home">
+									<i class='fas fa-grin fa-fw'></i>&nbsp;Home
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/archives"
+                  
+                    rel="nofollow"
+                  
+                  
+                    target="_self"
+                  
+                  id="archives">
+									<i class='fas fa-archive fa-fw'></i>&nbsp;Archives
+								</a>
+							</li>
+      			
+      		
+				</ul>
+			</div>
+
+			
+				<div class="m_search">
+					<form name="searchform" class="form u-search-form">
+						<input type="text" class="input u-search-input" placeholder="search" />
+						<i class="icon fas fa-search fa-fw"></i>
+					</form>
+				</div>
+			
+			<ul class='switcher h-list'>
+				
+					<li class='s-search'><a class="fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
+				
+				<li class='s-menu'><a class="fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+
+		<div class='nav-sub container container--flex'>
+			<a class="logo flat-box"></a>
+			<ul class='switcher h-list'>
+				<li class='s-comment'><a class="flat-btn fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+          <li class='s-toc'><a class="flat-btn fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+			</ul>
+		</div>
+	</div>
+</header>
+	<aside class="menu-phone">
+    <header>
+		<nav class="menu navgation">
+      <ul>
+        
+          
+            <li>
+							<a class="nav flat-box" href="/"
+                
+                
+                id="home">
+								<i class='fas fa-clock fa-fw'></i>&nbsp;Home
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/archives"
+                
+                  rel="nofollow"
+                
+                
+                id="archives">
+								<i class='fas fa-archive fa-fw'></i>&nbsp;Archives
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/projects"
+                
+                
+                id="projects">
+								<i class='fas fa-code-branch fa-fw'></i>&nbsp;Projects
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="https://xaoxuu.com/wiki/material-x/"
+                
+                  rel="nofollow"
+                
+                
+                id="https:xaoxuu.comwikimaterial-x">
+								<i class='fas fa-book fa-fw'></i>&nbsp;Reference
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/about"
+                
+                  rel="nofollow"
+                
+                
+                id="about">
+								<i class='fas fa-info-circle fa-fw'></i>&nbsp;About
+							</a>
+            </li>
+          
+       
+      </ul>
+		</nav>
+    </header>
+	</aside>
+<script>setLoadingBarProgress(40);</script>
+
+  </div>
+
+
+  <div class="l_body">
+    <div class='body-wrapper'>
+      <div class='l_main'>
+  
+
+  
+    <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
+      
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  
+    <h1 class="title">
+      <a href="/2020/02/04/python-skills/">
+        Helper Function for Clean code (Python)
+      </a>
+    </h1>
+  
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    
+      <a href="http://jungjihyuk.github.io" rel="nofollow">
+        
+          <i class="fas fa-user" aria-hidden="true"></i>
+        
+        <p>Jihyuk Jung</p>
+      </a>
+    
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2020-02-04</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/Language/Python/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>Language&nbsp;/&nbsp;Python</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+  
+
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          <center><span style="color: orange; font-size: 35px">Python 코드의 가독성을 높여보자</span></center>
+
+<br>
+
+
+<h1 id="상황-1-URL에서-쿼리-문자열을-디코드해야-할-때"><a href="#상황-1-URL에서-쿼리-문자열을-디코드해야-할-때" class="headerlink" title="#상황 1. URL에서 쿼리 문자열을 디코드해야 할 때"></a>#상황 1. URL에서 쿼리 문자열을 디코드해야 할 때</h1><br>
+
+<blockquote>
+<p>URL에서 인코딩, 디코딩의 의미는 보안에서의 의미와 살짝 다르다. <br><br>인코딩 <br><br><a href="http://www.google.com/떡볶이" target="_blank" rel="noopener">http://www.google.com/떡볶이</a> 먹고싶다!! <br><br>=&gt; <a href="http://www.google.com/search?sxsrf=ACYBGNTgapWszfC06soR1IlVyLsC2w_7EQ%" target="_blank" rel="noopener">http://www.google.com/search?sxsrf=ACYBGNTgapWszfC06soR1IlVyLsC2w_7EQ%</a> <br><br>3A1580777854450&amp;source=hp&amp;ei=fsE4Xri1GdWRr7wPvM2UOA&amp;q=떡볶이+먹고싶다!! <br><br>주소에 한글/공백/특수기호가 들어가면 안되기 때문에 가능하도록 변환하는 작업 <br><br>디코딩은 그 반대</p>
+</blockquote>
+<h2 id="Boolean-표현식"><a href="#Boolean-표현식" class="headerlink" title="Boolean 표현식"></a>Boolean 표현식</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> parse_qs</span><br><span class="line"></span><br><span class="line">my_values = parse_qs(<span class="string">'red=5&amp;blue=0&amp;green='</span>,keep_blank_values=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 값 전체 (dictionary로 저장)</span></span><br><span class="line">print(my_values)</span><br><span class="line">: &#123;<span class="string">'red'</span>: [<span class="string">'5'</span>], <span class="string">'green'</span>:[<span class="string">''</span>],<span class="string">'blue'</span>:[<span class="string">'0'</span>]&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 각각의 값을 뽑을 때</span></span><br><span class="line">red = my_values.get(<span class="string">'red'</span>,[<span class="string">''</span>])[<span class="number">0</span>] <span class="keyword">or</span> <span class="number">0</span></span><br><span class="line">green = my_values.get(<span class="string">'green'</span>,[<span class="string">''</span>])[<span class="number">0</span>] <span class="keyword">or</span> <span class="number">0</span></span><br><span class="line">opacity = my_values.get(<span class="string">'opacity'</span>,[<span class="string">''</span>])[<span class="number">0</span>] <span class="keyword">or</span> <span class="number">0</span></span><br></pre></td></tr></table></figure>
+
+<p><code>평가 =&gt;</code> 이 표현식은 읽기도 불편하고 필요한 작업을 수행하지도 못하는 좋지 못한 코딩</p>
+<br>
+
+<h3 id="Boolean-표현식-변형"><a href="#Boolean-표현식-변형" class="headerlink" title="Boolean 표현식 변형"></a>Boolean 표현식 변형</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">red = my_values.get(<span class="string">'red'</span>,[<span class="string">''</span>])[<span class="number">0</span>] <span class="keyword">or</span> <span class="number">0</span></span><br><span class="line">green = my_values.get(<span class="string">'green'</span>,[<span class="string">''</span>])[<span class="number">0</span>] <span class="keyword">or</span> <span class="number">0</span></span><br><span class="line">opacity = my_values.get(<span class="string">'opacity'</span>,[<span class="string">''</span>])[<span class="number">0</span>] <span class="keyword">or</span> <span class="number">0</span></span><br><span class="line">                    ∥</span><br><span class="line">                    ∨</span><br><span class="line">red = int(my_values.get(<span class="string">'red'</span>,[<span class="string">''</span>])[<span class="number">0</span>] <span class="keyword">or</span> <span class="number">0</span>)</span><br><span class="line">green = int(my_values.get(<span class="string">'green'</span>,[<span class="string">''</span>])[<span class="number">0</span>] <span class="keyword">or</span> <span class="number">0</span>)</span><br><span class="line">opacity = int(my_values.get(<span class="string">'opacity'</span>,[<span class="string">''</span>])[<span class="number">0</span>] <span class="keyword">or</span> <span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h2 id="if-else-조건식-삼항-표현식"><a href="#if-else-조건식-삼항-표현식" class="headerlink" title="if/else 조건식(삼항 표현식)"></a>if/else 조건식(삼항 표현식)</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> parse_qs</span><br><span class="line"></span><br><span class="line">my_values = parse_qs(<span class="string">'red=5&amp;blue=0&amp;green='</span>,keep_blank_values=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line">red = my_values.get(<span class="string">'red'</span>,[<span class="string">''</span>])</span><br><span class="line">red = int(red[<span class="number">0</span>]) <span class="keyword">if</span> red[<span class="number">0</span>] <span class="keyword">else</span> <span class="number">0</span></span><br><span class="line"></span><br><span class="line">green = my_values.get(<span class="string">'green'</span>,[<span class="string">''</span>])</span><br><span class="line">green = int(green[<span class="number">0</span>]) <span class="keyword">if</span> green[<span class="number">0</span>] <span class="keyword">else</span> <span class="number">0</span></span><br><span class="line"></span><br><span class="line">opacity = my_values.get(<span class="string">'opacity'</span>,[<span class="string">''</span>])</span><br><span class="line">opacity = int(opacity[<span class="number">0</span>]) <span class="keyword">if</span> opacity[<span class="number">0</span>] <span class="keyword">else</span> <span class="number">0</span></span><br></pre></td></tr></table></figure>
+<br>
+
+<p><code>평가 =&gt;</code> 삼항 표현식은 코드를 짧게 유지하면서도 명확하게 표현 할 수 있는 장점이 있지만 복잡한 로직일 경우 남발하면 안된다.</p>
+<br>
+
+<h2 id="여러줄에-걸친-if-else-문"><a href="#여러줄에-걸친-if-else-문" class="headerlink" title="여러줄에 걸친 if/else 문"></a>여러줄에 걸친 if/else 문</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">green = my_values.get(<span class="string">'green'</span>,[<span class="string">''</span>])</span><br><span class="line"><span class="keyword">if</span> green[<span class="number">0</span>]:</span><br><span class="line">    green = int(green[<span class="number">0</span>])</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    green = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">red = my_values.get(<span class="string">'red'</span>,[<span class="string">''</span>])</span><br><span class="line"><span class="keyword">if</span> red[<span class="number">0</span>]:</span><br><span class="line">    red = int(red[<span class="number">0</span>])</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    red = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">opacity = my_values.get(<span class="string">'opacity'</span>,[<span class="string">''</span>])</span><br><span class="line"><span class="keyword">if</span> opacity[<span class="number">0</span>]:</span><br><span class="line">    opacity = int(opacity[<span class="number">0</span>])</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    opacity = <span class="number">0</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p><code>평가 =&gt;</code> 직관적이고 이해하기 편하나 코드의 길이가 길어 속도가 느려질 수 있다. 그리고 오히려 복잡한 수학 문제 같은 경우 코드가 길면 이해하기 더 힘들 수 있다.</p>
+<br>
+
+
+<h2 id="Helper-Function"><a href="#Helper-Function" class="headerlink" title="Helper Function"></a>Helper Function</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"> <span class="function"><span class="keyword">def</span> <span class="title">get_first_int</span><span class="params">(values, key, default=<span class="number">0</span>)</span>:</span></span><br><span class="line">     found = values.get(key, [<span class="string">''</span>])</span><br><span class="line">     <span class="keyword">if</span> found[<span class="number">0</span>]:</span><br><span class="line">         found = int(found[<span class="number">0</span>])</span><br><span class="line">     <span class="keyword">else</span>:</span><br><span class="line">         found = default</span><br><span class="line">     <span class="keyword">return</span> found</span><br><span class="line"></span><br><span class="line">green = get_first_int(my_values, <span class="string">'green'</span>)</span><br><span class="line">red = get_first_int(my_values, <span class="string">'red'</span>)</span><br><span class="line">opacity = get_first_int(my_values, <span class="string">'opacity'</span>)</span><br></pre></td></tr></table></figure>
+
+<p><code>평가 =&gt;</code> 복잡한 표현식보다 호출 코드가 훨씬 명확해진다. 하지만 아주 간단한 문제인데도 불구하고 너무 헬퍼 함수를 쓰는 것도 그리 좋지 않다.</p>
+<center><span style="color: #ca6257; font-size: 20px">최종 평가</span></center>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">상황에 잘 맞게 적절하게 코드를 짜야 한다!</span><br><span class="line">그리고</span><br><span class="line">표현식이 복잡해지기 시작하면 최대한 빨리 해당 표현식을 작은 조각으로 분할하고</span><br><span class="line">로직을 헬퍼 함수로 옮기는 방안을 고려해야 한다.</span><br><span class="line"></span><br><span class="line">무조건 짧은 코드를 만들기보다는 가독성을 선택하는 편이 나을때가 많다.</span><br></pre></td></tr></table></figure>
+
+          
+        </div>
+        
+          <br>
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-12-29T12:24:01+09:00">
+  <a class='notlink'>
+    <i class="fas fa-clock" aria-hidden="true"></i>
+    <p>Dec 29, 2021</p>
+    <!-- __('post.updated') + ' ' +  -->
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/python/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>python</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/clean-code/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>clean code</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/helper-function/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>helper function</p></a></div>
+
+
+        
+      
+    </div>
+  </section>
+
+
+        
+
+        
+            <div class="prev-next">
+                
+                    <section class="prev">
+                        <span class="art-item-left">
+                            <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;prev</h6>
+                            <h4>
+                                <a href="/2020/03/17/Arrays/" rel="prev" title="Arrays(Codesignal)">
+                                  
+                                      Arrays(Codesignal)
+                                  
+                                </a>
+                            </h4>
+                            
+                                
+                                <h6 class="tags">
+                                    <a class="tag" href="/tags/Algorithm/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> Algorithm</a> <a class="tag" href="/tags/coding-test/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> coding test</a> <a class="tag" href="/tags/array/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> array</a>
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
+                
+                    <section class="next">
+                        <span class="art-item-right" aria-hidden="true">
+                            <h6>next&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
+                            <h4>
+                                <a href="/2020/02/03/python-yield-send/" rel="prev" title="Yield와 send 함수를 알아보자 (Python)">
+                                    
+                                        Yield와 send 함수를 알아보자 (Python)
+                                    
+                                </a>
+                            </h4>
+                            
+                                
+                                <h6 class="tags">
+                                    <a class="tag" href="/tags/python/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> python</a> <a class="tag" href="/tags/generator/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> generator</a> <a class="tag" href="/tags/yield/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> yield</a> <a class="tag" href="/tags/send/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> send</a>
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
+            </div>
+        
+      </section>
+      <!-- Google AdSense -->
+      <!-- In post -->
+      <script data-ad-client="ca-pub-1288998211050792" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<!-- Google AdSense -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1288998211050792"
+     data-ad-slot="5437821794"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+    </article>
+  
+
+  
+    <!-- 显示推荐文章和评论 -->
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+  <script>
+    window.subData = {
+      title: 'Helper Function for Clean code (Python)',
+      tools: true
+    }
+  </script>
+
+
+  <div id="disqus_thread"></div>
+</div>
+<aside class='l_side'>
+  
+    
+    
+      
+        
+          <section class='widget blogger'>
+  <div class='content pure'>
+    
+      <div class='avatar'>
+        <img class='avatar' src='/jh.jpg'/>
+      </div>
+    
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="mailto:wlgur278@gmail.com"
+              class="social fas fa-envelope flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://github.com/Jungjihyuk"
+              class="social fab fa-github flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+      
+        
+      
+        
+          
+  <section class='widget toc-wrapper'>
+    <header class='pure'>
+  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Shortcuts</div>
+  
+    <!-- <div class='wrapper'><a class="s-toc rightBtn" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div> -->
+  
+</header>
+
+    <div class='content pure'>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Boolean-표현식"><span class="toc-text">Boolean 표현식</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Boolean-표현식-변형"><span class="toc-text">Boolean 표현식 변형</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#if-else-조건식-삼항-표현식"><span class="toc-text">if&#x2F;else 조건식(삼항 표현식)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#여러줄에-걸친-if-else-문"><span class="toc-text">여러줄에 걸친 if&#x2F;else 문</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Helper-Function"><span class="toc-text">Helper Function</span></a></li></ol>
+    </div>
+  </section>
+
+
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+      
+        
+      
+        
+      
+        
+          
+  <section class='widget category'>
+    <header class='pure'>
+  <div><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;category</div>
+  
+    <a class="rightBtn"
+    
+      rel="external nofollow noopener noreferrer"
+    
+    
+      target="_self"
+    
+    href="/categories/"
+    title="categories/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class='content pure'>
+      <ul class="entry">
+        
+          <li><a class="flat-box" title="/categories/AI/" href="/categories/AI/"><div class='name'>AI</div><div class='badge'>(10)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/AI/Data-Analysis/" href="/categories/AI/Data-Analysis/"><div class='name'>Data Analysis</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/AI/Deep-Learning/" href="/categories/AI/Deep-Learning/"><div class='name'>Deep Learning</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/AI/Machine-Learning/" href="/categories/AI/Machine-Learning/"><div class='name'>Machine Learning</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/AI/Natural-Language-Processing/" href="/categories/AI/Natural-Language-Processing/"><div class='name'>Natural Language Processing</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/AI/Numpy/" href="/categories/AI/Numpy/"><div class='name'>Numpy</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/AI/Pandas/" href="/categories/AI/Pandas/"><div class='name'>Pandas</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/AI/Python/" href="/categories/AI/Python/"><div class='name'>Python</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/Algorithm/" href="/categories/Algorithm/"><div class='name'>Algorithm</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/Algorithm/Arrays/" href="/categories/Algorithm/Arrays/"><div class='name'>Arrays</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/Data-Structure/" href="/categories/Data-Structure/"><div class='name'>Data Structure</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/English/" href="/categories/English/"><div class='name'>English</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/Git/" href="/categories/Git/"><div class='name'>Git</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/IT-Terms/" href="/categories/IT-Terms/"><div class='name'>IT Terms</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/JSP-Servlet/" href="/categories/JSP-Servlet/"><div class='name'>JSP & Servlet</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/Language/" href="/categories/Language/"><div class='name'>Language</div><div class='badge'>(8)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/Language/Java/" href="/categories/Language/Java/"><div class='name'>Java</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/Language/Markup-Language/" href="/categories/Language/Markup-Language/"><div class='name'>Markup Language</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/Language/Python/" href="/categories/Language/Python/"><div class='name'>Python</div><div class='badge'>(6)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/Web/" href="/categories/Web/"><div class='name'>Web</div><div class='badge'>(5)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/Web/Bootstrap4/" href="/categories/Web/Bootstrap4/"><div class='name'>Bootstrap4</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/Web/Django/" href="/categories/Web/Django/"><div class='name'>Django</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/Web/Flask/" href="/categories/Web/Flask/"><div class='name'>Flask</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/Web/Object-Model/" href="/categories/Web/Object-Model/"><div class='name'>Object Model</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/Web/Objectoriented/" href="/categories/Web/Objectoriented/"><div class='name'>Objectoriented</div><div class='badge'>(1)</div></a></li>
+        
+      </ul>
+    </div>
+  </section>
+
+
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+      
+        
+      
+        
+      
+        
+      
+        
+          
+  <section class='widget tagcloud'>
+    <header class='pure'>
+  <div><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Keywords</div>
+  
+    <a class="rightBtn"
+    
+      rel="external nofollow noopener noreferrer"
+    
+    
+      target="_self"
+    
+    href="/tags/"
+    title="tags/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class='content pure'>
+      <a href="/tags/AI/" style="font-size: 22px; color: #636363">AI</a> <a href="/tags/Algorithm/" style="font-size: 14px; color: #999">Algorithm</a> <a href="/tags/CodeSignal/" style="font-size: 16px; color: #8b8b8b">CodeSignal</a> <a href="/tags/CodeSignal2/" style="font-size: 14px; color: #999">CodeSignal2</a> <a href="/tags/Data-Analysis/" style="font-size: 14px; color: #999">Data Analysis</a> <a href="/tags/Deep-Learning/" style="font-size: 16px; color: #8b8b8b">Deep Learning</a> <a href="/tags/Django/" style="font-size: 14px; color: #999">Django</a> <a href="/tags/EDA/" style="font-size: 14px; color: #999">EDA</a> <a href="/tags/Flask/" style="font-size: 14px; color: #999">Flask</a> <a href="/tags/FrontEnd/" style="font-size: 14px; color: #999">FrontEnd</a> <a href="/tags/Git/" style="font-size: 14px; color: #999">Git</a> <a href="/tags/Git-Flow/" style="font-size: 14px; color: #999">Git-Flow</a> <a href="/tags/Github/" style="font-size: 14px; color: #999">Github</a> <a href="/tags/Gitlab/" style="font-size: 14px; color: #999">Gitlab</a> <a href="/tags/IT/" style="font-size: 14px; color: #999">IT</a> <a href="/tags/Java/" style="font-size: 14px; color: #999">Java</a> <a href="/tags/Jsp/" style="font-size: 14px; color: #999">Jsp</a> <a href="/tags/Lecture/" style="font-size: 22px; color: #636363">Lecture</a> <a href="/tags/Machine-Learning/" style="font-size: 16px; color: #8b8b8b">Machine Learning</a> <a href="/tags/NLP/" style="font-size: 14px; color: #999">NLP</a> <a href="/tags/Numpy/" style="font-size: 14px; color: #999">Numpy</a> <a href="/tags/Pandas/" style="font-size: 14px; color: #999">Pandas</a> <a href="/tags/Programming/" style="font-size: 14px; color: #999">Programming</a> <a href="/tags/Python/" style="font-size: 16px; color: #8b8b8b">Python</a> <a href="/tags/Servlet/" style="font-size: 14px; color: #999">Servlet</a> <a href="/tags/Web/" style="font-size: 14px; color: #999">Web</a> <a href="/tags/algorithm/" style="font-size: 20px; color: #707070">algorithm</a> <a href="/tags/api/" style="font-size: 14px; color: #999">api</a> <a href="/tags/array/" style="font-size: 14px; color: #999">array</a> <a href="/tags/bom/" style="font-size: 14px; color: #999">bom</a> <a href="/tags/bootstrap/" style="font-size: 14px; color: #999">bootstrap</a> <a href="/tags/class/" style="font-size: 14px; color: #999">class</a> <a href="/tags/clean-code/" style="font-size: 14px; color: #999">clean code</a> <a href="/tags/coding-test/" style="font-size: 14px; color: #999">coding test</a> <a href="/tags/crawling/" style="font-size: 14px; color: #999">crawling</a> <a href="/tags/css/" style="font-size: 14px; color: #999">css</a> <a href="/tags/data-mining/" style="font-size: 14px; color: #999">data mining</a> <a href="/tags/database/" style="font-size: 16px; color: #8b8b8b">database</a> <a href="/tags/deep-learning/" style="font-size: 16px; color: #8b8b8b">deep learning</a> <a href="/tags/deque/" style="font-size: 14px; color: #999">deque</a> <a href="/tags/dom/" style="font-size: 14px; color: #999">dom</a> <a href="/tags/generator/" style="font-size: 14px; color: #999">generator</a> <a href="/tags/git/" style="font-size: 14px; color: #999">git</a> <a href="/tags/helper-function/" style="font-size: 14px; color: #999">helper function</a> <a href="/tags/iris/" style="font-size: 14px; color: #999">iris</a> <a href="/tags/javascript/" style="font-size: 14px; color: #999">javascript</a> <a href="/tags/js/" style="font-size: 14px; color: #999">js</a> <a href="/tags/json/" style="font-size: 14px; color: #999">json</a> <a href="/tags/neural-network/" style="font-size: 14px; color: #999">neural network</a> <a href="/tags/object/" style="font-size: 14px; color: #999">object</a> <a href="/tags/object-model/" style="font-size: 14px; color: #999">object model</a> <a href="/tags/page-rank/" style="font-size: 14px; color: #999">page rank</a> <a href="/tags/python/" style="font-size: 24px; color: #555">python</a> <a href="/tags/queue/" style="font-size: 14px; color: #999">queue</a> <a href="/tags/scraping/" style="font-size: 14px; color: #999">scraping</a> <a href="/tags/send/" style="font-size: 14px; color: #999">send</a> <a href="/tags/stack/" style="font-size: 14px; color: #999">stack</a> <a href="/tags/tensorflow/" style="font-size: 14px; color: #999">tensorflow</a> <a href="/tags/xml/" style="font-size: 14px; color: #999">xml</a> <a href="/tags/yield/" style="font-size: 14px; color: #999">yield</a> <a href="/tags/%EB%AA%85%EB%A0%B9%EC%96%B4/" style="font-size: 14px; color: #999">명령어</a> <a href="/tags/%EB%AC%B8%EB%B2%95/" style="font-size: 14px; color: #999">문법</a> <a href="/tags/%EB%B0%B1%EC%A4%80/" style="font-size: 14px; color: #999">백준</a> <a href="/tags/%EC%82%B0%ED%83%80-%ED%86%A0%EC%9D%B5/" style="font-size: 14px; color: #999">산타 토익</a> <a href="/tags/%EC%84%A4%EA%B3%84/" style="font-size: 14px; color: #999">설계</a> <a href="/tags/%EC%8B%9C%EC%9B%90%EC%8A%A4%EC%BF%A8/" style="font-size: 14px; color: #999">시원스쿨</a> <a href="/tags/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/" style="font-size: 14px; color: #999">알고리즘</a> <a href="/tags/%EC%98%81%EC%96%B4/" style="font-size: 16px; color: #8b8b8b">영어</a> <a href="/tags/%EC%9A%A9%EC%96%B4/" style="font-size: 14px; color: #999">용어</a> <a href="/tags/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/" style="font-size: 14px; color: #999">자료구조</a> <a href="/tags/%EC%9E%90%EC%97%B0%EC%96%B4-%EC%B2%98%EB%A6%AC/" style="font-size: 14px; color: #999">자연어 처리</a> <a href="/tags/%EC%A0%95%EB%A6%AC/" style="font-size: 18px; color: #7e7e7e">정리</a> <a href="/tags/%EC%BD%94%EB%94%A9%EC%97%B0%EC%8A%B5/" style="font-size: 18px; color: #7e7e7e">코딩연습</a> <a href="/tags/%ED%86%A0%EC%9D%B5/" style="font-size: 14px; color: #999">토익</a> <a href="/tags/%ED%95%9C%EB%88%88%EC%97%90-%EB%B3%B4%EA%B8%B0/" style="font-size: 16px; color: #8b8b8b">한눈에 보기</a> <a href="/tags/%ED%95%9C%EB%88%88%EC%97%90-%EC%A0%95%EB%A6%AC/" style="font-size: 14px; color: #999">한눈에 정리</a> <a href="/tags/%ED%98%91%EC%97%85/" style="font-size: 14px; color: #999">협업</a> <a href="/tags/%ED%9A%8C%ED%99%94/" style="font-size: 14px; color: #999">회화</a>
+    </div>
+  </section>
+
+
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+  
+  <!-- Google AdSense -->
+  <div style="margin-top: 16px;">
+
+  </div>
+  <script data-ad-client="ca-pub-1288998211050792" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<!-- Google AdSense -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1288998211050792"
+     data-ad-slot="7750297977"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+</aside>
+
+<footer class="clearfix">
+  
+    <div class="social-wrapper">
+      
+        
+          <a href="mailto:wlgur278@gmail.com"
+            class="social fas fa-envelope flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="https://github.com/Jungjihyuk"
+            class="social fab fa-github flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+    </div>
+  
+  <br>
+  <!-- <div><- markdown(__('footer.license')) </div> -->
+  <div>
+    <!-- <- __('footer.use')  -->
+    <!-- a href = "<- theme.info.docs " -->
+    <span>Copyright. </span>
+    <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" class="codename">Material-X</a>
+    <!-- <- theme.info.name    -->
+    <!-- <- __('footer.theme')  -->
+    <br>
+    
+    . 
+  </div>
+  
+</footer>
+<script>setLoadingBarProgress(80);</script>
+
+<script>
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://https-jungjihyuk-github-io.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a></noscript>
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+
+  <script>
+    
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/" || "/";
+    if (!ROOT.endsWith('/')) ROOT += '/';
+  </script>
+
+<script async src="//instant.page/1.2.2" type="module" integrity="sha384-2xV8M5griQmzyiY3CDqh1dn4z3llDVqZDqzjzcY+jCBCk/a5fXJmuZ/40JJAPeoU"></script>
+
+  <script async src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js"></script>
+  <script async src="https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.5/dist/scrollreveal.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      const $reveal = $('.reveal');
+      if ($reveal.length === 0) return;
+      const sr = ScrollReveal({ distance: 0 });
+      sr.reveal('.reveal');
+    });
+  </script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+
+
+
+  
+  
+  
+    <script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@20.2/js/backstretch.min.js"></script>
+    <script type="text/javascript">
+      $(function(){
+        if ('') {
+          $('').backstretch(
+          ["unsplash.jpg", "jonathan.jpg", "flower.jpg"],
+          {
+            duration: "6000",
+            fade: "2500"
+          });
+        } else {
+          $.backstretch(
+          ["unsplash.jpg", "jonathan.jpg", "flower.jpg"],
+          {
+            duration: "6000",
+            fade: "2500"
+          });
+        }
+      });
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+<script src="/js/app.js"></script>
+
+
+
+  
+<script src="/js/search.js"></script>
+
+
+
+  
+    
+<script src="/js/commentTyping.js"></script>
+
+  
+
+
+
+
+
+<!-- 复制 -->
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  let COPY_SUCCESS = "Copied";
+  let COPY_FAILURE = "Copy failed";
+  /*页面载入完成后，创建复制按钮*/
+  !function (e, t, a) {
+    /* code */
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '  <i class="fa fa-copy"></i><span>Copy</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+
+      clipboard.on('success', function(e) {
+        //您可以加入成功提示
+        console.info('Action:', e.action);
+        console.info('Text:', e.text);
+        console.info('Trigger:', e.trigger);
+        success_prompt(COPY_SUCCESS);
+        e.clearSelection();
+      });
+      clipboard.on('error', function(e) {
+        //您可以加入失败提示
+        console.error('Action:', e.action);
+        console.error('Trigger:', e.trigger);
+        fail_prompt(COPY_FAILURE);
+      });
+    }
+    initCopyCode();
+
+  }(window, document);
+
+  /**
+   * 弹出式提示框，默认1.5秒自动消失
+   * @param message 提示信息
+   * @param style 提示样式，有alert-success、alert-danger、alert-warning、alert-info
+   * @param time 消失时间
+   */
+  var prompt = function (message, style, time)
+  {
+      style = (style === undefined) ? 'alert-success' : style;
+      time = (time === undefined) ? 1500 : time*1000;
+      $('<div>')
+          .appendTo('body')
+          .addClass('alert ' + style)
+          .html(message)
+          .show()
+          .delay(time)
+          .fadeOut();
+  };
+
+  // 成功提示
+  var success_prompt = function(message, time)
+  {
+      prompt(message, 'alert-success', time);
+  };
+
+  // 失败提示
+  var fail_prompt = function(message, time)
+  {
+      prompt(message, 'alert-danger', time);
+  };
+
+  // 提醒
+  var warning_prompt = function(message, time)
+  {
+      prompt(message, 'alert-warning', time);
+  };
+
+  // 信息提示
+  var info_prompt = function(message, time)
+  {
+      prompt(message, 'alert-info', time);
+  };
+
+</script>
+
+
+<!-- fancybox -->
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  let LAZY_LOAD_IMAGE = "";
+  $(".article-entry").find("fancybox").find("img").each(function () {
+      var element = document.createElement("a");
+      $(element).attr("data-fancybox", "gallery");
+      $(element).attr("href", $(this).attr("src"));
+      /* 图片采用懒加载处理时,
+       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
+       * 那么此处将原本的属性名src替换为对应属性名data-original,
+       * 修改如下
+       */
+       if (LAZY_LOAD_IMAGE) {
+         $(element).attr("href", $(this).attr("data-original"));
+       }
+      $(this).wrap(element);
+  });
+</script>
+
+
+
+
+
+  <script>setLoadingBarProgress(100);</script>
+</body>
+</html>

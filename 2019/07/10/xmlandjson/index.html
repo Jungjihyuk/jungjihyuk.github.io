@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  <title>XML &amp; JSON | 지혁&#39;s Blog</title>
+  
+  
+
+  
+  <link rel="alternate" href="/feed.xml" title="지혁's Blog">
+  
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- meta -->
+  
+
+  <!-- Auto Canonical -->
+  <link rel="canonical" href="http://jungjihyuk.github.io/2019/07/10/xmlandjson/"/>
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.10.1/css/all.min.css">
+  
+
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
+  
+
+  
+    
+<link rel="stylesheet" href="/style.css">
+
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+
+  
+  
+
+  <!-- Google AdSense -->
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-143236286-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-143236286-2');
+</script>
+
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/feed.xml" title="지혁's Blog" type="application/rss+xml">
+</head>
+
+<body>
+  
+  
+  <div class="cover-wrapper">
+    <cover class='cover post half'>
+      
+        
+  <h1 class='title'>Imitation, Imagination, Integration</h1>
+
+
+  <div class="m_search">
+    <form name="searchform" class="form u-search-form">
+      <input type="text" class="input u-search-input" placeholder="search" />
+      <i class="icon fas fa-search fa-fw"></i>
+    </form>
+  </div>
+
+<div class='menu navgation'>
+  <ul class='h-list'>
+    
+      
+        <li>
+          <a class="nav home" href="/"
+            
+            
+            id="home">
+            <i class='fas fa-rss fa-fw'></i>&nbsp;Home
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="/about"
+            
+              rel="nofollow"
+            
+            
+            id="about">
+            <i class='fas fa-info-circle fa-fw'></i>&nbsp;About
+          </a>
+        </li>
+      
+    
+  </ul>
+</div>
+
+      
+    </cover>
+    <header class="l_header pure">
+  <div id="loading-bar-wrapper">
+    <div id="loading-bar" class="pure"></div>
+  </div>
+
+	<div class='wrapper'>
+		<div class="nav-main container container--flex">
+      <a class="logo flat-box" target="_self" href='/' >
+        
+          지혁's Blog
+        
+      </a>
+			<div class='menu navgation'>
+				<ul class='h-list'>
+          
+  					
+  						<li>
+								<a class="nav flat-box" href="/"
+                  
+                  
+                    target="_self"
+                  
+                  id="home">
+									<i class='fas fa-grin fa-fw'></i>&nbsp;Home
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/archives"
+                  
+                    rel="nofollow"
+                  
+                  
+                    target="_self"
+                  
+                  id="archives">
+									<i class='fas fa-archive fa-fw'></i>&nbsp;Archives
+								</a>
+							</li>
+      			
+      		
+				</ul>
+			</div>
+
+			
+				<div class="m_search">
+					<form name="searchform" class="form u-search-form">
+						<input type="text" class="input u-search-input" placeholder="search" />
+						<i class="icon fas fa-search fa-fw"></i>
+					</form>
+				</div>
+			
+			<ul class='switcher h-list'>
+				
+					<li class='s-search'><a class="fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
+				
+				<li class='s-menu'><a class="fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+
+		<div class='nav-sub container container--flex'>
+			<a class="logo flat-box"></a>
+			<ul class='switcher h-list'>
+				<li class='s-comment'><a class="flat-btn fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+          <li class='s-toc'><a class="flat-btn fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+			</ul>
+		</div>
+	</div>
+</header>
+	<aside class="menu-phone">
+    <header>
+		<nav class="menu navgation">
+      <ul>
+        
+          
+            <li>
+							<a class="nav flat-box" href="/"
+                
+                
+                id="home">
+								<i class='fas fa-clock fa-fw'></i>&nbsp;Home
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/archives"
+                
+                  rel="nofollow"
+                
+                
+                id="archives">
+								<i class='fas fa-archive fa-fw'></i>&nbsp;Archives
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/projects"
+                
+                
+                id="projects">
+								<i class='fas fa-code-branch fa-fw'></i>&nbsp;Projects
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="https://xaoxuu.com/wiki/material-x/"
+                
+                  rel="nofollow"
+                
+                
+                id="https:xaoxuu.comwikimaterial-x">
+								<i class='fas fa-book fa-fw'></i>&nbsp;Reference
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/about"
+                
+                  rel="nofollow"
+                
+                
+                id="about">
+								<i class='fas fa-info-circle fa-fw'></i>&nbsp;About
+							</a>
+            </li>
+          
+       
+      </ul>
+		</nav>
+    </header>
+	</aside>
+<script>setLoadingBarProgress(40);</script>
+
+  </div>
+
+
+  <div class="l_body">
+    <div class='body-wrapper'>
+      <div class='l_main'>
+  
+
+  
+    <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
+      
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  
+    <h1 class="title">
+      <a href="/2019/07/10/xmlandjson/">
+        XML & JSON
+      </a>
+    </h1>
+  
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    
+      <a href="http://jungjihyuk.github.io" rel="nofollow">
+        
+          <i class="fas fa-user" aria-hidden="true"></i>
+        
+        <p>Jihyuk Jung</p>
+      </a>
+    
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2019-07-10</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/Language/Markup-Language/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>Language&nbsp;/&nbsp;Markup Language</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+  
+
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          <h1 id="Markup-Language"><a href="#Markup-Language" class="headerlink" title="Markup Language"></a>Markup Language</h1><blockquote>
+<p>태그 등을 이용하여 문서나 데이터의 구조를 명기하는 언어의 한가지 이다. <br></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">마크업 언어를 사용하여 데이터를 기술하면</span><br><span class="line">컴퓨터도 이해하고 사람도 이해할 수 있는 방식으로 문서를 정의하고 데이터를 구조화 할 수 있다.</span><br><span class="line">데이터를 문서화, 구조화 할 뿐만아니라 그 문서를 컴퓨터 화면에 보여줄 수도 있다.</span><br></pre></td></tr></table></figure>
+
+<br>
+<hr>
+
+<h1 id="XML"><a href="#XML" class="headerlink" title="XML"></a>XML</h1><h2 id="XML-이란"><a href="#XML-이란" class="headerlink" title="XML 이란?"></a>XML 이란?</h2><blockquote>
+<p>Extensible Markup Language의 약자로 W3C에서 개발된 다목적 마크업 언어이다. <br><br>XML은 데이터를 전달하고 저장하는 목적으로 만들어졌다. <br></p>
+</blockquote>
+<br>
+
+<h2 id="XML-등장-배경"><a href="#XML-등장-배경" class="headerlink" title="XML 등장 배경"></a>XML 등장 배경</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">정부나 항공우주 기업의 대규모 계획 사업에서 기계 판독형 문서를 공유할 목적으로</span><br><span class="line">SGML(Standard Generalized Markup Language)라는 마크업 언어가 있었는데,</span><br><span class="line">사용하기에 너무 복잡하고 HTML의 한계를 극복하기 위해 XML이 탄생했다.</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h2 id="XML의-특징"><a href="#XML의-특징" class="headerlink" title="XML의 특징"></a>XML의 특징</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">1. 데이터의 표현이 자유롭다</span><br><span class="line">- XML은 데이터에 의미를 부여하는 메타데이터를 기술 할 수 있다</span><br><span class="line">2. 데이터의 확장성이 뛰어나다</span><br><span class="line">3. 유효성 체크를 한다는 점이 엄청난 장점이다.</span><br><span class="line">- Valid XML과 Well formed XML는 서로 다르다</span><br><span class="line">- ex) &lt;?xml ~&gt;으로 시작하면 XML문서로서 가능하지만 가능하다고 해서</span><br><span class="line">- 모두 well formed xml은 아닐 수 있다 (well formed 조건에 부합하지 않는 것이 하나라도 있을때)</span><br><span class="line">4. 텍스트(Unicode) 기반으로 작성되어 읽기 쉽다</span><br><span class="line">5. Well-formed Documents</span><br><span class="line">- root element를 가져야한다</span><br><span class="line">- closing tag가 있어야 한다</span><br><span class="line">- tag는 대소문자에 민감하다</span><br><span class="line">- ex) &lt;body&gt;body&lt;&#x2F;Body&gt; (X) &lt;body&gt;body&lt;&#x2F;body&gt; (O)</span><br><span class="line">- tag는 적절하게 감싸야 한다</span><br><span class="line">- ex) html에서는 tag의 시작점과 끝점이 명확하지 않아도 상관없지만</span><br><span class="line">- xml은 정확하게 명시해야 한다. &lt;b&gt;&lt;i&gt;Hello&lt;&#x2F;b&gt;&lt;&#x2F;i&gt; &#x3D;&gt; HTML에서는 가능 , XML에서는 불가능</span><br><span class="line">- attribute 값은 쌍 따옴표로 감싸야 한다</span><br><span class="line">- ex) &lt;note date&#x3D; 19&#x2F;7&#x2F;10&gt;&lt;&#x2F;note&gt; (X) &lt;note date&#x3D; &quot;19&#x2F;7&#x2F;10&quot;&gt;&lt;&#x2F;note&gt; (O)</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h2 id="HTML-vs-XML"><a href="#HTML-vs-XML" class="headerlink" title="HTML vs XML"></a>HTML vs XML</h2><p><strong>HTML은 데이터를 표현하는 것에 초점을 두고 XML은 데이터를 구조화 하고 전달하는 것에 초점이 맞춰저 있다.</strong></p>
+<br>
+
+<h2 id="XML-구성-요소"><a href="#XML-구성-요소" class="headerlink" title="XML 구성 요소"></a>XML 구성 요소</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">1. XML declaration</span><br><span class="line">2. DTD(Document type declaration)</span><br><span class="line">- DTD를 사용하면 어떤 문서의 종류인지 확인이 가능하고</span><br><span class="line">- 해당 문서의 규칙을 따를 수 있도록 유효성 검사를 작동하게 된다.</span><br><span class="line">3. Root Element start tag, end tag</span><br><span class="line">4. Comment</span><br><span class="line">5. Elements</span><br><span class="line">6. Characters</span><br><span class="line">7. Attributes</span><br><span class="line">8. Entity</span><br><span class="line">9. XML Schema</span><br><span class="line">- namespaces, data types 지원</span><br><span class="line">- XML 문법 준수</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://user-images.githubusercontent.com/33630505/60965241-51681e80-a350-11e9-8b7b-ac25b974d4a3.JPG" alt="xml"></p>
+<br>
+
+<h3 id="XML-Schema"><a href="#XML-Schema" class="headerlink" title="XML Schema"></a>XML Schema</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0"?&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">xs:schema</span> <span class="attr">xmlns:xs</span>=<span class="string">"http://www.w3.org/2001/XMLSchema"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">xs:element</span> <span class="attr">name</span>=<span class="string">"note"</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">xs:complexType</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">xs:sequence</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">xs:element</span> <span class="attr">name</span>=<span class="string">"to"</span> <span class="attr">type</span>=<span class="string">"xs:string"</span>/&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">xs:element</span> <span class="attr">name</span>=<span class="string">"to"</span> <span class="attr">type</span>=<span class="string">"xs:string"</span>/&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">xs:element</span> <span class="attr">name</span>=<span class="string">"to"</span> <span class="attr">type</span>=<span class="string">"xs:string"</span>/&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">xs:sequence</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">xs:complexType</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">xs:element</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">xs:schema</span>&gt;</span>     </span><br><span class="line"><span class="comment">&lt;!-- xs는 namespace --&gt;</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="XML-Tree"><a href="#XML-Tree" class="headerlink" title="XML Tree"></a>XML Tree</h3><p><img src="https://user-images.githubusercontent.com/33630505/60965240-51681e80-a350-11e9-8555-bc1646001a49.png" alt="xmltree"></p>
+<h2 id="XML-vs-LXML"><a href="#XML-vs-LXML" class="headerlink" title="XML vs LXML"></a>XML vs LXML</h2><h3 id="LXML"><a href="#LXML" class="headerlink" title="LXML"></a>LXML</h3><blockquote>
+<p>XML보다 속도가 빠르고 자주 쓰는 방법</p>
+</blockquote>
+<br>
+
+<h4 id="예제"><a href="#예제" class="headerlink" title="예제"></a>예제</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> lxml <span class="keyword">import</span> etree</span><br><span class="line"></span><br><span class="line">bookStore = etree.Element(<span class="string">"bookstore"</span>)</span><br><span class="line"></span><br><span class="line">book1 = etree.SubElement(bookStore, <span class="string">"book"</span>)</span><br><span class="line">book2 = etree.SubElement(bookStore, <span class="string">"book"</span>, attrib=&#123;<span class="string">"category"</span>:<span class="string">"children"</span>&#125;)</span><br><span class="line"></span><br><span class="line">book1.attrib[<span class="string">"category"</span>] = <span class="string">"cooking"</span></span><br><span class="line"></span><br><span class="line">title1 = etree.Element(<span class="string">"title"</span>, lang=<span class="string">"en"</span>)</span><br><span class="line">title1.text = <span class="string">"Everyday Italian"</span></span><br><span class="line">book1.append(title1)</span><br><span class="line"></span><br><span class="line">etree.SubElement(book1, <span class="string">"author"</span>).text = <span class="string">"Giada De Lausadlf"</span></span><br><span class="line">etree.SubElement(book1, <span class="string">"year"</span>).text = <span class="string">"2003"</span></span><br><span class="line">etree.SubElement(book1, <span class="string">"price"</span>).text = <span class="string">"40.3"</span></span><br><span class="line"></span><br><span class="line">title2 = etree.Element(<span class="string">"title"</span>)</span><br><span class="line">title2.set(<span class="string">"lang"</span>, title1.get(<span class="string">"lang"</span>))</span><br><span class="line">title2.text = <span class="string">"Harry Potter"</span></span><br><span class="line">book2.append(title2)</span><br><span class="line"></span><br><span class="line">etree.SubElement(book2, <span class="string">"author"</span>).text = <span class="string">"Giada De Lausadlf"</span></span><br><span class="line">etree.SubElement(book2, <span class="string">"year"</span>).text = <span class="string">"2003"</span></span><br><span class="line">etree.SubElement(book2, <span class="string">"price"</span>).text = <span class="string">"40.3"</span></span><br><span class="line"></span><br><span class="line">xmlBytes = etree.tostring(bookStore, encoding=<span class="string">"UTF-8"</span>, pretty_print=<span class="literal">True</span>, xml_declaration=<span class="literal">True</span>)</span><br><span class="line">xmlstr = etree.tounicode(bookStore, pretty_print=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line">etree.dump(bookStore)</span><br><span class="line">:</span><br><span class="line">&lt;bookstore&gt;</span><br><span class="line">  &lt;book category=<span class="string">"cooking"</span>&gt;</span><br><span class="line">    &lt;title lang="en"&gt;Everyday Italian&lt;/title&gt;</span><br><span class="line">    &lt;author&gt;Giada De Lausadlf&lt;/author&gt;</span><br><span class="line">    &lt;year&gt;2003&lt;/year&gt;</span><br><span class="line">    &lt;price&gt;40.3&lt;/price&gt;</span><br><span class="line">  &lt;/book&gt;</span><br><span class="line">  &lt;book category=<span class="string">"children"</span>&gt;</span><br><span class="line">    &lt;title lang="en"&gt;Harry Potter&lt;/title&gt;</span><br><span class="line">    &lt;author&gt;Giada De Lausadlf&lt;/author&gt;</span><br><span class="line">    &lt;year&gt;2003&lt;/year&gt;</span><br><span class="line">    &lt;price&gt;40.3&lt;/price&gt;</span><br><span class="line">  &lt;/book&gt;</span><br><span class="line">&lt;/bookstore&gt;</span><br><span class="line"></span><br><span class="line">xmlRoot = xmlTree.getroot()</span><br><span class="line"><span class="keyword">for</span> childNode <span class="keyword">in</span> xmlRoot:</span><br><span class="line">    print(childNode.tag, childNode.attrib)</span><br><span class="line">:</span><br><span class="line">book &#123;<span class="string">'category'</span>: <span class="string">'cooking'</span>&#125;</span><br><span class="line">book &#123;<span class="string">'category'</span>: <span class="string">'children'</span>&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="예제-Write-Parse"><a href="#예제-Write-Parse" class="headerlink" title="예제 (Write, Parse)"></a>예제 (Write, Parse)</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># bookStore는 위 예제와 동일</span></span><br><span class="line">xml = etree.XML(etree.tostring(bookStore))</span><br><span class="line">xmlTree = etree.ElementTree(xml)</span><br><span class="line">xmlRoot = xmlTree.getroot()</span><br><span class="line"></span><br><span class="line"><span class="comment"># xmlTree book_tree, book_root 이름의 xml 파일을 생성한다</span></span><br><span class="line">xmlTree.write(<span class="string">"book_tree.xml"</span>)</span><br><span class="line">etree.ElementTree(xmlRoot).write(<span class="string">"book_root.xml"</span>)</span><br><span class="line"></span><br><span class="line">getxmlTree = etree.parse(<span class="string">"book_tree.xml"</span>)</span><br><span class="line">xmlRoot = getxmlTree.getroot()</span><br><span class="line"></span><br><span class="line">etree.dump(xmlRoot)</span><br><span class="line">:</span><br><span class="line">&lt;bookstore&gt;</span><br><span class="line">  &lt;book category=<span class="string">"cooking"</span>&gt;</span><br><span class="line">    &lt;title lang="en"&gt;Everyday Italian&lt;/title&gt;</span><br><span class="line">    &lt;author&gt;Giada De Lausadlf&lt;/author&gt;</span><br><span class="line">    &lt;year&gt;2003&lt;/year&gt;</span><br><span class="line">    &lt;price&gt;40.3&lt;/price&gt;</span><br><span class="line">  &lt;/book&gt;</span><br><span class="line">  &lt;book category=<span class="string">"children"</span>&gt;</span><br><span class="line">    &lt;title lang="en"&gt;Harry Potter&lt;/title&gt;</span><br><span class="line">    &lt;author&gt;Giada De Lausadlf&lt;/author&gt;</span><br><span class="line">    &lt;year&gt;2003&lt;/year&gt;</span><br><span class="line">    &lt;price&gt;40.3&lt;/price&gt;</span><br><span class="line">  &lt;/book&gt;</span><br><span class="line">&lt;/bookstore&gt;</span><br></pre></td></tr></table></figure>
+
+<br>
+<hr>
+
+<h1 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h1><h2 id="JSON-이란"><a href="#JSON-이란" class="headerlink" title="JSON 이란?"></a>JSON 이란?</h2><blockquote>
+<p>JavaScript Object Notation의 약자</p>
+</blockquote>
+<br>
+
+<h2 id="JSON-등장"><a href="#JSON-등장" class="headerlink" title="JSON 등장"></a>JSON 등장</h2><blockquote>
+<p>XML의 대안으로서 좀 더 쉽게 데이터를 교환하고 저장하기 위해 고안되었다. <br><br>XML보다 가볍고 사용하기 편하다.</p>
+</blockquote>
+<br>
+
+<h2 id="왜-json을-쓰는가"><a href="#왜-json을-쓰는가" class="headerlink" title="왜 json을 쓰는가?"></a>왜 json을 쓰는가?</h2><br>
+
+<h2 id="JSON의-특징"><a href="#JSON의-특징" class="headerlink" title="JSON의 특징"></a>JSON의 특징</h2><h3 id="장점"><a href="#장점" class="headerlink" title="장점"></a>장점</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1. javascript 객체 표기법을 따른다</span><br><span class="line">2. 사람과 기계 모두 읽기 편하다</span><br><span class="line">- XML보다 가독성이 뛰어나다</span><br><span class="line">3. 프로그래밍 언어와 운영체제에 독립적이다</span><br><span class="line">- 언어에 관계없이 통일된 데이터를 주고받을 수 있다</span><br><span class="line">4. 가볍다</span><br><span class="line">- XML보다 메모리가 효율적이다</span><br></pre></td></tr></table></figure>
+
+<h3 id="단점"><a href="#단점" class="headerlink" title="단점"></a>단점</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1. 문법 오류에 민감하다</span><br><span class="line">- 콤마가 누락되거나 중괄호가 잘못 닫히는 등 구두점에서 오타가 나면 전체 JSON 파일이 망가진다</span><br><span class="line">2. 주석을 지원하지 않는다</span><br><span class="line">3. 데이터 타입을 강제할 수 없다 (JSON Schema로 보완은 가능하지만 데이터 스스로 타입을 기술할 수 없다)</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h2 id="XML-vs-JSON"><a href="#XML-vs-JSON" class="headerlink" title="XML vs JSON"></a>XML vs JSON</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">1. JSON은 종료 태그를 사용하지 않는다</span><br><span class="line">2. JSON의 구문은 XML 구문보다 짧다</span><br><span class="line">3. XML은 배열을 사용할 수 없지만, JSON은 배열을 사용할 수 있다</span><br><span class="line">4. XML은 XML 파서로 파싱되며, JSON은 자바스크립트 표준 함수인 eval() 함수로 파싱된다</span><br><span class="line">5. XML 문서는 XML DOM을 이용하여 문서에 접근하지만 JSON은 문자열을 전송 받은 후에</span><br><span class="line">   해당 문자열을 바로 파싱하므로, XML보다 더 빠른 처리 속도를 보여준다</span><br><span class="line">6. JSON은 전송받은 데이터의 무결성을 사용자가 직접 검증해야 하지만 XML은</span><br><span class="line">   스키마를 사용하여 무결성을 검증할 수 있다(JSON Schema로 보완 가능하긴 함)</span><br></pre></td></tr></table></figure>
+
+<p>출처: <a href="http://tcpschool.com/json/json_intro_xml" target="_blank" rel="noopener">tcpschool</a><br></p>
+<br>
+
+<h2 id="JSON-구성-요소"><a href="#JSON-구성-요소" class="headerlink" title="JSON 구성 요소"></a>JSON 구성 요소</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1. 데이터는 이름과 값의 쌍으로 이루어진다</span><br><span class="line">2. Array (대괄호 [])</span><br><span class="line">3. Object (중괄호 &#123;&#125;)</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://user-images.githubusercontent.com/33630505/60967707-444e2e00-a356-11e9-968d-dc80f8e9ecb3.JPG" alt="jsonstructure"></p>
+<br>
+
+<h2 id="데이터-타입"><a href="#데이터-타입" class="headerlink" title="데이터 타입"></a>데이터 타입</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1. Number</span><br><span class="line">2. String</span><br><span class="line">3. Boolean</span><br><span class="line">4. Object</span><br><span class="line">5. Array</span><br><span class="line">6. Null</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://user-images.githubusercontent.com/33630505/60967709-444e2e00-a356-11e9-9fc4-c7d6bd34f645.JPG" alt="datatype"></p>
+<br>
+
+<h2 id="Stringify-amp-Parse"><a href="#Stringify-amp-Parse" class="headerlink" title="Stringify &amp; Parse"></a>Stringify &amp; Parse</h2><blockquote>
+<p>Stringify는 JSON파일을 Serialize하고 Parse는 Deserialize한다 <br><br>Stringify는 json객체를 string객체로 변환하고 parse는 string객체를 json 객체로 변환한다</p>
+</blockquote>
+<h3 id="예시"><a href="#예시" class="headerlink" title="예시"></a>예시</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">    <span class="keyword">var</span> obj = &#123;name: <span class="string">"jh"</span>, <span class="string">"age"</span>: <span class="number">25</span>, <span class="string">"car"</span>: <span class="literal">true</span>&#125;;</span></span><br><span class="line"><span class="javascript">    objstr = <span class="built_in">JSON</span>.stringify(obj, <span class="function"><span class="keyword">function</span>(<span class="params">k,v</span>)</span>&#123;<span class="keyword">if</span>(v===<span class="number">23</span>)<span class="keyword">return</span>;<span class="keyword">else</span> <span class="keyword">return</span> v;&#125;);</span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(<span class="string">"obj: "</span>,obj);</span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(<span class="string">"objstr1"</span>, objstr);</span></span><br><span class="line"><span class="javascript">    objstr = <span class="built_in">JSON</span>.stringify(obj, <span class="literal">null</span>, <span class="number">10</span><span class="comment">/* ' ', '\t' */</span>);</span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(<span class="string">"objstr2"</span>, objstr);</span></span><br><span class="line"></span><br><span class="line"><span class="javascript">    objbyte = <span class="built_in">JSON</span>.parse(objstr);</span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(<span class="string">"objbyte"</span>,objbyte);</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://user-images.githubusercontent.com/33630505/60969067-93e22900-a359-11e9-839f-f3e3b9af7a43.JPG" alt="jsonjavascript"></p>
+<br>
+
+<h2 id="Open-API-JSON형태로-불러오기"><a href="#Open-API-JSON형태로-불러오기" class="headerlink" title="Open API JSON형태로 불러오기"></a>Open API JSON형태로 불러오기</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> json, urllib</span><br><span class="line"></span><br><span class="line">url = <span class="string">'http://openapi.airkorea.or.kr/openapi/services/rest/ArpltnInforInqireSvc/getCtprvnRltmMesureDnsty'</span></span><br><span class="line"></span><br><span class="line">params = &#123;</span><br><span class="line">    <span class="string">"serviceKey"</span>: <span class="string">"rHPpLuWO16wWq7c2Z87Q8gwiZ7z6agbTuwvSDBpCEC7dqDXusPHYkC%2FVMq029DVkRJegegKOoUETTvYa82Dc2Q%3D%3D"</span>,</span><br><span class="line">    <span class="string">"numOfRows"</span>: <span class="number">10</span>,</span><br><span class="line">    <span class="string">"pageNo"</span>: <span class="number">1</span>,</span><br><span class="line">    <span class="string">"startPage"</span>: <span class="number">1</span>,</span><br><span class="line">    <span class="string">"sidoName"</span>: <span class="string">"인천"</span>,</span><br><span class="line">    <span class="string">"dataTerm"</span>: <span class="string">"DAILY"</span>,</span><br><span class="line">    <span class="string">"ver"</span>:<span class="string">"1.3"</span>,</span><br><span class="line">    <span class="string">"_returnType"</span>: <span class="string">"JSON"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">params[<span class="string">"serviceKey"</span>] = urllib.parse.unquote(params[<span class="string">"serviceKey"</span>])</span><br><span class="line">params = urllib.parse.urlencode(params)</span><br><span class="line">params = params.encode(<span class="string">"UTF-8"</span>)</span><br><span class="line">req = urllib.request.Request(url, data=params)</span><br><span class="line">res = urllib.request.urlopen(req)</span><br><span class="line">resStr = res.read()</span><br><span class="line">resStr = resStr.decode(<span class="string">"UTF-8"</span>)</span><br><span class="line">resObj = json.loads(resStr)</span><br><span class="line">resJSON = json.dumps(resObj, indent=<span class="string">"  "</span>)</span><br><span class="line"></span><br><span class="line">x = resObj[<span class="string">'list'</span>]</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> x:</span><br><span class="line">    print(i[<span class="string">'stationName'</span>], i[<span class="string">'pm25Value'</span>])</span><br><span class="line"></span><br><span class="line">:</span><br><span class="line">신흥 <span class="number">9</span></span><br><span class="line">송림 <span class="number">9</span></span><br><span class="line">구월동 <span class="number">2</span></span><br><span class="line">숭의 <span class="number">10</span></span><br><span class="line">석바위 <span class="number">31</span></span><br><span class="line">부평역 <span class="number">20</span></span><br><span class="line">부평 <span class="number">5</span></span><br><span class="line">연희 -</span><br><span class="line">검단 <span class="number">7</span></span><br><span class="line">계산 <span class="number">8</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="JSON-Schema"><a href="#JSON-Schema" class="headerlink" title="JSON Schema"></a>JSON Schema</h2>
+          
+        </div>
+        
+          <br>
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-12-29T12:24:01+09:00">
+  <a class='notlink'>
+    <i class="fas fa-clock" aria-hidden="true"></i>
+    <p>Dec 29, 2021</p>
+    <!-- __('post.updated') + ' ' +  -->
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/xml/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>xml</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/json/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>json</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/api/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>api</p></a></div>
+
+
+        
+      
+    </div>
+  </section>
+
+
+        
+
+        
+            <div class="prev-next">
+                
+                    <section class="prev">
+                        <span class="art-item-left">
+                            <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;prev</h6>
+                            <h4>
+                                <a href="/2019/07/13/objectModel/" rel="prev" title="Object Model">
+                                  
+                                      Object Model
+                                  
+                                </a>
+                            </h4>
+                            
+                                
+                                <h6 class="tags">
+                                    <a class="tag" href="/tags/object-model/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> object model</a> <a class="tag" href="/tags/dom/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> dom</a> <a class="tag" href="/tags/bom/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> bom</a> <a class="tag" href="/tags/javascript/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> javascript</a>
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
+                
+                    <section class="next">
+                        <span class="art-item-right" aria-hidden="true">
+                            <h6>next&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
+                            <h4>
+                                <a href="/2019/06/24/object/" rel="prev" title="객체지향의 사실과 오해 책으로 객체지향 이해하기">
+                                    
+                                        객체지향의 사실과 오해 책으로 객체지향 이해하기
+                                    
+                                </a>
+                            </h4>
+                            
+                                
+                                <h6 class="tags">
+                                    <a class="tag" href="/tags/object/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> object</a> <a class="tag" href="/tags/%EC%84%A4%EA%B3%84/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 설계</a>
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
+            </div>
+        
+      </section>
+      <!-- Google AdSense -->
+      <!-- In post -->
+      <script data-ad-client="ca-pub-1288998211050792" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<!-- Google AdSense -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1288998211050792"
+     data-ad-slot="5437821794"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+    </article>
+  
+
+  
+    <!-- 显示推荐文章和评论 -->
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+  <script>
+    window.subData = {
+      title: 'XML & JSON',
+      tools: true
+    }
+  </script>
+
+
+  <div id="disqus_thread"></div>
+</div>
+<aside class='l_side'>
+  
+    
+    
+      
+        
+          <section class='widget blogger'>
+  <div class='content pure'>
+    
+      <div class='avatar'>
+        <img class='avatar' src='/jh.jpg'/>
+      </div>
+    
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="mailto:wlgur278@gmail.com"
+              class="social fas fa-envelope flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://github.com/Jungjihyuk"
+              class="social fab fa-github flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+      
+        
+      
+        
+          
+  <section class='widget toc-wrapper'>
+    <header class='pure'>
+  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Shortcuts</div>
+  
+    <!-- <div class='wrapper'><a class="s-toc rightBtn" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div> -->
+  
+</header>
+
+    <div class='content pure'>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#XML-이란"><span class="toc-text">XML 이란?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#XML-등장-배경"><span class="toc-text">XML 등장 배경</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#XML의-특징"><span class="toc-text">XML의 특징</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTML-vs-XML"><span class="toc-text">HTML vs XML</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#XML-구성-요소"><span class="toc-text">XML 구성 요소</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#XML-Schema"><span class="toc-text">XML Schema</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#XML-Tree"><span class="toc-text">XML Tree</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#XML-vs-LXML"><span class="toc-text">XML vs LXML</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#LXML"><span class="toc-text">LXML</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#예제"><span class="toc-text">예제</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#예제-Write-Parse"><span class="toc-text">예제 (Write, Parse)</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JSON-이란"><span class="toc-text">JSON 이란?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JSON-등장"><span class="toc-text">JSON 등장</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#왜-json을-쓰는가"><span class="toc-text">왜 json을 쓰는가?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JSON의-특징"><span class="toc-text">JSON의 특징</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#장점"><span class="toc-text">장점</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#단점"><span class="toc-text">단점</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#XML-vs-JSON"><span class="toc-text">XML vs JSON</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JSON-구성-요소"><span class="toc-text">JSON 구성 요소</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#데이터-타입"><span class="toc-text">데이터 타입</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Stringify-amp-Parse"><span class="toc-text">Stringify &amp; Parse</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#예시"><span class="toc-text">예시</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Open-API-JSON형태로-불러오기"><span class="toc-text">Open API JSON형태로 불러오기</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JSON-Schema"><span class="toc-text">JSON Schema</span></a></li></ol>
+    </div>
+  </section>
+
+
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+      
+        
+      
+        
+      
+        
+          
+  <section class='widget category'>
+    <header class='pure'>
+  <div><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;category</div>
+  
+    <a class="rightBtn"
+    
+      rel="external nofollow noopener noreferrer"
+    
+    
+      target="_self"
+    
+    href="/categories/"
+    title="categories/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class='content pure'>
+      <ul class="entry">
+        
+          <li><a class="flat-box" title="/categories/AI/" href="/categories/AI/"><div class='name'>AI</div><div class='badge'>(10)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/AI/Data-Analysis/" href="/categories/AI/Data-Analysis/"><div class='name'>Data Analysis</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/AI/Deep-Learning/" href="/categories/AI/Deep-Learning/"><div class='name'>Deep Learning</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/AI/Machine-Learning/" href="/categories/AI/Machine-Learning/"><div class='name'>Machine Learning</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/AI/Natural-Language-Processing/" href="/categories/AI/Natural-Language-Processing/"><div class='name'>Natural Language Processing</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/AI/Numpy/" href="/categories/AI/Numpy/"><div class='name'>Numpy</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/AI/Pandas/" href="/categories/AI/Pandas/"><div class='name'>Pandas</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/AI/Python/" href="/categories/AI/Python/"><div class='name'>Python</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/Algorithm/" href="/categories/Algorithm/"><div class='name'>Algorithm</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/Algorithm/Arrays/" href="/categories/Algorithm/Arrays/"><div class='name'>Arrays</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/Data-Structure/" href="/categories/Data-Structure/"><div class='name'>Data Structure</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/English/" href="/categories/English/"><div class='name'>English</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/Git/" href="/categories/Git/"><div class='name'>Git</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/IT-Terms/" href="/categories/IT-Terms/"><div class='name'>IT Terms</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/JSP-Servlet/" href="/categories/JSP-Servlet/"><div class='name'>JSP & Servlet</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/Language/" href="/categories/Language/"><div class='name'>Language</div><div class='badge'>(8)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/Language/Java/" href="/categories/Language/Java/"><div class='name'>Java</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/Language/Markup-Language/" href="/categories/Language/Markup-Language/"><div class='name'>Markup Language</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/Language/Python/" href="/categories/Language/Python/"><div class='name'>Python</div><div class='badge'>(6)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/Web/" href="/categories/Web/"><div class='name'>Web</div><div class='badge'>(5)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/Web/Bootstrap4/" href="/categories/Web/Bootstrap4/"><div class='name'>Bootstrap4</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/Web/Django/" href="/categories/Web/Django/"><div class='name'>Django</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/Web/Flask/" href="/categories/Web/Flask/"><div class='name'>Flask</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/Web/Object-Model/" href="/categories/Web/Object-Model/"><div class='name'>Object Model</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/Web/Objectoriented/" href="/categories/Web/Objectoriented/"><div class='name'>Objectoriented</div><div class='badge'>(1)</div></a></li>
+        
+      </ul>
+    </div>
+  </section>
+
+
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+      
+        
+      
+        
+      
+        
+      
+        
+          
+  <section class='widget tagcloud'>
+    <header class='pure'>
+  <div><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Keywords</div>
+  
+    <a class="rightBtn"
+    
+      rel="external nofollow noopener noreferrer"
+    
+    
+      target="_self"
+    
+    href="/tags/"
+    title="tags/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class='content pure'>
+      <a href="/tags/AI/" style="font-size: 22px; color: #636363">AI</a> <a href="/tags/Algorithm/" style="font-size: 14px; color: #999">Algorithm</a> <a href="/tags/CodeSignal/" style="font-size: 16px; color: #8b8b8b">CodeSignal</a> <a href="/tags/CodeSignal2/" style="font-size: 14px; color: #999">CodeSignal2</a> <a href="/tags/Data-Analysis/" style="font-size: 14px; color: #999">Data Analysis</a> <a href="/tags/Deep-Learning/" style="font-size: 16px; color: #8b8b8b">Deep Learning</a> <a href="/tags/Django/" style="font-size: 14px; color: #999">Django</a> <a href="/tags/EDA/" style="font-size: 14px; color: #999">EDA</a> <a href="/tags/Flask/" style="font-size: 14px; color: #999">Flask</a> <a href="/tags/FrontEnd/" style="font-size: 14px; color: #999">FrontEnd</a> <a href="/tags/Git/" style="font-size: 14px; color: #999">Git</a> <a href="/tags/Git-Flow/" style="font-size: 14px; color: #999">Git-Flow</a> <a href="/tags/Github/" style="font-size: 14px; color: #999">Github</a> <a href="/tags/Gitlab/" style="font-size: 14px; color: #999">Gitlab</a> <a href="/tags/IT/" style="font-size: 14px; color: #999">IT</a> <a href="/tags/Java/" style="font-size: 14px; color: #999">Java</a> <a href="/tags/Jsp/" style="font-size: 14px; color: #999">Jsp</a> <a href="/tags/Lecture/" style="font-size: 22px; color: #636363">Lecture</a> <a href="/tags/Machine-Learning/" style="font-size: 16px; color: #8b8b8b">Machine Learning</a> <a href="/tags/NLP/" style="font-size: 14px; color: #999">NLP</a> <a href="/tags/Numpy/" style="font-size: 14px; color: #999">Numpy</a> <a href="/tags/Pandas/" style="font-size: 14px; color: #999">Pandas</a> <a href="/tags/Programming/" style="font-size: 14px; color: #999">Programming</a> <a href="/tags/Python/" style="font-size: 16px; color: #8b8b8b">Python</a> <a href="/tags/Servlet/" style="font-size: 14px; color: #999">Servlet</a> <a href="/tags/Web/" style="font-size: 14px; color: #999">Web</a> <a href="/tags/algorithm/" style="font-size: 20px; color: #707070">algorithm</a> <a href="/tags/api/" style="font-size: 14px; color: #999">api</a> <a href="/tags/array/" style="font-size: 14px; color: #999">array</a> <a href="/tags/bom/" style="font-size: 14px; color: #999">bom</a> <a href="/tags/bootstrap/" style="font-size: 14px; color: #999">bootstrap</a> <a href="/tags/class/" style="font-size: 14px; color: #999">class</a> <a href="/tags/clean-code/" style="font-size: 14px; color: #999">clean code</a> <a href="/tags/coding-test/" style="font-size: 14px; color: #999">coding test</a> <a href="/tags/crawling/" style="font-size: 14px; color: #999">crawling</a> <a href="/tags/css/" style="font-size: 14px; color: #999">css</a> <a href="/tags/data-mining/" style="font-size: 14px; color: #999">data mining</a> <a href="/tags/database/" style="font-size: 16px; color: #8b8b8b">database</a> <a href="/tags/deep-learning/" style="font-size: 16px; color: #8b8b8b">deep learning</a> <a href="/tags/deque/" style="font-size: 14px; color: #999">deque</a> <a href="/tags/dom/" style="font-size: 14px; color: #999">dom</a> <a href="/tags/generator/" style="font-size: 14px; color: #999">generator</a> <a href="/tags/git/" style="font-size: 14px; color: #999">git</a> <a href="/tags/helper-function/" style="font-size: 14px; color: #999">helper function</a> <a href="/tags/iris/" style="font-size: 14px; color: #999">iris</a> <a href="/tags/javascript/" style="font-size: 14px; color: #999">javascript</a> <a href="/tags/js/" style="font-size: 14px; color: #999">js</a> <a href="/tags/json/" style="font-size: 14px; color: #999">json</a> <a href="/tags/neural-network/" style="font-size: 14px; color: #999">neural network</a> <a href="/tags/object/" style="font-size: 14px; color: #999">object</a> <a href="/tags/object-model/" style="font-size: 14px; color: #999">object model</a> <a href="/tags/page-rank/" style="font-size: 14px; color: #999">page rank</a> <a href="/tags/python/" style="font-size: 24px; color: #555">python</a> <a href="/tags/queue/" style="font-size: 14px; color: #999">queue</a> <a href="/tags/scraping/" style="font-size: 14px; color: #999">scraping</a> <a href="/tags/send/" style="font-size: 14px; color: #999">send</a> <a href="/tags/stack/" style="font-size: 14px; color: #999">stack</a> <a href="/tags/tensorflow/" style="font-size: 14px; color: #999">tensorflow</a> <a href="/tags/xml/" style="font-size: 14px; color: #999">xml</a> <a href="/tags/yield/" style="font-size: 14px; color: #999">yield</a> <a href="/tags/%EB%AA%85%EB%A0%B9%EC%96%B4/" style="font-size: 14px; color: #999">명령어</a> <a href="/tags/%EB%AC%B8%EB%B2%95/" style="font-size: 14px; color: #999">문법</a> <a href="/tags/%EB%B0%B1%EC%A4%80/" style="font-size: 14px; color: #999">백준</a> <a href="/tags/%EC%82%B0%ED%83%80-%ED%86%A0%EC%9D%B5/" style="font-size: 14px; color: #999">산타 토익</a> <a href="/tags/%EC%84%A4%EA%B3%84/" style="font-size: 14px; color: #999">설계</a> <a href="/tags/%EC%8B%9C%EC%9B%90%EC%8A%A4%EC%BF%A8/" style="font-size: 14px; color: #999">시원스쿨</a> <a href="/tags/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/" style="font-size: 14px; color: #999">알고리즘</a> <a href="/tags/%EC%98%81%EC%96%B4/" style="font-size: 16px; color: #8b8b8b">영어</a> <a href="/tags/%EC%9A%A9%EC%96%B4/" style="font-size: 14px; color: #999">용어</a> <a href="/tags/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/" style="font-size: 14px; color: #999">자료구조</a> <a href="/tags/%EC%9E%90%EC%97%B0%EC%96%B4-%EC%B2%98%EB%A6%AC/" style="font-size: 14px; color: #999">자연어 처리</a> <a href="/tags/%EC%A0%95%EB%A6%AC/" style="font-size: 18px; color: #7e7e7e">정리</a> <a href="/tags/%EC%BD%94%EB%94%A9%EC%97%B0%EC%8A%B5/" style="font-size: 18px; color: #7e7e7e">코딩연습</a> <a href="/tags/%ED%86%A0%EC%9D%B5/" style="font-size: 14px; color: #999">토익</a> <a href="/tags/%ED%95%9C%EB%88%88%EC%97%90-%EB%B3%B4%EA%B8%B0/" style="font-size: 16px; color: #8b8b8b">한눈에 보기</a> <a href="/tags/%ED%95%9C%EB%88%88%EC%97%90-%EC%A0%95%EB%A6%AC/" style="font-size: 14px; color: #999">한눈에 정리</a> <a href="/tags/%ED%98%91%EC%97%85/" style="font-size: 14px; color: #999">협업</a> <a href="/tags/%ED%9A%8C%ED%99%94/" style="font-size: 14px; color: #999">회화</a>
+    </div>
+  </section>
+
+
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+  
+  <!-- Google AdSense -->
+  <div style="margin-top: 16px;">
+
+  </div>
+  <script data-ad-client="ca-pub-1288998211050792" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<!-- Google AdSense -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1288998211050792"
+     data-ad-slot="7750297977"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+</aside>
+
+<footer class="clearfix">
+  
+    <div class="social-wrapper">
+      
+        
+          <a href="mailto:wlgur278@gmail.com"
+            class="social fas fa-envelope flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="https://github.com/Jungjihyuk"
+            class="social fab fa-github flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+    </div>
+  
+  <br>
+  <!-- <div><- markdown(__('footer.license')) </div> -->
+  <div>
+    <!-- <- __('footer.use')  -->
+    <!-- a href = "<- theme.info.docs " -->
+    <span>Copyright. </span>
+    <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" class="codename">Material-X</a>
+    <!-- <- theme.info.name    -->
+    <!-- <- __('footer.theme')  -->
+    <br>
+    
+    . 
+  </div>
+  
+</footer>
+<script>setLoadingBarProgress(80);</script>
+
+<script>
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://https-jungjihyuk-github-io.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a></noscript>
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+
+  <script>
+    
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/" || "/";
+    if (!ROOT.endsWith('/')) ROOT += '/';
+  </script>
+
+<script async src="//instant.page/1.2.2" type="module" integrity="sha384-2xV8M5griQmzyiY3CDqh1dn4z3llDVqZDqzjzcY+jCBCk/a5fXJmuZ/40JJAPeoU"></script>
+
+  <script async src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js"></script>
+  <script async src="https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.5/dist/scrollreveal.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      const $reveal = $('.reveal');
+      if ($reveal.length === 0) return;
+      const sr = ScrollReveal({ distance: 0 });
+      sr.reveal('.reveal');
+    });
+  </script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+
+
+
+  
+  
+  
+    <script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@20.2/js/backstretch.min.js"></script>
+    <script type="text/javascript">
+      $(function(){
+        if ('') {
+          $('').backstretch(
+          ["unsplash.jpg", "jonathan.jpg", "flower.jpg"],
+          {
+            duration: "6000",
+            fade: "2500"
+          });
+        } else {
+          $.backstretch(
+          ["unsplash.jpg", "jonathan.jpg", "flower.jpg"],
+          {
+            duration: "6000",
+            fade: "2500"
+          });
+        }
+      });
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+<script src="/js/app.js"></script>
+
+
+
+  
+<script src="/js/search.js"></script>
+
+
+
+  
+    
+<script src="/js/commentTyping.js"></script>
+
+  
+
+
+
+
+
+<!-- 复制 -->
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  let COPY_SUCCESS = "Copied";
+  let COPY_FAILURE = "Copy failed";
+  /*页面载入完成后，创建复制按钮*/
+  !function (e, t, a) {
+    /* code */
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '  <i class="fa fa-copy"></i><span>Copy</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+
+      clipboard.on('success', function(e) {
+        //您可以加入成功提示
+        console.info('Action:', e.action);
+        console.info('Text:', e.text);
+        console.info('Trigger:', e.trigger);
+        success_prompt(COPY_SUCCESS);
+        e.clearSelection();
+      });
+      clipboard.on('error', function(e) {
+        //您可以加入失败提示
+        console.error('Action:', e.action);
+        console.error('Trigger:', e.trigger);
+        fail_prompt(COPY_FAILURE);
+      });
+    }
+    initCopyCode();
+
+  }(window, document);
+
+  /**
+   * 弹出式提示框，默认1.5秒自动消失
+   * @param message 提示信息
+   * @param style 提示样式，有alert-success、alert-danger、alert-warning、alert-info
+   * @param time 消失时间
+   */
+  var prompt = function (message, style, time)
+  {
+      style = (style === undefined) ? 'alert-success' : style;
+      time = (time === undefined) ? 1500 : time*1000;
+      $('<div>')
+          .appendTo('body')
+          .addClass('alert ' + style)
+          .html(message)
+          .show()
+          .delay(time)
+          .fadeOut();
+  };
+
+  // 成功提示
+  var success_prompt = function(message, time)
+  {
+      prompt(message, 'alert-success', time);
+  };
+
+  // 失败提示
+  var fail_prompt = function(message, time)
+  {
+      prompt(message, 'alert-danger', time);
+  };
+
+  // 提醒
+  var warning_prompt = function(message, time)
+  {
+      prompt(message, 'alert-warning', time);
+  };
+
+  // 信息提示
+  var info_prompt = function(message, time)
+  {
+      prompt(message, 'alert-info', time);
+  };
+
+</script>
+
+
+<!-- fancybox -->
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  let LAZY_LOAD_IMAGE = "";
+  $(".article-entry").find("fancybox").find("img").each(function () {
+      var element = document.createElement("a");
+      $(element).attr("data-fancybox", "gallery");
+      $(element).attr("href", $(this).attr("src"));
+      /* 图片采用懒加载处理时,
+       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
+       * 那么此处将原本的属性名src替换为对应属性名data-original,
+       * 修改如下
+       */
+       if (LAZY_LOAD_IMAGE) {
+         $(element).attr("href", $(this).attr("data-original"));
+       }
+      $(this).wrap(element);
+  });
+</script>
+
+
+
+
+
+  <script>setLoadingBarProgress(100);</script>
+</body>
+</html>

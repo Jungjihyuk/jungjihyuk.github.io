@@ -1,0 +1,1809 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  <title>IT 용어 정리 | 지혁&#39;s Blog</title>
+  
+  
+
+  
+  <link rel="alternate" href="/feed.xml" title="지혁's Blog">
+  
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- meta -->
+  
+
+  <!-- Auto Canonical -->
+  <link rel="canonical" href="http://jungjihyuk.github.io/2019/03/16/it-terms/"/>
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.10.1/css/all.min.css">
+  
+
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
+  
+
+  
+    
+<link rel="stylesheet" href="/style.css">
+
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+
+  
+  
+
+  <!-- Google AdSense -->
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-143236286-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-143236286-2');
+</script>
+
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/feed.xml" title="지혁's Blog" type="application/rss+xml">
+</head>
+
+<body>
+  
+  
+  <div class="cover-wrapper">
+    <cover class='cover post half'>
+      
+        
+  <h1 class='title'>Imitation, Imagination, Integration</h1>
+
+
+  <div class="m_search">
+    <form name="searchform" class="form u-search-form">
+      <input type="text" class="input u-search-input" placeholder="search" />
+      <i class="icon fas fa-search fa-fw"></i>
+    </form>
+  </div>
+
+<div class='menu navgation'>
+  <ul class='h-list'>
+    
+      
+        <li>
+          <a class="nav home" href="/"
+            
+            
+            id="home">
+            <i class='fas fa-rss fa-fw'></i>&nbsp;Home
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="/about"
+            
+              rel="nofollow"
+            
+            
+            id="about">
+            <i class='fas fa-info-circle fa-fw'></i>&nbsp;About
+          </a>
+        </li>
+      
+    
+  </ul>
+</div>
+
+      
+    </cover>
+    <header class="l_header pure">
+  <div id="loading-bar-wrapper">
+    <div id="loading-bar" class="pure"></div>
+  </div>
+
+	<div class='wrapper'>
+		<div class="nav-main container container--flex">
+      <a class="logo flat-box" target="_self" href='/' >
+        
+          지혁's Blog
+        
+      </a>
+			<div class='menu navgation'>
+				<ul class='h-list'>
+          
+  					
+  						<li>
+								<a class="nav flat-box" href="/"
+                  
+                  
+                    target="_self"
+                  
+                  id="home">
+									<i class='fas fa-grin fa-fw'></i>&nbsp;Home
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/archives"
+                  
+                    rel="nofollow"
+                  
+                  
+                    target="_self"
+                  
+                  id="archives">
+									<i class='fas fa-archive fa-fw'></i>&nbsp;Archives
+								</a>
+							</li>
+      			
+      		
+				</ul>
+			</div>
+
+			
+				<div class="m_search">
+					<form name="searchform" class="form u-search-form">
+						<input type="text" class="input u-search-input" placeholder="search" />
+						<i class="icon fas fa-search fa-fw"></i>
+					</form>
+				</div>
+			
+			<ul class='switcher h-list'>
+				
+					<li class='s-search'><a class="fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
+				
+				<li class='s-menu'><a class="fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+
+		<div class='nav-sub container container--flex'>
+			<a class="logo flat-box"></a>
+			<ul class='switcher h-list'>
+				<li class='s-comment'><a class="flat-btn fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+          <li class='s-toc'><a class="flat-btn fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+			</ul>
+		</div>
+	</div>
+</header>
+	<aside class="menu-phone">
+    <header>
+		<nav class="menu navgation">
+      <ul>
+        
+          
+            <li>
+							<a class="nav flat-box" href="/"
+                
+                
+                id="home">
+								<i class='fas fa-clock fa-fw'></i>&nbsp;Home
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/archives"
+                
+                  rel="nofollow"
+                
+                
+                id="archives">
+								<i class='fas fa-archive fa-fw'></i>&nbsp;Archives
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/projects"
+                
+                
+                id="projects">
+								<i class='fas fa-code-branch fa-fw'></i>&nbsp;Projects
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="https://xaoxuu.com/wiki/material-x/"
+                
+                  rel="nofollow"
+                
+                
+                id="https:xaoxuu.comwikimaterial-x">
+								<i class='fas fa-book fa-fw'></i>&nbsp;Reference
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/about"
+                
+                  rel="nofollow"
+                
+                
+                id="about">
+								<i class='fas fa-info-circle fa-fw'></i>&nbsp;About
+							</a>
+            </li>
+          
+       
+      </ul>
+		</nav>
+    </header>
+	</aside>
+<script>setLoadingBarProgress(40);</script>
+
+  </div>
+
+
+  <div class="l_body">
+    <div class='body-wrapper'>
+      <div class='l_main'>
+  
+
+  
+    <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
+      
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  
+    <h1 class="title">
+      <a href="/2019/03/16/IT-Terms/">
+        IT 용어 정리
+      </a>
+    </h1>
+  
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    
+      <a href="http://jungjihyuk.github.io" rel="nofollow">
+        
+          <i class="fas fa-user" aria-hidden="true"></i>
+        
+        <p>Jihyuk Jung</p>
+      </a>
+    
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2019-03-16</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/IT-Terms/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>IT Terms</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+  
+
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          <h3 id="정보처리기사-실기를-위한-용어"><a href="#정보처리기사-실기를-위한-용어" class="headerlink" title="정보처리기사 실기를 위한 용어"></a>정보처리기사 실기를 위한 용어</h3><ol>
+<li>Data warehouse</li>
+</ol>
+<ul>
+<li>정보에 입각한 의사 결정을 내릴 수 있도록 분석 가능한 정보의 중앙 저장소  <a href="https://middleware.tistory.com/entry/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%9B%A8%EC%96%B4%ED%95%98%EC%9A%B0%EC%8A%A4Data-Warehouse-%EB%B0%8F-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EB%A7%88%ED%8A%B8Data-Mart" target="_blank" rel="noopener">DW vs DM</a></li>
+</ul>
+<ol start="2">
+<li>Big data</li>
+</ol>
+<ul>
+<li>의사결정에 필요한 아주 방대한 데이터들 그리고 데이터를 활용하는 기술</li>
+<li><a href="https://www.educba.com/big-data-vs-data-warehouse" target="_blank" rel="noopener">Data warehose vs Big data</a></li>
+</ul>
+<ol start="3">
+<li>Data mining</li>
+</ol>
+<ul>
+<li>Data warehouse에 저장된 데이터 집합에서 사용자의 요구에 따라 유용하고 가능성 있는<br>정보를 발견할 수 있도록 해주는 기술</li>
+</ul>
+<ol start="4">
+<li>Triger</li>
+</ol>
+<ul>
+<li>입력, 갱신, 삭제 등의 이벤트가 발생할 때마다 자동적으로 수행되는 사용자 정의 프로시저</li>
+</ul>
+<ol start="5">
+<li>DSMS(Data Stream Management System)</li>
+</ol>
+<ul>
+<li>무선 센서 네트워크나 인터넷 같은 통신사에서 발생하는 대량의 스트림 데이터를 처리하고 관리하는 시스템.</li>
+</ul>
+<ol start="6">
+<li>DC(Dublin Core)</li>
+</ol>
+<ul>
+<li>ISO 15836으로 표준화된 메타데이터 요소 집합, 네트워크 환경에서 각종 전자 정보를 기술하는 메타데이터.</li>
+</ul>
+<ol start="7">
+<li>MDR(Meta Data Registry)</li>
+</ol>
+<ul>
+<li>메타 데이터의 등록과 인증을 통해 메타 데이터를 유지, 관리하며 메타 데이터의 명세를 공유하는 레지스트리.</li>
+</ul>
+<ol start="8">
+<li>Database Tuning</li>
+</ol>
+<ul>
+<li>데이터베이스 시스템을 최적화하는 방안, DB application, OS, DB 등의 조정을 통하여 DB System 성능 향상.</li>
+</ul>
+<ol start="9">
+<li>EA(Enterprise Architecture)</li>
+</ol>
+<ul>
+<li>정보화를 체계적으로 추진하기 위해 조직 및 업무 활동, 정보화 종합설계도<a href="https://m.blog.naver.com/PostView.nhn?blogId=jvioonpe&logNo=220227180562&prxyRefere=https%3A%2F%2Fwww.google.co.kr%2F" target="_blank" rel="noopener">EA</a></li>
+</ul>
+<ol start="10">
+<li>ERP(Enterprise Resource Planning)</li>
+</ol>
+<ul>
+<li>인사, 재무, 생산 등 기업의 전 부문을 하나의 통합 시스템으로 재구축함으로써 생산성 극대화 기법.</li>
+</ul>
+<ol start="11">
+<li>EAI(Enterprise Application Integration)</li>
+</ol>
+<ul>
+<li>DW나 ERP등 기업에서 운영하는 서로 다른 어플리케이션을 통합하여 업무의 효율성을 높이려는 시도.</li>
+</ul>
+<ol start="12">
+<li>DRM(Digital Rights Management or Digital Restrictions Managment)</li>
+</ol>
+<ul>
+<li>출판자 또는 저작권자가 그들이 배포한 디지털 자료나 하드웨어의 사용을 제어하고 이를 의도한 용도로만 사용하도록 제한하는 모든 기술.</li>
+</ul>
+<ol start="13">
+<li>OLAP(Online Analytic Processing)</li>
+</ol>
+<ul>
+<li>의사결정 지원 시스템. DW로 부터 정보를 추출하여 온라인으로 다차원 분석을 하는 기술 <a href="https://docs.microsoft.com/ko-kr/system-center/scsm/olap-cubes-overview?view=sc-sm-2019" target="_blank" rel="noopener">OLAP</a></li>
+</ul>
+<ol start="14">
+<li>OLTP(Online Transaction Processing)</li>
+</ol>
+<ul>
+<li>주 컴퓨터와 통신 회선으로 접속되어 있는 복수의 사용자 단말에서 발생한 트랜잭션을 주 컴퓨터에서 처리하여 그 결과를 즉석에서 사용자 단말 측으로 되돌려 보내 주는 처리 형태. <a href="https://m.blog.naver.com/PostView.nhn?blogId=skygrab&logNo=30102437276&proxyReferer=https%3A%2F%2Fwww.google.com%2F" target="_blank" rel="noopener">OLAP vs OLTP</a></li>
+</ul>
+<ol start="15">
+<li>시간복잡도(Big-O)</li>
+</ol>
+<ul>
+<li>알고리즘이 수행되는 시간</li>
+</ul>
+<ol start="16">
+<li>공간복잡도</li>
+</ol>
+<ul>
+<li>프로그램 실행후 종료시까지 필요로하는 자원공간의 양(메모리)</li>
+</ul>
+<ol start="17">
+<li>as-is</li>
+</ol>
+<ul>
+<li>현재 업무 프로세스 분석</li>
+</ul>
+<ol start="18">
+<li>to-be</li>
+</ol>
+<ul>
+<li>미래 업무 프로세스 분석</li>
+</ul>
+<ol start="19">
+<li>AR(Augmented reality)</li>
+</ol>
+<ul>
+<li>증강현실, 실제 존재하는 환경에 가상의 사물이나 정보를 합성하여 마치 원래의 환경에 존재하는 사물처럼 보이도록 하는 컴퓨터 그래픽 기법 ex) 포켓몬고</li>
+</ul>
+<ol start="20">
+<li>임계영역</li>
+</ol>
+<ul>
+<li>공유자원에 접근하는 프로세스의 영역</li>
+</ul>
+<ol start="21">
+<li>상호배제</li>
+</ol>
+<ul>
+<li>동시에 실행되는 프로세스들이 임계영역에 동시에 들어가지 않도록 하는 것 ex) 파일이 열려 있으므로 이 작업을 완료할 수 없습니다</li>
+</ul>
+<ol start="22">
+<li>bi-modal</li>
+</ol>
+<ul>
+<li>혁신을 추진하는 특별팀을 만드는 동시에 기존 핵심 시스템도 잘 유지해야 한다</li>
+</ul>
+<ol start="23">
+<li>CRM(Customer Relationship management)</li>
+</ol>
+<ul>
+<li>소비자들을 자신의 고객으로 만들고, 이를 장기간 유지하고자 하는 경영 방식</li>
+</ul>
+<ol start="24">
+<li>CUI(Conversational user interfaces)</li>
+</ol>
+<ul>
+<li>인공지능 대화형 인터페이스</li>
+</ul>
+<ol start="25">
+<li>스마트 캠퍼스</li>
+</ol>
+<ul>
+<li>인간-기기가 상호작용하여 시스템을 통해 대학의 구성원이 더 몰일할 수 있고 자동화된 경험을 만들어낸다</li>
+</ul>
+<ol start="26">
+<li>넛지기술</li>
+</ol>
+<ul>
+<li>클라우드와 모바일, 소셜, 데이터 관련 기술의 모음, 개인화된 소통을 통해 서비스 제공 ex)aws 쇼핑몰 홈페이지, 쳇봇</li>
+</ul>
+<ol start="27">
+<li>BYOD(Bring your own device)</li>
+</ol>
+<ul>
+<li>컴퓨터나 모바일 기기 속 자료를 프로젝터 같은 유선 기기 연결 없이 무선 네트워크를 사용해 스크린에 보여줄 수 있다</li>
+</ul>
+<ol start="28">
+<li>HIP(Hybrid integration platform)</li>
+</ol>
+<ul>
+<li>기존의 IT 환경들을 통합하여 환경 구축 ex)software ag</li>
+</ul>
+<ol start="29">
+<li>SLA(Service Level Agreement)</li>
+</ol>
+<ul>
+<li>서비스를 제공함에 있어서 공급자와 사용자간에 서비스에 대하여 측정지표와 목표등에 대한 협약서</li>
+</ul>
+<ol start="30">
+<li>PaaS(Platform as a Service)</li>
+</ol>
+<ul>
+<li>클라우드 컴퓨팅 서비스중 하나, 앱 개발에 필요한 인프라 대여 플랫폼 ex)aws, 공개 API, 구글의 앱 엔진</li>
+</ul>
+<ol start="31">
+<li>SaaS(Software as a Service)</li>
+</ol>
+<ul>
+<li>기존의 ASP를 확장한 개념으로 소프트웨어 및 관련 데이터는 중앙에 호스팅되고 사용자는 웹 브라우저 등의 클라이언트를 통해 접속하는 형태의 소프트웨어 전달 모델 (주문형 소프트웨어) ex) CRMKorea</li>
+</ul>
+<ol start="32">
+<li>IaaS(Infrastructure as a Service)</li>
+</ol>
+<ul>
+<li>서버, 스토리지, 네트워크를 가상화 환경으로 만들어, 필요에 따라 인프라 자원을 사용할 수 있게 서비스를 제공한다 ex) aws’s EC2, microsoft azure</li>
+</ul>
+<ol start="33">
+<li>ASP(Application Service Provider)</li>
+</ol>
+<ul>
+<li>네트워크 인프라를 이용하여 다양한 정보화 솔루션을 사용할 수 있는 애플리케이션 임대 서비스, SaaS와 유사하지만 동적으로 컴퓨팅 자원을 할당하는 분산처리 등과 같은 기술 제공이 제한적이다는 면에서 차이가 있다</li>
+</ul>
+<ol start="34">
+<li>APaaS / DPaaS / IPaaS</li>
+</ol>
+<ul>
+<li>PaaS에서 파생된 것들</li>
+</ul>
+<ol start="35">
+<li>BCI(Brain-Computer Interface)</li>
+</ol>
+<ul>
+<li>컴퓨터 방식을 이용해 정보를 추출한 후 뇌에 다시 자극을 적용하는 것 및 손상된 청각, 시각 및 운동을 복원하는 것을 목표로 하는 신경기능 대체 분야에 초점을 맞추고 있다</li>
+</ul>
+<ol start="36">
+<li>Ad-hoc</li>
+</ol>
+<ul>
+<li>무선 통신 및 네트워킹 능력을 갖춘 두 개 이상의 장비로 구성된 네트워크, 별도의 AP(Access point) or Infrastructure 없이 모바일 디바이스만으로 구성가능하다</li>
+</ul>
+<ol start="37">
+<li>WPAN(Wireless Personal Area Network)</li>
+</ol>
+<ul>
+<li>무선 개인지역망, 블루투스 등의 개인 디바이스</li>
+</ul>
+<ol start="38">
+<li>WLAN(Wireless Local Area Network)</li>
+</ol>
+<ul>
+<li>무선 근거리 통신망, 802.11 프로토콜 통신을 하며 와이파이가 이에 해당한다</li>
+</ul>
+<ol start="39">
+<li>WMAN(Wireless Metropolitan Area Network)</li>
+</ol>
+<ul>
+<li>무선 도시지역망, 와이브로가 이에 해당한다, 그 지역 내부에서 어디든지 인터넷이 잘 되지만 다소 느리다는 단점이 있다</li>
+</ul>
+<ol start="40">
+<li>WWAN(Wireless Wide Area Network)</li>
+</ol>
+<ul>
+<li>무선 광대역 통신망, 휴대폰이 이에 해당한다, 일부 지역을 제외하고 어디서든 통신이 가능하다는점, 2G~4G</li>
+</ul>
+<ol start="41">
+<li>스마트 카(Smart car) or 커넥티드 카(COnnected car)</li>
+</ol>
+<ul>
+<li>자동차와 IT 기술을 융합하여 인터넷 접속이 가능항 자동차</li>
+</ul>
+<ol start="42">
+<li>크라우드 소싱(Crowd Sourcing)</li>
+</ol>
+<ul>
+<li>인터넷을 통해 일반 대중이 기업 내부 인력을 대체하는 것을 의미</li>
+</ul>
+<ol start="43">
+<li>SAN(Storage Area Network)</li>
+</ol>
+<ul>
+<li>‘광저장장치영역 네트워크’라고 불린다, 특수 목적용 고속 네트워크로서 대규모 네트워크 사용자들을 위하여 이기종 간의 데이터 저장장치를 관련 데이터 서버와 함께 연결해 별도의 네트워크를 구성해 관리한다</li>
+</ul>
+<ol start="44">
+<li>지그비(ZigBee)</li>
+</ol>
+<ul>
+<li>버튼 하나의 동작으로 집안 어느 곳에서나 전등 제어 및 홈 보안 시스템을 제어 관리할 수 있고 인터넷을 통한 전화 접속으로 가정 자동화를 더욱 편리하게 달성하려는 것에서부터 출발한 기술, Ad-hoc 방식 네트워크, 낮은 수준의 전송 속도만 필요로 하면서 긴 베터리 수명과 보안성을 요구하는 분야에서 사용</li>
+</ul>
+<ol start="45">
+<li>멀웨어(Malware)</li>
+</ol>
+<ul>
+<li>악성 소프트웨어, 사용자가 멀웨어를 설치하게되면 컴퓨터에 대한 액세스 권한을 얻도록 설계되어 컴퓨터에서 액세스한 내용을 추적할 수 있으며 사용자가 인식하지 못 할 수도 있는 피해를 일으킬 수도 있다(키로거, 바이러스, 웜, 스파이웨어)</li>
+</ul>
+<ol start="46">
+<li>랜섬웨어(Ransomware)</li>
+</ol>
+<ul>
+<li>컴퓨터 시스템을 감염시켜 접근을 제한하고 일종의 몸값을 요구하는 악성 소프트웨어의 한 종류이다</li>
+</ul>
+<ol start="47">
+<li>MC-Finder</li>
+</ol>
+<ul>
+<li>악성코드 은닉 사이트 탐지 프로그램</li>
+</ul>
+<ol start="48">
+<li>MOTP(Moblie One Time Password)</li>
+</ol>
+<ul>
+<li>모바일 일회용 비밀번호</li>
+</ul>
+<ol start="49">
+<li>Network Neutrality</li>
+</ol>
+<ul>
+<li>통신망 제공사업자는 모든 콘텐츠를 동등하고 차별 없이 다뤄야 한다는 원칙</li>
+</ul>
+<ol start="50">
+<li>ICP(Internet Contents Provider)</li>
+</ol>
+<ul>
+<li>인터넷 콘텐츠 서비스 업체 ex) 네이버, 구글, 페이스북</li>
+</ul>
+<ol start="51">
+<li>ISP(Internet Service Provider)</li>
+</ol>
+<ul>
+<li>인터넷 서비스 업체 ex) SKT, KT, LG</li>
+</ul>
+<ol start="52">
+<li>VPN(Virtual Private Network)</li>
+</ol>
+<ul>
+<li>가상 사설망, 사용자의 인터넷 트래픽을 암호화하여 망 제공자로부터 안전하게 인터넷을 사용할 수 있도록 해준다</li>
+</ul>
+<ol start="53">
+<li>Smishing(SMS phishing)</li>
+</ol>
+<ul>
+<li>문자메시지를 이용한 피싱, 신뢰할 수 있는 사람 또는 기업이 보낸 것처럼 가장하여 개인비밀정보를 요구하거나 휴대폰 소액 결제를 유도한다</li>
+</ul>
+<ol start="54">
+<li>Sniffing</li>
+</ol>
+<ul>
+<li>패킷 가로채기 공격, 네트워크 상에 떠돌아다니는 패킷이나 데이터 등을 훔쳐보는 것, 암호화 되지 않은 패킷들을 수집하여 순서대로 재조합 후 중요한 정보를 유출하는 수동적인 형태의 공격</li>
+</ul>
+<ol start="55">
+<li>Snooping</li>
+</ol>
+<ul>
+<li>네트워크 상의 정보를 염탐하여 불법적으로 얻는 것</li>
+</ul>
+<ol start="56">
+<li>Spoofing</li>
+</ol>
+<ul>
+<li>네트워크 트래픽 흐름을 임의로 변경하고 시스템 권한 탈취 등의 공격, 그 대상은 MAC, IP, Port 주소가 될 수 있다</li>
+</ul>
+<ol start="57">
+<li>ICMP Sweep</li>
+</ol>
+<ul>
+<li>해당 네트워크를 탐색하면서 살아있는 호스트, 포트를 찾는다, 목표 네트워크나 시스템에 ICMP Echo_Request 패킷을 순차적으로 전송한 후, 응답 패킷을 기반으로 해당 시스템의 동작 여부와 운영체제 종류 등을 파악한다</li>
+</ul>
+<ol start="58">
+<li>Scanning</li>
+</ol>
+<ul>
+<li>시스템의 상태, 사용하는 서비스 등을 찾아 취약점을 찾는 사전 주비 단계</li>
+</ul>
+<ol start="59">
+<li>ICMP(Internet Control Message Protocol)</li>
+</ol>
+<ul>
+<li>호스트 서버와 인터넷 게이트 웨이 사이에서 메시지를 제어 하고 에러를 알려주는 프로토콜</li>
+</ul>
+<ol start="60">
+<li>트로이 목마</li>
+</ol>
+<ul>
+<li>정상적인 프로그램으로 위장한 악성코드, 트로이 목마의 99.99%는 불법 파일이나 프로그램 다운시 전파된다, 트로이 목마는 개인정보 유출, 운영체제 파괴, 속도 느려짐, 시스템 파일 삭제, 부팅 오류, 컴퓨터 하드웨어 자체를 먹통으로 만들 정도로 손상시키기도 한다, 포멧을 해도 복구가 불가능할 수도 있다</li>
+</ul>
+<ol start="61">
+<li>Tvishing</li>
+</ol>
+<ul>
+<li>스마트 TV의 약점을 이용하여 몰래 악성코드를 심어 TV 기능을 악용하는 피싱 방법</li>
+</ul>
+<ol start="62">
+<li>Pharming</li>
+</ol>
+<ul>
+<li>웹 브라우저에서 정확한 웹 페이지 주소를 입력해도 가짜 웹 페이지에 접속하게 하여 개인 정보를 훔치거나 금전적 피해를 입히게 하는 피싱방법</li>
+</ul>
+<ol start="63">
+<li>USIM(Universal Subscriber Identity Module)</li>
+</ol>
+<ul>
+<li>휴대전화에 끼워서 쓰는 일종의 스마크카드, 3G, 4G, WiBro, 데이터 쉐어링 기기를 사용하고 있다면 기기에 하나 씩 들어 있다, 보통 개인 정보를 담고 있어 보안에 신경써야 한다</li>
+</ul>
+<ol start="64">
+<li>ISP(Information Strategy Planning)</li>
+</ol>
+<ul>
+<li>정보 시스템 구축의 출발점인 계획 단계</li>
+</ul>
+<ol start="65">
+<li>SCM(Supply Chain Management)</li>
+</ol>
+<ul>
+<li>공급망 관리, 고객이 사용하고자 하는 시점에 원하는 제품을, 원하는 수량만큼 공급하는 것을 목표로함</li>
+</ul>
+<ol start="66">
+<li>Balanced Scorecard(균형 성과표)</li>
+</ol>
+<ul>
+<li>얼마나 돈을 벌었냐보다, 여러가지 기준을 추가해서 업무의 성과를 판단함</li>
+</ul>
+<ol start="67">
+<li>BPR(Business Process Reengineering)</li>
+</ol>
+<ul>
+<li>기업 경영 내용이나, 경영 과정을 분석하여 경영 목표 달성에 가장 적합하도록 재설계하고, 그 설계에 따라 기업 형태, 사업 내용, 조직을 재구성 하는 것</li>
+</ul>
+<ol start="68">
+<li>Strategic Information System(전략적 정보 시스템)</li>
+</ol>
+<ul>
+<li>이전의 정보 시스템이 업무의 합리화나 효율성에 초점을 두었던 것에 반하여, 기업이 경쟁에서 승리하여 살아남기 위한 필수적인 시스템</li>
+</ul>
+<ol start="69">
+<li>Point of Sale(판매 시점)</li>
+</ol>
+<ul>
+<li>물품 거래가 완료되는 장소, 판매와 관련된 데이터를 일괄적으로 관리하고, 고객 정보를 수집하여 부가 가치를 향사시키는 시스템</li>
+</ul>
+<ol start="70">
+<li>Decision Support System(결정 지원 시스템)</li>
+</ol>
+<ul>
+<li>회사의 경영층의 의사결정자의 계산 부담을 줄여주고, 정보를 도식화 하여 분석모형과 데이터를 제공함으로써 의사결정자의 의사 결정을 보다 효율적으로 도와주는 응용프로그램</li>
+</ul>
+<ol start="71">
+<li>Executive Information System(경영 정보 시스템)</li>
+</ol>
+<ul>
+<li>DSS의 일종으로 최고 경영진에게 전략적인 의사 결정에 필요한 정보를 제공하는 체계를 일컫는 사업 용어</li>
+</ul>
+<ol start="72">
+<li>Product Data Management(제품 데이터 관리)</li>
+</ol>
+<ul>
+<li>소프트웨어나 다른 툴을 이용하여 특정 제품과 관련된 데이터를 추적하고 관리하는 것을 지칭한다</li>
+</ul>
+<ol start="73">
+<li>Chief Knowledge Officer(지식 총괄 책임자)</li>
+</ol>
+<ul>
+<li>지식의 보존을 통해 기업 가치가 최대로 되도록 하는 책임자를 일컫는다</li>
+</ul>
+<ol start="74">
+<li>Six Sigma</li>
+</ol>
+<ul>
+<li>기업 내에서 전략적으로 완벽에 가까운 제품이나 서비스를 개발하고 제공하려는 목적으로 정립된 품질 관리 기법</li>
+</ul>
+<ol start="75">
+<li>5-Forces</li>
+</ol>
+<ul>
+<li>기존 경쟁자 간의 경쟁 정도, 공급자들의 교섭력, 구매자들의 교섭력, 잠재적 진입자들의 위협, 대체제의 위협 이 다섯 가지 요소들의 강약에 의해 산업 내 잠재적 이윤의 수준이 결정되며 산업 분석을 이용하면 전반적 산업의 경쟁강도 파악이 가능하며 특히 산업 내 어느 부분에서 경쟁이 일어나는지 파악 할 수 있다</li>
+</ul>
+<ol start="76">
+<li>7S</li>
+</ol>
+<ul>
+<li>조직 개발 측면에서 꼭 필요하다고 생각한 일곱가지 요인 Strategy, Structure, Systems, Staff, Shared Value, Skills, Style</li>
+</ul>
+<ol start="77">
+<li>Community of Practice</li>
+</ol>
+<ul>
+<li>열정과 지식을 공유하는 학습 공동체</li>
+</ul>
+<ol start="78">
+<li>Work Breakdown Structure(작업 분해도)</li>
+</ol>
+<ul>
+<li>프로젝트의 범위와 최종산출물을 세부 요소로 분할한 계층적 구조</li>
+</ul>
+<ol start="79">
+<li>Corporate Performance Management(기업 성과 관리)</li>
+</ol>
+<ul>
+<li>경영계획-성과분석- 예측- 전략분석- 시뮬레이션 / 예측 경영을 통한 최적의 의사 결정을 내릴 수 있게 해주는 시스템</li>
+</ul>
+<ol start="80">
+<li>Groupware</li>
+</ol>
+<ul>
+<li>집단으로 서의 작업을 지원하기 위해 만들어진 소프트웨어</li>
+</ul>
+<ol start="81">
+<li>Business Process Management(생애 주기)</li>
+</ol>
+<ul>
+<li>프로세스 설계-시뮬레이션-구현-실행-모니터링-최적화</li>
+</ul>
+<ol start="82">
+<li>@anywhere(앳애니웨어)</li>
+</ol>
+<ul>
+<li>뉴욕타임즈 같은 언론사나 야후 같은 유명 사이트와 제휴를 해서 트위터 사이트로 이동하지 않고도 해당 사이트상에서 최근의 트위터 글을 바로 확인할 수 있는 새로운 플랫폼</li>
+</ul>
+<ol start="83">
+<li>5G 네트워크 슬라이싱</li>
+</ol>
+<ul>
+<li>5G의 핵심 기술인 네트워크 슬라이싱, 하나의 물리적 ‘코어 네트워크’를 독립된 다수 가상 네트워크로 분리한 뒤 고객 맞춤형 서비스를 제공한다</li>
+</ul>
+<ol start="84">
+<li>아이엠티 2020(International Mobile Telecommunications-2020,IMT-2020)</li>
+</ol>
+<ul>
+<li>5G 이동통신, 이용자에게 초당 최고 20Gbps의 데이터 전송 속도를 제공할 것을 규정한다, 최고 전송속도 20Gbps, 사용자 체감 전송속도 100Mbps, 전송 지연 시간 1ms 등…</li>
+</ul>
+<ol start="85">
+<li>EMBB(enhanced Mobile BroadBand)</li>
+</ol>
+<ul>
+<li>초광대역 이동 통신</li>
+</ul>
+<ol start="86">
+<li>URLLC(Ultra-Reliable and Low Latency Communications)</li>
+</ol>
+<ul>
+<li>초고신뢰 저지연 통신</li>
+</ul>
+<ol start="87">
+<li>mMTC(massive Machine Type Communications)</li>
+</ol>
+<ul>
+<li>대규모 사물통신</li>
+</ul>
+<ol start="88">
+<li>4C 분석</li>
+</ol>
+<ul>
+<li>Customer, Competitor, Company, Channel (고객, 경쟁사, 자사, 유통)</li>
+</ul>
+<ol start="89">
+<li>ERM(Enterprise Risk Management)</li>
+</ol>
+<ul>
+<li>기업이 직면하고 있는 주요 위험들을 식별하고 관리하기 위한 위험 관리 방식</li>
+</ul>
+<ol start="90">
+<li>PLM(Product Lifecycle Management)</li>
+</ol>
+<ul>
+<li>기업이 제품의 원가를 낮추고 부가가치를 높일 수 있도록 기획부터 설계, 생산, 서비스, 폐기에 이르는 수명주기를 관리하는 것</li>
+</ul>
+<ol start="91">
+<li>MDM(Master Data Management)</li>
+</ol>
+<ul>
+<li>기업의 내, 외부에 산재해 있는 마스터 데이터의 단일화를 통해 활용도를 높이고 오류를 줄이기 위한 모든 활동</li>
+</ul>
+<ol start="92">
+<li>VRM(Vendor Relationship Management)</li>
+</ol>
+<ul>
+<li>개인이 기업에게 제공할 개인정보, 선호도, 패턴 등을 관리하는 기술로, 기업이 고객의 정보를 분석 및 통합하여 관리하는 CRM에 반대되는 개념, 개인이 기업에 제공할 정보와 선호도를 관리, 보안이 중요시됨. <a href="https://i-bada.blogspot.com/2012/05/vrmvendor-relationship-management.html" target="_blank" rel="noopener">VRM vs CRM</a></li>
+</ul>
+<ol start="93">
+<li>Escrow 서비스</li>
+</ol>
+<ul>
+<li>전자상거래 시 판매자와 구매자의 거래가 문제없이 이루어질 수 있도록 제 3자가 도와주는 매매 보호 서비스</li>
+</ul>
+<ol start="94">
+<li>OPE(Order Preserving Encryption)</li>
+</ol>
+<ul>
+<li>암호화된 수치 데이터들이 원본 수치 데이터와 동일한 순서로 정렬될 수 있도록 해주는 암호화 기술</li>
+</ul>
+<ol start="95">
+<li>QKD(Quantum Key Distribution)</li>
+</ol>
+<ul>
+<li>양자 통신을 위해 비밀키를 분배하고 관리하는 기술</li>
+</ul>
+<ol start="96">
+<li>마이핀</li>
+</ol>
+<ul>
+<li>법적 근거 없는 주민번호 수집이 금지되면서 도입된 13자리의 무작위 번호로 온라인상에서 사용되는 아이핀과 달리 오프라인 상에서 주민번호를 대신한다, 유출시 폐기 가능하며 5회까지 변경이 가능하고 유효기간은 3년이다</li>
+</ul>
+<ol start="97">
+<li>CAPTCHA(Completely Automated Public Turing test to tell Computers and Humans Apart)</li>
+</ol>
+<ul>
+<li>자동 계정 생성 방지 기술은 웹 페이지에서 악의적으로 회원가입을 하거나 스팸 메시지를 보내기 위해 사용되는 프로그램인 봇을 차단하기 위해 만들어졌다.</li>
+</ul>
+<ol start="98">
+<li>독싱(dropping docs)</li>
+</ol>
+<ul>
+<li>‘문서를 떨어뜨리다’에서 파생된 용어로, 특정 개인이나 조직을 해킹하여 빼낸 정보를 온라인에 공개하는 행위</li>
+</ul>
+<ol start="99">
+<li>독스웨어</li>
+</ol>
+<ul>
+<li>독스와 랜섬웨어의 합성어</li>
+</ul>
+<ol start="100">
+<li>스파이웨어</li>
+</ol>
+<ul>
+<li>적절한 사용자 동의 없이 사용자 정보를 수집하는 프로그램</li>
+</ul>
+<ol start="101">
+<li>웜</li>
+</ol>
+<ul>
+<li>네트워크를 통해 연속적으로 자신을 복제하여 시스템의 부하를 높임으로써 결국 시스템을 다운시키는 바이러스</li>
+</ul>
+<ol start="102">
+<li>크래킹</li>
+</ol>
+<ul>
+<li>어떤 목적을 가지고 타인의 시스템에 불법으로 침입하여 정보를 파괴하거나 정보의 내용을 자신의 이익에 맞게 변경하는 행위</li>
+</ul>
+<ol start="103">
+<li>혹스</li>
+</ol>
+<ul>
+<li>악성코드인척하는 소프트웨어, 실제로 악성코드로 행동하지 않음</li>
+</ul>
+<ol start="104">
+<li>버퍼 오버플로 공격</li>
+</ol>
+<ul>
+<li>버퍼의 크기보다 많은 데이터를 입력하여 프로그램이 비정상적으로 동작하도록 만드는 것</li>
+</ul>
+<ol start="105">
+<li>NR(New Radio)</li>
+</ol>
+<ul>
+<li>5세대 이동통신의 실현을 위한 무선 접속 기술</li>
+</ul>
+<ol start="106">
+<li>Force Touch</li>
+</ol>
+<ul>
+<li>애플에서 개발한 트랙패드와 터치스크린에 적용되는 기술로, 패털에 가해지는 힘의 강도를 감지한다</li>
+</ul>
+<ol start="107">
+<li>GNSS(Global Navigation Satellite System)</li>
+</ol>
+<ul>
+<li>인공위성을 이용하여 위치를 파악하는 항법 시스템. ex) GPS, GLONASS, 갈릴레오, Compass</li>
+</ul>
+<ol start="108">
+<li>SBAS(Satellite-Based Augmentation System)</li>
+</ol>
+<ul>
+<li>GNSS의 위치 오차를 보정한 정보를 위성을 통해 사용자에게 전달하는 광역의 위성 항법 보정 시스템.</li>
+</ul>
+<ol start="109">
+<li>SNG(Satellite News Gathering)</li>
+</ol>
+<ul>
+<li>현장에서 촬영한 영상을 위성을 통해 방송사로 전송하는 방식</li>
+</ul>
+<ol start="110">
+<li>MNG(Mobile News Gathering)</li>
+</ol>
+<ul>
+<li>야외에서 촬영한 영상을 3G, LTE, WiBro, Wi-Fi 등 다양한 무선망 접속 장비를 이용해 전송하는 방식</li>
+</ul>
+<ol start="111">
+<li>ENG(Electronic News Gathering)</li>
+</ol>
+<ul>
+<li>카메라와 녹화부가 탑재된 일체형 카메라 시스템을 말한다.</li>
+</ul>
+<ol start="112">
+<li>Brute force attack(무작위 대입 공격)</li>
+</ol>
+<ul>
+<li>특정한 암호를 풀기 위해 가능한 모든 값을 대입하는 것을 의미한다</li>
+</ul>
+<ol start="113">
+<li>DES(Data Encryption Standard)</li>
+</ol>
+<ul>
+<li>56비트를 사용하는 키</li>
+</ul>
+<ol start="114">
+<li>Backdoor</li>
+</ol>
+<ul>
+<li>os나 프로그램 등을 만들 때 정상적인 인증 과정을 거치지 않고 접근할 수 있도록 만든 일종의 뒷구멍 같은 개념,네트워크에 허가받지 않고도 들어갈 수 있을 만큼 허술한 부분, 의도적으로 만들어진 보안구멍, 프로그래머의 실수로 만들어진 취약점(익스플로잇)</li>
+</ul>
+<ol start="115">
+<li>RPO(Recovery Point Objective)</li>
+</ol>
+<ul>
+<li>목표 복구 시점, 허용할 수 있는 데이터의 손실양과 관계가 있다</li>
+</ul>
+<ol start="116">
+<li>RTO(Recovery Time Objective)</li>
+</ol>
+<ul>
+<li>목표 복구 시간, 최대 허용 다운타임</li>
+</ul>
+<ol start="117">
+<li>NAS(Network Attached Storage)</li>
+</ol>
+<ul>
+<li>네트워크 결합 스토리지, LAN으로 연결하는 외장 하드디스크 ex) Github</li>
+</ul>
+<ol start="118">
+<li>DAS(Direct Attached Storage)</li>
+</ol>
+<ul>
+<li>직접 연결 저장장치, ex) 하드디스크</li>
+</ul>
+<ol start="119">
+<li>HA(High Availability)</li>
+</ol>
+<ul>
+<li>고가용성, 서버와 네트워크, 프로그램 등의 정보 시스템이 상당히 오랜 기간 동안 지속적으로 정상 운영이 가능한 성질, 가용성이 높다는 뜻은 오류가 거의 없고 고장이 잘 안나는 상태를 의미한다</li>
+</ul>
+<ol start="120">
+<li>ISO 20000</li>
+</ol>
+<ul>
+<li>IT 서비스를 제공하는 기업들이 고객에게 IT 서비스를 제공하고 관리하기 위한 통합된 관리체계를 적용하고 고객에게 적절한 통제, 개선된 효과성 및 개선의 기회를 제공하게 하는 규격, IT 서비스의 수준을 객관적으로 평가하고 서비스 중심의 프로세스, 견고하고 통합화된 프로세스 프레임 워크를 제공하기 위해 만들어졌다</li>
+</ul>
+<ol start="121">
+<li>디지털 프로슈머</li>
+</ol>
+<ul>
+<li>생산자와 소비자의 합성어, 생산자인 동시에 소비자이고 소비자이면서 생산을 하는 사람들, ex) Github블로그를 운영하면서 광고로 수익을 얻는 사람</li>
+</ul>
+<ol start="122">
+<li>ITSM(IT Service Management)</li>
+</ol>
+<ul>
+<li>고객에게 제공하는 정보기술 서비스들을 계획, 설계, 전달, 운영하기 위해 단체에 의해 수행되는 활동 전반을 가리킨다</li>
+</ul>
+<ol start="123">
+<li>ITIL(IT Infrastructure Library)</li>
+</ol>
+<ul>
+<li>IT 서비스 관리에 대한 프레임워크 구현을 돕기 위한 문서들의 집합</li>
+</ul>
+<ol start="124">
+<li>SYN(Synchronization)</li>
+</ol>
+<ul>
+<li>연결요청플래그, 신호를 전달하는 플래그</li>
+</ul>
+<ol start="125">
+<li>SDN(Software Defined network)</li>
+</ol>
+<ul>
+<li>소프트웨어 정의 네트워크, 소프트웨어 프로그래밍을 통해 네트워크 경로 설정과 제어 및 복잡한 운용관리를 편하게 처리할 수 있는 차세대 네트워킹 기술 <a href="https://bloter.net/archives/267815" target="_blank" rel="noopener">설명</a></li>
+</ul>
+<ol start="126">
+<li>QoS(Quality of Service)</li>
+</ol>
+<ul>
+<li>다른 응용 프로그램, 사용자, 데이터 흐름 등에 우선 순위를 정하여, 데이터 전송에 특정 수준의 성능을 보장하기 위한 능력을 말한다, 통신 서비스 품질,</li>
+</ul>
+<ol start="127">
+<li>KMS(Knowledge Management System)</li>
+</ol>
+<ul>
+<li>지식 관리 시스템, 조직 내의 지식을 관리하는 분산 하이퍼미디어 시스템, 분산되어 있는 다양한 데이터를 효과적으로 저장, 관리, 활용하여 관리자의 의사결정을 지원하는 정보시스템, OLAP, 데이터마이닝 기술을 이용한다</li>
+</ul>
+<ol start="128">
+<li>SOA(Service Oriented Architecture)</li>
+</ol>
+<ul>
+<li>서비스 지향 아키텍쳐, 업무상의 일처리에 해당하는 소프트웨어 기능을 네트워크 상에 연동하여 시스템 전체를 구축해 나가는 방법론 <a href="https://bcho.tistory.com/372" target="_blank" rel="noopener">EAI &amp; SOA</a></li>
+</ul>
+<ol start="129">
+<li>Data Mart</li>
+</ol>
+<ul>
+<li>DW 환경에서 정의된 접근계층으로, DW에서 데이터를 꺼내 사용자에게 제공하는 역할을 한다, 특정 사용자가 관심을 갖는 데이터들을 담은 비교적 작은 규모의 DW</li>
+</ul>
+<ol start="130">
+<li>Ontology</li>
+</ol>
+<ul>
+<li>사람이 인식하고 있는 사물을 기술한 것, 컴퓨터는 온톨로지로 표현된 개념을 이해하고 지식처리를 할 수 있다, 일종의 규칙이라고 생각하면 된다, 컴퓨터는 온톨로지를 토대로 판단을 할 수가 있다.</li>
+</ul>
+<ol start="131">
+<li>Semantic Web</li>
+</ol>
+<ul>
+<li>컴퓨터가 이해하는 웹, 정보와 자원 사이의 관계-의미 정보를 기계가 처리할 수 있는 온톨로지 형태로 표현하고 이를 자동화된 기계가 처리하도록 하는 프레임워크이자 기술 <a href="https://mnworld.co.kr/401" target="_blank" rel="noopener">시맨틱웹과 온톨로지</a></li>
+</ul>
+<ol start="132">
+<li>GAN(Generative Adversarial Network)</li>
+</ol>
+<ul>
+<li>생성적 적대 신경망, 비지도 학습에 사용되는 인공지능 알고리즘, 제로섬 게임 틀 안에서 서로 경쟁하는 두 개의 신경 네트워크 시스템에 의해 구현된다(제로 섬 게임: 게임이나 경제이론에서 여러 사람이 서로 영향을 받는 상황에서 모든 이득의 총합이 항상 제로 또는 그 상태를 말한다)</li>
+</ul>
+<ol start="133">
+<li>Deepfake</li>
+</ol>
+<ul>
+<li>인공지능 기술을 활용해 기존에 있던 인물의 얼굴이나, 특정한 부위를 영화의 CG 처럼 합성한 영상편집물</li>
+</ul>
+<ol start="134">
+<li>DeepMind</li>
+</ol>
+<ul>
+<li>영국의 AI 프로그램 개발 회사, 구글이 인수하여 구글 딥마인드가 되었다, 심층 인공지능 기술인 ‘심층 큐 네트워크’를 독자적으로 개발하였다. 이 기술은 Deep Neural Network와 Q-Learning을 조합한 기술이다. 규칙을 알지 못하는 상태에서 점수와 픽셀 디스플레이 정보를 활용하여 최고점을 만들기 위해 이전 게임 세션으로부터 학습하는 능력만을 갖추었다. 알파고를 만든 회사이기도 하다</li>
+</ul>
+<p>TTA 정보통신용어 =&gt; <a href="https://terms.tta.or.kr/main.do" target="_blank" rel="noopener">신기술 용어</a><br><br>2018년 1차 정처기 실기 =&gt; <a href="https://bactoria.me/post/17" target="_blank" rel="noopener">blog</a><br><br>2018년 2차 정처기 실기 =&gt; <a href="https://blog.naver.com/PostView.nhn?blogId=owen989&logNo=221311141874" target="_blank" rel="noopener">blog</a><br><br>2018년 3차 정처기 실기 =&gt; <a href="https://blog.naver.com/PostView.nhn?blogId=seungp916&logNo=221372731489&categoryNo=220&parentCategoryNo=190&viewDate=&currentPage=&postListTopCurrentPage=&isAfterWrite=true" target="_blank" rel="noopener">blog</a><br><br>이동통신 =&gt; <a href="https://m.blog.naver.com/PostView.nhn?blogId=wlsthfkim&logNo=220710581614&proxyReferer=https%3A%2F%2Fwww.google.co.kr%2F" target="_blank" rel="noopener">1~5G</a><br><br>정처기 실기 기출 정리 블로그 =&gt; <a href="https://m.blog.naver.com/PostView.nhn?blogId=qkfldkeh&logNo=220739131448&proxyReferer=https%3A%2F%2Fwww.google.co.kr%2F" target="_blank" rel="noopener">blog</a><br></p>
+
+          
+        </div>
+        
+          <br>
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-12-29T12:24:01+09:00">
+  <a class='notlink'>
+    <i class="fas fa-clock" aria-hidden="true"></i>
+    <p>Dec 29, 2021</p>
+    <!-- __('post.updated') + ' ' +  -->
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/IT/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>IT</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%EC%9A%A9%EC%96%B4/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>용어</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%EC%A0%95%EB%A6%AC/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>정리</p></a></div>
+
+
+        
+      
+    </div>
+  </section>
+
+
+        
+
+        
+            <div class="prev-next">
+                
+                    <section class="prev">
+                        <span class="art-item-left">
+                            <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;prev</h6>
+                            <h4>
+                                <a href="/2019/03/25/django/" rel="prev" title="Django">
+                                  
+                                      Django
+                                  
+                                </a>
+                            </h4>
+                            
+                                
+                                <h6 class="tags">
+                                    <a class="tag" href="/tags/%EC%A0%95%EB%A6%AC/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 정리</a> <a class="tag" href="/tags/Django/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> Django</a>
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
+                
+                    <section class="next">
+                        <span class="art-item-right" aria-hidden="true">
+                            <h6>next&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
+                            <h4>
+                                <a href="/2019/03/14/gitflow/" rel="prev" title="Git-Flow">
+                                    
+                                        Git-Flow
+                                    
+                                </a>
+                            </h4>
+                            
+                                
+                                <h6 class="tags">
+                                    <a class="tag" href="/tags/%ED%98%91%EC%97%85/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 협업</a> <a class="tag" href="/tags/Git/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> Git</a> <a class="tag" href="/tags/Github/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> Github</a> <a class="tag" href="/tags/Gitlab/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> Gitlab</a> <a class="tag" href="/tags/Git-Flow/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> Git-Flow</a>
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
+            </div>
+        
+      </section>
+      <!-- Google AdSense -->
+      <!-- In post -->
+      <script data-ad-client="ca-pub-1288998211050792" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<!-- Google AdSense -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1288998211050792"
+     data-ad-slot="5437821794"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+    </article>
+  
+
+  
+    <!-- 显示推荐文章和评论 -->
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+  <script>
+    window.subData = {
+      title: 'IT 용어 정리',
+      tools: true
+    }
+  </script>
+
+
+  <div id="disqus_thread"></div>
+</div>
+<aside class='l_side'>
+  
+    
+    
+      
+        
+          <section class='widget blogger'>
+  <div class='content pure'>
+    
+      <div class='avatar'>
+        <img class='avatar' src='/jh.jpg'/>
+      </div>
+    
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="mailto:wlgur278@gmail.com"
+              class="social fas fa-envelope flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://github.com/Jungjihyuk"
+              class="social fab fa-github flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+      
+        
+      
+        
+          
+  <section class='widget toc-wrapper'>
+    <header class='pure'>
+  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Shortcuts</div>
+  
+    <!-- <div class='wrapper'><a class="s-toc rightBtn" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div> -->
+  
+</header>
+
+    <div class='content pure'>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#정보처리기사-실기를-위한-용어"><span class="toc-text">정보처리기사 실기를 위한 용어</span></a></li></ol>
+    </div>
+  </section>
+
+
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+      
+        
+      
+        
+      
+        
+          
+  <section class='widget category'>
+    <header class='pure'>
+  <div><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;category</div>
+  
+    <a class="rightBtn"
+    
+      rel="external nofollow noopener noreferrer"
+    
+    
+      target="_self"
+    
+    href="/categories/"
+    title="categories/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class='content pure'>
+      <ul class="entry">
+        
+          <li><a class="flat-box" title="/categories/AI/" href="/categories/AI/"><div class='name'>AI</div><div class='badge'>(10)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/AI/Data-Analysis/" href="/categories/AI/Data-Analysis/"><div class='name'>Data Analysis</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/AI/Deep-Learning/" href="/categories/AI/Deep-Learning/"><div class='name'>Deep Learning</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/AI/Machine-Learning/" href="/categories/AI/Machine-Learning/"><div class='name'>Machine Learning</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/AI/Natural-Language-Processing/" href="/categories/AI/Natural-Language-Processing/"><div class='name'>Natural Language Processing</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/AI/Numpy/" href="/categories/AI/Numpy/"><div class='name'>Numpy</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/AI/Pandas/" href="/categories/AI/Pandas/"><div class='name'>Pandas</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/AI/Python/" href="/categories/AI/Python/"><div class='name'>Python</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/Algorithm/" href="/categories/Algorithm/"><div class='name'>Algorithm</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/Algorithm/Arrays/" href="/categories/Algorithm/Arrays/"><div class='name'>Arrays</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/Data-Structure/" href="/categories/Data-Structure/"><div class='name'>Data Structure</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/English/" href="/categories/English/"><div class='name'>English</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/Git/" href="/categories/Git/"><div class='name'>Git</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/IT-Terms/" href="/categories/IT-Terms/"><div class='name'>IT Terms</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/JSP-Servlet/" href="/categories/JSP-Servlet/"><div class='name'>JSP & Servlet</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/Language/" href="/categories/Language/"><div class='name'>Language</div><div class='badge'>(8)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/Language/Java/" href="/categories/Language/Java/"><div class='name'>Java</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/Language/Markup-Language/" href="/categories/Language/Markup-Language/"><div class='name'>Markup Language</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/Language/Python/" href="/categories/Language/Python/"><div class='name'>Python</div><div class='badge'>(6)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/Web/" href="/categories/Web/"><div class='name'>Web</div><div class='badge'>(5)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/Web/Bootstrap4/" href="/categories/Web/Bootstrap4/"><div class='name'>Bootstrap4</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/Web/Django/" href="/categories/Web/Django/"><div class='name'>Django</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/Web/Flask/" href="/categories/Web/Flask/"><div class='name'>Flask</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/Web/Object-Model/" href="/categories/Web/Object-Model/"><div class='name'>Object Model</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/Web/Objectoriented/" href="/categories/Web/Objectoriented/"><div class='name'>Objectoriented</div><div class='badge'>(1)</div></a></li>
+        
+      </ul>
+    </div>
+  </section>
+
+
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+      
+        
+      
+        
+      
+        
+      
+        
+          
+  <section class='widget tagcloud'>
+    <header class='pure'>
+  <div><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Keywords</div>
+  
+    <a class="rightBtn"
+    
+      rel="external nofollow noopener noreferrer"
+    
+    
+      target="_self"
+    
+    href="/tags/"
+    title="tags/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class='content pure'>
+      <a href="/tags/AI/" style="font-size: 22px; color: #636363">AI</a> <a href="/tags/Algorithm/" style="font-size: 14px; color: #999">Algorithm</a> <a href="/tags/CodeSignal/" style="font-size: 16px; color: #8b8b8b">CodeSignal</a> <a href="/tags/CodeSignal2/" style="font-size: 14px; color: #999">CodeSignal2</a> <a href="/tags/Data-Analysis/" style="font-size: 14px; color: #999">Data Analysis</a> <a href="/tags/Deep-Learning/" style="font-size: 16px; color: #8b8b8b">Deep Learning</a> <a href="/tags/Django/" style="font-size: 14px; color: #999">Django</a> <a href="/tags/EDA/" style="font-size: 14px; color: #999">EDA</a> <a href="/tags/Flask/" style="font-size: 14px; color: #999">Flask</a> <a href="/tags/FrontEnd/" style="font-size: 14px; color: #999">FrontEnd</a> <a href="/tags/Git/" style="font-size: 14px; color: #999">Git</a> <a href="/tags/Git-Flow/" style="font-size: 14px; color: #999">Git-Flow</a> <a href="/tags/Github/" style="font-size: 14px; color: #999">Github</a> <a href="/tags/Gitlab/" style="font-size: 14px; color: #999">Gitlab</a> <a href="/tags/IT/" style="font-size: 14px; color: #999">IT</a> <a href="/tags/Java/" style="font-size: 14px; color: #999">Java</a> <a href="/tags/Jsp/" style="font-size: 14px; color: #999">Jsp</a> <a href="/tags/Lecture/" style="font-size: 22px; color: #636363">Lecture</a> <a href="/tags/Machine-Learning/" style="font-size: 16px; color: #8b8b8b">Machine Learning</a> <a href="/tags/NLP/" style="font-size: 14px; color: #999">NLP</a> <a href="/tags/Numpy/" style="font-size: 14px; color: #999">Numpy</a> <a href="/tags/Pandas/" style="font-size: 14px; color: #999">Pandas</a> <a href="/tags/Programming/" style="font-size: 14px; color: #999">Programming</a> <a href="/tags/Python/" style="font-size: 16px; color: #8b8b8b">Python</a> <a href="/tags/Servlet/" style="font-size: 14px; color: #999">Servlet</a> <a href="/tags/Web/" style="font-size: 14px; color: #999">Web</a> <a href="/tags/algorithm/" style="font-size: 20px; color: #707070">algorithm</a> <a href="/tags/api/" style="font-size: 14px; color: #999">api</a> <a href="/tags/array/" style="font-size: 14px; color: #999">array</a> <a href="/tags/bom/" style="font-size: 14px; color: #999">bom</a> <a href="/tags/bootstrap/" style="font-size: 14px; color: #999">bootstrap</a> <a href="/tags/class/" style="font-size: 14px; color: #999">class</a> <a href="/tags/clean-code/" style="font-size: 14px; color: #999">clean code</a> <a href="/tags/coding-test/" style="font-size: 14px; color: #999">coding test</a> <a href="/tags/crawling/" style="font-size: 14px; color: #999">crawling</a> <a href="/tags/css/" style="font-size: 14px; color: #999">css</a> <a href="/tags/data-mining/" style="font-size: 14px; color: #999">data mining</a> <a href="/tags/database/" style="font-size: 16px; color: #8b8b8b">database</a> <a href="/tags/deep-learning/" style="font-size: 16px; color: #8b8b8b">deep learning</a> <a href="/tags/deque/" style="font-size: 14px; color: #999">deque</a> <a href="/tags/dom/" style="font-size: 14px; color: #999">dom</a> <a href="/tags/generator/" style="font-size: 14px; color: #999">generator</a> <a href="/tags/git/" style="font-size: 14px; color: #999">git</a> <a href="/tags/helper-function/" style="font-size: 14px; color: #999">helper function</a> <a href="/tags/iris/" style="font-size: 14px; color: #999">iris</a> <a href="/tags/javascript/" style="font-size: 14px; color: #999">javascript</a> <a href="/tags/js/" style="font-size: 14px; color: #999">js</a> <a href="/tags/json/" style="font-size: 14px; color: #999">json</a> <a href="/tags/neural-network/" style="font-size: 14px; color: #999">neural network</a> <a href="/tags/object/" style="font-size: 14px; color: #999">object</a> <a href="/tags/object-model/" style="font-size: 14px; color: #999">object model</a> <a href="/tags/page-rank/" style="font-size: 14px; color: #999">page rank</a> <a href="/tags/python/" style="font-size: 24px; color: #555">python</a> <a href="/tags/queue/" style="font-size: 14px; color: #999">queue</a> <a href="/tags/scraping/" style="font-size: 14px; color: #999">scraping</a> <a href="/tags/send/" style="font-size: 14px; color: #999">send</a> <a href="/tags/stack/" style="font-size: 14px; color: #999">stack</a> <a href="/tags/tensorflow/" style="font-size: 14px; color: #999">tensorflow</a> <a href="/tags/xml/" style="font-size: 14px; color: #999">xml</a> <a href="/tags/yield/" style="font-size: 14px; color: #999">yield</a> <a href="/tags/%EB%AA%85%EB%A0%B9%EC%96%B4/" style="font-size: 14px; color: #999">명령어</a> <a href="/tags/%EB%AC%B8%EB%B2%95/" style="font-size: 14px; color: #999">문법</a> <a href="/tags/%EB%B0%B1%EC%A4%80/" style="font-size: 14px; color: #999">백준</a> <a href="/tags/%EC%82%B0%ED%83%80-%ED%86%A0%EC%9D%B5/" style="font-size: 14px; color: #999">산타 토익</a> <a href="/tags/%EC%84%A4%EA%B3%84/" style="font-size: 14px; color: #999">설계</a> <a href="/tags/%EC%8B%9C%EC%9B%90%EC%8A%A4%EC%BF%A8/" style="font-size: 14px; color: #999">시원스쿨</a> <a href="/tags/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/" style="font-size: 14px; color: #999">알고리즘</a> <a href="/tags/%EC%98%81%EC%96%B4/" style="font-size: 16px; color: #8b8b8b">영어</a> <a href="/tags/%EC%9A%A9%EC%96%B4/" style="font-size: 14px; color: #999">용어</a> <a href="/tags/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/" style="font-size: 14px; color: #999">자료구조</a> <a href="/tags/%EC%9E%90%EC%97%B0%EC%96%B4-%EC%B2%98%EB%A6%AC/" style="font-size: 14px; color: #999">자연어 처리</a> <a href="/tags/%EC%A0%95%EB%A6%AC/" style="font-size: 18px; color: #7e7e7e">정리</a> <a href="/tags/%EC%BD%94%EB%94%A9%EC%97%B0%EC%8A%B5/" style="font-size: 18px; color: #7e7e7e">코딩연습</a> <a href="/tags/%ED%86%A0%EC%9D%B5/" style="font-size: 14px; color: #999">토익</a> <a href="/tags/%ED%95%9C%EB%88%88%EC%97%90-%EB%B3%B4%EA%B8%B0/" style="font-size: 16px; color: #8b8b8b">한눈에 보기</a> <a href="/tags/%ED%95%9C%EB%88%88%EC%97%90-%EC%A0%95%EB%A6%AC/" style="font-size: 14px; color: #999">한눈에 정리</a> <a href="/tags/%ED%98%91%EC%97%85/" style="font-size: 14px; color: #999">협업</a> <a href="/tags/%ED%9A%8C%ED%99%94/" style="font-size: 14px; color: #999">회화</a>
+    </div>
+  </section>
+
+
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+  
+  <!-- Google AdSense -->
+  <div style="margin-top: 16px;">
+
+  </div>
+  <script data-ad-client="ca-pub-1288998211050792" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<!-- Google AdSense -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1288998211050792"
+     data-ad-slot="7750297977"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+</aside>
+
+<footer class="clearfix">
+  
+    <div class="social-wrapper">
+      
+        
+          <a href="mailto:wlgur278@gmail.com"
+            class="social fas fa-envelope flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="https://github.com/Jungjihyuk"
+            class="social fab fa-github flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+    </div>
+  
+  <br>
+  <!-- <div><- markdown(__('footer.license')) </div> -->
+  <div>
+    <!-- <- __('footer.use')  -->
+    <!-- a href = "<- theme.info.docs " -->
+    <span>Copyright. </span>
+    <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" class="codename">Material-X</a>
+    <!-- <- theme.info.name    -->
+    <!-- <- __('footer.theme')  -->
+    <br>
+    
+    . 
+  </div>
+  
+</footer>
+<script>setLoadingBarProgress(80);</script>
+
+<script>
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://https-jungjihyuk-github-io.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a></noscript>
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+
+  <script>
+    
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/" || "/";
+    if (!ROOT.endsWith('/')) ROOT += '/';
+  </script>
+
+<script async src="//instant.page/1.2.2" type="module" integrity="sha384-2xV8M5griQmzyiY3CDqh1dn4z3llDVqZDqzjzcY+jCBCk/a5fXJmuZ/40JJAPeoU"></script>
+
+  <script async src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js"></script>
+  <script async src="https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.5/dist/scrollreveal.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      const $reveal = $('.reveal');
+      if ($reveal.length === 0) return;
+      const sr = ScrollReveal({ distance: 0 });
+      sr.reveal('.reveal');
+    });
+  </script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+
+
+
+  
+  
+  
+    <script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@20.2/js/backstretch.min.js"></script>
+    <script type="text/javascript">
+      $(function(){
+        if ('') {
+          $('').backstretch(
+          ["unsplash.jpg", "jonathan.jpg", "flower.jpg"],
+          {
+            duration: "6000",
+            fade: "2500"
+          });
+        } else {
+          $.backstretch(
+          ["unsplash.jpg", "jonathan.jpg", "flower.jpg"],
+          {
+            duration: "6000",
+            fade: "2500"
+          });
+        }
+      });
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+<script src="/js/app.js"></script>
+
+
+
+  
+<script src="/js/search.js"></script>
+
+
+
+  
+    
+<script src="/js/commentTyping.js"></script>
+
+  
+
+
+
+
+
+<!-- 复制 -->
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  let COPY_SUCCESS = "Copied";
+  let COPY_FAILURE = "Copy failed";
+  /*页面载入完成后，创建复制按钮*/
+  !function (e, t, a) {
+    /* code */
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '  <i class="fa fa-copy"></i><span>Copy</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+
+      clipboard.on('success', function(e) {
+        //您可以加入成功提示
+        console.info('Action:', e.action);
+        console.info('Text:', e.text);
+        console.info('Trigger:', e.trigger);
+        success_prompt(COPY_SUCCESS);
+        e.clearSelection();
+      });
+      clipboard.on('error', function(e) {
+        //您可以加入失败提示
+        console.error('Action:', e.action);
+        console.error('Trigger:', e.trigger);
+        fail_prompt(COPY_FAILURE);
+      });
+    }
+    initCopyCode();
+
+  }(window, document);
+
+  /**
+   * 弹出式提示框，默认1.5秒自动消失
+   * @param message 提示信息
+   * @param style 提示样式，有alert-success、alert-danger、alert-warning、alert-info
+   * @param time 消失时间
+   */
+  var prompt = function (message, style, time)
+  {
+      style = (style === undefined) ? 'alert-success' : style;
+      time = (time === undefined) ? 1500 : time*1000;
+      $('<div>')
+          .appendTo('body')
+          .addClass('alert ' + style)
+          .html(message)
+          .show()
+          .delay(time)
+          .fadeOut();
+  };
+
+  // 成功提示
+  var success_prompt = function(message, time)
+  {
+      prompt(message, 'alert-success', time);
+  };
+
+  // 失败提示
+  var fail_prompt = function(message, time)
+  {
+      prompt(message, 'alert-danger', time);
+  };
+
+  // 提醒
+  var warning_prompt = function(message, time)
+  {
+      prompt(message, 'alert-warning', time);
+  };
+
+  // 信息提示
+  var info_prompt = function(message, time)
+  {
+      prompt(message, 'alert-info', time);
+  };
+
+</script>
+
+
+<!-- fancybox -->
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  let LAZY_LOAD_IMAGE = "";
+  $(".article-entry").find("fancybox").find("img").each(function () {
+      var element = document.createElement("a");
+      $(element).attr("data-fancybox", "gallery");
+      $(element).attr("href", $(this).attr("src"));
+      /* 图片采用懒加载处理时,
+       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
+       * 那么此处将原本的属性名src替换为对应属性名data-original,
+       * 修改如下
+       */
+       if (LAZY_LOAD_IMAGE) {
+         $(element).attr("href", $(this).attr("data-original"));
+       }
+      $(this).wrap(element);
+  });
+</script>
+
+
+
+
+
+  <script>setLoadingBarProgress(100);</script>
+</body>
+</html>

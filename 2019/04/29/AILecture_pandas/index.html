@@ -1,0 +1,1288 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  <title>AI 이노베이션 스퀘어 수업(기본반) - pandas | 지혁&#39;s Blog</title>
+  
+  
+
+  
+  <link rel="alternate" href="/feed.xml" title="지혁's Blog">
+  
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- meta -->
+  
+
+  <!-- Auto Canonical -->
+  <link rel="canonical" href="http://jungjihyuk.github.io/2019/04/29/ailecture_pandas/"/>
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.10.1/css/all.min.css">
+  
+
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
+  
+
+  
+    
+<link rel="stylesheet" href="/style.css">
+
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+
+  
+  
+
+  <!-- Google AdSense -->
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-143236286-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-143236286-2');
+</script>
+
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/feed.xml" title="지혁's Blog" type="application/rss+xml">
+</head>
+
+<body>
+  
+  
+  <div class="cover-wrapper">
+    <cover class='cover post half'>
+      
+        
+  <h1 class='title'>Imitation, Imagination, Integration</h1>
+
+
+  <div class="m_search">
+    <form name="searchform" class="form u-search-form">
+      <input type="text" class="input u-search-input" placeholder="search" />
+      <i class="icon fas fa-search fa-fw"></i>
+    </form>
+  </div>
+
+<div class='menu navgation'>
+  <ul class='h-list'>
+    
+      
+        <li>
+          <a class="nav home" href="/"
+            
+            
+            id="home">
+            <i class='fas fa-rss fa-fw'></i>&nbsp;Home
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="/about"
+            
+              rel="nofollow"
+            
+            
+            id="about">
+            <i class='fas fa-info-circle fa-fw'></i>&nbsp;About
+          </a>
+        </li>
+      
+    
+  </ul>
+</div>
+
+      
+    </cover>
+    <header class="l_header pure">
+  <div id="loading-bar-wrapper">
+    <div id="loading-bar" class="pure"></div>
+  </div>
+
+	<div class='wrapper'>
+		<div class="nav-main container container--flex">
+      <a class="logo flat-box" target="_self" href='/' >
+        
+          지혁's Blog
+        
+      </a>
+			<div class='menu navgation'>
+				<ul class='h-list'>
+          
+  					
+  						<li>
+								<a class="nav flat-box" href="/"
+                  
+                  
+                    target="_self"
+                  
+                  id="home">
+									<i class='fas fa-grin fa-fw'></i>&nbsp;Home
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/archives"
+                  
+                    rel="nofollow"
+                  
+                  
+                    target="_self"
+                  
+                  id="archives">
+									<i class='fas fa-archive fa-fw'></i>&nbsp;Archives
+								</a>
+							</li>
+      			
+      		
+				</ul>
+			</div>
+
+			
+				<div class="m_search">
+					<form name="searchform" class="form u-search-form">
+						<input type="text" class="input u-search-input" placeholder="search" />
+						<i class="icon fas fa-search fa-fw"></i>
+					</form>
+				</div>
+			
+			<ul class='switcher h-list'>
+				
+					<li class='s-search'><a class="fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
+				
+				<li class='s-menu'><a class="fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+
+		<div class='nav-sub container container--flex'>
+			<a class="logo flat-box"></a>
+			<ul class='switcher h-list'>
+				<li class='s-comment'><a class="flat-btn fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+          <li class='s-toc'><a class="flat-btn fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+			</ul>
+		</div>
+	</div>
+</header>
+	<aside class="menu-phone">
+    <header>
+		<nav class="menu navgation">
+      <ul>
+        
+          
+            <li>
+							<a class="nav flat-box" href="/"
+                
+                
+                id="home">
+								<i class='fas fa-clock fa-fw'></i>&nbsp;Home
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/archives"
+                
+                  rel="nofollow"
+                
+                
+                id="archives">
+								<i class='fas fa-archive fa-fw'></i>&nbsp;Archives
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/projects"
+                
+                
+                id="projects">
+								<i class='fas fa-code-branch fa-fw'></i>&nbsp;Projects
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="https://xaoxuu.com/wiki/material-x/"
+                
+                  rel="nofollow"
+                
+                
+                id="https:xaoxuu.comwikimaterial-x">
+								<i class='fas fa-book fa-fw'></i>&nbsp;Reference
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/about"
+                
+                  rel="nofollow"
+                
+                
+                id="about">
+								<i class='fas fa-info-circle fa-fw'></i>&nbsp;About
+							</a>
+            </li>
+          
+       
+      </ul>
+		</nav>
+    </header>
+	</aside>
+<script>setLoadingBarProgress(40);</script>
+
+  </div>
+
+
+  <div class="l_body">
+    <div class='body-wrapper'>
+      <div class='l_main'>
+  
+
+  
+    <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
+      
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  
+    <h1 class="title">
+      <a href="/2019/04/29/AILecture_pandas/">
+        AI 이노베이션 스퀘어 수업(기본반) - pandas
+      </a>
+    </h1>
+  
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    
+      <a href="http://jungjihyuk.github.io" rel="nofollow">
+        
+          <i class="fas fa-user" aria-hidden="true"></i>
+        
+        <p>Jihyuk Jung</p>
+      </a>
+    
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2019-04-29</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/AI/Pandas/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>AI&nbsp;/&nbsp;Pandas</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+  
+
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          <p><a id = '15th'></a></p>
+<h1 id="2019년-5월-24일-금요일-15th"><a href="#2019년-5월-24일-금요일-15th" class="headerlink" title="2019년 5월 24일 금요일 15th"></a>2019년 5월 24일 금요일 15th</h1><h2 id="Pandas"><a href="#Pandas" class="headerlink" title="Pandas"></a>Pandas</h2><blockquote>
+<p>Numpy 기반으로 만들어진 데이터 조작, 분석을 위한 프레임워크 <br><br>Data Wrangling Tool, 데이터를 불러와 합치고, 간단한 전처리하고, 기초통계 분석하는 프레임워크<br></p>
+</blockquote>
+<p><span style="color:orange">Pandas로 할 수 있는 2가지</span></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1. 기초통계분석 (EDA)</span><br><span class="line">2. 전처리</span><br><span class="line">- 반정형 데이터를 정형데이터로 바꿔준다</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p>ETL vs Munging ETL(Extract Transform Load)는 개발자 입장에서 하는 파이프라인이고 Munging은 통계분석가 입장에서 하는 파이프라인이라고 생각하면 된다.</p>
+<br>
+
+<h2 id="데이터-종류"><a href="#데이터-종류" class="headerlink" title="데이터 종류"></a>데이터 종류</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1. 정형 데이터 : Dataframe 객체에 정확하게 컬럼에 집어 넣을 수 있는 데이터</span><br><span class="line">2. 비정형 데이터</span><br><span class="line">3. 반정형 데이터</span><br></pre></td></tr></table></figure>
+
+<h2 id="데이터-타입-만드는-방법"><a href="#데이터-타입-만드는-방법" class="headerlink" title="데이터 타입 만드는 방법"></a>데이터 타입 만드는 방법</h2><h3 id="Numpy-방식-structured-array"><a href="#Numpy-방식-structured-array" class="headerlink" title="Numpy 방식 (structured array)"></a>Numpy 방식 (structured array)</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">x = np.array([(<span class="string">'jihyuk'</span>,<span class="number">25</span>,<span class="number">73.0</span>),(<span class="string">'thor'</span>,<span class="number">35</span>,<span class="number">85.0</span>),(<span class="string">'lion'</span>,<span class="number">10</span>,<span class="number">30.0</span>)],dtype=[(<span class="string">'name'</span>,<span class="string">'U10'</span>),(<span class="string">'age'</span>,<span class="string">'i4'</span>),(<span class="string">'weight'</span>,<span class="string">'f4'</span>)])  </span><br><span class="line"></span><br><span class="line">x[<span class="number">0</span>]</span><br><span class="line">: (<span class="string">'jihyuk'</span>,<span class="number">25</span>,<span class="number">73.0</span>)</span><br><span class="line">x[<span class="number">0</span>][<span class="string">'name'</span>]  <span class="comment"># dict의 key값으로 접근</span></span><br><span class="line">: <span class="string">'jihyuk'</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Python-방식-namedtuple"><a href="#Python-방식-namedtuple" class="headerlink" title="Python 방식 (namedtuple)"></a>Python 방식 (namedtuple)</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> namedtuple</span><br><span class="line"></span><br><span class="line">x = namedtuple(<span class="string">'Address'</span>,[<span class="string">'name'</span>,<span class="string">'age'</span>,<span class="string">'weight'</span>])</span><br><span class="line">a = x(<span class="string">'jh'</span>,<span class="number">25</span>,<span class="string">'73.0'</span>)</span><br><span class="line"></span><br><span class="line">a.name  <span class="comment"># attribute</span></span><br><span class="line">a.age</span><br><span class="line">: <span class="string">'jh'</span></span><br><span class="line">  <span class="number">25</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Pandas로-기초통계분석하기"><a href="#Pandas로-기초통계분석하기" class="headerlink" title="Pandas로 기초통계분석하기"></a>Pandas로 기초통계분석하기</h2><h3 id="첫번째-데이터-불러들이기"><a href="#첫번째-데이터-불러들이기" class="headerlink" title="[첫번째] 데이터 불러들이기"></a>[첫번째] 데이터 불러들이기</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line">data = pd.read_csv(<span class="string">'/Users/SAMSUNG/Desktop/개인공부/AI/AI 이노베이션 스퀘어 기본과정/수업 내용/abc.csv'</span>,engine=<span class="string">'python'</span>)</span><br><span class="line">type(data)</span><br><span class="line">: pandas.core.frame.DataFrame</span><br><span class="line"></span><br><span class="line"><span class="comment"># read 메소드는 flat file 또는 sql format을 dataframe형태로 불러들인다</span></span><br><span class="line"><span class="comment"># 첫번째 인자는 불러올 파일의 경로인데 현재 작업파일과 동일한 위치에 있다면 파일이름만 적어줘도 된다</span></span><br><span class="line"><span class="comment"># engine = 'python' 이나 encoding = 'cp949'를 인자로 넣어주지 않으면 unicodeerror가 뜬다</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://user-images.githubusercontent.com/33630505/58368737-26567680-7f2c-11e9-9581-e21370c90f49.JPG" alt="read method"></p>
+<p><strong>filepath_buffer</strong>는 read_csv 메소드의 첫번째 인자로 파일경로나, url이 올 수 있다  </p>
+<p><strong>Dataframe</strong> 객체는 Numpy에서 structured array방식을 따라 데이터 타입을 생성한다. pandas는 벡터, 행렬연산으로 속도를 빠르게 하기 위해 Numpy방식을 그대로 이어받아 사용한다. 그리고 DataFrame에서 각 열은 단일 데이터 형식만을 저장한다. 따라서 타입체크를 하지 않아 속도가 빠르다. 또한 DataFrame은 dict, attr 두가지 방법으로 모두 접근 가능하다. ex) dataframe.column, dataframe[‘column’]</p>
+<p><strong>Series</strong> 객체는 Dataframe에서 1차원 데이터 한 행이나 한 열, 1차원이기 때문에 방향은 없다. Series는 dataframe 처럼 dictionary 형태로 구성되어 있고 key값으로 index가 자동 생성이 된다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line">data = np.read_csv(<span class="string">'abc.csv'</span>, engine=<span class="string">'python'</span>)</span><br><span class="line">data.values</span><br><span class="line"></span><br><span class="line">: array([[<span class="string">'절도'</span>, <span class="string">' 129 '</span>, <span class="string">' 217 '</span>, ..., <span class="string">' 1 '</span>, <span class="string">' - '</span>, nan],</span><br><span class="line">       [<span class="string">'불법사용'</span>, <span class="string">' - '</span>, <span class="string">' - '</span>, ..., <span class="string">' - '</span>, <span class="string">' - '</span>, nan],</span><br><span class="line">       [<span class="string">'침입절도'</span>, <span class="string">' 29 '</span>, <span class="string">' 38 '</span>, ..., <span class="string">' - '</span>, <span class="string">' - '</span>, nan],</span><br><span class="line">       ...,</span><br><span class="line">       [<span class="string">'화재예방·소방시설설치유지및안전관리에관한법률'</span>, <span class="string">' - '</span>, <span class="string">' - '</span>, ..., <span class="string">' - '</span>, <span class="string">' - '</span>, nan],</span><br><span class="line">       [<span class="string">'화학물질관리법'</span>, <span class="string">' 1 '</span>, <span class="string">' - '</span>, ..., <span class="string">' 3 '</span>, <span class="string">' - '</span>, nan],</span><br><span class="line">       [<span class="string">'기타특별법'</span>, <span class="string">' 26 '</span>, <span class="string">' 226 '</span>, ..., <span class="string">' 4 '</span>, <span class="string">' - '</span>, nan]], dtype=object)</span><br><span class="line"></span><br><span class="line"><span class="comment"># dict으로 접근해서 values를 사용하면 numpy format인것을 확인할 수 있다</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Series-Vector-차이점"><a href="#Series-Vector-차이점" class="headerlink" title="Series , Vector 차이점"></a>Series , Vector 차이점</h3><p>Series, Vector 둘다 1차원 데이터에 방향도 없지만 Series는 index가 붙는다</p>
+<br>
+
+
+<h3 id="두번째-분석하고-그래프-그리기"><a href="#두번째-분석하고-그래프-그리기" class="headerlink" title="[두번째] 분석하고 그래프 그리기"></a>[두번째] 분석하고 그래프 그리기</h3><h3 id="분석하기전-5가지-확인-사항"><a href="#분석하기전-5가지-확인-사항" class="headerlink" title="분석하기전 5가지 확인 사항"></a>분석하기전 5가지 확인 사항</h3><blockquote>
+<p>데이터를 분석하기 전에 분석할 가치가 있는 데이터인지 부터 판단해야 한다!  데이터의 갯수가 충분한지 여부도 체크하고, 내가 불러들일 수 있는 크기의 데이터 양인지 체크하고 편향된 데이터값이 많은지 등등 알고서 분석에 적합한 데이터를 판별해야한다. (데이터가 많으면 많을 수록 분석, 예측시 성능이 좋아진다!</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1. info : 데이터의 기본 정보를 보여준다</span><br><span class="line">2. describe : 숫자형태인 데이터에 대해서 기본 통계값을 보여준다</span><br><span class="line">3. head : default로 앞에서 5개 데이터만 불러온다 (앞에서부터 보고싶은 데이터 갯수 입력 가능)</span><br><span class="line">4. tail : head와 반대로 뒤에서 부터 데이터를 불러온다</span><br><span class="line">5. sample : 랜덤으로 하나의 데이터를 불러온다</span><br></pre></td></tr></table></figure>
+
+<h3 id="info-describe로-데이터의-숨겨진-의미-찾기"><a href="#info-describe로-데이터의-숨겨진-의미-찾기" class="headerlink" title="info, describe로 데이터의 숨겨진 의미 찾기"></a>info, describe로 데이터의 숨겨진 의미 찾기</h3><ol>
+<li>column 갯수 확인 =&gt; 차원의 저주 고려 <br></li>
+<li>데이터 갯수 확인 =&gt; 큰 수의 법칙 고려 <br></li>
+<li>미싱 데이터 찾기 =&gt; 미싱데이터를 포함하고 있으면 정확도  <br></li>
+<li>데이터 타입 확인 =&gt; 적절한 타입을 썻는지 체크 (category, object는 각각 지원하는 기능이 다르다) <br></li>
+</ol>
+<br>
+
+<h4 id="data-도로교통공단-시도-시군구별-도로형태별-교통사고-2018-공공데이터"><a href="#data-도로교통공단-시도-시군구별-도로형태별-교통사고-2018-공공데이터" class="headerlink" title="data (도로교통공단_시도_시군구별_도로형태별_교통사고(2018) 공공데이터)"></a>data (도로교통공단_시도_시군구별_도로형태별_교통사고(2018) 공공데이터)</h4><blockquote>
+<p>pandas로 불러오면 rangeindex가 붙는다</p>
+</blockquote>
+<p><img src="https://user-images.githubusercontent.com/33630505/58369114-09707200-7f31-11e9-8b4b-cfcc10731401.JPG" alt="accident"></p>
+<h4 id="info"><a href="#info" class="headerlink" title="info"></a>info</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line">data = pd.read_csv(<span class="string">'load.csv'</span>, engine = <span class="string">'python'</span>)</span><br><span class="line">data.info()</span><br><span class="line"></span><br><span class="line">: &lt;<span class="class"><span class="keyword">class</span> '<span class="title">pandas</span>.<span class="title">core</span>.<span class="title">frame</span>.<span class="title">DataFrame</span>'&gt;</span></span><br><span class="line"><span class="class">  <span class="title">RangeIndex</span>:</span> <span class="number">2001</span> entries, <span class="number">0</span> to <span class="number">2000</span></span><br><span class="line">  Data columns (total <span class="number">9</span> columns):</span><br><span class="line">  시도      <span class="number">2001</span> non-null object</span><br><span class="line">  시군구     <span class="number">2001</span> non-null object</span><br><span class="line">  도로형태    <span class="number">2001</span> non-null object</span><br><span class="line">  발생건수    <span class="number">2001</span> non-null int64</span><br><span class="line">  사망자수    <span class="number">2001</span> non-null int64</span><br><span class="line">  부상자수    <span class="number">2001</span> non-null int64</span><br><span class="line">  중상      <span class="number">2001</span> non-null int64</span><br><span class="line">  경상      <span class="number">2001</span> non-null int64</span><br><span class="line">  부상신고    <span class="number">2001</span> non-null int64</span><br><span class="line">  dtypes: int64(<span class="number">6</span>), object(<span class="number">3</span>)</span><br><span class="line">  memory usage: <span class="number">140.8</span>+ KB</span><br><span class="line"></span><br><span class="line"><span class="comment"># 교통사고 공공데이터</span></span><br></pre></td></tr></table></figure>
+
+
+<h4 id="describe"><a href="#describe" class="headerlink" title="describe"></a>describe</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line">data = pd.read_csv(<span class="string">'load.csv'</span>, engine = <span class="string">'python'</span>)</span><br><span class="line">data.describe()</span><br></pre></td></tr></table></figure>
+<p><img src="https://user-images.githubusercontent.com/33630505/58369143-5f451a00-7f31-11e9-8bf4-b9dcac83f844.JPG" alt="describe"></p>
+<h4 id="head-tail-sample"><a href="#head-tail-sample" class="headerlink" title="head, tail, sample"></a>head, tail, sample</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line">data = pd.read_csv(<span class="string">'load.csv'</span>, engine = <span class="string">'python'</span>)</span><br><span class="line">data.head(<span class="number">3</span>)</span><br><span class="line">data.tail(<span class="number">3</span>)</span><br><span class="line">data.sample(<span class="number">3</span>) <span class="comment"># replace = True 옵션을 주면 복원추출</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://user-images.githubusercontent.com/33630505/58369306-78e76100-7f33-11e9-9abc-f94e94aac804.JPG" alt="head"><br><img src="https://user-images.githubusercontent.com/33630505/58369307-7a188e00-7f33-11e9-9254-1fdaa0245e32.JPG" alt="tail"><br><img src="https://user-images.githubusercontent.com/33630505/58369313-90bee500-7f33-11e9-8549-92b5635e9a3d.JPG" alt="sample"></p>
+<h4 id="표준편차-표로-보기-boxplot"><a href="#표준편차-표로-보기-boxplot" class="headerlink" title="표준편차 표로 보기 (boxplot)"></a>표준편차 표로 보기 (boxplot)</h4><p><img src="https://user-images.githubusercontent.com/33630505/58369325-c237b080-7f33-11e9-9d04-2ec773255130.JPG" alt="boxplot"></p>
+<h3 id="왜도-skewness-첨도-kurtosis"><a href="#왜도-skewness-첨도-kurtosis" class="headerlink" title="왜도(skewness), 첨도(kurtosis)"></a>왜도(skewness), 첨도(kurtosis)</h3><p><strong>왜도</strong> <br><br>왜도는 데이터가 대칭이 아닌 정도를 나타낸다 <br><br>왜도의 값이 음수이면 오른쪽으로 치우친 정도를 나타내고 <br><br>왜도의 값이 양수이면 왼쪽으로 치우친 정도를 나타낸다 <br><br><br><br><strong>첨도</strong> <br><br>첨도는 데이터가 중간값의 분포도의 정도를 나타낸다 <br><br>첨도의 값이 3보다 작으면 완만한 분포를 나타내고 <br><br>첨도의 값이 3보다 크면 뾰족한 분포를 나타낸다 <br></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line">data = pd.read_csv(<span class="string">'load.csv'</span>, engine = <span class="string">'python'</span>)</span><br><span class="line">data.skew()</span><br><span class="line">data.kurtosis() <span class="comment"># kurt</span></span><br><span class="line"></span><br><span class="line">: 발생건수    <span class="number">3.765094</span></span><br><span class="line">사망자수    <span class="number">3.820251</span></span><br><span class="line">부상자수    <span class="number">3.778984</span></span><br><span class="line">중상      <span class="number">3.541237</span></span><br><span class="line">경상      <span class="number">3.847238</span></span><br><span class="line">부상신고    <span class="number">5.351853</span></span><br><span class="line">dtype: float64</span><br><span class="line"></span><br><span class="line">발생건수    <span class="number">17.881821</span></span><br><span class="line">사망자수    <span class="number">18.509412</span></span><br><span class="line">부상자수    <span class="number">17.783772</span></span><br><span class="line">중상      <span class="number">15.962331</span></span><br><span class="line">경상      <span class="number">18.220330</span></span><br><span class="line">부상신고    <span class="number">40.538785</span></span><br><span class="line">dtype: float64</span><br></pre></td></tr></table></figure>
+
+<h2 id="열-뽑는-4가지-방법"><a href="#열-뽑는-4가지-방법" class="headerlink" title="열 뽑는 4가지 방법"></a>열 뽑는 4가지 방법</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1. dictionary</span><br><span class="line">2. attribute</span><br><span class="line">3. fancy indexing</span><br><span class="line">4. data type</span><br></pre></td></tr></table></figure>
+
+<p><strong>Pandas Tip1</strong> 데이터 분석시 데이터 조작을 하기위해 할당을 하는 경우에 view방식으로 접근하게되면 원본 데이터도 변경될 수 있으므로 copy방식을 사용해야 한다</p>
+<h2 id="행-뽑는-방법"><a href="#행-뽑는-방법" class="headerlink" title="행 뽑는 방법"></a>행 뽑는 방법</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1.loc  # index 명으로 접근</span><br><span class="line">2.iloc # index 숫자로 접근</span><br></pre></td></tr></table></figure>
+
+<h2 id="문제해결-그리고-예측"><a href="#문제해결-그리고-예측" class="headerlink" title="문제해결 그리고 예측"></a>문제해결 그리고 예측</h2><p><span style="background-color:orange">많은 데이터 확보 =&gt; 기초 통계분석 및 전처리 =&gt; 기계학습 및 딥러닝으로 예측 </span></p>
+<h2 id="Exploratory-Data-Analysis"><a href="#Exploratory-Data-Analysis" class="headerlink" title="Exploratory Data Analysis"></a>Exploratory Data Analysis</h2><blockquote>
+<p>수집한 데이터가 들어왔을 때, 이를 다양한 각도에서 관찰하고 이해하는 과정. <br><br>한마디로 데이터를 분석하기 전에 그래프나 통계적인 방법으로 자료를 직관적으로 바라보는 과정이다. <br></p>
+</blockquote>
+<br>
+
+<h3 id="nan값-제거"><a href="#nan값-제거" class="headerlink" title="nan값 제거"></a>nan값 제거</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line">data = pd.read_csv(<span class="string">'abc.csv'</span>,engine=<span class="string">'python'</span>)</span><br><span class="line">data.iloc[<span class="number">4</span>].dropna()</span><br></pre></td></tr></table></figure>
+
+
+<hr>
+
+
+<p><code>복습 시간</code>  2시간으로 추정</p>
+<h1 id="2019년-5월-26일-일요일-Jupyter-Notebook-오류"><a href="#2019년-5월-26일-일요일-Jupyter-Notebook-오류" class="headerlink" title="2019년 5월 26일 일요일 Jupyter Notebook 오류"></a>2019년 5월 26일 일요일 Jupyter Notebook 오류</h1><blockquote>
+<p>Numpy 예제 100선을 풀기 위해 파일을 불러오는 도중 해당 파일이 Not trusted 문제가 발생했다</p>
+</blockquote>
+<h2 id="Not-trusted"><a href="#Not-trusted" class="headerlink" title="Not trusted"></a>Not trusted</h2><p>내가 작성한 파일이 아닌 다른 사람에 의해 만들어진 파일이라서 보안상 문제가 될 수 있어 발생한 오류 인것 같다<br><br>그래서 열고자 하는 파일이 믿을만하다는 것을 알려주기 위해서 명령 프롬프트를 통해 신뢰할만한 파일이라고 직접 알려줘야 한다<br></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jupyter trust name.ipynb</span><br></pre></td></tr></table></figure>
+<p>위 명령어를 입력하자 not trusted 오류는 발생하지 않았다 <br></p>
+<h2 id="페이지를-열기-위한-메모리가-충분하지-않음"><a href="#페이지를-열기-위한-메모리가-충분하지-않음" class="headerlink" title="페이지를 열기 위한 메모리가 충분하지 않음"></a>페이지를 열기 위한 메모리가 충분하지 않음</h2><p>크롬 브라우저에서 메모리가 부족하다는 것이다. <br><br>그래서 쿠키정보를 삭제해보았다.</p>
+<p><strong>해결!</strong> <br><br>그러나 힌트파일이 아닌 정답파일은 파일 자체 내용이 많아서 그런지 아직도 안열린다…</p>
+<p><a id = '16th'></a></p>
+<h1 id="2019년-5월-27일-월요일-16th"><a href="#2019년-5월-27일-월요일-16th" class="headerlink" title="2019년 5월 27일 월요일 16th"></a>2019년 5월 27일 월요일 16th</h1><h2 id="유니콘이-되려면…"><a href="#유니콘이-되려면…" class="headerlink" title="유니콘이 되려면…"></a>유니콘이 되려면…</h2><p><img src="https://user-images.githubusercontent.com/33630505/58414654-fedfe500-80b6-11e9-950d-03888fd83082.JPG" alt="unicon"></p>
+<p><strong>Data Wrangling</strong> Raw data를 또 다른 형태로 수작업으로 전환하거나 매핑하는 과정. 즉, 여러가지 데이터 포멧을 내가 원하는 데이터 포멧으로 전환하여 사용하기 위한 과정. (Data Munging 이라고도 불린다)</p>
+<h2 id="그래프-그리기"><a href="#그래프-그리기" class="headerlink" title="그래프 그리기"></a>그래프 그리기</h2><h3 id="describe로-나오는-값들-그래프로-그리기"><a href="#describe로-나오는-값들-그래프로-그리기" class="headerlink" title="describe로 나오는 값들 그래프로 그리기"></a>describe로 나오는 값들 그래프로 그리기</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</span><br><span class="line"></span><br><span class="line">data = pd.read_csv(<span class="string">'file.csv'</span>, engine=<span class="string">'python'</span>)</span><br><span class="line">pd.plotting.boxplot(data)</span><br></pre></td></tr></table></figure>
+<p><img src="https://user-images.githubusercontent.com/33630505/58414617-e374da00-80b6-11e9-9e72-168df4140f90.JPG" alt="describe"></p>
+<h3 id="정규분포가-되는지-확인하는-그래프-그리기"><a href="#정규분포가-되는지-확인하는-그래프-그리기" class="headerlink" title="정규분포가 되는지 확인하는 그래프 그리기"></a>정규분포가 되는지 확인하는 그래프 그리기</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</span><br><span class="line"></span><br><span class="line">data = pd.read_csv(<span class="string">'file.csv'</span>, engine=<span class="string">'python'</span>)</span><br><span class="line">pd.plotting.scatter_matrix(data)</span><br></pre></td></tr></table></figure>
+<p><img src="https://user-images.githubusercontent.com/33630505/58416173-aeb75180-80bb-11e9-8cc3-5d8f83737d5d.JPG" alt="scatter"></p>
+<h2 id="matplotlib-inline-amp-notebook"><a href="#matplotlib-inline-amp-notebook" class="headerlink" title="matplotlib inline &amp; notebook"></a>matplotlib inline &amp; notebook</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">%matplotlib inline</span><br><span class="line">data.boxplot()</span><br><span class="line"></span><br><span class="line">%matplotlib notebook</span><br><span class="line">data.boxplot()</span><br></pre></td></tr></table></figure>
+
+<h3 id="inline"><a href="#inline" class="headerlink" title="inline"></a>inline</h3><p><img src="https://user-images.githubusercontent.com/33630505/58416292-0f468e80-80bc-11e9-9789-12627d6fbdd7.JPG" alt="inline"></p>
+<h3 id="notebook"><a href="#notebook" class="headerlink" title="notebook"></a>notebook</h3><p><img src="https://user-images.githubusercontent.com/33630505/58416310-1bcae700-80bc-11e9-90c0-54f9ba8cd9aa.JPG" alt="notebook"></p>
+<h2 id="seaborn으로-그래프-이쁘게-그리기"><a href="#seaborn으로-그래프-이쁘게-그리기" class="headerlink" title="seaborn으로 그래프 이쁘게 그리기"></a>seaborn으로 그래프 이쁘게 그리기</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</span><br><span class="line"></span><br><span class="line">data = pd.read_csv(<span class="string">'file.csv'</span>, engine=<span class="string">'python'</span>)</span><br><span class="line">sns.pairplot(data)</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://user-images.githubusercontent.com/33630505/58416408-63ea0980-80bc-11e9-818c-93fbe478439e.JPG" alt="seaborn"></p>
+<h2 id="Header-name-바꾸기-전처리-과정중-일부"><a href="#Header-name-바꾸기-전처리-과정중-일부" class="headerlink" title="Header name 바꾸기 (전처리 과정중 일부)"></a>Header name 바꾸기 (전처리 과정중 일부)</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line">data = pd.read_csv(<span class="string">'file.csv'</span>, engine=<span class="string">'python'</span>)</span><br><span class="line">data.rename(&#123;<span class="number">0</span>:<span class="string">'sl'</span>,<span class="number">1</span>:<span class="string">'sw'</span>,<span class="number">2</span>:<span class="string">'pl'</span>,<span class="number">3</span>:<span class="string">'pw'</span>,<span class="string">'class'</span>:<span class="string">'class_'</span>&#125;,axis=<span class="number">1</span>,inplace=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># inplace True하면 자기자신이 바뀜</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="짝을-이뤄-그래프-그리기"><a href="#짝을-이뤄-그래프-그리기" class="headerlink" title="짝을 이뤄 그래프 그리기"></a>짝을 이뤄 그래프 그리기</h2><blockquote>
+<p>열(column)에 object가 있을 때</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line">data = pd.read_csv(<span class="string">'file.csv'</span>, engine=<span class="string">'python'</span>)</span><br><span class="line">data.rename(&#123;<span class="number">0</span>:<span class="string">'sl'</span>,<span class="number">1</span>:<span class="string">'sw'</span>,<span class="number">2</span>:<span class="string">'pl'</span>,<span class="number">3</span>:<span class="string">'pw'</span>,<span class="string">'class'</span>:<span class="string">'class_'</span>&#125;,axis=<span class="number">1</span>,inplace=<span class="literal">True</span>)</span><br><span class="line">sns.pairplot(data,hue=<span class="string">'class_'</span>)</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://user-images.githubusercontent.com/33630505/58416593-115d1d00-80bd-11e9-8b8a-59429b3f8b51.JPG" alt="hue"></p>
+<h2 id="Tidy-Data"><a href="#Tidy-Data" class="headerlink" title="Tidy Data"></a>Tidy Data</h2><p><kbd>Wide format</kbd> ⇒  <kbd>Long format</kbd></p>
+<blockquote>
+<p>분석하기 좋은 데이터. Tidy data 형태로 만들면 차원도 줄고, 유지보수하기도 좋다</p>
+</blockquote>
+<p><strong>Tidy Data 특징</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1. 각 변수는 개별의 열(column)로 존재한다</span><br><span class="line">2. 각 관측치는 행(row)으로 구성한다</span><br><span class="line">3. 각 표는 단 하나의 관측기준에 의해서 조작된 데이터를 저장한다</span><br><span class="line">4. 만약 여러개의 표가 존재한다면, 적어도 하나이상의 열이 공유되어야 한다</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>위 원칙들은 관계형 데이터베이스 원칙과 유사하다</p>
+</blockquote>
+<p>※ 예시</p>
+<p>변수 : 키, 몸무게, 성별 <br><br>값 : 175, 73, 남자 <br><br>관측치 : 사람  (값을 측정한 단위가 되는 기준) <br></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line">data = pd.read_csv(<span class="string">'file.csv'</span>)</span><br><span class="line">data.melt([<span class="string">'iso2'</span>,<span class="string">'year'</span>], var_name=<span class="string">'sp'</span>, value_name=<span class="string">'값'</span>).dropna()</span><br></pre></td></tr></table></figure>
+<p><img src="https://user-images.githubusercontent.com/33630505/58412407-58451580-80b1-11e9-869a-56ce832033bb.JPG" alt="tidy data"></p>
+<p><strong>주의</strong> <br><br>Tidy Data화 하지 않으면 info, describe, 등.. 초기 작업시 엉망으로 값이 나온다</p>
+<br>
+### 행 뽑기
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tb.loc[<span class="number">5</span>:<span class="number">7</span>]</span><br></pre></td></tr></table></figure>
+<p><img src="https://user-images.githubusercontent.com/33630505/58419146-bd563680-80c4-11e9-99e6-fd1fa156b058.JPG" alt="loc"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tb.iloc[<span class="number">1</span>:<span class="number">3</span>] <span class="comment"># 파이썬 방식</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://user-images.githubusercontent.com/33630505/58419147-bd563680-80c4-11e9-9aeb-d56d82b27083.JPG" alt="iloc"></p>
+<h2 id="상관성-체크하기-correlation"><a href="#상관성-체크하기-correlation" class="headerlink" title="상관성 체크하기  (correlation)"></a>상관성 체크하기  (correlation)</h2><blockquote>
+<p>두 변수간에 어떤 선형적 관계를 갖고 있는지 분석하는 방법이 상관 분석. 그렇다면 상관성 있다는 것은 얼마나 관계가 있는지에 대한 정도라고 볼 수 있다. 만약 상관성이 1에 가깝다면 두 변수는 매우 관련 이 있다. 예를 들어 키가 크면 몸무게가 많이 나가는 것처럼 서로 관계가 가까운것.</p>
+</blockquote>
+<p><strong>양의 상관성</strong>: 기준이되는 변수가 커지면 상대 변수도 같이 커진다 <br><br><strong>음의 상관성</strong>: 기준이되는 변수가 커지면 상대 변수는 작아진다 <br></p>
+<p><span style='color: red'>상관 분석은 왜 하는거야?</span><br><br>데이터 분석시 column이 많아지면 계산이 복잡해지는데 상관관계를 따져 <br><br>상관성이 높은 것들은 분석 데이터에서 제외시켜 계산 복잡도를 크게 줄일 수 있기 때문이다.<br><br></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line">data = pd.read_csv(<span class="string">'file.txt'</span>)</span><br><span class="line">data.rename(&#123;<span class="number">0</span>:<span class="string">'sl'</span>,<span class="number">1</span>:<span class="string">'sw'</span>,<span class="number">2</span>:<span class="string">'pl'</span>,<span class="number">3</span>:<span class="string">'pw'</span>,<span class="string">'class'</span>:<span class="string">'class_'</span>&#125;,axis=<span class="number">1</span>,inplace=<span class="literal">True</span>)</span><br><span class="line">data.corr() <span class="comment"># method = &#123;'pearson', 'kendall', 'spearman'&#125;</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://user-images.githubusercontent.com/33630505/58418421-a9a9d080-80c2-11e9-9188-af2eb88e45b1.JPG" alt="corr"></p>
+<p><strong>공분산</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">data.cov()</span><br></pre></td></tr></table></figure>
+
+<h2 id="문자열에-사용하는-것들"><a href="#문자열에-사용하는-것들" class="headerlink" title="문자열에 사용하는 것들"></a>문자열에 사용하는 것들</h2><h3 id="Series에서-object-문자열-빈도수-체크하기"><a href="#Series에서-object-문자열-빈도수-체크하기" class="headerlink" title="Series에서 object(문자열) 빈도수 체크하기"></a>Series에서 object(문자열) 빈도수 체크하기</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line">data = pd.read_csv(<span class="string">'file.txt'</span>)</span><br><span class="line">data.rename(&#123;<span class="number">0</span>:<span class="string">'sl'</span>,<span class="number">1</span>:<span class="string">'sw'</span>,<span class="number">2</span>:<span class="string">'pl'</span>,<span class="number">3</span>:<span class="string">'pw'</span>,<span class="string">'4'</span>:<span class="string">'class_'</span>&#125;,axis=<span class="number">1</span>,inplace=<span class="literal">True</span>)</span><br><span class="line">data[<span class="string">'class_'</span>].value_counts()</span><br><span class="line"></span><br><span class="line">: Iris-versicolor    <span class="number">50</span></span><br><span class="line">  Iris-setosa        <span class="number">50</span></span><br><span class="line">  Iris-virginica     <span class="number">50</span></span><br><span class="line">  Name: class_, dtype: int64</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">data[<span class="string">'class_'</span>].value_counts().plot.pie()</span><br><span class="line">data[<span class="string">'class_'</span>].value_counts().plot.bar()</span><br></pre></td></tr></table></figure>
+<p><img src="https://user-images.githubusercontent.com/33630505/58419044-78320480-80c4-11e9-8ebb-cca88b2feb3b.JPG" alt="pie"><br><img src="https://user-images.githubusercontent.com/33630505/58419048-79fbc800-80c4-11e9-980c-5105d90b2777.JPG" alt="bar"></p>
+<h3 id="nlargest-nsmallest-unique"><a href="#nlargest-nsmallest-unique" class="headerlink" title="nlargest, nsmallest, unique"></a>nlargest, nsmallest, unique</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">x = data[<span class="string">'class_'</span>].value_counts()</span><br><span class="line"></span><br><span class="line">x.nlargest()</span><br><span class="line">x.nsmallest()</span><br><span class="line">data[<span class="string">'class_'</span>].unique()</span><br><span class="line"></span><br><span class="line">: Iris-versicolor    <span class="number">50</span></span><br><span class="line">  Iris-setosa        <span class="number">50</span></span><br><span class="line">  Iris-virginica     <span class="number">50</span></span><br><span class="line">  Name: class_, dtype: int64</span><br><span class="line"></span><br><span class="line">  Iris-versicolor    <span class="number">50</span></span><br><span class="line">  Iris-setosa        <span class="number">50</span></span><br><span class="line">  Iris-virginica     <span class="number">50</span></span><br><span class="line">  Name: class_, dtype: int64</span><br><span class="line"></span><br><span class="line">  array([<span class="string">'Iris-setosa'</span>, <span class="string">'Iris-versicolor'</span>, <span class="string">'Iris-virginica'</span>], dtype=object)</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="기초-통계-분석시-알아두면-좋은-원칙-및-정리"><a href="#기초-통계-분석시-알아두면-좋은-원칙-및-정리" class="headerlink" title="기초 통계 분석시 알아두면 좋은 원칙 및 정리"></a>기초 통계 분석시 알아두면 좋은 원칙 및 정리</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">1. Occam&#39;s Razor (오캄의 면도날)</span><br><span class="line">- 같은 성능을 보일 때 간단한것을 택한다</span><br><span class="line">2. Curse of dimensionality (차원의 저주)</span><br><span class="line">- 차원이 커지면 커질수록 필요한 데이터의 양이 커져야 한다</span><br><span class="line">3. Law of large numbers (큰 수의 법칙)</span><br><span class="line">- 큰 모집단에서 무작위로 뽑은 표본의 평균이 전체 모집단의 평균과 가까울 가능성이 높다</span><br><span class="line">- 모집단이 커지면 표본평균은 모평균을 더 정확히 추정할 수 있다</span><br><span class="line">4. Central limit theorem (중심 극한 정리)</span><br><span class="line">- 동일한 확률분포를 가진 독립 확률 변수 n개의 평균의 분포는 n이 적당히 크다면 정규분포에 가까워진다는 정리</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="Indexing-amp-Slicing-Select-data"><a href="#Indexing-amp-Slicing-Select-data" class="headerlink" title="Indexing &amp; Slicing (Select data)"></a>Indexing &amp; Slicing (Select data)</h2><p>내가 필요한 통계값 구하기 위해</p>
+<h2 id="MultiIndex"><a href="#MultiIndex" class="headerlink" title="MultiIndex"></a>MultiIndex</h2><p><img src="https://user-images.githubusercontent.com/33630505/58419324-440b1380-80c5-11e9-9630-d4f56d60c460.JPG" alt="multiindex"></p>
+<p><strong>Pandas Tip1</strong> 예측 분석을 하려면 문자열을 숫자로 바꿔줘야한다 (Encoding)</p>
+<br>
+
+<p><strong>예시에 나오는 데이터 출처</strong> : <a href="https://archive.ics.uci.edu/ml/machine-learning-databases/iris/" target="_blank" rel="noopener">archive</a><br></p>
+<p><strong>복습시간</strong> 18시 30분 ~ 21시 / 총 2시간 30분</p>
+<p><a id = '17th'></a></p>
+<h1 id="2019년-5월-28일-화요일-17th"><a href="#2019년-5월-28일-화요일-17th" class="headerlink" title="2019년 5월 28일 화요일 17th"></a>2019년 5월 28일 화요일 17th</h1><h2 id="loc-iloc-lambda"><a href="#loc-iloc-lambda" class="headerlink" title="loc, iloc + lambda"></a>loc, iloc + lambda</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">data = pd.DataFrame(np.random.randn(<span class="number">6</span>,<span class="number">4</span>), index = list(<span class="string">'abcdef'</span>), columns = list(<span class="string">'ABCD'</span>)</span><br><span class="line">data</span><br><span class="line">: 	   A	            B               C               D</span><br><span class="line">a	<span class="number">0.427092</span>	<span class="number">1.122736</span>	<span class="number">1.064223</span>	<span class="number">-0.724660</span></span><br><span class="line">b	<span class="number">0.091881</span>	<span class="number">1.049868</span>	<span class="number">1.263243</span>	<span class="number">-0.193525</span></span><br><span class="line">c	<span class="number">0.224007</span>	<span class="number">-1.128729</span>	<span class="number">-1.261087</span>	<span class="number">2.461563</span></span><br><span class="line">d	<span class="number">-0.859961</span>	<span class="number">-0.450851</span>	<span class="number">-0.098474</span>	<span class="number">0.456542</span></span><br><span class="line">e	<span class="number">0.339599</span>	<span class="number">-0.946570</span>	<span class="number">0.892721</span>	<span class="number">-0.331624</span></span><br><span class="line">f	<span class="number">1.691290</span>	<span class="number">-0.565636</span>	<span class="number">0.905357</span>	<span class="number">-0.301717</span></span><br><span class="line"></span><br><span class="line">data.loc[<span class="keyword">lambda</span> x: x.B&gt;<span class="number">0</span>, :]</span><br><span class="line">: 	   A	            B               C               D</span><br><span class="line">a	<span class="number">0.427092</span>	<span class="number">1.122736</span>	<span class="number">1.064223</span>	<span class="number">-0.724660</span></span><br><span class="line">b	<span class="number">0.091881</span>	<span class="number">1.049868</span>	<span class="number">1.263243</span>	<span class="number">-0.193525</span></span><br><span class="line"></span><br><span class="line">data.loc[:, <span class="keyword">lambda</span> x:[<span class="string">'D'</span>,<span class="string">'A'</span>]]</span><br><span class="line">:           D	           A</span><br><span class="line">a	<span class="number">-0.724660</span>	<span class="number">0.427092</span></span><br><span class="line">b	<span class="number">-0.193525</span>	<span class="number">0.091881</span></span><br><span class="line">c	<span class="number">2.461563</span>	<span class="number">0.224007</span></span><br><span class="line">d	<span class="number">0.456542</span>	<span class="number">-0.859961</span></span><br><span class="line">e	<span class="number">-0.331624</span>	<span class="number">0.339599</span></span><br><span class="line">f	<span class="number">-0.301717</span>	<span class="number">1.691290</span></span><br><span class="line"></span><br><span class="line">data.iloc[:,<span class="keyword">lambda</span> x:[<span class="number">0</span>,<span class="number">3</span>]]</span><br><span class="line">:           A	            D</span><br><span class="line">a	<span class="number">0.427092</span>	<span class="number">-0.724660</span></span><br><span class="line">b	<span class="number">0.091881</span>	<span class="number">-0.193525</span></span><br><span class="line">c	<span class="number">0.224007</span>	<span class="number">2.461563</span></span><br><span class="line">d	<span class="number">-0.859961</span>	<span class="number">0.456542</span></span><br><span class="line">e	<span class="number">0.339599</span>	<span class="number">-0.331624</span></span><br><span class="line">f	<span class="number">1.691290</span>	<span class="number">-0.301717</span></span><br><span class="line"></span><br><span class="line">data[<span class="keyword">lambda</span> x: x.columns[<span class="number">3</span>]]</span><br><span class="line">: a   <span class="number">-0.724660</span></span><br><span class="line">  b   <span class="number">-0.193525</span></span><br><span class="line">  c    <span class="number">2.461563</span></span><br><span class="line">  d    <span class="number">0.456542</span></span><br><span class="line">  e   <span class="number">-0.331624</span></span><br><span class="line">  f   <span class="number">-0.301717</span></span><br><span class="line">Name: D, dtype: float64</span><br></pre></td></tr></table></figure>
+
+<h2 id="columns"><a href="#columns" class="headerlink" title="columns"></a>columns</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</span><br><span class="line"></span><br><span class="line">tips = sns.load_dataset(<span class="string">'tips'</span>)</span><br><span class="line">tips</span><br><span class="line">:    total_bill	 tip	 sex   smoker	day	time	 size</span><br><span class="line"><span class="number">0</span>	<span class="number">16.99</span>	<span class="number">1.01</span>	Female	 No	Sun	Dinner	  <span class="number">2</span></span><br><span class="line"><span class="number">1</span>	<span class="number">10.34</span>	<span class="number">1.66</span>	Male	 No	Sun	Dinner	  <span class="number">3</span></span><br><span class="line"><span class="number">2</span>	<span class="number">21.01</span>	<span class="number">3.50</span>	Male	 No	Sun	Dinner	  <span class="number">3</span></span><br><span class="line"><span class="number">3</span>	<span class="number">23.68</span>	<span class="number">3.31</span>	Male	 No	Sun	Dinner	  <span class="number">2</span></span><br><span class="line"></span><br><span class="line">tips.melt(tips.columns[:<span class="number">3</span>])    <span class="comment">#  열만 따로 뽑기</span></span><br><span class="line">:    total_bill	 tip	sex	variable   value</span><br><span class="line"><span class="number">0</span>	<span class="number">16.99</span>	<span class="number">1.01</span>	Female	smoker	     No</span><br><span class="line"><span class="number">1</span>	<span class="number">10.34</span>	<span class="number">1.66</span>	Male	smoker	     No</span><br><span class="line"><span class="number">2</span>	<span class="number">21.01</span>	<span class="number">3.50</span>	Male	smoker	     No</span><br><span class="line"><span class="number">3</span>	<span class="number">23.68</span>	<span class="number">3.31</span>	Male	smoker	     No</span><br></pre></td></tr></table></figure>
+
+<h2 id="index"><a href="#index" class="headerlink" title="index"></a>index</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line">data = pd.read_csv(<span class="string">'billboard.csv'</span>,engine=<span class="string">'python'</span>)</span><br><span class="line">data.melt(data.columns[:<span class="number">7</span>]).set_index(<span class="string">'genre'</span>).loc[<span class="string">'Rock'</span>]</span><br><span class="line"></span><br><span class="line">: 	year	artist.inverted	     track	     time	    date.entered       date.peaked    variable        value</span><br><span class="line">genre								</span><br><span class="line">Rock	<span class="number">2000</span>	Destiny<span class="string">'s Child	 Independent         3:38            2000-09-23         2000-11-18    x1st.week      78.0</span></span><br><span class="line"><span class="string">                                  Women Part I	     		                         	  </span></span><br><span class="line"><span class="string">Rock	2000	  Santana	 Maria, Maria	     4:18	     2000-02-12	        2000-04-08    x1st.week	     15.0</span></span><br><span class="line"><span class="string">Rock	2000	Savage Garden	I Knew I Loved You   4:07	     1999-10-23	        2000-01-29    x1st.week	     71.0</span></span><br><span class="line"><span class="string">Rock	2000	Madonna	             Music	     3:45	     2000-08-12	        2000-09-16    x1st.week	     41.0</span></span><br><span class="line"><span class="string">`</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Intersection"><a href="#Intersection" class="headerlink" title="Intersection"></a>Intersection</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">a = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>&#125;</span><br><span class="line">b = &#123;<span class="number">3</span>,<span class="number">4</span>&#125;</span><br><span class="line"></span><br><span class="line">a.intersection(b)</span><br><span class="line">: &#123;<span class="number">3</span>&#125;</span><br><span class="line">a.intersection([<span class="number">3</span>,<span class="number">4</span>])</span><br><span class="line">: &#123;<span class="number">3</span>&#125;</span><br><span class="line">a.intersection(range(<span class="number">3</span>))</span><br><span class="line">:&#123;<span class="number">1</span>,<span class="number">2</span>&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="새로운-연산자-만들기"><a href="#새로운-연산자-만들기" class="headerlink" title="새로운 연산자 만들기"></a>새로운 연산자 만들기</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">x</span><span class="params">(int)</span>:</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">__add__</span><span class="params">(self, other)</span>:</span></span><br><span class="line">		print(<span class="string">'안더해줌'</span>)</span><br><span class="line"></span><br><span class="line">x(<span class="number">3</span>) + x(<span class="number">4</span>)</span><br><span class="line">: 안더해줌</span><br></pre></td></tr></table></figure>
+
+<h2 id="isin-predicate"><a href="#isin-predicate" class="headerlink" title="isin (predicate)"></a>isin (predicate)</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">s = pd.Series(np.arange(<span class="number">5</span>), index=np.arange(<span class="number">5</span>)[::<span class="number">-1</span>], dtype=<span class="string">'int64'</span>)</span><br><span class="line"></span><br><span class="line">s.isin([<span class="number">2</span>, <span class="number">4</span>, <span class="number">6</span>])</span><br><span class="line">: <span class="number">4</span>    <span class="literal">False</span></span><br><span class="line">  <span class="number">3</span>    <span class="literal">False</span></span><br><span class="line">  <span class="number">2</span>     <span class="literal">True</span></span><br><span class="line">  <span class="number">1</span>    <span class="literal">False</span></span><br><span class="line">  <span class="number">0</span>     <span class="literal">True</span></span><br><span class="line">  dtype: bool</span><br><span class="line"></span><br><span class="line">s[s.isin([<span class="number">2</span>, <span class="number">4</span>, <span class="number">6</span>])]  </span><br><span class="line">: <span class="number">2</span>    <span class="number">2</span></span><br><span class="line">  <span class="number">0</span>    <span class="number">4</span></span><br><span class="line">  dtype: int64</span><br></pre></td></tr></table></figure>
+
+<h2 id="where"><a href="#where" class="headerlink" title="where"></a>where</h2><h2 id="split-strip"><a href="#split-strip" class="headerlink" title="split, strip"></a>split, strip</h2><p><strong>복습시간</strong> 12시 ~ 1시 30분 / 총 1시간 30분</p>
+<p><a id = '18th'></a></p>
+<h1 id="2019년-5월-30일-목요일-18th"><a href="#2019년-5월-30일-목요일-18th" class="headerlink" title="2019년 5월 30일 목요일 18th"></a>2019년 5월 30일 목요일 18th</h1><h2 id="기초통계-분석시-그래프-그리는-3가지"><a href="#기초통계-분석시-그래프-그리는-3가지" class="headerlink" title="기초통계 분석시 그래프 그리는 3가지"></a>기초통계 분석시 그래프 그리는 3가지</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1. boxplot</span><br><span class="line">2. pairplot</span><br><span class="line">3. heatmap</span><br></pre></td></tr></table></figure>
+
+<h3 id="boxplot"><a href="#boxplot" class="headerlink" title="boxplot"></a>boxplot</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</span><br><span class="line"></span><br><span class="line">tips = sns.load_dataset(<span class="string">'tips'</span>)</span><br><span class="line">tips.boxplot()  <span class="comment"># tips Dataframe의 attribute로 내장하고 있음</span></span><br><span class="line"><span class="comment"># or</span></span><br><span class="line">pd.plotting.boxplot(tips)</span><br></pre></td></tr></table></figure>
+
+<h3 id="pairplot"><a href="#pairplot" class="headerlink" title="pairplot"></a>pairplot</h3><blockquote>
+<p>짝을 이뤄 그리는 그래프</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">tips = sns.load_dataset(<span class="string">'tips'</span>)</span><br><span class="line">sns.pairplot(tips)  <span class="comment"># tips Dataframe의 attribute로 내장하고 있지 않다</span></span><br><span class="line">sns.pairplot(tips, hue=<span class="string">'sex'</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="heatmap"><a href="#heatmap" class="headerlink" title="heatmap"></a>heatmap</h3><blockquote>
+<p>상관 분석시 그리는 그래프</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</span><br><span class="line"></span><br><span class="line">tips = sns.load_dataset(<span class="string">'tips'</span>)</span><br><span class="line">sns.heatmap(tips.corr())</span><br><span class="line">sns.heatmap(tips.corr(), cbar = <span class="literal">False</span>, annot = <span class="literal">True</span>) <span class="comment"># 오른쪽 사이드바 제거, 평면에 상관계수 표시</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Dataframe은-Iterator-Generator-처럼-next연산을-할-수-있다"><a href="#Dataframe은-Iterator-Generator-처럼-next연산을-할-수-있다" class="headerlink" title="Dataframe은 Iterator/Generator 처럼 next연산을 할 수 있다"></a>Dataframe은 Iterator/Generator 처럼 next연산을 할 수 있다</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</span><br><span class="line"></span><br><span class="line">tips = sns.load_dataset(<span class="string">'tips'</span>)</span><br><span class="line">x = tips.items() <span class="comment"># or x = tips.iteritems()</span></span><br><span class="line">y = tips.iterrows()</span><br><span class="line">type(x)</span><br><span class="line">type(y)</span><br><span class="line">next(x)</span><br><span class="line">next(y)</span><br><span class="line">: generator</span><br><span class="line">  generator</span><br><span class="line">  (<span class="string">'total_bill'</span>,</span><br><span class="line">   <span class="number">0</span>      <span class="number">16.99</span></span><br><span class="line">   <span class="number">1</span>      <span class="number">10.34</span></span><br><span class="line">   <span class="number">2</span>      <span class="number">21.01</span></span><br><span class="line">   <span class="number">3</span>      <span class="number">23.68</span></span><br><span class="line">   <span class="number">4</span>      <span class="number">24.59</span></span><br><span class="line">   <span class="number">5</span>      <span class="number">25.29</span></span><br><span class="line">   (<span class="number">0</span>, total_bill     <span class="number">16.99</span></span><br><span class="line">   tip             <span class="number">1.01</span></span><br><span class="line">   sex           Female</span><br><span class="line">   smoker            No</span><br><span class="line">   day              Sun</span><br><span class="line">   time          Dinner</span><br><span class="line">   size               <span class="number">2</span></span><br><span class="line">   Name: <span class="number">0</span>, dtype: object)</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="Pandas-data-type-종류"><a href="#Pandas-data-type-종류" class="headerlink" title="Pandas data type 종류"></a>Pandas data type 종류</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1. 숫자      &#x3D;&gt; int64, float64</span><br><span class="line">2. 문자      &#x3D;&gt; object, category</span><br><span class="line">3. 시간&#x2F;날짜</span><br></pre></td></tr></table></figure>
+
+<p><strong>Dask</strong>는 메모리의 제한으로 dataframe을 만들 수 없는 경우 도움을 줄 수 있는 패키지 이다. 파이썬으로 작성한 작업을 병렬화 할 수 있다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">!dir</span><br><span class="line"></span><br><span class="line">: <span class="number">2019</span><span class="number">-05</span><span class="number">-25</span>  오후 <span class="number">10</span>:<span class="number">01</span>             <span class="number">4</span>,<span class="number">173</span> pandas.ipynb</span><br><span class="line">  <span class="number">2019</span><span class="number">-05</span><span class="number">-25</span>  오후 <span class="number">08</span>:<span class="number">49</span>           <span class="number">139</span>,<span class="number">785</span> pandas2.ipynb</span><br><span class="line">  <span class="number">2019</span><span class="number">-05</span><span class="number">-26</span>  오후 <span class="number">02</span>:<span class="number">51</span>           <span class="number">220</span>,<span class="number">247</span> pandas3.ipynb</span><br><span class="line">  <span class="number">2019</span><span class="number">-05</span><span class="number">-27</span>  오후 <span class="number">09</span>:<span class="number">18</span>           <span class="number">749</span>,<span class="number">763</span> pandas4.ipynb</span><br><span class="line"></span><br><span class="line">----------------------------------------------------------</span><br><span class="line"><span class="comment"># 오늘 받은 패키지</span></span><br><span class="line"></span><br><span class="line">!pip install vincent</span><br><span class="line">!pip install -q pdvega <span class="comment"># -q 옵션은 설치시 나오는 메시지 생략</span></span><br><span class="line">                       <span class="comment"># -U 옵션은 최신 버전이 아닐 경우 업데이트</span></span><br></pre></td></tr></table></figure>
+<p><strong>Jupyter Tip1</strong> jupyter에서 !(느낌표) 뒤에 cmd에서 작동하는 명령어를 치면 작동한다</p>
+<br>
+
+<p><strong>pdvega</strong> <br></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pdvega</span><br><span class="line"></span><br><span class="line">s = tips.groupby(<span class="string">'smoker'</span>)</span><br><span class="line">s.vgplot.bar()</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://user-images.githubusercontent.com/33630505/58626155-11545b80-830f-11e9-8744-da3eb42a2161.JPG" alt="vgplot"></p>
+<h2 id="Aggregation-analysis-집합-분석"><a href="#Aggregation-analysis-집합-분석" class="headerlink" title="Aggregation analysis (집합 분석)"></a>Aggregation analysis (집합 분석)</h2><h3 id="Groupby의-내부적-구현-순서"><a href="#Groupby의-내부적-구현-순서" class="headerlink" title="Groupby의 내부적 구현 순서"></a>Groupby의 내부적 구현 순서</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1. iterrow 순회</span><br><span class="line">2. split        &#x3D;&gt; groupby</span><br><span class="line">3. apply        &#x3D;&gt; mean, max ... (통계적으로 대표할 수 있는 값 설정)</span><br><span class="line">4. combine      &#x3D;&gt; 결과 묶기</span><br></pre></td></tr></table></figure>
+
+<h2 id="Group-3총사"><a href="#Group-3총사" class="headerlink" title="Group 3총사"></a>Group 3총사</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1. groupby</span><br><span class="line">2. pivot table</span><br><span class="line">3. crosstab (pd로 접근)</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-pivot-table"><a href="#2-pivot-table" class="headerlink" title="2. pivot table"></a>2. pivot table</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</span><br><span class="line"></span><br><span class="line">tips = sns.load_dataset(<span class="string">'tips'</span>)</span><br><span class="line">tips.pivot_table(index=<span class="string">'smoker'</span>, columns = <span class="string">'sex'</span>, aggfunc = np.sum, margins = <span class="literal">True</span>)</span><br><span class="line"><span class="comment"># margin은 부분합을 보여줌</span></span><br><span class="line"></span><br><span class="line">:  	size	                tip	                total_bill</span><br><span class="line">sex	Male	Female	All	Male	Female	All	Male	Female	All</span><br><span class="line">smoker									</span><br><span class="line">Yes	<span class="number">150</span>	<span class="number">74</span>	<span class="number">224</span>	<span class="number">183.07</span>	<span class="number">96.74</span>	<span class="number">279.81</span>	<span class="number">1337.07</span>	<span class="number">593.27</span>	<span class="number">1930.34</span></span><br><span class="line">No	<span class="number">263</span>	<span class="number">140</span>	<span class="number">403</span>	<span class="number">302.00</span>	<span class="number">149.77</span>	<span class="number">451.77</span>	<span class="number">1919.75</span>	<span class="number">977.68</span>	<span class="number">2897.43</span></span><br><span class="line">All	<span class="number">413</span>	<span class="number">214</span>	<span class="number">627</span>	<span class="number">485.07</span>	<span class="number">246.51</span>	<span class="number">731.58</span>	<span class="number">3256.82</span>	<span class="number">1570.95</span>	<span class="number">4827.77</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-crosstab"><a href="#3-crosstab" class="headerlink" title="3. crosstab"></a>3. crosstab</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</span><br><span class="line"></span><br><span class="line">tips = sns.load_dataset(<span class="string">'tips'</span>)</span><br><span class="line">a = pd.crosstab(tips.smoker, tips.sex, tips.tip, aggfunc = np.max)</span><br><span class="line">a.index</span><br><span class="line"></span><br><span class="line"><span class="comment"># smoker가 index, sex가 column, tip이 value, aggfunc는 value의 대푯값</span></span><br><span class="line"></span><br><span class="line">:</span><br><span class="line">sex	Male	Female</span><br><span class="line">smoker		</span><br><span class="line">Yes	<span class="number">10.0</span>	<span class="number">6.5</span></span><br><span class="line">No	<span class="number">9.0</span>	<span class="number">5.2</span></span><br><span class="line"></span><br><span class="line">CategoricalIndex([<span class="string">'Yes'</span>, <span class="string">'No'</span>], categories=[<span class="string">'Yes'</span>, <span class="string">'No'</span>], ordered=<span class="literal">False</span>, name=<span class="string">'smoker'</span>, dtype=<span class="string">'category'</span>)</span><br><span class="line"></span><br><span class="line">b = pd.crosstab(tips.smoker,[tips.sex,tips.time],tips.tip,aggfunc=np.max)</span><br><span class="line">b.index</span><br><span class="line"><span class="comment"># multi columns</span></span><br><span class="line"></span><br><span class="line">:</span><br><span class="line">sex	Male	        Female</span><br><span class="line">time	Lunch	Dinner	Lunch	Dinner</span><br><span class="line">smoker				</span><br><span class="line">Yes	<span class="number">5.0</span>	<span class="number">10.0</span>	<span class="number">5.00</span>	<span class="number">6.5</span></span><br><span class="line">No	<span class="number">6.7</span>	<span class="number">9.0</span>	<span class="number">5.17</span>	<span class="number">5.2</span></span><br><span class="line"></span><br><span class="line">CategoricalIndex([<span class="string">'Yes'</span>, <span class="string">'No'</span>], categories=[<span class="string">'Yes'</span>, <span class="string">'No'</span>], ordered=<span class="literal">False</span>, name=<span class="string">'smoker'</span>, dtype=<span class="string">'category'</span>)</span><br><span class="line"></span><br><span class="line">c = pd.crosstab([tips.smoker,tips.sex],tips.time,tips.tip,aggfunc=np.max)</span><br><span class="line">c.index</span><br><span class="line"></span><br><span class="line">: multi index</span><br><span class="line">        time	Lunch	Dinner</span><br><span class="line">smoker	sex		</span><br><span class="line">Yes	Male	<span class="number">5.00</span>	<span class="number">10.0</span></span><br><span class="line">        Female	<span class="number">5.00</span>	<span class="number">6.5</span></span><br><span class="line">No	Male	<span class="number">6.70</span>	<span class="number">9.0</span></span><br><span class="line">        Female	<span class="number">5.17</span>	<span class="number">5.2</span></span><br><span class="line"></span><br><span class="line">MultiIndex(levels=[[<span class="string">'Yes'</span>, <span class="string">'No'</span>], [<span class="string">'Male'</span>, <span class="string">'Female'</span>]],</span><br><span class="line">           codes=[[<span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>], [<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>]],</span><br><span class="line">           names=[<span class="string">'smoker'</span>, <span class="string">'sex'</span>])</span><br><span class="line"></span><br><span class="line">d = pd.crosstab([tips.smoker,tips.sex],tips.time,tips.tip,aggfunc=np.max).index</span><br><span class="line">d.labels <span class="comment"># or d.codes</span></span><br><span class="line"></span><br><span class="line">: FrozenList([[<span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>], [<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>]])</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># sequnce 방식</span></span><br><span class="line">x.codes</span><br><span class="line">: FrozenList([[<span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>], [<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>]])</span><br><span class="line"></span><br><span class="line">x.labels[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># attribute 방식</span></span><br><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> namedtuple</span><br><span class="line">n = namedtuple(<span class="string">'Jung'</span>, [<span class="string">'x'</span>,<span class="string">'y'</span>])</span><br><span class="line">a = n(<span class="number">1</span>,<span class="number">2</span>)</span><br><span class="line">a</span><br><span class="line">: Jung(x=<span class="number">1</span>, y=<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line">a.x</span><br><span class="line">a.y</span><br><span class="line">: <span class="number">1</span></span><br><span class="line">  <span class="number">2</span></span><br></pre></td></tr></table></figure>
+<p><strong>Pandas Tip1</strong> 데이터 형태가 []를 포함하면 sequence 방식 , xx = yy 가 있으면 attribute 방식</p>
+<h2 id="reindex-amp-resetindex"><a href="#reindex-amp-resetindex" class="headerlink" title="reindex &amp; resetindex"></a>reindex &amp; resetindex</h2><blockquote>
+<p>reindex는 수동으로 index변경, resetindex는 0부터 자동으로 index 변경</p>
+</blockquote>
+<h3 id="resetindex"><a href="#resetindex" class="headerlink" title="resetindex"></a>resetindex</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</span><br><span class="line"></span><br><span class="line">tips = sns.load_dataset(<span class="string">'tips'</span>)</span><br><span class="line">n = tips[tips.sex == <span class="string">'Male'</span>].loc[:<span class="number">15</span>] <span class="comment"># 맨처음 index부터 15 index까지 행 뽑기</span></span><br><span class="line">n.reset_index(drop=<span class="literal">True</span>)  <span class="comment"># 기존 index 버리고 0부터 새로 생성</span></span><br><span class="line"></span><br><span class="line">: 	total_bill	tip	sex	smoker	day	time	size</span><br><span class="line"><span class="number">0</span>	  <span class="number">10.34</span>	        <span class="number">1.66</span>	Male	No	Sun	Dinner	  <span class="number">3</span></span><br><span class="line"><span class="number">1</span>	  <span class="number">21.01</span>	        <span class="number">3.50</span>	Male	No	Sun	Dinner	  <span class="number">3</span></span><br><span class="line"><span class="number">2</span>	  <span class="number">23.68</span>	        <span class="number">3.31</span>	Male	No	Sun	Dinner	  <span class="number">2</span></span><br><span class="line"><span class="number">3</span>	  <span class="number">25.29</span>	        <span class="number">4.71</span>	Male	No	Sun	Dinner	  <span class="number">4</span></span><br><span class="line"><span class="number">4</span>	  <span class="number">8.77</span>	        <span class="number">2.00</span>	Male	No	Sun	Dinner	  <span class="number">2</span></span><br><span class="line"><span class="number">5</span>	  <span class="number">26.88</span>	        <span class="number">3.12</span>	Male	No	Sun	Dinner	  <span class="number">4</span></span><br><span class="line"><span class="number">6</span>	  <span class="number">15.04</span>	        <span class="number">1.96</span>	Male	No	Sun	Dinner	  <span class="number">2</span></span><br><span class="line"><span class="number">7</span>	  <span class="number">14.78</span>	        <span class="number">3.23</span>	Male	No	Sun	Dinner	  <span class="number">2</span></span><br><span class="line"><span class="number">8</span>	  <span class="number">10.27</span>	        <span class="number">1.71</span>	Male	No	Sun	Dinner	  <span class="number">2</span></span><br><span class="line"><span class="number">9</span>	  <span class="number">15.42</span>	        <span class="number">1.57</span>	Male	No	Sun	Dinner	  <span class="number">2</span></span><br><span class="line"><span class="number">10</span>	  <span class="number">18.43</span>	        <span class="number">3.00</span>	Male	No	Sun	Dinner	  <span class="number">4</span></span><br><span class="line"><span class="number">11</span>	  <span class="number">21.58</span>	        <span class="number">3.92</span>	Male	No	Sun	Dinner	  <span class="number">2</span></span><br><span class="line"></span><br><span class="line">n.reset_index() <span class="comment"># 기존의 index 삭제 X</span></span><br><span class="line"></span><br><span class="line">:     index	total_bill	tip	sex	smoker	day	time	size</span><br><span class="line"><span class="number">0</span>	<span class="number">1</span>	<span class="number">10.34</span>	        <span class="number">1.66</span>	Male	No	Sun	Dinner	  <span class="number">3</span></span><br><span class="line"><span class="number">1</span>	<span class="number">2</span>	<span class="number">21.01</span>	        <span class="number">3.50</span>	Male	No	Sun	Dinner	  <span class="number">3</span></span><br><span class="line"><span class="number">2</span>	<span class="number">3</span>	<span class="number">23.68</span>	        <span class="number">3.31</span>	Male	No	Sun	Dinner	  <span class="number">2</span></span><br><span class="line"><span class="number">3</span>	<span class="number">5</span>	<span class="number">25.29</span>	        <span class="number">4.71</span>	Male	No	Sun	Dinner	  <span class="number">4</span></span><br><span class="line"><span class="number">4</span>	<span class="number">6</span>	<span class="number">8.77</span>	        <span class="number">2.00</span>	Male	No	Sun	Dinner	  <span class="number">2</span></span><br><span class="line"><span class="number">5</span>	<span class="number">7</span>	<span class="number">26.88</span>	        <span class="number">3.12</span>	Male	No	Sun	Dinner	  <span class="number">4</span></span><br><span class="line"><span class="number">6</span>	<span class="number">8</span>	<span class="number">15.04</span>	        <span class="number">1.96</span>	Male	No	Sun	Dinner	  <span class="number">2</span></span><br><span class="line"><span class="number">7</span>	<span class="number">9</span>	<span class="number">14.78</span>	        <span class="number">3.23</span>	Male	No	Sun	Dinner	  <span class="number">2</span></span><br><span class="line"><span class="number">8</span>	<span class="number">10</span>	<span class="number">10.27</span>	        <span class="number">1.71</span>	Male	No	Sun	Dinner	  <span class="number">2</span></span><br><span class="line"><span class="number">9</span>	<span class="number">12</span>	<span class="number">15.42</span>	        <span class="number">1.57</span>	Male	No	Sun	Dinner	  <span class="number">2</span></span><br><span class="line"><span class="number">10</span>	<span class="number">13</span>	<span class="number">18.43</span>	        <span class="number">3.00</span>	Male	No	Sun	Dinner	  <span class="number">4</span></span><br><span class="line"><span class="number">11</span>	<span class="number">15</span>	<span class="number">21.58</span>	        <span class="number">3.92</span>	Male	No	Sun	Dinner	  <span class="number">2</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="행-열-위치-변환하기"><a href="#행-열-위치-변환하기" class="headerlink" title="행, 열 위치 변환하기"></a>행, 열 위치 변환하기</h2><h3 id="기준-데이터"><a href="#기준-데이터" class="headerlink" title="기준 데이터"></a>기준 데이터</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">tips.groupby([<span class="string">'sex'</span>,<span class="string">'smoker'</span>]).mean()[[<span class="string">'tip'</span>]]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">		tip</span><br><span class="line">sex	smoker</span><br><span class="line">Male	Yes	<span class="number">3.051167</span></span><br><span class="line">        No	<span class="number">3.113402</span></span><br><span class="line">Female	Yes	<span class="number">2.931515</span></span><br><span class="line">        No	<span class="number">2.773519</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="stack"><a href="#stack" class="headerlink" title="stack"></a>stack</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">tips.groupby([<span class="string">'sex'</span>,<span class="string">'smoker'</span>]).mean()[[<span class="string">'tip'</span>]].stack()</span><br><span class="line"></span><br><span class="line">sex     smoker     </span><br><span class="line">Male    Yes     tip    <span class="number">3.051167</span></span><br><span class="line">        No      tip    <span class="number">3.113402</span></span><br><span class="line">Female  Yes     tip    <span class="number">2.931515</span></span><br><span class="line">        No      tip    <span class="number">2.773519</span></span><br><span class="line"></span><br><span class="line">dtype: float64</span><br><span class="line"><span class="comment"># 1차원으로 바뀜</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="unstack"><a href="#unstack" class="headerlink" title="unstack"></a>unstack</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">tips.groupby([<span class="string">'sex'</span>,<span class="string">'smoker'</span>]).mean()[[<span class="string">'tip'</span>]].unstack()</span><br><span class="line"></span><br><span class="line">	tip</span><br><span class="line">smoker	Yes	        No</span><br><span class="line">sex		</span><br><span class="line">Male	<span class="number">3.051167</span>	<span class="number">3.113402</span></span><br><span class="line">Female	<span class="number">2.931515</span>	<span class="number">2.773519</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Column이-2개-이상일-때-그래프"><a href="#Column이-2개-이상일-때-그래프" class="headerlink" title="Column이 2개 이상일 때 그래프"></a>Column이 2개 이상일 때 그래프</h3><h4 id="Stacked-True-Column값을-쌓는다"><a href="#Stacked-True-Column값을-쌓는다" class="headerlink" title="Stacked = True (Column값을 쌓는다)"></a>Stacked = True (Column값을 쌓는다)</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tips.groupby([<span class="string">'day'</span>,<span class="string">'sex'</span>]).mean()[[<span class="string">'tip'</span>]].unstack().plot.bar(stacked=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
+<p><img src="https://user-images.githubusercontent.com/33630505/58628687-5f6c5d80-8315-11e9-9c14-5bc64e11af28.JPG" alt="stacked_True"></p>
+<h4 id="unstack-0-index와-열의-조합"><a href="#unstack-0-index와-열의-조합" class="headerlink" title="unstack(0) (index와 열의 조합)"></a>unstack(0) (index와 열의 조합)</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tips.groupby([<span class="string">'day'</span>,<span class="string">'sex'</span>]).mean()[[<span class="string">'tip'</span>,<span class="string">'total_bill'</span>]].unstack(<span class="number">0</span>).plot.bar(stacked=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
+<p><img src="https://user-images.githubusercontent.com/33630505/58629825-79f40600-8318-11e9-9a54-a760d7049719.JPG" alt="zero"></p>
+<h4 id="Stacked-False-Column값을-쌓지-않는다"><a href="#Stacked-False-Column값을-쌓지-않는다" class="headerlink" title="Stacked = False (Column값을 쌓지 않는다)"></a>Stacked = False (Column값을 쌓지 않는다)</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tips.groupby([<span class="string">'day'</span>,<span class="string">'sex'</span>]).mean()[[<span class="string">'tip'</span>]].unstack().plot.bar(stacked=<span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
+<p><img src="https://user-images.githubusercontent.com/33630505/58628716-714e0080-8315-11e9-812d-006a2a4efea9.JPG" alt="stacked_False"></p>
+<h4 id="unstack-1-header와-열의-조합"><a href="#unstack-1-header와-열의-조합" class="headerlink" title="unstack(1) (header와 열의 조합)"></a>unstack(1) (header와 열의 조합)</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tips.groupby([<span class="string">'day'</span>,<span class="string">'sex'</span>]).mean()[[<span class="string">'tip'</span>,<span class="string">'total_bill'</span>]].unstack(<span class="number">1</span>).plot.bar(stacked=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://user-images.githubusercontent.com/33630505/58629826-79f40600-8318-11e9-81a2-e408173faa35.JPG" alt="one"></p>
+<p><strong>sci</strong> Stack은 Column을 Index로 바꿔주고, Unstack은 Index를 Column으로 바꿔준다</p>
+<p><strong>복습시간</strong> 18시 13분 ~ 20시 21분/ 총 2시간 8분</p>
+<p><a id = '19th'></a></p>
+<h1 id="2019년-5월-30일-금요일-19th"><a href="#2019년-5월-30일-금요일-19th" class="headerlink" title="2019년 5월 30일 금요일 19th"></a>2019년 5월 30일 금요일 19th</h1><h2 id="Data-Visualization"><a href="#Data-Visualization" class="headerlink" title="Data Visualization"></a>Data Visualization</h2><blockquote>
+<p>문자나, 숫자 보다 그림으로 혹은 그래프로 시각적인 정보가 사람에게는 더 명확하고 효율적으로 전달 되기 때문에 데이터 분석 결과를 시각화 할 수 있어야 한다</p>
+</blockquote>
+<h3 id="시각화-라이브러리"><a href="#시각화-라이브러리" class="headerlink" title="시각화 라이브러리"></a>시각화 라이브러리</h3><p><img src="https://user-images.githubusercontent.com/33630505/58707963-5ea8f980-83f1-11e9-8a8e-33d77621fc9d.JPG" alt="lib"></p>
+<h3 id="Python-시각화-라이브러리-분류"><a href="#Python-시각화-라이브러리-분류" class="headerlink" title="Python 시각화 라이브러리 분류"></a>Python 시각화 라이브러리 분류</h3><p><img src="https://user-images.githubusercontent.com/33630505/58707964-6072bd00-83f1-11e9-99ab-3f366ebac47e.JPG" alt="pylib"></p>
+<blockquote>
+<p>Costumize하려면 Matplotlib을 사용해야 한다</p>
+</blockquote>
+<p><strong>matplotlib, seaborn</strong> matplotlib는 python, numpy format으로 데이터를 처리하고 seaborn은 pandas format으로 데이터를 처리한다. .value는 pandas 데이터 형태를 numpy format으로 바꿔준다</p>
+<h2 id="Matplotlib"><a href="#Matplotlib" class="headerlink" title="Matplotlib"></a>Matplotlib</h2><ol>
+<li>pyplot</li>
+<li>pylab</li>
+</ol>
+<blockquote>
+<p>이제 pylab은 쓰지 않는다</p>
+</blockquote>
+<h3 id="구성요소"><a href="#구성요소" class="headerlink" title="구성요소"></a>구성요소</h3><p><img src="https://user-images.githubusercontent.com/33630505/58708062-ab8cd000-83f1-11e9-842e-c69ea2654837.JPG" alt="structure"></p>
+<p><img src="https://user-images.githubusercontent.com/33630505/58708348-8187dd80-83f2-11e9-96df-29952d1ff993.JPG" alt="graph"></p>
+<h3 id="그래프-커스터마이징-하기"><a href="#그래프-커스터마이징-하기" class="headerlink" title="그래프 커스터마이징 하기"></a>그래프 커스터마이징 하기</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line"><span class="comment"># canvas, figure, axes는 생략하면 자동으로 생성해서 그래프를 그려준다</span></span><br><span class="line"><span class="comment"># 단 생략하지 않으면 커스텀 할 수 있다</span></span><br><span class="line"></span><br><span class="line">plt.figure(figsize=(<span class="number">10</span>,<span class="number">5</span>), facecolor=<span class="string">'yellow'</span>)    </span><br><span class="line">plt.axes(xlim=(<span class="number">0</span>,<span class="number">10</span>),ylim=(<span class="number">0</span>,<span class="number">10</span>))  <span class="comment"># xlim,ylim은 최대 범위를 지정</span></span><br><span class="line">plt.title(<span class="string">'Title'</span>)</span><br><span class="line">plt.xlabel(<span class="string">'Time'</span>)</span><br><span class="line">plt.ylabel(<span class="string">'Rate'</span>)</span><br><span class="line">plt.grid(axis=<span class="string">'y'</span>)</span><br><span class="line">plt.plot([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>],[<span class="number">2</span>,<span class="number">0</span>,<span class="number">4</span>,<span class="number">7</span>,<span class="number">3</span>,<span class="number">10</span>], color=<span class="string">'black'</span>, marker=<span class="string">'o'</span>)</span><br></pre></td></tr></table></figure>
+<p><img src="https://user-images.githubusercontent.com/33630505/58708975-117a5700-83f4-11e9-9978-19420df353c3.JPG" alt="plotgraph"></p>
+<h3 id="matplotlib에서-제공해주는-스타일"><a href="#matplotlib에서-제공해주는-스타일" class="headerlink" title="matplotlib에서 제공해주는 스타일"></a>matplotlib에서 제공해주는 스타일</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">plt.style.available</span><br><span class="line"></span><br><span class="line">[<span class="string">'bmh'</span>,</span><br><span class="line"> <span class="string">'classic'</span>,</span><br><span class="line"> <span class="string">'dark_background'</span>,</span><br><span class="line"> <span class="string">'fast'</span>,</span><br><span class="line"> <span class="string">'fivethirtyeight'</span>,</span><br><span class="line"> <span class="string">'ggplot'</span>,</span><br><span class="line"> <span class="string">'grayscale'</span>,</span><br><span class="line"> <span class="string">'seaborn-bright'</span>,</span><br><span class="line"> <span class="string">'seaborn-colorblind'</span>,</span><br><span class="line"> <span class="string">'seaborn-dark-palette'</span>,</span><br><span class="line"> <span class="string">'seaborn-dark'</span>,</span><br><span class="line"> <span class="string">'seaborn-darkgrid'</span>,</span><br><span class="line"> <span class="string">'seaborn-deep'</span>,</span><br><span class="line"> <span class="string">'seaborn-muted'</span>,</span><br><span class="line"> <span class="string">'seaborn-notebook'</span>,</span><br><span class="line"> <span class="string">'seaborn-paper'</span>,</span><br><span class="line"> <span class="string">'seaborn-pastel'</span>,</span><br><span class="line"> <span class="string">'seaborn-poster'</span>,</span><br><span class="line"> <span class="string">'seaborn-talk'</span>,</span><br><span class="line"> <span class="string">'seaborn-ticks'</span>,</span><br><span class="line"> <span class="string">'seaborn-white'</span>,</span><br><span class="line"> <span class="string">'seaborn-whitegrid'</span>,</span><br><span class="line"> <span class="string">'seaborn'</span>,</span><br><span class="line"> <span class="string">'Solarize_Light2'</span>,</span><br><span class="line"> <span class="string">'tableau-colorblind10'</span>,</span><br><span class="line"> <span class="string">'_classic_test'</span>]</span><br></pre></td></tr></table></figure>
+
+<p><strong>예시</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</span><br><span class="line"></span><br><span class="line">iris = sns.load_dataset(<span class="string">'iris'</span>)</span><br><span class="line">plt.style.use(<span class="string">'ggplot'</span>)</span><br><span class="line">sns.pairplot(iris, hue=<span class="string">'species'</span>)</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://user-images.githubusercontent.com/33630505/58709958-366fc980-83f6-11e9-8d80-2c457a90c1fb.JPG" alt="ggplot"></p>
+<p><strong>복습시간</strong> 22시 ~ 22시 40분 / 총 40분</p>
+<p><a id = '20th'></a></p>
+<h1 id="2019년-6월-3일-월요일-20th"><a href="#2019년-6월-3일-월요일-20th" class="headerlink" title="2019년 6월 3일 월요일 20th"></a>2019년 6월 3일 월요일 20th</h1><h2 id="Folium"><a href="#Folium" class="headerlink" title="Folium"></a>Folium</h2><blockquote>
+<p>지도 그리는 python 패키지 또는 라이브러리. 분석에 필요한 단계구분도를 하기 위해서 사용한다.<br>Google map에서 갖고옴.</p>
+</blockquote>
+<h3 id="Folium-설치"><a href="#Folium-설치" class="headerlink" title="Folium 설치"></a>Folium 설치</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install folium</span><br></pre></td></tr></table></figure>
+
+<h3 id="Folium-Map"><a href="#Folium-Map" class="headerlink" title="Folium Map"></a>Folium Map</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> folium</span><br><span class="line"></span><br><span class="line">mymap = folium.Map(location=[<span class="number">37.332268</span>, <span class="number">127.180961</span>], zoom_start = <span class="number">11</span>, tiles=<span class="string">'Stamen Toner'</span>)</span><br><span class="line">folium.Marker([<span class="number">37.332268</span>, <span class="number">127.180961</span>], popup=<span class="string">'&lt;i&gt;Ji hyeok home&lt;/i&gt;'</span>,</span><br><span class="line">icon=folium.Icon(icon=<span class="string">'cloud'</span>)).add_to(mymap)</span><br><span class="line">folium.Marker([<span class="number">37.543148</span>,<span class="number">126.949866</span>], popup=<span class="string">'&lt;b&gt;My location&lt;/b&gt;'</span>).add_to(mymap)</span><br><span class="line"></span><br><span class="line">folium.CircleMarker(</span><br><span class="line">location=[<span class="number">37.332268</span>, <span class="number">127.180961</span>],</span><br><span class="line">radius=<span class="number">80</span>,</span><br><span class="line">popup=<span class="string">'My area'</span>,</span><br><span class="line">color=<span class="string">'#3186cc'</span>,</span><br><span class="line">fill=<span class="literal">True</span>,</span><br><span class="line">fill_color=<span class="string">'#3186cc'</span>   </span><br><span class="line">).add_to(mymap)</span><br><span class="line"></span><br><span class="line">mymap.add_child(folium.LatLngPopup()) <span class="comment"># 지도위 클릭시 위도, 경도 보여줌</span></span><br><span class="line">mymap.add_child(folium.ClickForMarker(popup=<span class="string">"ClickPoint"</span>)) <span class="comment"># 지도위 클릭시 클릭위치에 표시됨</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://user-images.githubusercontent.com/33630505/58799253-cce2fb80-863f-11e9-8f2a-fac434b50f71.JPG" alt="map"></p>
+<h2 id="file-불러오기"><a href="#file-불러오기" class="headerlink" title="file 불러오기"></a>file 불러오기</h2><p>보통 pandas로 파일을 불러오지만<br><br>파일 구성이 복잡하여 불러오지 못하는 파일은 open으로 불러와야 한다<br><br>open으로 불러온 데이터는 text(객체의 의미를 갖지 못함)형태로 불러오고 <br><br>이 text를 csv나 json형태로 불러와 의미 부여해줘야 한다 (csv, json만 가능) <br><br>나머지는 pickle로?</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">from</span> pprint <span class="keyword">import</span> pprint</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> open(<span class="string">'seoul_municipalities_geo_simple.json'</span>, encoding=<span class="string">'utf-8'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    x = json.load(f)</span><br><span class="line"></span><br><span class="line">pprint(x)</span><br><span class="line">len(x)</span><br><span class="line">len(x[<span class="string">'features'</span>])</span><br><span class="line">x[<span class="string">'features'</span>][<span class="number">0</span>][<span class="string">'properties'</span>][<span class="string">'name'</span>]</span><br><span class="line">x[<span class="string">'features'</span>][<span class="number">0</span>][<span class="string">'geometry'</span>][<span class="string">'type'</span>]</span><br><span class="line">: &#123;<span class="string">'features'</span>: [&#123;<span class="string">'geometry'</span>: &#123;<span class="string">'coordinates'</span>: [[[<span class="number">127.11519584981606</span>,</span><br><span class="line">                                              <span class="number">37.557533180704915</span>],</span><br><span class="line">                                             [<span class="number">127.11879551821994</span>,</span><br><span class="line">                                              <span class="number">37.557222485451305</span>],</span><br><span class="line">                                             [<span class="number">127.12146867175024</span>,</span><br><span class="line">                                              <span class="number">37.55986003393365</span>],</span><br><span class="line">                                             [<span class="number">127.12435254630417</span>,</span><br><span class="line">                                              <span class="number">37.56144246249796</span>]</span><br><span class="line">  <span class="number">2</span></span><br><span class="line">  <span class="number">25</span></span><br><span class="line">  <span class="string">'강동구'</span></span><br><span class="line">  <span class="string">'Polygon'</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="단계구분도"><a href="#단계구분도" class="headerlink" title="단계구분도"></a>단계구분도</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> json, folium</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line">seoul_geo_json = open(<span class="string">'seoul_municipalities_geo_simple.json'</span>,encoding=<span class="string">'utf-8'</span>)</span><br><span class="line">seoul_geo_json = json.load(seoul_geo_json)</span><br><span class="line"></span><br><span class="line">data = pd.DataFrame.from_dict(seoul_geo_json[<span class="string">'features'</span>]).properties</span><br><span class="line"></span><br><span class="line">keys = data[<span class="number">0</span>].keys()</span><br><span class="line"></span><br><span class="line">data_list = &#123;&#125;</span><br><span class="line"><span class="keyword">for</span> key <span class="keyword">in</span> keys:</span><br><span class="line">    temp_list = []</span><br><span class="line">    <span class="keyword">for</span> inst <span class="keyword">in</span> data:</span><br><span class="line">        temp_list.append(inst[key])</span><br><span class="line">    data_list[key] = temp_list</span><br><span class="line"></span><br><span class="line">seoul_df = pd.DataFrame.from_dict(data_list)    </span><br><span class="line">seoul_df.to_csv(<span class="string">'seoul_map.csv'</span>)</span><br><span class="line"></span><br><span class="line">seoul = folium.Map(location=[<span class="number">37.5665</span>, <span class="number">126.9780</span>], tiles=<span class="string">'Mapbox Bright'</span>)</span><br><span class="line">seoul_geo_df = pd.read_csv(<span class="string">'seoul_map.csv'</span>)</span><br><span class="line">seoul.choropleth(</span><br><span class="line">    geo_data=seoul_geo_json, <span class="comment"># json</span></span><br><span class="line">    name=<span class="string">'choropleth'</span>,</span><br><span class="line">    data=seoul_geo_df,  <span class="comment"># pandas</span></span><br><span class="line">    columns=[<span class="string">'name'</span>, <span class="string">'code'</span>],</span><br><span class="line">    key_on=<span class="string">'feature.properties.name'</span>, <span class="comment"># geo data와 pandas data 맞춰준다?</span></span><br><span class="line">    fill_color=<span class="string">'YlGn'</span>,</span><br><span class="line">    fill_opacity=<span class="number">0.7</span>,</span><br><span class="line">    line_opacity=<span class="number">0.2</span>,</span><br><span class="line">    legend_name=<span class="string">'population'</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">seoul</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://user-images.githubusercontent.com/33630505/58800748-9f984c80-8643-11e9-80aa-83ede9c45b0b.JPG" alt="seoul"></p>
+<h2 id="map-사용하여-특정-열-값-뽑아내기"><a href="#map-사용하여-특정-열-값-뽑아내기" class="headerlink" title="map 사용하여 특정 열 값 뽑아내기"></a>map 사용하여 특정 열 값 뽑아내기</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> json</span><br><span class="line"></span><br><span class="line">seoul_geo_json = open(<span class="string">'seoul_municipalities_geo_simple.json'</span>,encoding=<span class="string">'utf-8'</span>)</span><br><span class="line">seoul_geo_json = json.load(seoul_geo_json)</span><br><span class="line"></span><br><span class="line">data=pd.DataFrame.from_dict(seoul_geo_json[<span class="string">'features'</span>])</span><br><span class="line">t=pd.DataFrame.from_dict(data.properties)</span><br><span class="line"></span><br><span class="line">t</span><br><span class="line"></span><br><span class="line">: 	                                         properties</span><br><span class="line"><span class="number">0</span>	&#123;<span class="string">'code'</span>: <span class="string">'11250'</span>, <span class="string">'name'</span>: <span class="string">'강동구'</span>, <span class="string">'name_eng'</span>: <span class="string">'...</span></span><br><span class="line"><span class="string">1	&#123;'</span>code<span class="string">': '</span><span class="number">11240</span><span class="string">', '</span>name<span class="string">': '</span>송파구<span class="string">', '</span>name_eng<span class="string">': '</span>...</span><br><span class="line"><span class="number">2</span>	&#123;<span class="string">'code'</span>: <span class="string">'11230'</span>, <span class="string">'name'</span>: <span class="string">'강남구'</span>, <span class="string">'name_eng'</span>: <span class="string">'...</span></span><br><span class="line"><span class="string">3	&#123;'</span>code<span class="string">': '</span><span class="number">11220</span><span class="string">', '</span>name<span class="string">': '</span>서초구<span class="string">', '</span>name_eng<span class="string">': '</span>...</span><br><span class="line"><span class="number">4</span>	&#123;<span class="string">'code'</span>: <span class="string">'11210'</span>, <span class="string">'name'</span>: <span class="string">'관악구'</span>, <span class="string">'name_eng'</span>: <span class="string">'...</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">t.properties.map(lambda x:x['</span>name<span class="string">'])</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">:</span></span><br><span class="line"><span class="string">0      강동구</span></span><br><span class="line"><span class="string">1      송파구</span></span><br><span class="line"><span class="string">2      강남구</span></span><br><span class="line"><span class="string">3      서초구</span></span><br><span class="line"><span class="string">4      관악구</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="pandas-format으로-불러들이는-방법-3가지"><a href="#pandas-format으로-불러들이는-방법-3가지" class="headerlink" title="pandas format으로 불러들이는 방법 3가지"></a>pandas format으로 불러들이는 방법 3가지</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1. pd.read_csv</span><br><span class="line">2. pd.DataFrame</span><br><span class="line">3. pd.DataFrame.from_dict</span><br></pre></td></tr></table></figure>
+
+<p><span style='coloc:red'>※ 보충 필요 </span></p>
+<h2 id="Machine-Learning"><a href="#Machine-Learning" class="headerlink" title="Machine Learning"></a>Machine Learning</h2><h2 id="기계학습시-거치는-단계"><a href="#기계학습시-거치는-단계" class="headerlink" title="기계학습시 거치는 단계"></a>기계학습시 거치는 단계</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">1. 방법 (알고리즘)</span><br><span class="line">2. 하이퍼 파라미터</span><br><span class="line"></span><br><span class="line">컴퓨터에게 방법(알고리즘)을 알려주고 스스로 학습을 하고</span><br><span class="line">학습한 데이터를 기반으로 예측을 할때 비슷한걸 찾는다</span><br><span class="line">이때 기계학습에는 전부 숫자데이터로 하기 때문에 근처 숫자 값을</span><br><span class="line">찾아 예측하게 된다 (KNN 알고리즘)</span><br><span class="line"></span><br><span class="line">하이퍼 파라미터는 근처 값 몇개를 찾아보고 예측을 할지 정해주는 것이다</span><br><span class="line">하이퍼 파라미터를 몇개로 줘야 하는지는 성능이 좋은 것에 따라 지정해주면 된다</span><br><span class="line"></span><br><span class="line">그리고 알고리즘, 하이퍼 파라미터 둘다 컴퓨터가 알아서 성능 좋은걸로 선택하게 할 수도 있다</span><br></pre></td></tr></table></figure>
+
+<p><strong>KNN</strong> K-Nearest Neighbor 최근접 이웃 알고리즘</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</span><br><span class="line"><span class="keyword">from</span> sklearn.datasets <span class="keyword">import</span> load_iris</span><br><span class="line"><span class="keyword">from</span> sklearn.neighbors <span class="keyword">import</span> KNeighborsClassifier</span><br><span class="line"></span><br><span class="line">data = load_iris()</span><br><span class="line">print(data.DESCR) <span class="comment"># 데이터 이해를 위해 보는 것</span></span><br><span class="line"></span><br><span class="line">data_pd = pd.DataFrame(data.data, columns=data.feature_names) <span class="comment"># 인스턴스 방식</span></span><br><span class="line">data_target = pd.DataFrame(data.target, columns=[<span class="string">'target'</span>])</span><br><span class="line">iris = pd.concat([data_pd, data_target], axis = <span class="number">1</span>) <span class="comment"># data_pd + data_target 결합</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">knn = KNeighborsClassfier(<span class="number">3</span>) <span class="comment"># 근처 3개를 확인해라</span></span><br><span class="line">knn.fit(iris.iloc[:,:<span class="number">-1</span>], iris.iloc[:,<span class="number">-1</span>])</span><br><span class="line"></span><br><span class="line">: KNeighborsClassifier(algorithm=<span class="string">'auto'</span>, leaf_size=<span class="number">30</span>, metric=<span class="string">'minkowski'</span>,</span><br><span class="line">           metric_params=<span class="literal">None</span>, n_jobs=<span class="literal">None</span>, n_neighbors=<span class="number">3</span>, p=<span class="number">2</span>,</span><br><span class="line">           weights=<span class="string">'uniform'</span>)</span><br><span class="line"></span><br><span class="line">data.target_names</span><br><span class="line">knn.predict([[<span class="number">3</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">3</span>]])</span><br><span class="line">knn.predict_proba([[<span class="number">3</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">3</span>]])</span><br><span class="line"></span><br><span class="line">: array([<span class="string">'setosa'</span>, <span class="string">'versicolor'</span>, <span class="string">'virginica'</span>], dtype=<span class="string">'&lt;U10'</span>)</span><br><span class="line">  array([<span class="number">1</span>])  <span class="comment"># versicolor로 예측</span></span><br><span class="line">  array([[<span class="number">0.</span>        , <span class="number">0.66666667</span>, <span class="number">0.33333333</span>]])  <span class="comment"># 가까운 값이 versicolor 2개, virginica 1개가 있었음</span></span><br><span class="line"></span><br><span class="line">※ Bunch</span><br><span class="line"><span class="comment"># dictionary + attribute</span></span><br><span class="line"></span><br><span class="line">type(data)</span><br><span class="line">: sklearn.utils.Bunch</span><br><span class="line"></span><br><span class="line">data.data</span><br><span class="line">data[<span class="string">'data'</span>]</span><br><span class="line"><span class="comment"># 둘다 접근 가능한 데이터 타입</span></span><br><span class="line"></span><br><span class="line">dir(data)</span><br><span class="line">: [<span class="string">'DESCR'</span>, <span class="string">'data'</span>, <span class="string">'feature_names'</span>, <span class="string">'filename'</span>, <span class="string">'target'</span>, <span class="string">'target_names'</span>]</span><br></pre></td></tr></table></figure>
+
+
+<p>Folium 활용 : <a href="https://pythonhow.com/web-mapping-with-python-and-folium/" target="_blank" rel="noopener">pythonhow</a></p>
+<p><strong>복습시간</strong>   18시 30분 ~ 21시 / 2시간 30분</p>
+
+          
+        </div>
+        
+          <br>
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-12-29T12:24:01+09:00">
+  <a class='notlink'>
+    <i class="fas fa-clock" aria-hidden="true"></i>
+    <p>Dec 29, 2021</p>
+    <!-- __('post.updated') + ' ' +  -->
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/AI/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>AI</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Lecture/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>Lecture</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Pandas/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>Pandas</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Data-Analysis/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>Data Analysis</p></a></div>
+
+
+        
+      
+    </div>
+  </section>
+
+
+        
+
+        
+            <div class="prev-next">
+                
+                    <section class="prev">
+                        <span class="art-item-left">
+                            <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;prev</h6>
+                            <h4>
+                                <a href="/2019/04/29/AILecture_numpy/" rel="prev" title="AI 이노베이션 스퀘어 수업(기본반) - numpy">
+                                  
+                                      AI 이노베이션 스퀘어 수업(기본반) - numpy
+                                  
+                                </a>
+                            </h4>
+                            
+                                
+                                <h6 class="tags">
+                                    <a class="tag" href="/tags/AI/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> AI</a> <a class="tag" href="/tags/Lecture/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> Lecture</a> <a class="tag" href="/tags/Numpy/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> Numpy</a>
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
+                
+                    <section class="next">
+                        <span class="art-item-right" aria-hidden="true">
+                            <h6>next&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
+                            <h4>
+                                <a href="/2019/04/29/AILecture_machineLearning/" rel="prev" title="AI 이노베이션 스퀘어 수업(기본반) - machine learning">
+                                    
+                                        AI 이노베이션 스퀘어 수업(기본반) - machine learning
+                                    
+                                </a>
+                            </h4>
+                            
+                                
+                                <h6 class="tags">
+                                    <a class="tag" href="/tags/AI/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> AI</a> <a class="tag" href="/tags/Lecture/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> Lecture</a> <a class="tag" href="/tags/Machine-Learning/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> Machine Learning</a>
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
+            </div>
+        
+      </section>
+      <!-- Google AdSense -->
+      <!-- In post -->
+      <script data-ad-client="ca-pub-1288998211050792" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<!-- Google AdSense -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1288998211050792"
+     data-ad-slot="5437821794"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+    </article>
+  
+
+  
+    <!-- 显示推荐文章和评论 -->
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+  <script>
+    window.subData = {
+      title: 'AI 이노베이션 스퀘어 수업(기본반) - pandas',
+      tools: true
+    }
+  </script>
+
+
+  <div id="disqus_thread"></div>
+</div>
+<aside class='l_side'>
+  
+    
+    
+      
+        
+          <section class='widget blogger'>
+  <div class='content pure'>
+    
+      <div class='avatar'>
+        <img class='avatar' src='/jh.jpg'/>
+      </div>
+    
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="mailto:wlgur278@gmail.com"
+              class="social fas fa-envelope flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://github.com/Jungjihyuk"
+              class="social fab fa-github flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+      
+        
+      
+        
+          
+  <section class='widget toc-wrapper'>
+    <header class='pure'>
+  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Shortcuts</div>
+  
+    <!-- <div class='wrapper'><a class="s-toc rightBtn" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div> -->
+  
+</header>
+
+    <div class='content pure'>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Pandas"><span class="toc-text">Pandas</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#데이터-종류"><span class="toc-text">데이터 종류</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#데이터-타입-만드는-방법"><span class="toc-text">데이터 타입 만드는 방법</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Numpy-방식-structured-array"><span class="toc-text">Numpy 방식 (structured array)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Python-방식-namedtuple"><span class="toc-text">Python 방식 (namedtuple)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Pandas로-기초통계분석하기"><span class="toc-text">Pandas로 기초통계분석하기</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#첫번째-데이터-불러들이기"><span class="toc-text">[첫번째] 데이터 불러들이기</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Series-Vector-차이점"><span class="toc-text">Series , Vector 차이점</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#두번째-분석하고-그래프-그리기"><span class="toc-text">[두번째] 분석하고 그래프 그리기</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#분석하기전-5가지-확인-사항"><span class="toc-text">분석하기전 5가지 확인 사항</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#info-describe로-데이터의-숨겨진-의미-찾기"><span class="toc-text">info, describe로 데이터의 숨겨진 의미 찾기</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#data-도로교통공단-시도-시군구별-도로형태별-교통사고-2018-공공데이터"><span class="toc-text">data (도로교통공단_시도_시군구별_도로형태별_교통사고(2018) 공공데이터)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#info"><span class="toc-text">info</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#describe"><span class="toc-text">describe</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#head-tail-sample"><span class="toc-text">head, tail, sample</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#표준편차-표로-보기-boxplot"><span class="toc-text">표준편차 표로 보기 (boxplot)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#왜도-skewness-첨도-kurtosis"><span class="toc-text">왜도(skewness), 첨도(kurtosis)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#열-뽑는-4가지-방법"><span class="toc-text">열 뽑는 4가지 방법</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#행-뽑는-방법"><span class="toc-text">행 뽑는 방법</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#문제해결-그리고-예측"><span class="toc-text">문제해결 그리고 예측</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Exploratory-Data-Analysis"><span class="toc-text">Exploratory Data Analysis</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#nan값-제거"><span class="toc-text">nan값 제거</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Not-trusted"><span class="toc-text">Not trusted</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#페이지를-열기-위한-메모리가-충분하지-않음"><span class="toc-text">페이지를 열기 위한 메모리가 충분하지 않음</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#유니콘이-되려면…"><span class="toc-text">유니콘이 되려면…</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#그래프-그리기"><span class="toc-text">그래프 그리기</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#describe로-나오는-값들-그래프로-그리기"><span class="toc-text">describe로 나오는 값들 그래프로 그리기</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#정규분포가-되는지-확인하는-그래프-그리기"><span class="toc-text">정규분포가 되는지 확인하는 그래프 그리기</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#matplotlib-inline-amp-notebook"><span class="toc-text">matplotlib inline &amp; notebook</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#inline"><span class="toc-text">inline</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#notebook"><span class="toc-text">notebook</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#seaborn으로-그래프-이쁘게-그리기"><span class="toc-text">seaborn으로 그래프 이쁘게 그리기</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Header-name-바꾸기-전처리-과정중-일부"><span class="toc-text">Header name 바꾸기 (전처리 과정중 일부)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#짝을-이뤄-그래프-그리기"><span class="toc-text">짝을 이뤄 그래프 그리기</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Tidy-Data"><span class="toc-text">Tidy Data</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#상관성-체크하기-correlation"><span class="toc-text">상관성 체크하기  (correlation)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#문자열에-사용하는-것들"><span class="toc-text">문자열에 사용하는 것들</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Series에서-object-문자열-빈도수-체크하기"><span class="toc-text">Series에서 object(문자열) 빈도수 체크하기</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#nlargest-nsmallest-unique"><span class="toc-text">nlargest, nsmallest, unique</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#기초-통계-분석시-알아두면-좋은-원칙-및-정리"><span class="toc-text">기초 통계 분석시 알아두면 좋은 원칙 및 정리</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Indexing-amp-Slicing-Select-data"><span class="toc-text">Indexing &amp; Slicing (Select data)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MultiIndex"><span class="toc-text">MultiIndex</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#loc-iloc-lambda"><span class="toc-text">loc, iloc + lambda</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#columns"><span class="toc-text">columns</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#index"><span class="toc-text">index</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Intersection"><span class="toc-text">Intersection</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#새로운-연산자-만들기"><span class="toc-text">새로운 연산자 만들기</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#isin-predicate"><span class="toc-text">isin (predicate)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#where"><span class="toc-text">where</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#split-strip"><span class="toc-text">split, strip</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#기초통계-분석시-그래프-그리는-3가지"><span class="toc-text">기초통계 분석시 그래프 그리는 3가지</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#boxplot"><span class="toc-text">boxplot</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#pairplot"><span class="toc-text">pairplot</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#heatmap"><span class="toc-text">heatmap</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Dataframe은-Iterator-Generator-처럼-next연산을-할-수-있다"><span class="toc-text">Dataframe은 Iterator&#x2F;Generator 처럼 next연산을 할 수 있다</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Pandas-data-type-종류"><span class="toc-text">Pandas data type 종류</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Aggregation-analysis-집합-분석"><span class="toc-text">Aggregation analysis (집합 분석)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Groupby의-내부적-구현-순서"><span class="toc-text">Groupby의 내부적 구현 순서</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Group-3총사"><span class="toc-text">Group 3총사</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-pivot-table"><span class="toc-text">2. pivot table</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-crosstab"><span class="toc-text">3. crosstab</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#reindex-amp-resetindex"><span class="toc-text">reindex &amp; resetindex</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#resetindex"><span class="toc-text">resetindex</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#행-열-위치-변환하기"><span class="toc-text">행, 열 위치 변환하기</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#기준-데이터"><span class="toc-text">기준 데이터</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#stack"><span class="toc-text">stack</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#unstack"><span class="toc-text">unstack</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Column이-2개-이상일-때-그래프"><span class="toc-text">Column이 2개 이상일 때 그래프</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Stacked-True-Column값을-쌓는다"><span class="toc-text">Stacked &#x3D; True (Column값을 쌓는다)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#unstack-0-index와-열의-조합"><span class="toc-text">unstack(0) (index와 열의 조합)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Stacked-False-Column값을-쌓지-않는다"><span class="toc-text">Stacked &#x3D; False (Column값을 쌓지 않는다)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#unstack-1-header와-열의-조합"><span class="toc-text">unstack(1) (header와 열의 조합)</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Data-Visualization"><span class="toc-text">Data Visualization</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#시각화-라이브러리"><span class="toc-text">시각화 라이브러리</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Python-시각화-라이브러리-분류"><span class="toc-text">Python 시각화 라이브러리 분류</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Matplotlib"><span class="toc-text">Matplotlib</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#구성요소"><span class="toc-text">구성요소</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#그래프-커스터마이징-하기"><span class="toc-text">그래프 커스터마이징 하기</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#matplotlib에서-제공해주는-스타일"><span class="toc-text">matplotlib에서 제공해주는 스타일</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Folium"><span class="toc-text">Folium</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Folium-설치"><span class="toc-text">Folium 설치</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Folium-Map"><span class="toc-text">Folium Map</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#file-불러오기"><span class="toc-text">file 불러오기</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#단계구분도"><span class="toc-text">단계구분도</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#map-사용하여-특정-열-값-뽑아내기"><span class="toc-text">map 사용하여 특정 열 값 뽑아내기</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#pandas-format으로-불러들이는-방법-3가지"><span class="toc-text">pandas format으로 불러들이는 방법 3가지</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Machine-Learning"><span class="toc-text">Machine Learning</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#기계학습시-거치는-단계"><span class="toc-text">기계학습시 거치는 단계</span></a></li></ol>
+    </div>
+  </section>
+
+
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+      
+        
+      
+        
+      
+        
+          
+  <section class='widget category'>
+    <header class='pure'>
+  <div><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;category</div>
+  
+    <a class="rightBtn"
+    
+      rel="external nofollow noopener noreferrer"
+    
+    
+      target="_self"
+    
+    href="/categories/"
+    title="categories/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class='content pure'>
+      <ul class="entry">
+        
+          <li><a class="flat-box" title="/categories/AI/" href="/categories/AI/"><div class='name'>AI</div><div class='badge'>(10)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/AI/Data-Analysis/" href="/categories/AI/Data-Analysis/"><div class='name'>Data Analysis</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/AI/Deep-Learning/" href="/categories/AI/Deep-Learning/"><div class='name'>Deep Learning</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/AI/Machine-Learning/" href="/categories/AI/Machine-Learning/"><div class='name'>Machine Learning</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/AI/Natural-Language-Processing/" href="/categories/AI/Natural-Language-Processing/"><div class='name'>Natural Language Processing</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/AI/Numpy/" href="/categories/AI/Numpy/"><div class='name'>Numpy</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/AI/Pandas/" href="/categories/AI/Pandas/"><div class='name'>Pandas</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/AI/Python/" href="/categories/AI/Python/"><div class='name'>Python</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/Algorithm/" href="/categories/Algorithm/"><div class='name'>Algorithm</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/Algorithm/Arrays/" href="/categories/Algorithm/Arrays/"><div class='name'>Arrays</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/Data-Structure/" href="/categories/Data-Structure/"><div class='name'>Data Structure</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/English/" href="/categories/English/"><div class='name'>English</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/Git/" href="/categories/Git/"><div class='name'>Git</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/IT-Terms/" href="/categories/IT-Terms/"><div class='name'>IT Terms</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/JSP-Servlet/" href="/categories/JSP-Servlet/"><div class='name'>JSP & Servlet</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/Language/" href="/categories/Language/"><div class='name'>Language</div><div class='badge'>(8)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/Language/Java/" href="/categories/Language/Java/"><div class='name'>Java</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/Language/Markup-Language/" href="/categories/Language/Markup-Language/"><div class='name'>Markup Language</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/Language/Python/" href="/categories/Language/Python/"><div class='name'>Python</div><div class='badge'>(6)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/Web/" href="/categories/Web/"><div class='name'>Web</div><div class='badge'>(5)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/Web/Bootstrap4/" href="/categories/Web/Bootstrap4/"><div class='name'>Bootstrap4</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/Web/Django/" href="/categories/Web/Django/"><div class='name'>Django</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/Web/Flask/" href="/categories/Web/Flask/"><div class='name'>Flask</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/Web/Object-Model/" href="/categories/Web/Object-Model/"><div class='name'>Object Model</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/Web/Objectoriented/" href="/categories/Web/Objectoriented/"><div class='name'>Objectoriented</div><div class='badge'>(1)</div></a></li>
+        
+      </ul>
+    </div>
+  </section>
+
+
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+      
+        
+      
+        
+      
+        
+      
+        
+          
+  <section class='widget tagcloud'>
+    <header class='pure'>
+  <div><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Keywords</div>
+  
+    <a class="rightBtn"
+    
+      rel="external nofollow noopener noreferrer"
+    
+    
+      target="_self"
+    
+    href="/tags/"
+    title="tags/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class='content pure'>
+      <a href="/tags/AI/" style="font-size: 22px; color: #636363">AI</a> <a href="/tags/Algorithm/" style="font-size: 14px; color: #999">Algorithm</a> <a href="/tags/CodeSignal/" style="font-size: 16px; color: #8b8b8b">CodeSignal</a> <a href="/tags/CodeSignal2/" style="font-size: 14px; color: #999">CodeSignal2</a> <a href="/tags/Data-Analysis/" style="font-size: 14px; color: #999">Data Analysis</a> <a href="/tags/Deep-Learning/" style="font-size: 16px; color: #8b8b8b">Deep Learning</a> <a href="/tags/Django/" style="font-size: 14px; color: #999">Django</a> <a href="/tags/EDA/" style="font-size: 14px; color: #999">EDA</a> <a href="/tags/Flask/" style="font-size: 14px; color: #999">Flask</a> <a href="/tags/FrontEnd/" style="font-size: 14px; color: #999">FrontEnd</a> <a href="/tags/Git/" style="font-size: 14px; color: #999">Git</a> <a href="/tags/Git-Flow/" style="font-size: 14px; color: #999">Git-Flow</a> <a href="/tags/Github/" style="font-size: 14px; color: #999">Github</a> <a href="/tags/Gitlab/" style="font-size: 14px; color: #999">Gitlab</a> <a href="/tags/IT/" style="font-size: 14px; color: #999">IT</a> <a href="/tags/Java/" style="font-size: 14px; color: #999">Java</a> <a href="/tags/Jsp/" style="font-size: 14px; color: #999">Jsp</a> <a href="/tags/Lecture/" style="font-size: 22px; color: #636363">Lecture</a> <a href="/tags/Machine-Learning/" style="font-size: 16px; color: #8b8b8b">Machine Learning</a> <a href="/tags/NLP/" style="font-size: 14px; color: #999">NLP</a> <a href="/tags/Numpy/" style="font-size: 14px; color: #999">Numpy</a> <a href="/tags/Pandas/" style="font-size: 14px; color: #999">Pandas</a> <a href="/tags/Programming/" style="font-size: 14px; color: #999">Programming</a> <a href="/tags/Python/" style="font-size: 16px; color: #8b8b8b">Python</a> <a href="/tags/Servlet/" style="font-size: 14px; color: #999">Servlet</a> <a href="/tags/Web/" style="font-size: 14px; color: #999">Web</a> <a href="/tags/algorithm/" style="font-size: 20px; color: #707070">algorithm</a> <a href="/tags/api/" style="font-size: 14px; color: #999">api</a> <a href="/tags/array/" style="font-size: 14px; color: #999">array</a> <a href="/tags/bom/" style="font-size: 14px; color: #999">bom</a> <a href="/tags/bootstrap/" style="font-size: 14px; color: #999">bootstrap</a> <a href="/tags/class/" style="font-size: 14px; color: #999">class</a> <a href="/tags/clean-code/" style="font-size: 14px; color: #999">clean code</a> <a href="/tags/coding-test/" style="font-size: 14px; color: #999">coding test</a> <a href="/tags/crawling/" style="font-size: 14px; color: #999">crawling</a> <a href="/tags/css/" style="font-size: 14px; color: #999">css</a> <a href="/tags/data-mining/" style="font-size: 14px; color: #999">data mining</a> <a href="/tags/database/" style="font-size: 16px; color: #8b8b8b">database</a> <a href="/tags/deep-learning/" style="font-size: 16px; color: #8b8b8b">deep learning</a> <a href="/tags/deque/" style="font-size: 14px; color: #999">deque</a> <a href="/tags/dom/" style="font-size: 14px; color: #999">dom</a> <a href="/tags/generator/" style="font-size: 14px; color: #999">generator</a> <a href="/tags/git/" style="font-size: 14px; color: #999">git</a> <a href="/tags/helper-function/" style="font-size: 14px; color: #999">helper function</a> <a href="/tags/iris/" style="font-size: 14px; color: #999">iris</a> <a href="/tags/javascript/" style="font-size: 14px; color: #999">javascript</a> <a href="/tags/js/" style="font-size: 14px; color: #999">js</a> <a href="/tags/json/" style="font-size: 14px; color: #999">json</a> <a href="/tags/neural-network/" style="font-size: 14px; color: #999">neural network</a> <a href="/tags/object/" style="font-size: 14px; color: #999">object</a> <a href="/tags/object-model/" style="font-size: 14px; color: #999">object model</a> <a href="/tags/page-rank/" style="font-size: 14px; color: #999">page rank</a> <a href="/tags/python/" style="font-size: 24px; color: #555">python</a> <a href="/tags/queue/" style="font-size: 14px; color: #999">queue</a> <a href="/tags/scraping/" style="font-size: 14px; color: #999">scraping</a> <a href="/tags/send/" style="font-size: 14px; color: #999">send</a> <a href="/tags/stack/" style="font-size: 14px; color: #999">stack</a> <a href="/tags/tensorflow/" style="font-size: 14px; color: #999">tensorflow</a> <a href="/tags/xml/" style="font-size: 14px; color: #999">xml</a> <a href="/tags/yield/" style="font-size: 14px; color: #999">yield</a> <a href="/tags/%EB%AA%85%EB%A0%B9%EC%96%B4/" style="font-size: 14px; color: #999">명령어</a> <a href="/tags/%EB%AC%B8%EB%B2%95/" style="font-size: 14px; color: #999">문법</a> <a href="/tags/%EB%B0%B1%EC%A4%80/" style="font-size: 14px; color: #999">백준</a> <a href="/tags/%EC%82%B0%ED%83%80-%ED%86%A0%EC%9D%B5/" style="font-size: 14px; color: #999">산타 토익</a> <a href="/tags/%EC%84%A4%EA%B3%84/" style="font-size: 14px; color: #999">설계</a> <a href="/tags/%EC%8B%9C%EC%9B%90%EC%8A%A4%EC%BF%A8/" style="font-size: 14px; color: #999">시원스쿨</a> <a href="/tags/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/" style="font-size: 14px; color: #999">알고리즘</a> <a href="/tags/%EC%98%81%EC%96%B4/" style="font-size: 16px; color: #8b8b8b">영어</a> <a href="/tags/%EC%9A%A9%EC%96%B4/" style="font-size: 14px; color: #999">용어</a> <a href="/tags/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/" style="font-size: 14px; color: #999">자료구조</a> <a href="/tags/%EC%9E%90%EC%97%B0%EC%96%B4-%EC%B2%98%EB%A6%AC/" style="font-size: 14px; color: #999">자연어 처리</a> <a href="/tags/%EC%A0%95%EB%A6%AC/" style="font-size: 18px; color: #7e7e7e">정리</a> <a href="/tags/%EC%BD%94%EB%94%A9%EC%97%B0%EC%8A%B5/" style="font-size: 18px; color: #7e7e7e">코딩연습</a> <a href="/tags/%ED%86%A0%EC%9D%B5/" style="font-size: 14px; color: #999">토익</a> <a href="/tags/%ED%95%9C%EB%88%88%EC%97%90-%EB%B3%B4%EA%B8%B0/" style="font-size: 16px; color: #8b8b8b">한눈에 보기</a> <a href="/tags/%ED%95%9C%EB%88%88%EC%97%90-%EC%A0%95%EB%A6%AC/" style="font-size: 14px; color: #999">한눈에 정리</a> <a href="/tags/%ED%98%91%EC%97%85/" style="font-size: 14px; color: #999">협업</a> <a href="/tags/%ED%9A%8C%ED%99%94/" style="font-size: 14px; color: #999">회화</a>
+    </div>
+  </section>
+
+
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+  
+  <!-- Google AdSense -->
+  <div style="margin-top: 16px;">
+
+  </div>
+  <script data-ad-client="ca-pub-1288998211050792" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<!-- Google AdSense -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1288998211050792"
+     data-ad-slot="7750297977"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+</aside>
+
+<footer class="clearfix">
+  
+    <div class="social-wrapper">
+      
+        
+          <a href="mailto:wlgur278@gmail.com"
+            class="social fas fa-envelope flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="https://github.com/Jungjihyuk"
+            class="social fab fa-github flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+    </div>
+  
+  <br>
+  <!-- <div><- markdown(__('footer.license')) </div> -->
+  <div>
+    <!-- <- __('footer.use')  -->
+    <!-- a href = "<- theme.info.docs " -->
+    <span>Copyright. </span>
+    <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" class="codename">Material-X</a>
+    <!-- <- theme.info.name    -->
+    <!-- <- __('footer.theme')  -->
+    <br>
+    
+    . 
+  </div>
+  
+</footer>
+<script>setLoadingBarProgress(80);</script>
+
+<script>
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://https-jungjihyuk-github-io.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a></noscript>
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+
+  <script>
+    
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/" || "/";
+    if (!ROOT.endsWith('/')) ROOT += '/';
+  </script>
+
+<script async src="//instant.page/1.2.2" type="module" integrity="sha384-2xV8M5griQmzyiY3CDqh1dn4z3llDVqZDqzjzcY+jCBCk/a5fXJmuZ/40JJAPeoU"></script>
+
+  <script async src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js"></script>
+  <script async src="https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.5/dist/scrollreveal.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      const $reveal = $('.reveal');
+      if ($reveal.length === 0) return;
+      const sr = ScrollReveal({ distance: 0 });
+      sr.reveal('.reveal');
+    });
+  </script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+
+
+
+  
+  
+  
+    <script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@20.2/js/backstretch.min.js"></script>
+    <script type="text/javascript">
+      $(function(){
+        if ('') {
+          $('').backstretch(
+          ["unsplash.jpg", "jonathan.jpg", "flower.jpg"],
+          {
+            duration: "6000",
+            fade: "2500"
+          });
+        } else {
+          $.backstretch(
+          ["unsplash.jpg", "jonathan.jpg", "flower.jpg"],
+          {
+            duration: "6000",
+            fade: "2500"
+          });
+        }
+      });
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+<script src="/js/app.js"></script>
+
+
+
+  
+<script src="/js/search.js"></script>
+
+
+
+  
+    
+<script src="/js/commentTyping.js"></script>
+
+  
+
+
+
+
+
+<!-- 复制 -->
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  let COPY_SUCCESS = "Copied";
+  let COPY_FAILURE = "Copy failed";
+  /*页面载入完成后，创建复制按钮*/
+  !function (e, t, a) {
+    /* code */
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '  <i class="fa fa-copy"></i><span>Copy</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+
+      clipboard.on('success', function(e) {
+        //您可以加入成功提示
+        console.info('Action:', e.action);
+        console.info('Text:', e.text);
+        console.info('Trigger:', e.trigger);
+        success_prompt(COPY_SUCCESS);
+        e.clearSelection();
+      });
+      clipboard.on('error', function(e) {
+        //您可以加入失败提示
+        console.error('Action:', e.action);
+        console.error('Trigger:', e.trigger);
+        fail_prompt(COPY_FAILURE);
+      });
+    }
+    initCopyCode();
+
+  }(window, document);
+
+  /**
+   * 弹出式提示框，默认1.5秒自动消失
+   * @param message 提示信息
+   * @param style 提示样式，有alert-success、alert-danger、alert-warning、alert-info
+   * @param time 消失时间
+   */
+  var prompt = function (message, style, time)
+  {
+      style = (style === undefined) ? 'alert-success' : style;
+      time = (time === undefined) ? 1500 : time*1000;
+      $('<div>')
+          .appendTo('body')
+          .addClass('alert ' + style)
+          .html(message)
+          .show()
+          .delay(time)
+          .fadeOut();
+  };
+
+  // 成功提示
+  var success_prompt = function(message, time)
+  {
+      prompt(message, 'alert-success', time);
+  };
+
+  // 失败提示
+  var fail_prompt = function(message, time)
+  {
+      prompt(message, 'alert-danger', time);
+  };
+
+  // 提醒
+  var warning_prompt = function(message, time)
+  {
+      prompt(message, 'alert-warning', time);
+  };
+
+  // 信息提示
+  var info_prompt = function(message, time)
+  {
+      prompt(message, 'alert-info', time);
+  };
+
+</script>
+
+
+<!-- fancybox -->
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  let LAZY_LOAD_IMAGE = "";
+  $(".article-entry").find("fancybox").find("img").each(function () {
+      var element = document.createElement("a");
+      $(element).attr("data-fancybox", "gallery");
+      $(element).attr("href", $(this).attr("src"));
+      /* 图片采用懒加载处理时,
+       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
+       * 那么此处将原本的属性名src替换为对应属性名data-original,
+       * 修改如下
+       */
+       if (LAZY_LOAD_IMAGE) {
+         $(element).attr("href", $(this).attr("data-original"));
+       }
+      $(this).wrap(element);
+  });
+</script>
+
+
+
+
+
+  <script>setLoadingBarProgress(100);</script>
+</body>
+</html>

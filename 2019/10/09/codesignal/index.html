@@ -1,0 +1,1628 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  <title>CodeSignal Arcade 문제 풀이 | 지혁&#39;s Blog</title>
+  
+  
+
+  
+  <link rel="alternate" href="/feed.xml" title="지혁's Blog">
+  
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- meta -->
+  
+
+  <!-- Auto Canonical -->
+  <link rel="canonical" href="http://jungjihyuk.github.io/2019/10/09/codesignal/"/>
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.10.1/css/all.min.css">
+  
+
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
+  
+
+  
+    
+<link rel="stylesheet" href="/style.css">
+
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+
+  
+  
+
+  <!-- Google AdSense -->
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-143236286-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-143236286-2');
+</script>
+
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/feed.xml" title="지혁's Blog" type="application/rss+xml">
+</head>
+
+<body>
+  
+  
+  <div class="cover-wrapper">
+    <cover class='cover post half'>
+      
+        
+  <h1 class='title'>Imitation, Imagination, Integration</h1>
+
+
+  <div class="m_search">
+    <form name="searchform" class="form u-search-form">
+      <input type="text" class="input u-search-input" placeholder="search" />
+      <i class="icon fas fa-search fa-fw"></i>
+    </form>
+  </div>
+
+<div class='menu navgation'>
+  <ul class='h-list'>
+    
+      
+        <li>
+          <a class="nav home" href="/"
+            
+            
+            id="home">
+            <i class='fas fa-rss fa-fw'></i>&nbsp;Home
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="/about"
+            
+              rel="nofollow"
+            
+            
+            id="about">
+            <i class='fas fa-info-circle fa-fw'></i>&nbsp;About
+          </a>
+        </li>
+      
+    
+  </ul>
+</div>
+
+      
+    </cover>
+    <header class="l_header pure">
+  <div id="loading-bar-wrapper">
+    <div id="loading-bar" class="pure"></div>
+  </div>
+
+	<div class='wrapper'>
+		<div class="nav-main container container--flex">
+      <a class="logo flat-box" target="_self" href='/' >
+        
+          지혁's Blog
+        
+      </a>
+			<div class='menu navgation'>
+				<ul class='h-list'>
+          
+  					
+  						<li>
+								<a class="nav flat-box" href="/"
+                  
+                  
+                    target="_self"
+                  
+                  id="home">
+									<i class='fas fa-grin fa-fw'></i>&nbsp;Home
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/archives"
+                  
+                    rel="nofollow"
+                  
+                  
+                    target="_self"
+                  
+                  id="archives">
+									<i class='fas fa-archive fa-fw'></i>&nbsp;Archives
+								</a>
+							</li>
+      			
+      		
+				</ul>
+			</div>
+
+			
+				<div class="m_search">
+					<form name="searchform" class="form u-search-form">
+						<input type="text" class="input u-search-input" placeholder="search" />
+						<i class="icon fas fa-search fa-fw"></i>
+					</form>
+				</div>
+			
+			<ul class='switcher h-list'>
+				
+					<li class='s-search'><a class="fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
+				
+				<li class='s-menu'><a class="fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+
+		<div class='nav-sub container container--flex'>
+			<a class="logo flat-box"></a>
+			<ul class='switcher h-list'>
+				<li class='s-comment'><a class="flat-btn fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+          <li class='s-toc'><a class="flat-btn fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+			</ul>
+		</div>
+	</div>
+</header>
+	<aside class="menu-phone">
+    <header>
+		<nav class="menu navgation">
+      <ul>
+        
+          
+            <li>
+							<a class="nav flat-box" href="/"
+                
+                
+                id="home">
+								<i class='fas fa-clock fa-fw'></i>&nbsp;Home
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/archives"
+                
+                  rel="nofollow"
+                
+                
+                id="archives">
+								<i class='fas fa-archive fa-fw'></i>&nbsp;Archives
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/projects"
+                
+                
+                id="projects">
+								<i class='fas fa-code-branch fa-fw'></i>&nbsp;Projects
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="https://xaoxuu.com/wiki/material-x/"
+                
+                  rel="nofollow"
+                
+                
+                id="https:xaoxuu.comwikimaterial-x">
+								<i class='fas fa-book fa-fw'></i>&nbsp;Reference
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/about"
+                
+                  rel="nofollow"
+                
+                
+                id="about">
+								<i class='fas fa-info-circle fa-fw'></i>&nbsp;About
+							</a>
+            </li>
+          
+       
+      </ul>
+		</nav>
+    </header>
+	</aside>
+<script>setLoadingBarProgress(40);</script>
+
+  </div>
+
+
+  <div class="l_body">
+    <div class='body-wrapper'>
+      <div class='l_main'>
+  
+
+  
+    <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
+      
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  
+    <h1 class="title">
+      <a href="/2019/10/09/codesignal/">
+        CodeSignal Arcade 문제 풀이
+      </a>
+    </h1>
+  
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    
+      <a href="http://jungjihyuk.github.io" rel="nofollow">
+        
+          <i class="fas fa-user" aria-hidden="true"></i>
+        
+        <p>Jihyuk Jung</p>
+      </a>
+    
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2019-10-09</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/Language/Python/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>Language&nbsp;/&nbsp;Python</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+  
+
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          <h1 id="Index"><a href="#Index" class="headerlink" title="Index"></a>Index</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1. Intro     &#x3D;&gt; 문제해결 프로그래밍, 알고리즘 문제</span><br><span class="line">2. DataBase  &#x3D;&gt; SQL 문제</span><br><span class="line">3. The Core  &#x3D;&gt; 아직 안풀어봄</span><br><span class="line">4. Python    &#x3D;&gt; Python 문법 문제</span><br><span class="line">5. Graphs    &#x3D;&gt; 아직 안풀어봄</span><br></pre></td></tr></table></figure>
+<br>
+
+<p><span style="font-size: 20px; background: rgb(36, 54, 76); color: white; padding: 2px;">Navigation</span> <br><br><a href="#1st"><span style="font-size: 18px; background: rgb(76, 217, 229); color: white; padding: 2px;">Intro</span></a> &nbsp;<br><a href="#2nd"><span style="font-size: 18px; background: rgb(30, 219, 173); color: white; padding: 2px;">DataBase</span></a> &nbsp;<br><a href="#3rd"><span style="font-size: 18px; background: rgb(226, 71, 0); color: white; padding: 2px;">The Core</span></a> &nbsp;<br><a href="#4th"><span style="font-size: 18px; background: rgb(71, 182, 127); color: white; padding: 2px;">Python</span></a> &nbsp;<br><a href="#5th"><span style="font-size: 18px; background: rgb(125, 73, 194); color: white; padding: 2px;">Graphs</span></a> &nbsp;</p>
+<hr>
+<br>
+
+
+<p><a id = '1st'></a></p>
+<h1 id="Intro"><a href="#Intro" class="headerlink" title="Intro"></a>Intro</h1><br>
+
+<h2 id="CenturyFromYear"><a href="#CenturyFromYear" class="headerlink" title="CenturyFromYear"></a>CenturyFromYear</h2><blockquote>
+<p>연도를 입력 받으면 몇 세기인지 출력하는 함수 만들기</p>
+</blockquote>
+<br>
+
+<h3 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">For year &#x3D; 1905, the output should be</span><br><span class="line">centuryFromYear(year) &#x3D; 20</span><br><span class="line"></span><br><span class="line">For year &#x3D; 1700, the output should be</span><br><span class="line">centuryFromYear(year) &#x3D; 17</span><br></pre></td></tr></table></figure>
+
+<br>
+### My Answer
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">centuryFromYear</span><span class="params">(year)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> year % <span class="number">100</span> != <span class="number">0</span>:</span><br><span class="line">        year = year / <span class="number">100</span></span><br><span class="line">        <span class="keyword">return</span> int(year + <span class="number">1</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        year = year / <span class="number">100</span></span><br><span class="line">        <span class="keyword">return</span> int(year)</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="Another-Answer-Python"><a href="#Another-Answer-Python" class="headerlink" title="Another Answer (Python)"></a>Another Answer (Python)</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">centuryFromYear</span><span class="params">(year)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> (year + <span class="number">99</span>) // <span class="number">100</span></span><br></pre></td></tr></table></figure>
+<br>
+
+<h3 id="Another-Answer-JS"><a href="#Another-Answer-JS" class="headerlink" title="Another Answer (JS)"></a>Another Answer (JS)</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">checkPalindrome</span>(<span class="params">inputString</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> inputString == inputString.split(<span class="string">''</span>).reverse().join(<span class="string">''</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+<hr>
+
+<h2 id="CheckPalindrome"><a href="#CheckPalindrome" class="headerlink" title="CheckPalindrome"></a>CheckPalindrome</h2><blockquote>
+<p>회문인지 체크하는 함수, 앞으로 읽어도 뒤로 읽어도 똑같은 문자열이면 True 반환, 아니면 False 반환</p>
+</blockquote>
+<br>
+
+<h3 id="Example-1"><a href="#Example-1" class="headerlink" title="Example"></a>Example</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">For inputString &#x3D; &quot;aabbaa&quot;, the output should be checkPalindrome(inputString) &#x3D; ture</span><br><span class="line"></span><br><span class="line">For inputString &#x3D; &quot;abac&quot;, the output should be checkPalindrome(inputString) &#x3D; false</span><br><span class="line"></span><br><span class="line">For inputString &#x3D; &quot;a&quot;, the output should be checkPalindrome(inputString) &#x3D; true</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="My-Answer"><a href="#My-Answer" class="headerlink" title="My Answer"></a>My Answer</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">checkPalindrome</span><span class="params">(inputString)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> inputString == inputString[::<span class="number">-1</span>]:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span></span><br></pre></td></tr></table></figure>
+<br>
+
+<h3 id="Another-Answer-Python-1"><a href="#Another-Answer-Python-1" class="headerlink" title="Another Answer (Python)"></a>Another Answer (Python)</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">checkPalindrome</span><span class="params">(inputString)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> inputString == inputString[::<span class="number">-1</span>]</span><br></pre></td></tr></table></figure>
+<br>
+
+<h3 id="Another-Answer-C"><a href="#Another-Answer-C" class="headerlink" title="Another Answer (C++)"></a>Another Answer (C++)</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">checkPalindrome</span><span class="params">(<span class="built_in">string</span> is)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> is == <span class="built_in">string</span>(is.rbegin(),is.rend());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<br>
+
+<h2 id="AdjacentElementsProduct"><a href="#AdjacentElementsProduct" class="headerlink" title="AdjacentElementsProduct"></a>AdjacentElementsProduct</h2><blockquote>
+<p>인접한 요소의 곱이 가장 큰 값 반환</p>
+</blockquote>
+<br>
+
+<h3 id="Example-2"><a href="#Example-2" class="headerlink" title="Example"></a>Example</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">For inputArray &#x3D; [3, 6, -2, -5, 7, 3], the output should be</span><br><span class="line">adjacentElementsProduct(inputArray) &#x3D; 21</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="My-Answer-1"><a href="#My-Answer-1" class="headerlink" title="My Answer"></a>My Answer</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">adjacentElementsProduct</span><span class="params">(inputArray)</span>:</span></span><br><span class="line">    temp = <span class="number">-99999999999</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(inputArray)<span class="number">-1</span>):</span><br><span class="line">        result = inputArray[i] * inputArray[i+<span class="number">1</span>]</span><br><span class="line">        <span class="keyword">if</span> temp &lt; result:</span><br><span class="line">            temp = result</span><br><span class="line">    <span class="keyword">return</span> temp</span><br></pre></td></tr></table></figure>
+<br>
+
+<h3 id="Another-Answer-Python-2"><a href="#Another-Answer-Python-2" class="headerlink" title="Another Answer (Python)"></a>Another Answer (Python)</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">adjacentElementsProduct</span><span class="params">(inputArray)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> max([inputArray[i] * inputArray[i+<span class="number">1</span>] <span class="keyword">for</span> i <span class="keyword">in</span> range(len(inputArray)<span class="number">-1</span>)])</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="Another-Answer-JS-1"><a href="#Another-Answer-JS-1" class="headerlink" title="Another Answer (JS)"></a>Another Answer (JS)</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"># 1</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">adjacentElementsProduct</span>(<span class="params">inputArray</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> prod = inputArray[<span class="number">0</span>] * inputArray[<span class="number">1</span>];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">1</span>; i&lt;inputArray.length - <span class="number">1</span>;i++) &#123;</span><br><span class="line">        prod = <span class="built_in">Math</span>.max(prod, inputArray[i] * inputArray[i+<span class="number">1</span>]);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> prod</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"># 2</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">adjacentElementsProduct</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">Math</span>.max(...arr.slice(<span class="number">1</span>).map(<span class="function">(<span class="params">x,i</span>)=&gt;</span>[x*arr[i]]))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="Another-Answer-Java"><a href="#Another-Answer-Java" class="headerlink" title="Another Answer (Java)"></a>Another Answer (Java)</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">adjacentElementsProduct</span><span class="params">(<span class="keyword">int</span>[] inputArray)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> IntStream.range(<span class="number">1</span>, inputArray.length).map(i-&gt;inputArray[i]*inputArray[i-<span class="number">1</span>]).max().getAsInt();&#125;</span><br></pre></td></tr></table></figure>
+<br>
+
+<h2 id="ShapeArea"><a href="#ShapeArea" class="headerlink" title="ShapeArea"></a>ShapeArea</h2><p><img src="https://user-images.githubusercontent.com/33630505/66472643-a25eee80-eac8-11e9-828c-5f7c78a5c6bb.JPG" alt="polygon"></p>
+<br>
+
+<h3 id="My-Answer-2"><a href="#My-Answer-2" class="headerlink" title="My Answer"></a>My Answer</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> math</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">shapeArea</span><span class="params">(n)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">2</span> * math.pow(n - <span class="number">1</span>, <span class="number">2</span>) + <span class="number">2</span> * (n - <span class="number">1</span>) + <span class="number">1</span></span><br></pre></td></tr></table></figure>
+<br>
+
+<h3 id="Another-Answer-Python-3"><a href="#Another-Answer-Python-3" class="headerlink" title="Another Answer (Python)"></a>Another Answer (Python)</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">shapeArea</span><span class="params">(n)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> n**<span class="number">2</span> + (n<span class="number">-1</span>)**<span class="number">2</span></span><br></pre></td></tr></table></figure>
+<br>
+
+<h3 id="Another-Answer-JS-2"><a href="#Another-Answer-JS-2" class="headerlink" title="Another Answer (JS)"></a>Another Answer (JS)</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">shapeArea</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> n*n + (n<span class="number">-1</span>)*(n<span class="number">-1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<br>
+
+<h3 id="Another-Answer-C-1"><a href="#Another-Answer-C-1" class="headerlink" title="Another Answer (C++)"></a>Another Answer (C++)</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">shapeArea</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span> + <span class="number">2</span> * n * (n<span class="number">-1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<br>
+
+<hr>
+<a id = '2nd'></a>
+# DataBase (MySQL 문법)
+
+<h2 id="MonthlyScholarships"><a href="#MonthlyScholarships" class="headerlink" title="MonthlyScholarships"></a>MonthlyScholarships</h2><blockquote>
+<p>1년치 장학금이 기제되어 있는 DB에서 각 id별로 매달 장학금을 계산해서 id와 scholarship을 조회하라</p>
+</blockquote>
+<h3 id="Example-3"><a href="#Example-3" class="headerlink" title="Example"></a>Example</h3><p><strong>Table</strong><br><img src="https://user-images.githubusercontent.com/33630505/66551079-b61a5b80-eb81-11e9-9d70-7809ae97b4bf.JPG" alt="scholarship"><br><br><strong>Result</strong><br><img src="https://user-images.githubusercontent.com/33630505/66551431-6a1be680-eb82-11e9-8e17-f4f8c9c3985a.JPG" alt="scholarship2"></p>
+<br>
+
+<h3 id="My-Answer-3"><a href="#My-Answer-3" class="headerlink" title="My Answer"></a>My Answer</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">PROCEDURE</span> monthlyScholarships()</span><br><span class="line"><span class="keyword">BEGIN</span></span><br><span class="line">	<span class="keyword">SELECT</span> <span class="keyword">id</span>, scholarship/<span class="number">12</span> <span class="keyword">as</span> scholarship <span class="keyword">FROM</span> scholarships;</span><br><span class="line"><span class="keyword">END</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h2 id="ProjectsTeam"><a href="#ProjectsTeam" class="headerlink" title="ProjectsTeam"></a>ProjectsTeam</h2><blockquote>
+<p>중복되는 이름은 제거하고 이름을 오름차순으로 정렬하여 조회하라<br><br></p>
+</blockquote>
+<h3 id="Example-4"><a href="#Example-4" class="headerlink" title="Example"></a>Example</h3><p><strong>Table</strong><br><img src="https://user-images.githubusercontent.com/33630505/66551762-0f36bf00-eb83-11e9-893d-3c28854a652c.JPG" alt="projectteam"><br><br></p>
+<p><strong>Result</strong><br><img src="https://user-images.githubusercontent.com/33630505/66551799-21186200-eb83-11e9-80db-e9e6c7685b81.JPG" alt="projectteam2"><br><br></p>
+<h3 id="My-Answer-4"><a href="#My-Answer-4" class="headerlink" title="My Answer"></a>My Answer</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">PROCEDURE</span> projectsTeam()</span><br><span class="line"><span class="keyword">BEGIN</span></span><br><span class="line">	<span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> <span class="keyword">name</span> <span class="keyword">FROM</span> projectLog <span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="keyword">name</span>;</span><br><span class="line"><span class="keyword">END</span></span><br></pre></td></tr></table></figure>
+<br>
+
+<h2 id="AutomaticNotifications"><a href="#AutomaticNotifications" class="headerlink" title="AutomaticNotifications"></a>AutomaticNotifications</h2><blockquote>
+<p>role 칼럼의 admin, premium을 제외한 행의 email을 조회하라</p>
+</blockquote>
+<br>
+
+<h3 id="Example-5"><a href="#Example-5" class="headerlink" title="Example"></a>Example</h3><p><strong>Table</strong><br><img src="https://user-images.githubusercontent.com/33630505/66553990-165fcc00-eb87-11e9-9317-b25645d68d07.JPG" alt="automaticnotification"><br><br></p>
+<p><strong>Result</strong><br><img src="https://user-images.githubusercontent.com/33630505/66553992-165fcc00-eb87-11e9-90f4-5ccb532d1341.JPG" alt="automaticnotification2"></p>
+<h3 id="MyAnswer"><a href="#MyAnswer" class="headerlink" title="MyAnswer"></a>MyAnswer</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">PROCEDURE</span> automaticNotifications()</span><br><span class="line">    <span class="keyword">SELECT</span> email</span><br><span class="line">    <span class="keyword">FROM</span> <span class="keyword">users</span></span><br><span class="line">    <span class="keyword">WHERE</span> <span class="keyword">role</span> <span class="keyword">NOT</span> <span class="keyword">IN</span> (<span class="string">"admin"</span>, <span class="string">"premium"</span>)</span><br><span class="line">    <span class="keyword">ORDER</span> <span class="keyword">BY</span> email;</span><br></pre></td></tr></table></figure>
+
+
+
+<hr>
+<a id = '3rd'></a>
+# The Core
+
+
+
+<hr>
+<a id = '4th'></a>
+# Python
+
+<h2 id="Collections-Truthness"><a href="#Collections-Truthness" class="headerlink" title="Collections Truthness"></a>Collections Truthness</h2><blockquote>
+<p>Python에서 True와 False의 의미를 알 수 있는 문제</p>
+</blockquote>
+<br>
+
+<h3 id="Example-6"><a href="#Example-6" class="headerlink" title="Example"></a>Example</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">xs = [()]</span><br><span class="line">res = [<span class="literal">False</span>] * <span class="number">2</span></span><br><span class="line"><span class="keyword">if</span> xs:</span><br><span class="line">    res[<span class="number">0</span>] = <span class="literal">True</span></span><br><span class="line"><span class="keyword">if</span> xs[<span class="number">0</span>]:</span><br><span class="line">    res[<span class="number">1</span>] = <span class="literal">True</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="My-Answer-5"><a href="#My-Answer-5" class="headerlink" title="My Answer"></a>My Answer</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">xs = [()]</span><br><span class="line">res = [<span class="literal">False</span>] * <span class="number">2</span></span><br><span class="line"><span class="keyword">if</span> xs:</span><br><span class="line">    res[<span class="number">0</span>] = <span class="literal">True</span></span><br><span class="line"><span class="keyword">if</span> xs[<span class="number">0</span>]:</span><br><span class="line">    res[<span class="number">1</span>] = <span class="literal">False</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>xs 리스트는 첫번째 요소로 tuple을 갖기 때문에 존재론적 관점에서 True, 리스트의 첫번째 요소인 tuple의 첫번째 요소는 아무것도 없기 때문에 존재론적 관점에서 False이다</strong></p>
+<br>
+
+<h2 id="Efficient-Comparison"><a href="#Efficient-Comparison" class="headerlink" title="Efficient Comparison"></a>Efficient Comparison</h2><blockquote>
+<p>효과적인 비교 방법을 찾는 문제</p>
+</blockquote>
+<br>
+### Example
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> <span class="keyword">if</span> L &lt; x**y &lt;=R:</span><br><span class="line"><span class="number">2.</span> <span class="keyword">if</span> x**y &gt; L <span class="keyword">and</span> x**y &lt;=R:</span><br><span class="line"><span class="number">3.</span> <span class="keyword">if</span> x**y <span class="keyword">in</span> range(L+<span class="number">1</span>, R+<span class="number">1</span>):</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="My-Answer-6"><a href="#My-Answer-6" class="headerlink" title="My Answer"></a>My Answer</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func1</span><span class="params">(x,y,L,R)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> L &lt; x**y &lt;=R:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func2</span><span class="params">(x,y,L,R)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> x**y &gt; L <span class="keyword">and</span> x**y &lt;=R:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span> 	</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func3</span><span class="params">(x,y,L,R)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> x**y <span class="keyword">in</span> range(L+<span class="number">1</span>, R+<span class="number">1</span>):</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line"></span><br><span class="line">%%timeit</span><br><span class="line">func1(<span class="number">2</span>,<span class="number">3</span>, <span class="number">0</span>,<span class="number">10</span>)</span><br><span class="line"></span><br><span class="line">: <span class="number">480</span> ns ± <span class="number">34.7</span> ns per loop (mean ± std. dev. of <span class="number">7</span> runs, <span class="number">1000000</span> loops each)</span><br><span class="line"></span><br><span class="line">%%timeit</span><br><span class="line">func2(<span class="number">2</span>,<span class="number">3</span>, <span class="number">0</span>,<span class="number">10</span>)</span><br><span class="line"></span><br><span class="line">: <span class="number">763</span> ns ± <span class="number">23.8</span> ns per loop (mean ± std. dev. of <span class="number">7</span> runs, <span class="number">1000000</span> loops each)</span><br><span class="line"></span><br><span class="line">%%timeit</span><br><span class="line">func3(<span class="number">2</span>,<span class="number">3</span>, <span class="number">0</span>,<span class="number">10</span>)</span><br><span class="line"></span><br><span class="line">: <span class="number">806</span> ns ± <span class="number">45.6</span> ns per loop (mean ± std. dev. of <span class="number">7</span> runs, <span class="number">1000000</span> loops each)</span><br></pre></td></tr></table></figure>
+
+<p><strong>func1이 가장 빠르다</strong></p>
+<br>
+
+<h2 id="Count-Bits"><a href="#Count-Bits" class="headerlink" title="Count Bits"></a>Count Bits</h2><blockquote>
+<p>숫자 n을 입력하면 bit수를 출력하는 함수</p>
+</blockquote>
+<br>
+### Example
+
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">n = <span class="number">50</span></span><br><span class="line">countBits(n) = <span class="number">6</span></span><br><span class="line">50(10진수) = 110010(2진수) =&gt; 6개 비트로 구성</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="My-Answer-7"><a href="#My-Answer-7" class="headerlink" title="My Answer"></a>My Answer</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">countBits</span><span class="params">(n)</span>:</span></span><br><span class="line">    cnt = <span class="number">1</span></span><br><span class="line">    rest = <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span>(n!=<span class="number">1</span>):</span><br><span class="line">        rest = n/<span class="number">2</span></span><br><span class="line">        n = int(rest)</span><br><span class="line">        cnt +=<span class="number">1</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> cnt</span><br></pre></td></tr></table></figure>
+
+<p><strong>함수가 잘 작동하고 정답처리가 되긴 했지만 자꾸 return문만 써서 간결하게 하라고 해서 다음 단계로 넘어가지 못했음..</strong></p>
+<br>
+
+<h3 id="Another-Answer-Python-4"><a href="#Another-Answer-Python-4" class="headerlink" title="Another Answer (Python)"></a>Another Answer (Python)</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">countBits</span><span class="params">(n)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> n.bit_length()</span><br></pre></td></tr></table></figure>
+
+<p><strong>저런 내장 함수가 있는지 몰랐네…</strong></p>
+<br>
+
+<h2 id="Modulus"><a href="#Modulus" class="headerlink" title="Modulus"></a>Modulus</h2><blockquote>
+<p>숫자 n이 정수형이면 return 1 아니면 return -1</p>
+</blockquote>
+<br>
+### Example
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">n = <span class="number">15</span></span><br><span class="line">modulus(n) = <span class="number">1</span></span><br><span class="line"></span><br><span class="line">n = <span class="number">23.12</span></span><br><span class="line">modulus(n) = <span class="number">-1</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="My-Answer-8"><a href="#My-Answer-8" class="headerlink" title="My Answer"></a>My Answer</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">modulus</span><span class="params">(n)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> isinstance(n, int):</span><br><span class="line">        <span class="keyword">return</span> n % <span class="number">2</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span></span><br></pre></td></tr></table></figure>
+<br>
+
+<h3 id="Another-Answer-Python-5"><a href="#Another-Answer-Python-5" class="headerlink" title="Another Answer (Python)"></a>Another Answer (Python)</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">modulus</span><span class="params">(n)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> n==int(n) :</span><br><span class="line">        <span class="keyword">return</span> n % <span class="number">2</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h2 id="Base-Conversion"><a href="#Base-Conversion" class="headerlink" title="Base Conversion"></a>Base Conversion</h2><blockquote>
+<p>n진법으로 표기된 String을 16진수로 변환하기</p>
+</blockquote>
+<br>
+
+<h3 id="Example-7"><a href="#Example-7" class="headerlink" title="Example"></a>Example</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">n = <span class="string">'1302'</span></span><br><span class="line">x = <span class="number">5</span></span><br><span class="line"></span><br><span class="line">1302(5) =&gt; 202(10) =&gt; ca</span><br><span class="line"></span><br><span class="line">baseConversion(<span class="string">'1302'</span>,<span class="number">5</span>) = <span class="string">'ca'</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="My-Answer-9"><a href="#My-Answer-9" class="headerlink" title="My Answer"></a>My Answer</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">baseConversion</span><span class="params">(n:str, x:int)</span>-&gt;int:</span></span><br><span class="line">    result = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i, n <span class="keyword">in</span> enumerate(n[::<span class="number">-1</span>]):</span><br><span class="line">        result += int(n) * pow(x, i)</span><br><span class="line">    <span class="keyword">return</span> hex(result)[<span class="number">2</span>:]</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">baseConversion</span><span class="params">(n, x)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> hex(int(n,x))[<span class="number">2</span>:]</span><br></pre></td></tr></table></figure>
+
+<p><strong>int 함수는 숫자를 넣었을 때 정수형으로 변환하지만, 문자열 형태의 숫자와 변환하고자 하는 진법의 수를 입력하면 원하는 진법을 변환해주기도 한다</strong></p>
+<br>
+
+<h3 id="Another-Answer-Python-6"><a href="#Another-Answer-Python-6" class="headerlink" title="Another Answer (Python)"></a>Another Answer (Python)</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">baseConversion</span><span class="params">(n, x)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> format(int(n, x), <span class="string">'x'</span>)</span><br></pre></td></tr></table></figure>
+
+<br>
+
+
+<h2 id="ListBeautifier"><a href="#ListBeautifier" class="headerlink" title="ListBeautifier"></a>ListBeautifier</h2><blockquote>
+<p>어떠한 리스트가 들어와도 리스트의 맨 앞 요소와 맨 뒤 요소가 같거나 빈 리스트를 반환하도록 하는 함수</p>
+</blockquote>
+<br>
+
+<h3 id="Example-8"><a href="#Example-8" class="headerlink" title="Example"></a>Example</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="number">3</span>, <span class="number">4</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">38</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">3</span>, <span class="number">2</span>]</span><br><span class="line">b = [<span class="number">1</span>,<span class="number">4</span>,<span class="number">-5</span>]</span><br><span class="line">c = [<span class="number">1</span>,<span class="number">2</span>]</span><br><span class="line"></span><br><span class="line">listBeautifier(a) = [<span class="number">4</span>, <span class="number">28</span>, <span class="number">4</span>]</span><br><span class="line">listBeatuifier(b) = [<span class="number">4</span>]</span><br><span class="line">listBeatuifier(c) = []</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="My-Answer-10"><a href="#My-Answer-10" class="headerlink" title="My Answer"></a>My Answer</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">listBeautifier1</span><span class="params">(a)</span>:</span></span><br><span class="line">    res = a[:]</span><br><span class="line">    <span class="keyword">while</span> res <span class="keyword">and</span> res[<span class="number">0</span>] != res[<span class="number">-1</span>]:</span><br><span class="line">    	res = res[<span class="number">1</span>:<span class="number">-1</span>]</span><br><span class="line">    <span class="keyword">return</span> res</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">listBeautifier2</span><span class="params">(a)</span>:</span></span><br><span class="line">    res = a[:]</span><br><span class="line">    <span class="keyword">while</span> res <span class="keyword">and</span> res[<span class="number">0</span>] != res[<span class="number">-1</span>]:</span><br><span class="line">        a, *res, b = res  </span><br><span class="line">    <span class="keyword">return</span> res</span><br><span class="line"></span><br><span class="line">%%timeit</span><br><span class="line">listBeautifier1(a)</span><br><span class="line"></span><br><span class="line">: <span class="number">2.32</span> µs ± <span class="number">193</span> ns per loop (mean ± std. dev. of <span class="number">7</span> runs, <span class="number">100000</span> loops each)</span><br><span class="line"></span><br><span class="line">%%timeit</span><br><span class="line">listBeautifier2(a)</span><br><span class="line"></span><br><span class="line">: <span class="number">3.05</span> µs ± <span class="number">237</span> ns per loop (mean ± std. dev. of <span class="number">7</span> runs, <span class="number">100000</span> loops each)</span><br><span class="line"></span><br><span class="line"><span class="comment"># slicing이 아주 살짝 더 빠르다</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>Slicing과 Unpacking으로 쉽게 풀 수 있다!</strong><br><br></p>
+<h2 id="Fix-Message"><a href="#Fix-Message" class="headerlink" title="Fix Message"></a>Fix Message</h2><blockquote>
+<p>대소문자 고쳐주는 함수 (가장 앞 단어의 첫번째 철자를 대문자로 그리고 나머지는 소문자로)</p>
+</blockquote>
+<br>
+
+<h3 id="Example-9"><a href="#Example-9" class="headerlink" title="Example"></a>Example</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">message = <span class="string">"you'll NEVER believe what that 'FrIeNd' of mine did!!1"</span></span><br><span class="line"></span><br><span class="line">fixMessage(message) = <span class="string">"You'll never believe what that 'friend' of mine did!!1"</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="My-Answer-11"><a href="#My-Answer-11" class="headerlink" title="My Answer"></a>My Answer</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fixMessage</span><span class="params">(message)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> message.lower().capitalize()</span><br></pre></td></tr></table></figure>
+
+<br>
+
+
+<h3 id="Another-Answer"><a href="#Another-Answer" class="headerlink" title="Another Answer"></a>Another Answer</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fixMessage</span><span class="params">(message)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> message.upper()[<span class="number">0</span>] + message[<span class="number">1</span>:].lower()</span><br></pre></td></tr></table></figure>
+
+<h2 id="Cat-Walk"><a href="#Cat-Walk" class="headerlink" title="Cat Walk"></a>Cat Walk</h2><blockquote>
+<p>내가 자리를 비운 사이 고양이가 내 키보드 위에 올라가 스페이스바를 마구 눌러서 띄어쓰기 간격이 <br><br>너무 많이 벌어졌다. 늘어난 띄어쓰기 공간을 하나로 줄여라 (이런 말도 안되는..ㅎ)</p>
+</blockquote>
+<br>
+
+<h3 id="Example-10"><a href="#Example-10" class="headerlink" title="Example"></a>Example</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">line = <span class="string">"def      m   e  gaDifficu     ltFun        ction(x):"</span></span><br><span class="line"></span><br><span class="line">catwalk(line) = <span class="string">"def m e gaDifficu ltFun ction(x):"</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="My-Answer-12"><a href="#My-Answer-12" class="headerlink" title="My Answer"></a>My Answer</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>번</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">catWalk</span><span class="params">(code)</span>:</span></span><br><span class="line">    a = <span class="string">''</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> code.rsplit():</span><br><span class="line">        a += i + <span class="string">' '</span></span><br><span class="line">    <span class="keyword">return</span> a.rstrip()  <span class="comment"># rstrip 함수는 원래 값은 변하지 않고 함수 호출시에만 결과값 리턴</span></span><br><span class="line"></span><br><span class="line"><span class="number">2</span>번</span><br><span class="line"><span class="keyword">from</span> functools <span class="keyword">import</span> reduce</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">catWalk</span><span class="params">(code)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> reduce(<span class="keyword">lambda</span> x,y:x+<span class="string">' '</span>+y, [i <span class="keyword">for</span> i <span class="keyword">in</span> code.rsplit()])</span><br></pre></td></tr></table></figure>
+
+<p><strong>내 머리속에서 이런 코드가 나오다니..ㅎ 근데 제출이 안되네 ㅠ</strong></p>
+<br>
+
+<h3 id="Another-Answer-1"><a href="#Another-Answer-1" class="headerlink" title="Another Answer"></a>Another Answer</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">3</span>번</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">catWalk</span><span class="params">(code)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">" "</span>.join(code.split())</span><br></pre></td></tr></table></figure>
+<p><strong>이런 쉬운 함수가 있었다니..ㅎ</strong></p>
+<br>
+
+<h3 id="속도-차이"><a href="#속도-차이" class="headerlink" title="속도 차이"></a>속도 차이</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">%%timeit</span><br><span class="line">catWalk(line)</span><br><span class="line"></span><br><span class="line"># 1번</span><br><span class="line">3.13 µs ± 205 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)</span><br><span class="line"></span><br><span class="line"># 2번</span><br><span class="line">4.51 µs ± 233 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)</span><br><span class="line"></span><br><span class="line"># 3번</span><br><span class="line">1.2 µs ± 39.3 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each)</span><br><span class="line"></span><br><span class="line"># 결론: 이미 만들어져 있는게 젤 빠르다..</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h2 id="Convert-Tabs"><a href="#Convert-Tabs" class="headerlink" title="Convert Tabs"></a>Convert Tabs</h2><blockquote>
+<p>문자열 안에 Tab(\t)이 들어 있다면 n번의 space로 변환하는 함수</p>
+</blockquote>
+<br>
+
+<h3 id="Example-11"><a href="#Example-11" class="headerlink" title="Example"></a>Example</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">code = <span class="string">"\t\t\t\t\t"</span></span><br><span class="line">convertTabs(code, <span class="number">1</span>) = <span class="string">"    "</span></span><br><span class="line"></span><br><span class="line">code = <span class="string">"def add(x, y)\f\treturn x + y"</span></span><br><span class="line">convertTabs(code, <span class="number">4</span>) = <span class="string">"def add(x, y)\f    return x + y"</span></span><br><span class="line"></span><br><span class="line">code = <span class="string">"    for x in range(20)"</span></span><br><span class="line">convertTabs(code, <span class="number">100</span>) = <span class="string">"    for x in range(20)"</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+
+<h3 id="My-Answer-13"><a href="#My-Answer-13" class="headerlink" title="My Answer"></a>My Answer</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">convertTabs</span><span class="params">(code, x)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> code.replace(<span class="string">'\t'</span>, <span class="string">' '</span>*x)</span><br></pre></td></tr></table></figure>
+
+<br>
+
+
+<h2 id="Feedback-Review"><a href="#Feedback-Review" class="headerlink" title="Feedback Review"></a>Feedback Review</h2><blockquote>
+<p>원하는 크기 이하의 문자열 단위로 쪼개주는 함수</p>
+</blockquote>
+<br>
+
+<h3 id="Example-12"><a href="#Example-12" class="headerlink" title="Example"></a>Example</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">feedback = <span class="string">"This is an example feedback"</span></span><br><span class="line">size = <span class="number">8</span></span><br><span class="line"></span><br><span class="line">feedbackReview(feedback, size) = [<span class="string">"This is"</span>,</span><br><span class="line">                                  <span class="string">"an"</span>,</span><br><span class="line">                                  <span class="string">"example"</span>,</span><br><span class="line">                                  <span class="string">"feedback"</span>]</span><br></pre></td></tr></table></figure>
+
+<br>
+
+
+<h3 id="Another-Answer-2"><a href="#Another-Answer-2" class="headerlink" title="Another Answer"></a>Another Answer</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> textwrap</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">feedbackReview</span><span class="params">(feedback, size)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> textwrap.wrap(feedback, size)</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">feedbackReview</span><span class="params">(feedback, size)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> re.findall(<span class="string">'(?:\s|^)(\S(?:.&#123;0,%d&#125;\S)?)(?=\s|$)'</span> % (size<span class="number">-2</span>),feedback)</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h2 id="Is-Word-Palindrome"><a href="#Is-Word-Palindrome" class="headerlink" title="Is Word Palindrome"></a>Is Word Palindrome</h2><blockquote>
+<p>회문인지 확인하는 함수, 앞으로 읽어도 뒤로 읽어도 같은지 확인하는 함수</p>
+</blockquote>
+<br>
+
+<h3 id="Example-13"><a href="#Example-13" class="headerlink" title="Example"></a>Example</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">word = <span class="string">"aibohphobia"</span></span><br><span class="line">isWordPalindrome(word) = true;</span><br><span class="line"></span><br><span class="line">word = <span class="string">"hehehehehe"</span></span><br><span class="line">isWordPalindrome(word) = false</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="My-Answer-14"><a href="#My-Answer-14" class="headerlink" title="My Answer"></a>My Answer</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">isWordPalindrome</span><span class="params">(word)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> word == word[::<span class="number">-1</span>]</span><br></pre></td></tr></table></figure>
+
+<br>
+
+
+
+<h2 id="Permutation-Cipher"><a href="#Permutation-Cipher" class="headerlink" title="Permutation Cipher"></a>Permutation Cipher</h2><blockquote>
+<p>이름은 순열암호화 인데 사실상 시저 암화랑 같음. 평문하고 키를 넘겨주면 시저암호 처럼 암호화 해주는 함수</p>
+</blockquote>
+<br>
+
+<h3 id="Example-14"><a href="#Example-14" class="headerlink" title="Example"></a>Example</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">password = <span class="string">"iamthebest"</span></span><br><span class="line">key = <span class="string">"zabcdefghijklmnopqrstuvwxy"</span></span><br><span class="line"></span><br><span class="line">permutationCipher(password, key) = <span class="string">"hzlsgdadrs"</span></span><br><span class="line"></span><br><span class="line">abcdefghijklmnopqrstuvwxyz</span><br><span class="line">||  |  ||   |     ||</span><br><span class="line">vv  v  vv   v     vv</span><br><span class="line">zabcdefghijklmnopqrstuvwxy</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="My-Answer-15"><a href="#My-Answer-15" class="headerlink" title="My Answer"></a>My Answer</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">permutationCipher</span><span class="params">(password, key)</span>:</span></span><br><span class="line">    table = str.maketrans(<span class="string">"abcdefghijklmnopqrstuvwxyz"</span>, key)</span><br><span class="line">    <span class="keyword">return</span> password.translate(table)</span><br></pre></td></tr></table></figure>
+
+<br>
+
+
+<h3 id="Another-Answer-3"><a href="#Another-Answer-3" class="headerlink" title="Another Answer"></a>Another Answer</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">permutationCipher</span><span class="params">(password, key)</span>:</span></span><br><span class="line">    table = &#123;ord(<span class="string">'a'</span>) + i : ord(k) <span class="keyword">for</span> i, k <span class="keyword">in</span> enumerate(key)&#125;</span><br><span class="line">    <span class="keyword">return</span> password.translate(table)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">permutationCipher</span><span class="params">(password, key)</span>:</span></span><br><span class="line">    table = <span class="string">' '</span>*<span class="number">97</span>+key</span><br><span class="line">    <span class="keyword">return</span> str(password).translate(table)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">permutationCipher</span><span class="params">(password, key)</span>:</span></span><br><span class="line">    table = string.maketrans(string.lowercase, key)</span><br><span class="line">    <span class="keyword">return</span> str(password).translate(table)</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h2 id="Competitive-Eating"><a href="#Competitive-Eating" class="headerlink" title="Competitive Eating"></a>Competitive Eating</h2><blockquote>
+<p>설명 못하겠음… 예시 확인 ㄱㄱ</p>
+</blockquote>
+<br>
+
+<h3 id="Example-15"><a href="#Example-15" class="headerlink" title="Example"></a>Example</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">t = <span class="number">3.1415</span>, width = <span class="number">10</span>, precision = <span class="number">2</span>,</span><br><span class="line"></span><br><span class="line">competitiveEating(t, width, precision) = <span class="string">"   3.14   "</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="Another-Answer-4"><a href="#Another-Answer-4" class="headerlink" title="Another Answer"></a>Another Answer</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">competitiveEating</span><span class="params">(t, width, precision)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">'&#123;:^&#123;&#125;.&#123;&#125;f&#125;'</span>.format(t,width,precision)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">competitiveEating</span><span class="params">(t, width, precision)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">"&#123;0:.&#123;1&#125;f&#125;"</span>.format(t,precision).center(width)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">competitiveEating</span><span class="params">(t, width, precision)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> (<span class="string">'&#123;:^&#123;w&#125;.&#123;p&#125;f&#125;'</span>).format(t,w=width,p=precision)</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h2 id="Get-Commit"><a href="#Get-Commit" class="headerlink" title="Get Commit"></a>Get Commit</h2><blockquote>
+<p>유저 이름과 0, ?, +, !가 포함된 암호화 commit 문자중 4가지 symbol을 제거한 문자열을 추출하라</p>
+</blockquote>
+<br>
+
+
+<h3 id="Example-16"><a href="#Example-16" class="headerlink" title="Example"></a>Example</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">commit = <span class="string">"0??+0+!!someCommIdhsSt"</span></span><br><span class="line"></span><br><span class="line">getCommit(commit) = <span class="string">"someCommIdhsSt"</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="My-Answer-16"><a href="#My-Answer-16" class="headerlink" title="My Answer"></a>My Answer</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getCommit</span><span class="params">(commit)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> commit.replace(<span class="string">'0'</span>,<span class="string">''</span>).replace(<span class="string">'?'</span>,<span class="string">''</span>).replace(<span class="string">'!'</span>,<span class="string">''</span>).replace(<span class="string">'+'</span>,<span class="string">''</span>)</span><br></pre></td></tr></table></figure>
+<p><strong>너무 일차원적인 답변이지만 잘 된다..ㅎ</strong></p>
+<br>
+
+<h3 id="Another-Answer-5"><a href="#Another-Answer-5" class="headerlink" title="Another Answer"></a>Another Answer</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getCommit</span><span class="params">(commit)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> commit.lstrip(<span class="string">'0?+!'</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getCommit</span><span class="params">(commit)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> commit.strip(<span class="string">'0?+!'</span>)    </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getCommit</span><span class="params">(commit)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">""</span>.join(filter(<span class="keyword">lambda</span> x: x <span class="keyword">not</span> <span class="keyword">in</span> <span class="string">"0?+!"</span>, commit))</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getCommit</span><span class="params">(commit)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> re.sub(<span class="string">'[0?+!]'</span>, <span class="string">''</span>, commit)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getCommit</span><span class="params">(commit)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">""</span>.join([c <span class="keyword">for</span> c <span class="keyword">in</span> commit <span class="keyword">if</span> c.islower() <span class="keyword">or</span> c.isupper()])</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getCommit</span><span class="params">(commit)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> re.match(<span class="string">r"^[0\?\+!]*(.*)$"</span>, commit).group(<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h2 id="Lists-Concatenation"><a href="#Lists-Concatenation" class="headerlink" title="Lists Concatenation"></a>Lists Concatenation</h2><blockquote>
+<p>두 리스트를 연결하는 함수.</p>
+</blockquote>
+<br>
+
+<h3 id="Example-17"><a href="#Example-17" class="headerlink" title="Example"></a>Example</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">lst1 = [<span class="number">2</span>, <span class="number">2</span>, <span class="number">1</span>]</span><br><span class="line">lst2 = [<span class="number">10</span>, <span class="number">11</span>]</span><br><span class="line"></span><br><span class="line">listsConcatenation(lst1, lst2) = [<span class="number">2</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">10</span>, <span class="number">11</span>]</span><br></pre></td></tr></table></figure>
+
+<br>
+
+
+<h3 id="My-Answer-17"><a href="#My-Answer-17" class="headerlink" title="My Answer"></a>My Answer</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">listsConcatenation</span><span class="params">(lst1, lst2)</span>:</span></span><br><span class="line">    res = lst1</span><br><span class="line">    res.extend(lst2)</span><br><span class="line">    <span class="keyword">return</span> res</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">listsConcatenation</span><span class="params">(lst1, lst2)</span>:</span></span><br><span class="line">    res = lst1</span><br><span class="line">    [res.append(i) <span class="keyword">for</span> i <span class="keyword">in</span> lst2]</span><br><span class="line">    <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="Another-Answer-6"><a href="#Another-Answer-6" class="headerlink" title="Another Answer"></a>Another Answer</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">listsConcatenation</span><span class="params">(lst1, lst2)</span>:</span></span><br><span class="line">    res = lst1</span><br><span class="line">    res += lst2</span><br><span class="line">    <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h2 id="Two-Teams"><a href="#Two-Teams" class="headerlink" title="Two Teams"></a>Two Teams</h2><blockquote>
+<p>리스트에 있는 요소에서 [홀수번째 요소 합 - 짝수번째 요소 합 구하는] 함수</p>
+</blockquote>
+<br>
+
+<h3 id="Example-18"><a href="#Example-18" class="headerlink" title="Example"></a>Example</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">students = [<span class="number">1</span>, <span class="number">11</span>, <span class="number">13</span>, <span class="number">6</span>,<span class="number">14</span>]</span><br><span class="line"></span><br><span class="line">twoTeams(students) = <span class="number">11</span></span><br><span class="line">(<span class="number">1</span> + <span class="number">13</span> + <span class="number">14</span>) - (<span class="number">11</span> + <span class="number">6</span>) = <span class="number">11</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+
+<h3 id="My-Answer-18"><a href="#My-Answer-18" class="headerlink" title="My Answer"></a>My Answer</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">twoTeams</span><span class="params">(students)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> sum(students[::<span class="number">2</span>]) - sum(students[<span class="number">1</span>::<span class="number">2</span>])</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="Another-Answer-7"><a href="#Another-Answer-7" class="headerlink" title="Another Answer"></a>Another Answer</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">twoTeams</span><span class="params">(students)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> sum( (<span class="number">-1</span>)**i*I <span class="keyword">for</span> i,I <span class="keyword">in</span> enumerate(students))</span><br></pre></td></tr></table></figure>
+
+<br>
+
+
+<h2 id="Remove-Tasks"><a href="#Remove-Tasks" class="headerlink" title="Remove Tasks"></a>Remove Tasks</h2><blockquote>
+<p>리스트에서 n번째 요소 제거한 리스트 반환하는 함수</p>
+</blockquote>
+<br>
+
+<h3 id="Example-19"><a href="#Example-19" class="headerlink" title="Example"></a>Example</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">k = <span class="number">3</span></span><br><span class="line">toDo = [<span class="number">1237</span>, <span class="number">2847</span>, <span class="number">27485</span>, <span class="number">2947</span>, <span class="number">1</span>, <span class="number">247</span>, <span class="number">374827</span>, <span class="number">22</span>]</span><br><span class="line"></span><br><span class="line">removeTasks(k, toDo) = [<span class="number">1237</span>, <span class="number">2847</span>, <span class="number">2947</span>, <span class="number">1</span>, <span class="number">374827</span>, <span class="number">22</span>]</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="My-Answer-19"><a href="#My-Answer-19" class="headerlink" title="My Answer"></a>My Answer</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">removeTasks</span><span class="params">(k, toDo)</span>:</span></span><br><span class="line">    <span class="keyword">del</span> toDo[k<span class="number">-1</span>::k]</span><br><span class="line">    <span class="keyword">return</span> toDo</span><br></pre></td></tr></table></figure>
+
+<br>
+
+
+<h2 id="Print-List"><a href="#Print-List" class="headerlink" title="Print List"></a>Print List</h2><blockquote>
+<p>설명은 패스 ~ 예시를 참고해주세요~</p>
+</blockquote>
+<br>
+
+<h3 id="Example-20"><a href="#Example-20" class="headerlink" title="Example"></a>Example</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">lst = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br><span class="line"></span><br><span class="line">printList(lst) = <span class="string">"This is your list: [1, 2, 3, 4, 5]"</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="My-Answer-20"><a href="#My-Answer-20" class="headerlink" title="My Answer"></a>My Answer</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">printList</span><span class="params">(lst)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">'This is your list: '</span> + str(lst)</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="Another-Answer-8"><a href="#Another-Answer-8" class="headerlink" title="Another Answer"></a>Another Answer</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">printList</span><span class="params">(lst)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">f'This is your list: <span class="subst">&#123;lst&#125;</span>'</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">printList</span><span class="params">(lst)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">"This is your list: &#123;&#125;"</span>.format(lst)</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h2 id="Repeat-Char"><a href="#Repeat-Char" class="headerlink" title="Repeat Char"></a>Repeat Char</h2><blockquote>
+<p>문자열과 숫자를 입력받아 입력받은 숫자만큼 반복하는 문자열을 반환하는 람다</p>
+</blockquote>
+<br>
+
+<h3 id="Example-21"><a href="#Example-21" class="headerlink" title="Example"></a>Example</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ch = <span class="string">'*'</span></span><br><span class="line">n = <span class="number">10</span></span><br><span class="line"></span><br><span class="line">repeatChar(ch, n) = <span class="string">'**********'</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="My-Answer-21"><a href="#My-Answer-21" class="headerlink" title="My Answer"></a>My Answer</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">repeatChar = <span class="keyword">lambda</span> ch, n : ch *n</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h2 id="Get-Points"><a href="#Get-Points" class="headerlink" title="Get Points"></a>Get Points</h2><blockquote>
+<p>채점 해주는 함수. n번째 문제가 맞으면 n점 획득, 틀리면 패널티 점수 차감.</p>
+</blockquote>
+<br>
+
+<h3 id="Example-22"><a href="#Example-22" class="headerlink" title="Example"></a>Example</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">answer = [<span class="literal">True</span>, <span class="literal">False</span>, <span class="literal">True</span>, <span class="literal">False</span>, <span class="literal">True</span>, <span class="literal">True</span>]</span><br><span class="line">p = <span class="number">3</span></span><br><span class="line"></span><br><span class="line">getPoints(answer, p) = 12 =&gt; 1 -3 + 3 -3 + 5 + 6</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="My-Answer-22"><a href="#My-Answer-22" class="headerlink" title="My Answer"></a>My Answer</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getPoints</span><span class="params">(answers, p)</span>:</span></span><br><span class="line">    questionPoints = <span class="keyword">lambda</span> x,y : x+<span class="number">1</span> <span class="keyword">if</span>(y==<span class="literal">True</span>) <span class="keyword">else</span> -p</span><br><span class="line"></span><br><span class="line">    res = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i, ans <span class="keyword">in</span> enumerate(answers):</span><br><span class="line">        res += questionPoints(i, ans)</span><br><span class="line">    <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="Another-Answer-9"><a href="#Another-Answer-9" class="headerlink" title="Another Answer"></a>Another Answer</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getPoints</span><span class="params">(answers, p)</span>:</span></span><br><span class="line">    questionPoints = <span class="keyword">lambda</span> i,ans: [-p,i+<span class="number">1</span>][ans]</span><br><span class="line"></span><br><span class="line">    res = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i, ans <span class="keyword">in</span> enumerate(answers):</span><br><span class="line">        res += questionPoints(i, ans)</span><br><span class="line">    <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h2 id="Sort-Students"><a href="#Sort-Students" class="headerlink" title="Sort Students"></a>Sort Students</h2><blockquote>
+<p>성씨를 기준으로 오름차순 정렬하는 함수. (단, 성이 같으면 이름으로)</p>
+</blockquote>
+<br>
+
+<h3 id="Example-23"><a href="#Example-23" class="headerlink" title="Example"></a>Example</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">name = [<span class="string">"John Smith"</span>, <span class="string">"Jacky Mon Simonoff"</span>, <span class="string">"Lucy Smith"</span>, <span class="string">"Angela Zimonova"</span>]</span><br><span class="line"></span><br><span class="line">sortStudents(name) = [<span class="string">'Jacky Mon Simonoff'</span>, <span class="string">'John Smith'</span>, <span class="string">'Lucy Smith'</span>, <span class="string">'Angela Zimonova'</span>]</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="Another-Answer-10"><a href="#Another-Answer-10" class="headerlink" title="Another Answer"></a>Another Answer</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sortStudents</span><span class="params">(students)</span>:</span></span><br><span class="line">    <span class="comment"># 특정한 데이터를 기준으로 정렬할 수 있도록 함수를 지정할 수 있다</span></span><br><span class="line">    students.sort(key=<span class="keyword">lambda</span> name: name.split(<span class="string">" "</span>)[<span class="number">-1</span>])</span><br><span class="line">    <span class="keyword">return</span> students</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sortStudents</span><span class="params">(students)</span>:</span></span><br><span class="line">    students.sort(key= <span class="keyword">lambda</span> s : s[len(s)-(s[::<span class="number">-1</span>]).find(<span class="string">" "</span>):] )</span><br><span class="line">    <span class="keyword">return</span> students</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h2 id="Is-Test-Solvable"><a href="#Is-Test-Solvable" class="headerlink" title="Is Test Solvable"></a>Is Test Solvable</h2><blockquote>
+<p>리스트에 있는 숫자들을 다 더하는데, 각 숫자는 각 자리수의 합을 구한 후 더한다. <br><br>그리고 그 총합이 n으로 나누어지는지 확인해주는 함수를 만든다.</p>
+</blockquote>
+<br>
+
+<h3 id="Example-24"><a href="#Example-24" class="headerlink" title="Example"></a>Example</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ids = [<span class="number">529665</span>, <span class="number">909767</span>, <span class="number">644200</span>]</span><br><span class="line">k = <span class="number">3</span></span><br><span class="line"></span><br><span class="line">(<span class="number">5</span>+<span class="number">2</span>+<span class="number">9</span>+<span class="number">6</span>+<span class="number">6</span>+<span class="number">5</span>) + (<span class="number">9</span>+<span class="number">0</span>+<span class="number">9</span>+<span class="number">7</span>+<span class="number">6</span>+<span class="number">7</span>) + (<span class="number">6</span>+<span class="number">4</span>+<span class="number">4</span>+<span class="number">2</span>+<span class="number">0</span>+<span class="number">0</span>) = <span class="number">87</span></span><br><span class="line"><span class="number">87</span>/<span class="number">3</span> = <span class="number">0</span></span><br><span class="line">=&gt; True</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="My-Answer-23"><a href="#My-Answer-23" class="headerlink" title="My Answer"></a>My Answer</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">isTestSolvable</span><span class="params">(ids, k)</span>:</span></span><br><span class="line">    digitSum = <span class="keyword">lambda</span> x : sum([int(i) <span class="keyword">for</span> i <span class="keyword">in</span> list(str(x))])</span><br><span class="line"></span><br><span class="line">    sm = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> questionId <span class="keyword">in</span> ids:</span><br><span class="line">        sm += digitSum(questionId)</span><br><span class="line">    <span class="keyword">return</span> sm % k == <span class="number">0</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="Another-Answer-11"><a href="#Another-Answer-11" class="headerlink" title="Another Answer"></a>Another Answer</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">isTestSolvable</span><span class="params">(ids, k)</span>:</span></span><br><span class="line">    digitSum = <span class="keyword">lambda</span> x: x%<span class="number">10</span>+digitSum(x//<span class="number">10</span>) <span class="keyword">if</span> x <span class="keyword">else</span> <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    sm = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> questionId <span class="keyword">in</span> ids:</span><br><span class="line">        sm += digitSum(questionId)</span><br><span class="line">    <span class="keyword">return</span> sm % k == <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">isTestSolvable</span><span class="params">(ids, k)</span>:</span></span><br><span class="line">    digitSum = <span class="keyword">lambda</span> r: sum(map(int,str(r)))</span><br><span class="line"></span><br><span class="line">    sm = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> questionId <span class="keyword">in</span> ids:</span><br><span class="line">        sm += digitSum(questionId)</span><br><span class="line">    <span class="keyword">return</span> sm % k == <span class="number">0</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+
+<h2 id="Create-Spiral-Matrix"><a href="#Create-Spiral-Matrix" class="headerlink" title="Create Spiral Matrix"></a>Create Spiral Matrix</h2><blockquote>
+<p>나선형 행렬을 구하는 함수. (맨 오른쪽 아래부터 시작)</p>
+</blockquote>
+<p><img src="https://user-images.githubusercontent.com/33630505/71462109-a19b4600-27f5-11ea-917f-361c3d2f7827.png" alt="spiral matrix"></p>
+<br>
+
+<h3 id="Example-25"><a href="#Example-25" class="headerlink" title="Example"></a>Example</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">n = <span class="number">3</span></span><br><span class="line"></span><br><span class="line">createSpiralMatrix(n) = [[<span class="number">5</span>, <span class="number">4</span>, <span class="number">3</span>],</span><br><span class="line">                         [<span class="number">6</span>, <span class="number">9</span>, <span class="number">2</span>],</span><br><span class="line">                         [<span class="number">7</span>, <span class="number">8</span>, <span class="number">1</span>]]</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="My-Answer-24"><a href="#My-Answer-24" class="headerlink" title="My Answer"></a>My Answer</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1번</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">createSpiralMatrix</span><span class="params">(n)</span>:</span></span><br><span class="line">    dirs = [(<span class="number">-1</span>, <span class="number">0</span>), (<span class="number">0</span>, <span class="number">-1</span>), (<span class="number">1</span>, <span class="number">0</span>), (<span class="number">0</span>, <span class="number">1</span>)]</span><br><span class="line">    curDir = <span class="number">0</span></span><br><span class="line">    curPos = (n - <span class="number">1</span>, n - <span class="number">1</span>)</span><br><span class="line">    res = [[<span class="number">0</span> <span class="keyword">for</span> j <span class="keyword">in</span> range(n)] <span class="keyword">for</span> i <span class="keyword">in</span> range(n)]</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, n * n + <span class="number">1</span>):</span><br><span class="line">        res[curPos[<span class="number">0</span>]][curPos[<span class="number">1</span>]] = i</span><br><span class="line">        nextPos = curPos[<span class="number">0</span>] + dirs[curDir][<span class="number">0</span>], curPos[<span class="number">1</span>] + dirs[curDir][<span class="number">1</span>]</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> (<span class="number">0</span> &lt;= nextPos[<span class="number">0</span>] &lt; n <span class="keyword">and</span></span><br><span class="line">                <span class="number">0</span> &lt;= nextPos[<span class="number">1</span>] &lt; n <span class="keyword">and</span></span><br><span class="line">                res[nextPos[<span class="number">0</span>]][nextPos[<span class="number">1</span>]] == <span class="number">0</span>):</span><br><span class="line">            curDir = (curDir + <span class="number">1</span>) % <span class="number">4</span></span><br><span class="line">            nextPos = curPos[<span class="number">0</span>] + dirs[curDir][<span class="number">0</span>], curPos[<span class="number">1</span>] + dirs[curDir][<span class="number">1</span>]</span><br><span class="line">        curPos = nextPos</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> res</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2번</span></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">createSpiralMatrix</span><span class="params">(n)</span>:</span></span><br><span class="line">    dirs = [(<span class="number">-1</span>, <span class="number">0</span>), (<span class="number">0</span>, <span class="number">-1</span>), (<span class="number">1</span>, <span class="number">0</span>), (<span class="number">0</span>, <span class="number">1</span>)]</span><br><span class="line">    curDir = <span class="number">0</span></span><br><span class="line">    curPos = (n - <span class="number">1</span>, n - <span class="number">1</span>)</span><br><span class="line">    res = np.zeros([n,n])</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, n * n + <span class="number">1</span>):</span><br><span class="line">        res[curPos[<span class="number">0</span>]][curPos[<span class="number">1</span>]] = i</span><br><span class="line">        nextPos = curPos[<span class="number">0</span>] + dirs[curDir][<span class="number">0</span>], curPos[<span class="number">1</span>] + dirs[curDir][<span class="number">1</span>]</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> (<span class="number">0</span> &lt;= nextPos[<span class="number">0</span>] &lt; n <span class="keyword">and</span></span><br><span class="line">                <span class="number">0</span> &lt;= nextPos[<span class="number">1</span>] &lt; n <span class="keyword">and</span></span><br><span class="line">                res[nextPos[<span class="number">0</span>]][nextPos[<span class="number">1</span>]] == <span class="number">0</span>):</span><br><span class="line">            curDir = (curDir + <span class="number">1</span>) % <span class="number">4</span></span><br><span class="line">            nextPos = curPos[<span class="number">0</span>] + dirs[curDir][<span class="number">0</span>], curPos[<span class="number">1</span>] + dirs[curDir][<span class="number">1</span>]</span><br><span class="line">        curPos = nextPos</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure>
+
+<p><strong>2번도 가능. 그러나 해당 문제에서 numpy 사용 금지.</strong><br><br><strong>1번에서 처음에 [[j for j in range(n)] for i in range(n)]를 했지만 계속 인덱스 오류가 남. (이유는 모르겠음..)</strong></p>
+<br>
+
+<h3 id="Another-Answer-12"><a href="#Another-Answer-12" class="headerlink" title="Another Answer"></a>Another Answer</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">createSpiralMatrix</span><span class="params">(n)</span>:</span></span><br><span class="line">    dirs = [(<span class="number">-1</span>, <span class="number">0</span>), (<span class="number">0</span>, <span class="number">-1</span>), (<span class="number">1</span>, <span class="number">0</span>), (<span class="number">0</span>, <span class="number">1</span>)]</span><br><span class="line">    curDir = <span class="number">0</span></span><br><span class="line">    curPos = (n - <span class="number">1</span>, n - <span class="number">1</span>)</span><br><span class="line">    res = [[<span class="number">0</span>]*n <span class="keyword">for</span> x <span class="keyword">in</span> range(n)]</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, n * n + <span class="number">1</span>):</span><br><span class="line">        res[curPos[<span class="number">0</span>]][curPos[<span class="number">1</span>]] = i</span><br><span class="line">        nextPos = curPos[<span class="number">0</span>] + dirs[curDir][<span class="number">0</span>], curPos[<span class="number">1</span>] + dirs[curDir][<span class="number">1</span>]</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> (<span class="number">0</span> &lt;= nextPos[<span class="number">0</span>] &lt; n <span class="keyword">and</span></span><br><span class="line">                <span class="number">0</span> &lt;= nextPos[<span class="number">1</span>] &lt; n <span class="keyword">and</span></span><br><span class="line">                res[nextPos[<span class="number">0</span>]][nextPos[<span class="number">1</span>]] == <span class="number">0</span>):</span><br><span class="line">            curDir = (curDir + <span class="number">1</span>) % <span class="number">4</span></span><br><span class="line">            nextPos = curPos[<span class="number">0</span>] + dirs[curDir][<span class="number">0</span>], curPos[<span class="number">1</span>] + dirs[curDir][<span class="number">1</span>]</span><br><span class="line">        curPos = nextPos</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h2 id="Construct-Shell"><a href="#Construct-Shell" class="headerlink" title="Construct Shell"></a>Construct Shell</h2><blockquote>
+<p>오른쪽으로 90도 회전한 산 모양 리스트를 반환하는 함수</p>
+</blockquote>
+<br>
+
+<h3 id="Example-26"><a href="#Example-26" class="headerlink" title="Example"></a>Example</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">n = <span class="number">3</span></span><br><span class="line"></span><br><span class="line">constructShell(n) = [[<span class="number">0</span>],</span><br><span class="line">                     [<span class="number">0</span>, <span class="number">0</span>],</span><br><span class="line">                     [<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>],</span><br><span class="line">                     [<span class="number">0</span>, <span class="number">0</span>],</span><br><span class="line">                     [<span class="number">0</span>]]</span><br></pre></td></tr></table></figure>
+
+<br>
+
+
+<h3 id="My-Answer-25"><a href="#My-Answer-25" class="headerlink" title="My Answer"></a>My Answer</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">constructShell</span><span class="params">(n)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> [[<span class="number">0</span> <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">2</span>*n-i)] <span class="keyword">if</span> i &gt; n <span class="keyword">else</span> [<span class="number">0</span>]*i  <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, <span class="number">2</span>*n)]</span><br></pre></td></tr></table></figure>
+
+<br>
+
+
+<h3 id="Another-Answer-13"><a href="#Another-Answer-13" class="headerlink" title="Another Answer"></a>Another Answer</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">constructShell</span><span class="params">(n)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> [[<span class="number">0</span>]*min(i,<span class="number">2</span>*n-i) <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>,<span class="number">2</span>*n)]</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">constructShell</span><span class="params">(n)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> [[<span class="number">0</span>] * (i - <span class="number">2</span> * max(<span class="number">0</span>, i-n) ) <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, <span class="number">2</span> * n)]</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">constructShell</span><span class="params">(n)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> [[<span class="number">0</span>] * (n-abs(i)) <span class="keyword">for</span> i <span class="keyword">in</span> range(-n+<span class="number">1</span>, n)]</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h2 id="Word-Power"><a href="#Word-Power" class="headerlink" title="Word Power"></a>Word Power</h2><blockquote>
+<p>단어를 넣으면 알파벳 순서에 맞게 숫자로 치환하여 각각의 철자의 합을 구하는 함수.</p>
+</blockquote>
+<br>
+
+<h3 id="Example-27"><a href="#Example-27" class="headerlink" title="Example"></a>Example</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">word = <span class="string">'hello'</span></span><br><span class="line"></span><br><span class="line">h =&gt; 8 e =&gt; 5 l =&gt; 12 o =&gt; 15</span><br><span class="line">wordPower(word) = <span class="number">8</span> + <span class="number">5</span> + <span class="number">12</span> + <span class="number">12</span> + <span class="number">15</span> = <span class="number">52</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="My-Answer-26"><a href="#My-Answer-26" class="headerlink" title="My Answer"></a>My Answer</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">wordPower</span><span class="params">(word)</span>:</span></span><br><span class="line">    num = &#123;b: a+<span class="number">1</span> <span class="keyword">for</span> a, b <span class="keyword">in</span> enumerate(<span class="string">'abcdefghijklmnopqrstuvwxyz'</span>)&#125;</span><br><span class="line">    <span class="keyword">return</span> sum([num[ch] <span class="keyword">for</span> ch <span class="keyword">in</span> word])</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="Another-Answer-14"><a href="#Another-Answer-14" class="headerlink" title="Another Answer"></a>Another Answer</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">wordPower</span><span class="params">(word)</span>:</span></span><br><span class="line">    num = &#123;c: ord(c) - <span class="number">96</span> <span class="keyword">for</span> c <span class="keyword">in</span> word&#125;</span><br><span class="line">    <span class="keyword">return</span> sum([num[ch] <span class="keyword">for</span> ch <span class="keyword">in</span> word])</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">wordPower</span><span class="params">(word)</span>:</span></span><br><span class="line">    num = dict(zip(<span class="string">'abcdefghijklmnopqrstuvwxyz'</span>, range(<span class="number">1</span>, <span class="number">27</span>)))</span><br><span class="line">    <span class="keyword">return</span> sum([num[ch] <span class="keyword">for</span> ch <span class="keyword">in</span> word])</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h2 id="Cool-Pairs"><a href="#Cool-Pairs" class="headerlink" title="Cool Pairs"></a>Cool Pairs</h2><blockquote>
+<p>두 리스트의 요소간 결합으로 만들어지는 숫자 쌍이 (x,y)라 했을 때 (x*y)%(x+y)==0 인 쌍의 갯수를 반환하는 함수 <br><br>단, 숫자 쌍의 합이 같은 경우가 2개 이상일 때는 하나로 취급한다.</p>
+</blockquote>
+<br>
+
+<h3 id="Example-28"><a href="#Example-28" class="headerlink" title="Example"></a>Example</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>]</span><br><span class="line">b = [<span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span>, <span class="number">11</span>, <span class="number">12</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># (4,12), (6,12), (8,8)의 경우가 발생</span></span><br><span class="line"><span class="comment"># 그러나 합으로 봤을 때는 16, 18인 경우 두 가지!</span></span><br><span class="line"></span><br><span class="line">coolPairs(a,b) = <span class="number">2</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="My-Answer-27"><a href="#My-Answer-27" class="headerlink" title="My Answer"></a>My Answer</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">coolPairs</span><span class="params">(a, b)</span>:</span></span><br><span class="line">    uniqueSums = &#123;(x+y) <span class="keyword">for</span> x <span class="keyword">in</span> a <span class="keyword">for</span> y <span class="keyword">in</span> b <span class="keyword">if</span> (x*y)%(x+y)==<span class="number">0</span>&#125;</span><br><span class="line">    <span class="keyword">return</span> len(uniqueSums)</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h2 id="Multiplication-Table"><a href="#Multiplication-Table" class="headerlink" title="Multiplication Table"></a>Multiplication Table</h2><blockquote>
+<p>숫자 n을 입력하면 NxN 행렬을 반환한다. (단, 1행은 1단 2행은 2단 …n행은 n단의 숫자로 구성)</p>
+</blockquote>
+<br>
+
+<h3 id="Example-29"><a href="#Example-29" class="headerlink" title="Example"></a>Example</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">n = <span class="number">5</span></span><br><span class="line"></span><br><span class="line">multiplicationTable(<span class="number">5</span>) = [[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>],</span><br><span class="line">			 [<span class="number">2</span>, <span class="number">4</span>, <span class="number">6</span>, <span class="number">8</span>, <span class="number">10</span>],</span><br><span class="line"> 			 [<span class="number">3</span>, <span class="number">6</span>, <span class="number">9</span>, <span class="number">12</span>, <span class="number">15</span>],</span><br><span class="line">			 [<span class="number">4</span>, <span class="number">8</span>, <span class="number">12</span>, <span class="number">16</span>, <span class="number">20</span>],</span><br><span class="line">			 [<span class="number">5</span>, <span class="number">10</span>, <span class="number">15</span>, <span class="number">20</span>, <span class="number">25</span>]]</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="My-Answer-28"><a href="#My-Answer-28" class="headerlink" title="My Answer"></a>My Answer</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">multiplicationTable</span><span class="params">(n)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> [[a <span class="keyword">for</span> a <span class="keyword">in</span> range(b,b*n+<span class="number">1</span>,b)] <span class="keyword">for</span> b <span class="keyword">in</span> range(<span class="number">1</span>,n+<span class="number">1</span>)]</span><br></pre></td></tr></table></figure>
+<br>
+
+<h3 id="Another-Answer-15"><a href="#Another-Answer-15" class="headerlink" title="Another Answer"></a>Another Answer</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">multiplicationTable</span><span class="params">(n)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> [range(i, n*i + <span class="number">1</span>, i) <span class="keyword">for</span> i <span class="keyword">in</span> xrange(<span class="number">1</span>,<span class="number">1</span>+n) ]</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">multiplicationTable</span><span class="params">(n)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> [[x*y <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">1</span>,n+<span class="number">1</span>)] <span class="keyword">for</span> y <span class="keyword">in</span> range(<span class="number">1</span>,n+<span class="number">1</span>)]</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h2 id="Chess-Teams"><a href="#Chess-Teams" class="headerlink" title="Chess Teams"></a>Chess Teams</h2><blockquote>
+<p>두 개의 리스트를 입력값으로 받으면 각각의 리스트에서 요소 하나씩 뽑아 리스트로 짝지어 리턴해주는 함수</p>
+</blockquote>
+<br>
+
+<h3 id="Example-30"><a href="#Example-30" class="headerlink" title="Example"></a>Example</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">smarties = [<span class="string">"Jane"</span>, <span class="string">"Bob"</span>, <span class="string">"Peter"</span>]</span><br><span class="line">cleveries = [<span class="string">"Oscar"</span>, <span class="string">"Lidia"</span>, <span class="string">"Ann"</span>]</span><br><span class="line"></span><br><span class="line">chessTeams(smarties, cleveries) = [[<span class="string">'Jane'</span>, <span class="string">'Oscar'</span>], [<span class="string">'Bob'</span>, <span class="string">'Lidia'</span>], [<span class="string">'Peter'</span>, <span class="string">'Ann'</span>]]</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="My-Answer-29"><a href="#My-Answer-29" class="headerlink" title="My Answer"></a>My Answer</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">chessTeams</span><span class="params">(smarties, cleveries)</span>:</span></span><br><span class="line">   <span class="keyword">return</span> list(map(<span class="keyword">lambda</span> x, y : [x,y], smarties, cleveries))</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="Another-Answer-16"><a href="#Another-Answer-16" class="headerlink" title="Another Answer"></a>Another Answer</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">chessTeams</span><span class="params">(smarties, cleveries)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> list(zip(smarties,cleveries))</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h2 id="College-Courses"><a href="#College-Courses" class="headerlink" title="College Courses"></a>College Courses</h2><blockquote>
+<p>수강한 과목중에 빼야 하는 과목 이름의 길이만 알때 그 과목을 빼는 함수</p>
+</blockquote>
+<br>
+
+<h3 id="Example-31"><a href="#Example-31" class="headerlink" title="Example"></a>Example</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">n = <span class="number">7</span></span><br><span class="line">courses = [<span class="string">"Art"</span>, <span class="string">"Finance"</span>, <span class="string">"Business"</span>, <span class="string">"Speech"</span>, <span class="string">"History"</span>, <span class="string">"Writing"</span>, <span class="string">"Statistics"</span>]</span><br><span class="line"></span><br><span class="line">collegeCourses(x, courses) = [<span class="string">"Art"</span>, <span class="string">"Business"</span>, <span class="string">"Speech"</span>, <span class="string">"Statistics"</span>]</span><br></pre></td></tr></table></figure>
+<br>
+
+<h3 id="My-Answer-30"><a href="#My-Answer-30" class="headerlink" title="My Answer"></a>My Answer</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">collegeCourses</span><span class="params">(x, courses)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">shouldConsider</span><span class="params">(course)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> len(course) != x</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> list(filter(shouldConsider, courses))</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h2 id="Create-Histograme"><a href="#Create-Histograme" class="headerlink" title="Create Histograme"></a>Create Histograme</h2><blockquote>
+<p>요일마다 과제 수행정도를 보여주는 히스토그램을 만드는 함수.. (사실 그냥 별찍기)</p>
+</blockquote>
+<br>
+
+<h3 id="Example-32"><a href="#Example-32" class="headerlink" title="Example"></a>Example</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">ch = <span class="string">'*'</span></span><br><span class="line">assignments = [<span class="number">12</span>, <span class="number">12</span>, <span class="number">14</span>, <span class="number">3</span>, <span class="number">12</span>, <span class="number">15</span>, <span class="number">14</span>]</span><br><span class="line"></span><br><span class="line">createHistogram(ch, assignments) = [<span class="string">"************"</span>,</span><br><span class="line">                                    <span class="string">"************"</span>,</span><br><span class="line">                                    <span class="string">"**************"</span>,</span><br><span class="line">                                    <span class="string">"***"</span>,</span><br><span class="line">                                    <span class="string">"************"</span>,</span><br><span class="line">                                    <span class="string">"***************"</span>,</span><br><span class="line">                                    <span class="string">"**************"</span>]</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="My-Answer-31"><a href="#My-Answer-31" class="headerlink" title="My Answer"></a>My Answer</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">createHistogram</span><span class="params">(ch, assignments)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> list(map(<span class="keyword">lambda</span> x: ch*x, assignments))</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">createHistogram</span><span class="params">(ch, assignments)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> [ch * x <span class="keyword">for</span> x <span class="keyword">in</span> assignments]</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h2 id="Least-Common-Denominator"><a href="#Least-Common-Denominator" class="headerlink" title="Least Common Denominator"></a>Least Common Denominator</h2><blockquote>
+<p>최소공통분모 구하는 함수</p>
+</blockquote>
+<br>
+
+<h3 id="Example-33"><a href="#Example-33" class="headerlink" title="Example"></a>Example</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">denominators = [<span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]</span><br><span class="line"></span><br><span class="line">leastCommonDenominator(denominators) = <span class="number">60</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 풀이</span></span><br><span class="line"></span><br><span class="line"><span class="number">2</span> x <span class="number">3</span>      <span class="number">4</span>        <span class="number">5</span>        <span class="number">6</span></span><br><span class="line">----- x  ----- x  ----- x  -----</span><br><span class="line">  1        2        1        6      =&gt; (2와 3의 최대공약수, 2x3과 4의 최대 공약수.....)</span><br></pre></td></tr></table></figure>
+
+<br>
+
+
+<p><a id = '5th'></a></p>
+<h1 id="Graphs"><a href="#Graphs" class="headerlink" title="Graphs"></a>Graphs</h1>
+          
+        </div>
+        
+          <br>
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-12-29T12:24:01+09:00">
+  <a class='notlink'>
+    <i class="fas fa-clock" aria-hidden="true"></i>
+    <p>Dec 29, 2021</p>
+    <!-- __('post.updated') + ' ' +  -->
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/algorithm/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>algorithm</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/CodeSignal/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>CodeSignal</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%EC%BD%94%EB%94%A9%EC%97%B0%EC%8A%B5/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>코딩연습</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/python/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>python</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/database/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>database</p></a></div>
+
+
+        
+      
+    </div>
+  </section>
+
+
+        
+
+        
+            <div class="prev-next">
+                
+                    <section class="prev">
+                        <span class="art-item-left">
+                            <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;prev</h6>
+                            <h4>
+                                <a href="/2019/11/03/deeplearning/" rel="prev" title="밑바닥부터 시작하는 딥러닝">
+                                  
+                                      밑바닥부터 시작하는 딥러닝
+                                  
+                                </a>
+                            </h4>
+                            
+                                
+                                <h6 class="tags">
+                                    <a class="tag" href="/tags/python/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> python</a> <a class="tag" href="/tags/deep-learning/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> deep learning</a>
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
+                
+                    <section class="next">
+                        <span class="art-item-right" aria-hidden="true">
+                            <h6>next&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
+                            <h4>
+                                <a href="/2019/10/09/codesignal_class/" rel="prev" title="CodeSignal Arcade 문제 풀이 [Class]">
+                                    
+                                        CodeSignal Arcade 문제 풀이 [Class]
+                                    
+                                </a>
+                            </h4>
+                            
+                                
+                                <h6 class="tags">
+                                    <a class="tag" href="/tags/algorithm/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> algorithm</a> <a class="tag" href="/tags/CodeSignal/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> CodeSignal</a> <a class="tag" href="/tags/%EC%BD%94%EB%94%A9%EC%97%B0%EC%8A%B5/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 코딩연습</a> <a class="tag" href="/tags/python/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> python</a> <a class="tag" href="/tags/class/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> class</a>
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
+            </div>
+        
+      </section>
+      <!-- Google AdSense -->
+      <!-- In post -->
+      <script data-ad-client="ca-pub-1288998211050792" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<!-- Google AdSense -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1288998211050792"
+     data-ad-slot="5437821794"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+    </article>
+  
+
+  
+    <!-- 显示推荐文章和评论 -->
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+  <script>
+    window.subData = {
+      title: 'CodeSignal Arcade 문제 풀이',
+      tools: true
+    }
+  </script>
+
+
+  <div id="disqus_thread"></div>
+</div>
+<aside class='l_side'>
+  
+    
+    
+      
+        
+          <section class='widget blogger'>
+  <div class='content pure'>
+    
+      <div class='avatar'>
+        <img class='avatar' src='/jh.jpg'/>
+      </div>
+    
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="mailto:wlgur278@gmail.com"
+              class="social fas fa-envelope flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://github.com/Jungjihyuk"
+              class="social fab fa-github flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+      
+        
+      
+        
+          
+  <section class='widget toc-wrapper'>
+    <header class='pure'>
+  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Shortcuts</div>
+  
+    <!-- <div class='wrapper'><a class="s-toc rightBtn" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div> -->
+  
+</header>
+
+    <div class='content pure'>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#CenturyFromYear"><span class="toc-text">CenturyFromYear</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Example"><span class="toc-text">Example</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Another-Answer-Python"><span class="toc-text">Another Answer (Python)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Another-Answer-JS"><span class="toc-text">Another Answer (JS)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CheckPalindrome"><span class="toc-text">CheckPalindrome</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Example-1"><span class="toc-text">Example</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#My-Answer"><span class="toc-text">My Answer</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Another-Answer-Python-1"><span class="toc-text">Another Answer (Python)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Another-Answer-C"><span class="toc-text">Another Answer (C++)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#AdjacentElementsProduct"><span class="toc-text">AdjacentElementsProduct</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Example-2"><span class="toc-text">Example</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#My-Answer-1"><span class="toc-text">My Answer</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Another-Answer-Python-2"><span class="toc-text">Another Answer (Python)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Another-Answer-JS-1"><span class="toc-text">Another Answer (JS)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Another-Answer-Java"><span class="toc-text">Another Answer (Java)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ShapeArea"><span class="toc-text">ShapeArea</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#My-Answer-2"><span class="toc-text">My Answer</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Another-Answer-Python-3"><span class="toc-text">Another Answer (Python)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Another-Answer-JS-2"><span class="toc-text">Another Answer (JS)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Another-Answer-C-1"><span class="toc-text">Another Answer (C++)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MonthlyScholarships"><span class="toc-text">MonthlyScholarships</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Example-3"><span class="toc-text">Example</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#My-Answer-3"><span class="toc-text">My Answer</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ProjectsTeam"><span class="toc-text">ProjectsTeam</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Example-4"><span class="toc-text">Example</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#My-Answer-4"><span class="toc-text">My Answer</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#AutomaticNotifications"><span class="toc-text">AutomaticNotifications</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Example-5"><span class="toc-text">Example</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MyAnswer"><span class="toc-text">MyAnswer</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Collections-Truthness"><span class="toc-text">Collections Truthness</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Example-6"><span class="toc-text">Example</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#My-Answer-5"><span class="toc-text">My Answer</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Efficient-Comparison"><span class="toc-text">Efficient Comparison</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#My-Answer-6"><span class="toc-text">My Answer</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Count-Bits"><span class="toc-text">Count Bits</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#My-Answer-7"><span class="toc-text">My Answer</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Another-Answer-Python-4"><span class="toc-text">Another Answer (Python)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Modulus"><span class="toc-text">Modulus</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#My-Answer-8"><span class="toc-text">My Answer</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Another-Answer-Python-5"><span class="toc-text">Another Answer (Python)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Base-Conversion"><span class="toc-text">Base Conversion</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Example-7"><span class="toc-text">Example</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#My-Answer-9"><span class="toc-text">My Answer</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Another-Answer-Python-6"><span class="toc-text">Another Answer (Python)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ListBeautifier"><span class="toc-text">ListBeautifier</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Example-8"><span class="toc-text">Example</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#My-Answer-10"><span class="toc-text">My Answer</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Fix-Message"><span class="toc-text">Fix Message</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Example-9"><span class="toc-text">Example</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#My-Answer-11"><span class="toc-text">My Answer</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Another-Answer"><span class="toc-text">Another Answer</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Cat-Walk"><span class="toc-text">Cat Walk</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Example-10"><span class="toc-text">Example</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#My-Answer-12"><span class="toc-text">My Answer</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Another-Answer-1"><span class="toc-text">Another Answer</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#속도-차이"><span class="toc-text">속도 차이</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Convert-Tabs"><span class="toc-text">Convert Tabs</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Example-11"><span class="toc-text">Example</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#My-Answer-13"><span class="toc-text">My Answer</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Feedback-Review"><span class="toc-text">Feedback Review</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Example-12"><span class="toc-text">Example</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Another-Answer-2"><span class="toc-text">Another Answer</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Is-Word-Palindrome"><span class="toc-text">Is Word Palindrome</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Example-13"><span class="toc-text">Example</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#My-Answer-14"><span class="toc-text">My Answer</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Permutation-Cipher"><span class="toc-text">Permutation Cipher</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Example-14"><span class="toc-text">Example</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#My-Answer-15"><span class="toc-text">My Answer</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Another-Answer-3"><span class="toc-text">Another Answer</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Competitive-Eating"><span class="toc-text">Competitive Eating</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Example-15"><span class="toc-text">Example</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Another-Answer-4"><span class="toc-text">Another Answer</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Get-Commit"><span class="toc-text">Get Commit</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Example-16"><span class="toc-text">Example</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#My-Answer-16"><span class="toc-text">My Answer</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Another-Answer-5"><span class="toc-text">Another Answer</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Lists-Concatenation"><span class="toc-text">Lists Concatenation</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Example-17"><span class="toc-text">Example</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#My-Answer-17"><span class="toc-text">My Answer</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Another-Answer-6"><span class="toc-text">Another Answer</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Two-Teams"><span class="toc-text">Two Teams</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Example-18"><span class="toc-text">Example</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#My-Answer-18"><span class="toc-text">My Answer</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Another-Answer-7"><span class="toc-text">Another Answer</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Remove-Tasks"><span class="toc-text">Remove Tasks</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Example-19"><span class="toc-text">Example</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#My-Answer-19"><span class="toc-text">My Answer</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Print-List"><span class="toc-text">Print List</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Example-20"><span class="toc-text">Example</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#My-Answer-20"><span class="toc-text">My Answer</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Another-Answer-8"><span class="toc-text">Another Answer</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Repeat-Char"><span class="toc-text">Repeat Char</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Example-21"><span class="toc-text">Example</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#My-Answer-21"><span class="toc-text">My Answer</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Get-Points"><span class="toc-text">Get Points</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Example-22"><span class="toc-text">Example</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#My-Answer-22"><span class="toc-text">My Answer</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Another-Answer-9"><span class="toc-text">Another Answer</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Sort-Students"><span class="toc-text">Sort Students</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Example-23"><span class="toc-text">Example</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Another-Answer-10"><span class="toc-text">Another Answer</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Is-Test-Solvable"><span class="toc-text">Is Test Solvable</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Example-24"><span class="toc-text">Example</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#My-Answer-23"><span class="toc-text">My Answer</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Another-Answer-11"><span class="toc-text">Another Answer</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Create-Spiral-Matrix"><span class="toc-text">Create Spiral Matrix</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Example-25"><span class="toc-text">Example</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#My-Answer-24"><span class="toc-text">My Answer</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Another-Answer-12"><span class="toc-text">Another Answer</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Construct-Shell"><span class="toc-text">Construct Shell</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Example-26"><span class="toc-text">Example</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#My-Answer-25"><span class="toc-text">My Answer</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Another-Answer-13"><span class="toc-text">Another Answer</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Word-Power"><span class="toc-text">Word Power</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Example-27"><span class="toc-text">Example</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#My-Answer-26"><span class="toc-text">My Answer</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Another-Answer-14"><span class="toc-text">Another Answer</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Cool-Pairs"><span class="toc-text">Cool Pairs</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Example-28"><span class="toc-text">Example</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#My-Answer-27"><span class="toc-text">My Answer</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Multiplication-Table"><span class="toc-text">Multiplication Table</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Example-29"><span class="toc-text">Example</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#My-Answer-28"><span class="toc-text">My Answer</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Another-Answer-15"><span class="toc-text">Another Answer</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Chess-Teams"><span class="toc-text">Chess Teams</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Example-30"><span class="toc-text">Example</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#My-Answer-29"><span class="toc-text">My Answer</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Another-Answer-16"><span class="toc-text">Another Answer</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#College-Courses"><span class="toc-text">College Courses</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Example-31"><span class="toc-text">Example</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#My-Answer-30"><span class="toc-text">My Answer</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Create-Histograme"><span class="toc-text">Create Histograme</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Example-32"><span class="toc-text">Example</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#My-Answer-31"><span class="toc-text">My Answer</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Least-Common-Denominator"><span class="toc-text">Least Common Denominator</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Example-33"><span class="toc-text">Example</span></a></li></ol></li></ol>
+    </div>
+  </section>
+
+
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+      
+        
+      
+        
+      
+        
+          
+  <section class='widget category'>
+    <header class='pure'>
+  <div><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;category</div>
+  
+    <a class="rightBtn"
+    
+      rel="external nofollow noopener noreferrer"
+    
+    
+      target="_self"
+    
+    href="/categories/"
+    title="categories/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class='content pure'>
+      <ul class="entry">
+        
+          <li><a class="flat-box" title="/categories/AI/" href="/categories/AI/"><div class='name'>AI</div><div class='badge'>(10)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/AI/Data-Analysis/" href="/categories/AI/Data-Analysis/"><div class='name'>Data Analysis</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/AI/Deep-Learning/" href="/categories/AI/Deep-Learning/"><div class='name'>Deep Learning</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/AI/Machine-Learning/" href="/categories/AI/Machine-Learning/"><div class='name'>Machine Learning</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/AI/Natural-Language-Processing/" href="/categories/AI/Natural-Language-Processing/"><div class='name'>Natural Language Processing</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/AI/Numpy/" href="/categories/AI/Numpy/"><div class='name'>Numpy</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/AI/Pandas/" href="/categories/AI/Pandas/"><div class='name'>Pandas</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/AI/Python/" href="/categories/AI/Python/"><div class='name'>Python</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/Algorithm/" href="/categories/Algorithm/"><div class='name'>Algorithm</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/Algorithm/Arrays/" href="/categories/Algorithm/Arrays/"><div class='name'>Arrays</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/Data-Structure/" href="/categories/Data-Structure/"><div class='name'>Data Structure</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/English/" href="/categories/English/"><div class='name'>English</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/Git/" href="/categories/Git/"><div class='name'>Git</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/IT-Terms/" href="/categories/IT-Terms/"><div class='name'>IT Terms</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/JSP-Servlet/" href="/categories/JSP-Servlet/"><div class='name'>JSP & Servlet</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/Language/" href="/categories/Language/"><div class='name'>Language</div><div class='badge'>(8)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/Language/Java/" href="/categories/Language/Java/"><div class='name'>Java</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/Language/Markup-Language/" href="/categories/Language/Markup-Language/"><div class='name'>Markup Language</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/Language/Python/" href="/categories/Language/Python/"><div class='name'>Python</div><div class='badge'>(6)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/Web/" href="/categories/Web/"><div class='name'>Web</div><div class='badge'>(5)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/Web/Bootstrap4/" href="/categories/Web/Bootstrap4/"><div class='name'>Bootstrap4</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/Web/Django/" href="/categories/Web/Django/"><div class='name'>Django</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/Web/Flask/" href="/categories/Web/Flask/"><div class='name'>Flask</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/Web/Object-Model/" href="/categories/Web/Object-Model/"><div class='name'>Object Model</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/Web/Objectoriented/" href="/categories/Web/Objectoriented/"><div class='name'>Objectoriented</div><div class='badge'>(1)</div></a></li>
+        
+      </ul>
+    </div>
+  </section>
+
+
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+      
+        
+      
+        
+      
+        
+      
+        
+          
+  <section class='widget tagcloud'>
+    <header class='pure'>
+  <div><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Keywords</div>
+  
+    <a class="rightBtn"
+    
+      rel="external nofollow noopener noreferrer"
+    
+    
+      target="_self"
+    
+    href="/tags/"
+    title="tags/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class='content pure'>
+      <a href="/tags/AI/" style="font-size: 22px; color: #636363">AI</a> <a href="/tags/Algorithm/" style="font-size: 14px; color: #999">Algorithm</a> <a href="/tags/CodeSignal/" style="font-size: 16px; color: #8b8b8b">CodeSignal</a> <a href="/tags/CodeSignal2/" style="font-size: 14px; color: #999">CodeSignal2</a> <a href="/tags/Data-Analysis/" style="font-size: 14px; color: #999">Data Analysis</a> <a href="/tags/Deep-Learning/" style="font-size: 16px; color: #8b8b8b">Deep Learning</a> <a href="/tags/Django/" style="font-size: 14px; color: #999">Django</a> <a href="/tags/EDA/" style="font-size: 14px; color: #999">EDA</a> <a href="/tags/Flask/" style="font-size: 14px; color: #999">Flask</a> <a href="/tags/FrontEnd/" style="font-size: 14px; color: #999">FrontEnd</a> <a href="/tags/Git/" style="font-size: 14px; color: #999">Git</a> <a href="/tags/Git-Flow/" style="font-size: 14px; color: #999">Git-Flow</a> <a href="/tags/Github/" style="font-size: 14px; color: #999">Github</a> <a href="/tags/Gitlab/" style="font-size: 14px; color: #999">Gitlab</a> <a href="/tags/IT/" style="font-size: 14px; color: #999">IT</a> <a href="/tags/Java/" style="font-size: 14px; color: #999">Java</a> <a href="/tags/Jsp/" style="font-size: 14px; color: #999">Jsp</a> <a href="/tags/Lecture/" style="font-size: 22px; color: #636363">Lecture</a> <a href="/tags/Machine-Learning/" style="font-size: 16px; color: #8b8b8b">Machine Learning</a> <a href="/tags/NLP/" style="font-size: 14px; color: #999">NLP</a> <a href="/tags/Numpy/" style="font-size: 14px; color: #999">Numpy</a> <a href="/tags/Pandas/" style="font-size: 14px; color: #999">Pandas</a> <a href="/tags/Programming/" style="font-size: 14px; color: #999">Programming</a> <a href="/tags/Python/" style="font-size: 16px; color: #8b8b8b">Python</a> <a href="/tags/Servlet/" style="font-size: 14px; color: #999">Servlet</a> <a href="/tags/Web/" style="font-size: 14px; color: #999">Web</a> <a href="/tags/algorithm/" style="font-size: 20px; color: #707070">algorithm</a> <a href="/tags/api/" style="font-size: 14px; color: #999">api</a> <a href="/tags/array/" style="font-size: 14px; color: #999">array</a> <a href="/tags/bom/" style="font-size: 14px; color: #999">bom</a> <a href="/tags/bootstrap/" style="font-size: 14px; color: #999">bootstrap</a> <a href="/tags/class/" style="font-size: 14px; color: #999">class</a> <a href="/tags/clean-code/" style="font-size: 14px; color: #999">clean code</a> <a href="/tags/coding-test/" style="font-size: 14px; color: #999">coding test</a> <a href="/tags/crawling/" style="font-size: 14px; color: #999">crawling</a> <a href="/tags/css/" style="font-size: 14px; color: #999">css</a> <a href="/tags/data-mining/" style="font-size: 14px; color: #999">data mining</a> <a href="/tags/database/" style="font-size: 16px; color: #8b8b8b">database</a> <a href="/tags/deep-learning/" style="font-size: 16px; color: #8b8b8b">deep learning</a> <a href="/tags/deque/" style="font-size: 14px; color: #999">deque</a> <a href="/tags/dom/" style="font-size: 14px; color: #999">dom</a> <a href="/tags/generator/" style="font-size: 14px; color: #999">generator</a> <a href="/tags/git/" style="font-size: 14px; color: #999">git</a> <a href="/tags/helper-function/" style="font-size: 14px; color: #999">helper function</a> <a href="/tags/iris/" style="font-size: 14px; color: #999">iris</a> <a href="/tags/javascript/" style="font-size: 14px; color: #999">javascript</a> <a href="/tags/js/" style="font-size: 14px; color: #999">js</a> <a href="/tags/json/" style="font-size: 14px; color: #999">json</a> <a href="/tags/neural-network/" style="font-size: 14px; color: #999">neural network</a> <a href="/tags/object/" style="font-size: 14px; color: #999">object</a> <a href="/tags/object-model/" style="font-size: 14px; color: #999">object model</a> <a href="/tags/page-rank/" style="font-size: 14px; color: #999">page rank</a> <a href="/tags/python/" style="font-size: 24px; color: #555">python</a> <a href="/tags/queue/" style="font-size: 14px; color: #999">queue</a> <a href="/tags/scraping/" style="font-size: 14px; color: #999">scraping</a> <a href="/tags/send/" style="font-size: 14px; color: #999">send</a> <a href="/tags/stack/" style="font-size: 14px; color: #999">stack</a> <a href="/tags/tensorflow/" style="font-size: 14px; color: #999">tensorflow</a> <a href="/tags/xml/" style="font-size: 14px; color: #999">xml</a> <a href="/tags/yield/" style="font-size: 14px; color: #999">yield</a> <a href="/tags/%EB%AA%85%EB%A0%B9%EC%96%B4/" style="font-size: 14px; color: #999">명령어</a> <a href="/tags/%EB%AC%B8%EB%B2%95/" style="font-size: 14px; color: #999">문법</a> <a href="/tags/%EB%B0%B1%EC%A4%80/" style="font-size: 14px; color: #999">백준</a> <a href="/tags/%EC%82%B0%ED%83%80-%ED%86%A0%EC%9D%B5/" style="font-size: 14px; color: #999">산타 토익</a> <a href="/tags/%EC%84%A4%EA%B3%84/" style="font-size: 14px; color: #999">설계</a> <a href="/tags/%EC%8B%9C%EC%9B%90%EC%8A%A4%EC%BF%A8/" style="font-size: 14px; color: #999">시원스쿨</a> <a href="/tags/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/" style="font-size: 14px; color: #999">알고리즘</a> <a href="/tags/%EC%98%81%EC%96%B4/" style="font-size: 16px; color: #8b8b8b">영어</a> <a href="/tags/%EC%9A%A9%EC%96%B4/" style="font-size: 14px; color: #999">용어</a> <a href="/tags/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/" style="font-size: 14px; color: #999">자료구조</a> <a href="/tags/%EC%9E%90%EC%97%B0%EC%96%B4-%EC%B2%98%EB%A6%AC/" style="font-size: 14px; color: #999">자연어 처리</a> <a href="/tags/%EC%A0%95%EB%A6%AC/" style="font-size: 18px; color: #7e7e7e">정리</a> <a href="/tags/%EC%BD%94%EB%94%A9%EC%97%B0%EC%8A%B5/" style="font-size: 18px; color: #7e7e7e">코딩연습</a> <a href="/tags/%ED%86%A0%EC%9D%B5/" style="font-size: 14px; color: #999">토익</a> <a href="/tags/%ED%95%9C%EB%88%88%EC%97%90-%EB%B3%B4%EA%B8%B0/" style="font-size: 16px; color: #8b8b8b">한눈에 보기</a> <a href="/tags/%ED%95%9C%EB%88%88%EC%97%90-%EC%A0%95%EB%A6%AC/" style="font-size: 14px; color: #999">한눈에 정리</a> <a href="/tags/%ED%98%91%EC%97%85/" style="font-size: 14px; color: #999">협업</a> <a href="/tags/%ED%9A%8C%ED%99%94/" style="font-size: 14px; color: #999">회화</a>
+    </div>
+  </section>
+
+
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+  
+  <!-- Google AdSense -->
+  <div style="margin-top: 16px;">
+
+  </div>
+  <script data-ad-client="ca-pub-1288998211050792" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<!-- Google AdSense -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1288998211050792"
+     data-ad-slot="7750297977"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+</aside>
+
+<footer class="clearfix">
+  
+    <div class="social-wrapper">
+      
+        
+          <a href="mailto:wlgur278@gmail.com"
+            class="social fas fa-envelope flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="https://github.com/Jungjihyuk"
+            class="social fab fa-github flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+    </div>
+  
+  <br>
+  <!-- <div><- markdown(__('footer.license')) </div> -->
+  <div>
+    <!-- <- __('footer.use')  -->
+    <!-- a href = "<- theme.info.docs " -->
+    <span>Copyright. </span>
+    <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" class="codename">Material-X</a>
+    <!-- <- theme.info.name    -->
+    <!-- <- __('footer.theme')  -->
+    <br>
+    
+    . 
+  </div>
+  
+</footer>
+<script>setLoadingBarProgress(80);</script>
+
+<script>
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://https-jungjihyuk-github-io.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a></noscript>
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+
+  <script>
+    
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/" || "/";
+    if (!ROOT.endsWith('/')) ROOT += '/';
+  </script>
+
+<script async src="//instant.page/1.2.2" type="module" integrity="sha384-2xV8M5griQmzyiY3CDqh1dn4z3llDVqZDqzjzcY+jCBCk/a5fXJmuZ/40JJAPeoU"></script>
+
+  <script async src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js"></script>
+  <script async src="https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.5/dist/scrollreveal.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      const $reveal = $('.reveal');
+      if ($reveal.length === 0) return;
+      const sr = ScrollReveal({ distance: 0 });
+      sr.reveal('.reveal');
+    });
+  </script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+
+
+
+  
+  
+  
+    <script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@20.2/js/backstretch.min.js"></script>
+    <script type="text/javascript">
+      $(function(){
+        if ('') {
+          $('').backstretch(
+          ["unsplash.jpg", "jonathan.jpg", "flower.jpg"],
+          {
+            duration: "6000",
+            fade: "2500"
+          });
+        } else {
+          $.backstretch(
+          ["unsplash.jpg", "jonathan.jpg", "flower.jpg"],
+          {
+            duration: "6000",
+            fade: "2500"
+          });
+        }
+      });
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+<script src="/js/app.js"></script>
+
+
+
+  
+<script src="/js/search.js"></script>
+
+
+
+  
+    
+<script src="/js/commentTyping.js"></script>
+
+  
+
+
+
+
+
+<!-- 复制 -->
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  let COPY_SUCCESS = "Copied";
+  let COPY_FAILURE = "Copy failed";
+  /*页面载入完成后，创建复制按钮*/
+  !function (e, t, a) {
+    /* code */
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '  <i class="fa fa-copy"></i><span>Copy</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+
+      clipboard.on('success', function(e) {
+        //您可以加入成功提示
+        console.info('Action:', e.action);
+        console.info('Text:', e.text);
+        console.info('Trigger:', e.trigger);
+        success_prompt(COPY_SUCCESS);
+        e.clearSelection();
+      });
+      clipboard.on('error', function(e) {
+        //您可以加入失败提示
+        console.error('Action:', e.action);
+        console.error('Trigger:', e.trigger);
+        fail_prompt(COPY_FAILURE);
+      });
+    }
+    initCopyCode();
+
+  }(window, document);
+
+  /**
+   * 弹出式提示框，默认1.5秒自动消失
+   * @param message 提示信息
+   * @param style 提示样式，有alert-success、alert-danger、alert-warning、alert-info
+   * @param time 消失时间
+   */
+  var prompt = function (message, style, time)
+  {
+      style = (style === undefined) ? 'alert-success' : style;
+      time = (time === undefined) ? 1500 : time*1000;
+      $('<div>')
+          .appendTo('body')
+          .addClass('alert ' + style)
+          .html(message)
+          .show()
+          .delay(time)
+          .fadeOut();
+  };
+
+  // 成功提示
+  var success_prompt = function(message, time)
+  {
+      prompt(message, 'alert-success', time);
+  };
+
+  // 失败提示
+  var fail_prompt = function(message, time)
+  {
+      prompt(message, 'alert-danger', time);
+  };
+
+  // 提醒
+  var warning_prompt = function(message, time)
+  {
+      prompt(message, 'alert-warning', time);
+  };
+
+  // 信息提示
+  var info_prompt = function(message, time)
+  {
+      prompt(message, 'alert-info', time);
+  };
+
+</script>
+
+
+<!-- fancybox -->
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  let LAZY_LOAD_IMAGE = "";
+  $(".article-entry").find("fancybox").find("img").each(function () {
+      var element = document.createElement("a");
+      $(element).attr("data-fancybox", "gallery");
+      $(element).attr("href", $(this).attr("src"));
+      /* 图片采用懒加载处理时,
+       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
+       * 那么此处将原本的属性名src替换为对应属性名data-original,
+       * 修改如下
+       */
+       if (LAZY_LOAD_IMAGE) {
+         $(element).attr("href", $(this).attr("data-original"));
+       }
+      $(this).wrap(element);
+  });
+</script>
+
+
+
+
+
+  <script>setLoadingBarProgress(100);</script>
+</body>
+</html>

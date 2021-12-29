@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="sitemap.xsl"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    <url>
+        <loc>http://jungjihyuk.github.io</loc>
+        <changefreq>daily</changefreq>
+        <priority>1</priority>
+    </url>
+
+    <url>
+        <loc>http://jungjihyuk.github.io/2019/07/10/xmlandjson/</loc>
+        <lastmod>2021-12-29T03:24:01.869Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://jungjihyuk.github.io/2019/07/13/objectModel/</loc>
+        <lastmod>2021-12-29T03:24:01.868Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://jungjihyuk.github.io/2020/02/04/python-skills/</loc>
+        <lastmod>2021-12-29T03:24:01.868Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://jungjihyuk.github.io/2020/02/03/python-yield-send/</loc>
+        <lastmod>2021-12-29T03:24:01.868Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://jungjihyuk.github.io/2019/01/23/python/</loc>
+        <lastmod>2021-12-29T03:24:01.868Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://jungjihyuk.github.io/2019/04/17/toeic/</loc>
+        <lastmod>2021-12-29T03:24:01.868Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://jungjihyuk.github.io/2019/10/06/tensorflow/</loc>
+        <lastmod>2021-12-29T03:24:01.868Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://jungjihyuk.github.io/2019/09/11/iris/</loc>
+        <lastmod>2021-12-29T03:24:01.867Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://jungjihyuk.github.io/2019/11/10/java/</loc>
+        <lastmod>2021-12-29T03:24:01.867Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://jungjihyuk.github.io/2018/07/28/jspandservlet/</loc>
+        <lastmod>2021-12-29T03:24:01.867Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://jungjihyuk.github.io/2019/07/20/nlp/</loc>
+        <lastmod>2021-12-29T03:24:01.867Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://jungjihyuk.github.io/2019/06/24/object/</loc>
+        <lastmod>2021-12-29T03:24:01.867Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://jungjihyuk.github.io/2019/11/03/deeplearning/</loc>
+        <lastmod>2021-12-29T03:24:01.866Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://jungjihyuk.github.io/2019/03/25/django/</loc>
+        <lastmod>2021-12-29T03:24:01.866Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://jungjihyuk.github.io/2019/05/18/flask/</loc>
+        <lastmod>2021-12-29T03:24:01.866Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://jungjihyuk.github.io/2019/03/12/git/</loc>
+        <lastmod>2021-12-29T03:24:01.866Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://jungjihyuk.github.io/2018/11/04/grammer/</loc>
+        <lastmod>2021-12-29T03:24:01.866Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://jungjihyuk.github.io/2019/03/14/gitflow/</loc>
+        <lastmod>2021-12-29T03:24:01.866Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://jungjihyuk.github.io/2020/01/07/codesignal2/</loc>
+        <lastmod>2021-12-29T03:24:01.865Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://jungjihyuk.github.io/2019/10/09/codesignal_class/</loc>
+        <lastmod>2021-12-29T03:24:01.865Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://jungjihyuk.github.io/2019/04/09/conversationinenglish/</loc>
+        <lastmod>2021-12-29T03:24:01.865Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://jungjihyuk.github.io/2020/01/07/datastructure/</loc>
+        <lastmod>2021-12-29T03:24:01.865Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://jungjihyuk.github.io/2019/07/15/data-collection/</loc>
+        <lastmod>2021-12-29T03:24:01.865Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://jungjihyuk.github.io/2019/03/16/IT-Terms/</loc>
+        <lastmod>2021-12-29T03:24:01.864Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://jungjihyuk.github.io/2019/04/04/algorithm/</loc>
+        <lastmod>2021-12-29T03:24:01.864Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://jungjihyuk.github.io/2019/08/07/bootstrap/</loc>
+        <lastmod>2021-12-29T03:24:01.864Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://jungjihyuk.github.io/2019/01/13/baekjoon-algorithm/</loc>
+        <lastmod>2021-12-29T03:24:01.864Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://jungjihyuk.github.io/2019/10/09/codesignal/</loc>
+        <lastmod>2021-12-29T03:24:01.864Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://jungjihyuk.github.io/2019/04/29/AILecture_pandas/</loc>
+        <lastmod>2021-12-29T03:24:01.863Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://jungjihyuk.github.io/2020/03/17/Arrays/</loc>
+        <lastmod>2021-12-29T03:24:01.863Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://jungjihyuk.github.io/2019/04/29/AILecture_python/</loc>
+        <lastmod>2021-12-29T03:24:01.863Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://jungjihyuk.github.io/2019/04/29/AILecture_numpy/</loc>
+        <lastmod>2021-12-29T03:24:01.862Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://jungjihyuk.github.io/2019/04/29/AILecture_machineLearning/</loc>
+        <lastmod>2021-12-29T03:24:01.862Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://jungjihyuk.github.io/2019/04/29/AILecture_deeplearning/</loc>
+        <lastmod>2021-12-29T03:24:01.861Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+</urlset>
+<!-- XML Sitemap generated by Hexo SEO Friendly Sitemap Generator -->

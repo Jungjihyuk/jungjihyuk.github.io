@@ -1,0 +1,1226 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  <title>AI 이노베이션 스퀘어 수업(기본반) - numpy | 지혁&#39;s Blog</title>
+  
+  
+
+  
+  <link rel="alternate" href="/feed.xml" title="지혁's Blog">
+  
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- meta -->
+  
+
+  <!-- Auto Canonical -->
+  <link rel="canonical" href="http://jungjihyuk.github.io/2019/04/29/ailecture_numpy/"/>
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.10.1/css/all.min.css">
+  
+
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
+  
+
+  
+    
+<link rel="stylesheet" href="/style.css">
+
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+
+  
+  
+
+  <!-- Google AdSense -->
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-143236286-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-143236286-2');
+</script>
+
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/feed.xml" title="지혁's Blog" type="application/rss+xml">
+</head>
+
+<body>
+  
+  
+  <div class="cover-wrapper">
+    <cover class='cover post half'>
+      
+        
+  <h1 class='title'>Imitation, Imagination, Integration</h1>
+
+
+  <div class="m_search">
+    <form name="searchform" class="form u-search-form">
+      <input type="text" class="input u-search-input" placeholder="search" />
+      <i class="icon fas fa-search fa-fw"></i>
+    </form>
+  </div>
+
+<div class='menu navgation'>
+  <ul class='h-list'>
+    
+      
+        <li>
+          <a class="nav home" href="/"
+            
+            
+            id="home">
+            <i class='fas fa-rss fa-fw'></i>&nbsp;Home
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="/about"
+            
+              rel="nofollow"
+            
+            
+            id="about">
+            <i class='fas fa-info-circle fa-fw'></i>&nbsp;About
+          </a>
+        </li>
+      
+    
+  </ul>
+</div>
+
+      
+    </cover>
+    <header class="l_header pure">
+  <div id="loading-bar-wrapper">
+    <div id="loading-bar" class="pure"></div>
+  </div>
+
+	<div class='wrapper'>
+		<div class="nav-main container container--flex">
+      <a class="logo flat-box" target="_self" href='/' >
+        
+          지혁's Blog
+        
+      </a>
+			<div class='menu navgation'>
+				<ul class='h-list'>
+          
+  					
+  						<li>
+								<a class="nav flat-box" href="/"
+                  
+                  
+                    target="_self"
+                  
+                  id="home">
+									<i class='fas fa-grin fa-fw'></i>&nbsp;Home
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/archives"
+                  
+                    rel="nofollow"
+                  
+                  
+                    target="_self"
+                  
+                  id="archives">
+									<i class='fas fa-archive fa-fw'></i>&nbsp;Archives
+								</a>
+							</li>
+      			
+      		
+				</ul>
+			</div>
+
+			
+				<div class="m_search">
+					<form name="searchform" class="form u-search-form">
+						<input type="text" class="input u-search-input" placeholder="search" />
+						<i class="icon fas fa-search fa-fw"></i>
+					</form>
+				</div>
+			
+			<ul class='switcher h-list'>
+				
+					<li class='s-search'><a class="fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
+				
+				<li class='s-menu'><a class="fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+
+		<div class='nav-sub container container--flex'>
+			<a class="logo flat-box"></a>
+			<ul class='switcher h-list'>
+				<li class='s-comment'><a class="flat-btn fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+          <li class='s-toc'><a class="flat-btn fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+			</ul>
+		</div>
+	</div>
+</header>
+	<aside class="menu-phone">
+    <header>
+		<nav class="menu navgation">
+      <ul>
+        
+          
+            <li>
+							<a class="nav flat-box" href="/"
+                
+                
+                id="home">
+								<i class='fas fa-clock fa-fw'></i>&nbsp;Home
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/archives"
+                
+                  rel="nofollow"
+                
+                
+                id="archives">
+								<i class='fas fa-archive fa-fw'></i>&nbsp;Archives
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/projects"
+                
+                
+                id="projects">
+								<i class='fas fa-code-branch fa-fw'></i>&nbsp;Projects
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="https://xaoxuu.com/wiki/material-x/"
+                
+                  rel="nofollow"
+                
+                
+                id="https:xaoxuu.comwikimaterial-x">
+								<i class='fas fa-book fa-fw'></i>&nbsp;Reference
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/about"
+                
+                  rel="nofollow"
+                
+                
+                id="about">
+								<i class='fas fa-info-circle fa-fw'></i>&nbsp;About
+							</a>
+            </li>
+          
+       
+      </ul>
+		</nav>
+    </header>
+	</aside>
+<script>setLoadingBarProgress(40);</script>
+
+  </div>
+
+
+  <div class="l_body">
+    <div class='body-wrapper'>
+      <div class='l_main'>
+  
+
+  
+    <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
+      
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  
+    <h1 class="title">
+      <a href="/2019/04/29/AILecture_numpy/">
+        AI 이노베이션 스퀘어 수업(기본반) - numpy
+      </a>
+    </h1>
+  
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    
+      <a href="http://jungjihyuk.github.io" rel="nofollow">
+        
+          <i class="fas fa-user" aria-hidden="true"></i>
+        
+        <p>Jihyuk Jung</p>
+      </a>
+    
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2019-04-29</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/AI/Numpy/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>AI&nbsp;/&nbsp;Numpy</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+  
+
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          <p><a id = '12th'></a></p>
+<h1 id="2019년-5월-20일-월요일-열두번째-수업"><a href="#2019년-5월-20일-월요일-열두번째-수업" class="headerlink" title="2019년 5월 20일 월요일 열두번째 수업"></a>2019년 5월 20일 월요일 열두번째 수업</h1><h2 id="정보의-진화-단계"><a href="#정보의-진화-단계" class="headerlink" title="정보의 진화 단계"></a>정보의 진화 단계</h2><p><img src="https://user-images.githubusercontent.com/33630505/58008628-c1fc7700-7b27-11e9-9e69-6f39608cd81d.JPG" alt="dikw"></p>
+<p>DIKW : <a href="http://blog.naver.com/PostView.nhn?blogId=gracehappyworld&logNo=221481622524&categoryNo=17&parentCategoryNo=0&viewDate=&currentPage=1&postListTopCurrentPage=1&from=search" target="_blank" rel="noopener">blog</a></p>
+<h2 id="인공지능의-시작과-배경"><a href="#인공지능의-시작과-배경" class="headerlink" title="인공지능의 시작과 배경"></a>인공지능의 시작과 배경</h2><p>Physical Labor과 Cognitive Labor의 한계를 극복하기 위해 인공지능으로 자동화 시키는 분야가 발달하게 됨 <br><br>그러나 요즘은 보통 물리적 노동보다는 인지적 관점에서 관심이 쏠리고 있다 <br><br>아직 인공지능은 이해하는 능력은 부족하지만 인식하는 능력은 사람의 영역 그 이상까지 왔다 <br></p>
+<h3 id="지능"><a href="#지능" class="headerlink" title="지능"></a>지능</h3><p>지식을 <br></p>
+<ol>
+<li>이해</li>
+<li>인식</li>
+<li>추론</li>
+<li>학습</li>
+<li>생성</li>
+<li>해결</li>
+<li>결정<br>
+할 수 있는 능력
+
+</li>
+</ol>
+<h2 id="인공지능"><a href="#인공지능" class="headerlink" title="인공지능"></a>인공지능</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#39;인간을 대체할 수 있는 기계 또는 지능을 갖춘 존재로부터 의사소통, 상황의 상관관계 이해 및</span><br><span class="line"> 결론 도출 등 인간의 행동을 모방할 수 있는 기술&#39;</span><br><span class="line"></span><br><span class="line">좁은 의미에서 기계학습이라 볼 수 있다</span><br><span class="line">기계학습은 데이터를 넣어주면 프로그래밍된 논리나 규칙을 바탕으로</span><br><span class="line">스스로 학습하여 문제해결을 하는 알고리즘을 생성한다</span><br><span class="line"></span><br><span class="line">deep learning은 인간 신경망을 모델화하여 스스로 데이터 세트를 예측하는 기술이다</span><br><span class="line">deep learning은 인식분야에서 정확도가 높지만 인식이외에 기능은 좋지 않다</span><br><span class="line">deep learning은 정형화 데이터에서 성능이 좋지 않고 비정형 데이터에서 성능이 좋다</span><br></pre></td></tr></table></figure>
+
+<h3 id="AI-Machine-learning-deep-learning"><a href="#AI-Machine-learning-deep-learning" class="headerlink" title="AI, Machine learning, deep learning"></a>AI, Machine learning, deep learning</h3><p><img src="https://user-images.githubusercontent.com/33630505/58009466-7f3b9e80-7b29-11e9-9515-20b4583abaf6.JPG" alt="ai"></p>
+<h3 id="인공지능-영역의-분류"><a href="#인공지능-영역의-분류" class="headerlink" title="인공지능 영역의 분류"></a>인공지능 영역의 분류</h3><p><img src="https://user-images.githubusercontent.com/33630505/58367430-26e61180-7f1a-11e9-97a3-9c163f0b52d4.JPG" alt="ai"></p>
+<h2 id="인공지능의-문제해결-전략"><a href="#인공지능의-문제해결-전략" class="headerlink" title="인공지능의 문제해결 전략"></a>인공지능의 문제해결 전략</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">인간의 인지적 작업을</span><br><span class="line">어떻게 Computing Model로 만들어내고</span><br><span class="line">그것을 Machine에서 구현하여</span><br><span class="line">그 작업을 자동으로 효율적으로 할 수 있게 할 것인가?</span><br><span class="line"></span><br><span class="line">Computing Model</span><br><span class="line">- Theory of computation</span><br><span class="line">  컴퓨터 과학의 한 갈래로, 어떤 문제를 컴퓨터로 풀 수 있는지, 또</span><br><span class="line">  얼마나 효율적으로 풀 수 있는지</span><br><span class="line">- Programmable</span><br></pre></td></tr></table></figure>
+
+<h2 id="파이썬은-연산속도가-느린데-도대체-왜-파이썬으로-AI를-하는가"><a href="#파이썬은-연산속도가-느린데-도대체-왜-파이썬으로-AI를-하는가" class="headerlink" title="파이썬은 연산속도가 느린데 도대체 왜 파이썬으로 AI를 하는가?"></a>파이썬은 연산속도가 느린데 도대체 왜 파이썬으로 AI를 하는가?</h2><h3 id="Numpy가-있기-때문에"><a href="#Numpy가-있기-때문에" class="headerlink" title="Numpy가 있기 때문에!"></a>Numpy가 있기 때문에!</h3><p><span style="background-color:rgb(56, 188, 182)">Numpy는 속도가 빠르고 사용하기가 쉽다! </span><br><br>Numpy는 벡터 연산, 행렬 연산을 효율적으로 쉽게 만들 수 있다<br><br>Numpy는 속도 개선의 최적화를 하지 않아도 되기 때문에 AI에서 Numpy를 쓰는 것이다 <br><br><br></p>
+<h2 id="Numpy"><a href="#Numpy" class="headerlink" title="Numpy"></a>Numpy</h2><blockquote>
+<p>Numarray와 Numeric이라는 오래된 Python 패키지를 계승해서 나온 수학 및 과학 연산을 위한 파이썬 패키지이다.</p>
+</blockquote>
+<br>
+
+<h3 id="Numpy-속도가-빠른-이유"><a href="#Numpy-속도가-빠른-이유" class="headerlink" title="Numpy 속도가 빠른 이유"></a>Numpy 속도가 빠른 이유</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> C나 Fortran으로 만들어져 속도가 빠르다</span><br><span class="line"><span class="number">2.</span> Array기반으로 처리하기 때문에 속도가 빠르다</span><br><span class="line"><span class="number">3.</span> 데이터를 <span class="number">1</span>열로 저장해, 효율적인 자료구조 형태를 갖기 때문에 빠르다</span><br><span class="line"><span class="number">4.</span> Homogeneous한 Type만을 저장하기 때문에 타입 체크 비용이 들지 않아 빠르다</span><br><span class="line"><span class="number">5.</span> 데이터를 메모리에 한번에 올려 처리하기 때문에 속도가 빠르다</span><br><span class="line"><span class="number">6.</span> 데이터 구조가 Structured array방식이기 때문에 데이터 접근이 빠르다</span><br></pre></td></tr></table></figure>
+
+<h3 id="Numpy는-벡터-기반이다"><a href="#Numpy는-벡터-기반이다" class="headerlink" title="Numpy는 벡터 기반이다"></a>Numpy는 벡터 기반이다</h3><ul>
+<li>1차 Vector (Numpy에서 vector는 방향이 없다고 간주)</li>
+<li>2차 Matrics  </li>
+<li>3차 Tensor</li>
+</ul>
+<br>
+
+
+<h3 id="python-속도-개선을-위한-방법"><a href="#python-속도-개선을-위한-방법" class="headerlink" title="python 속도 개선을 위한 방법"></a>python 속도 개선을 위한 방법</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">1. Computing Power</span><br><span class="line">- GPU</span><br><span class="line">- Parallel Computing</span><br><span class="line"></span><br><span class="line">2. Compiler</span><br><span class="line">- Cython</span><br><span class="line">- PyPy ....</span><br><span class="line"></span><br><span class="line">3. Library</span><br><span class="line">- Numpy</span><br><span class="line"></span><br><span class="line">4. Algorithm&#x2F; Data Structure</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="Vectorization"><a href="#Vectorization" class="headerlink" title="Vectorization"></a>Vectorization</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">loop없이 벡터연산으로 속도 향상을 하는 방법</span><br><span class="line">요즘은 cpu자체에서 vector processor를 지원</span><br><span class="line">함수형 패러다임 + 선형대수 기법</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://user-images.githubusercontent.com/33630505/58010431-4ef4ff80-7b2b-11e9-81fb-7fb7bba0cd19.JPG" alt="array"><br><br></p>
+<p><strong>Numpy Tip1</strong> python list와 numpy list는 차이가 있다. python은 linked list , type check로 인해 속도가 느리고, numpy 에서는 type이 통일되어 있어 속도가 빠르다</p>
+<p><img src="https://user-images.githubusercontent.com/33630505/58010552-8bc0f680-7b2b-11e9-9c2b-ff3cb5012eaa.JPG" alt="list"></p>
+<br>
+
+<h2 id="Python-문법으로-벡터화-하기-vs-Numpy"><a href="#Python-문법으로-벡터화-하기-vs-Numpy" class="headerlink" title="Python 문법으로 벡터화 하기 vs Numpy"></a>Python 문법으로 벡터화 하기 vs Numpy</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">x</span><span class="params">(a,b)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> [i+j <span class="keyword">for</span> i,j <span class="keyword">in</span> zip(a,b)]</span><br><span class="line">x([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],[<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>])</span><br><span class="line">: [<span class="number">5</span>, <span class="number">7</span>, <span class="number">9</span>]</span><br><span class="line"></span><br><span class="line"><span class="meta">@np.vectorize</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">z</span><span class="params">(a,b)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> a + b</span><br><span class="line">z([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],[<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>])</span><br><span class="line">: array([<span class="number">5</span>, <span class="number">7</span>, <span class="number">9</span>])</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="Numpy-사용하기"><a href="#Numpy-사용하기" class="headerlink" title="Numpy 사용하기"></a>Numpy 사용하기</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">a = np.array(<span class="number">0</span>)</span><br><span class="line">b = np.array([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>])</span><br><span class="line">c = np.array([[<span class="number">1</span>,<span class="number">2</span>],[<span class="number">3</span>,<span class="number">4</span>]])</span><br><span class="line">d = np.array([[[<span class="number">1</span>,<span class="number">2</span>],[<span class="number">3</span>,<span class="number">4</span>],[<span class="number">5</span>,<span class="number">6</span>]]])</span><br><span class="line">a</span><br><span class="line">b</span><br><span class="line">c</span><br><span class="line">d</span><br><span class="line">type(a)</span><br><span class="line"></span><br><span class="line">: array(<span class="number">0</span>)</span><br><span class="line">  array([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>])</span><br><span class="line">  array([[<span class="number">1</span>, <span class="number">2</span>],</span><br><span class="line">       [<span class="number">3</span>, <span class="number">4</span>]])</span><br><span class="line">  array([[[<span class="number">1</span>, <span class="number">2</span>],</span><br><span class="line">        [<span class="number">3</span>, <span class="number">4</span>],</span><br><span class="line">        [<span class="number">5</span>, <span class="number">6</span>]]])</span><br><span class="line">  numpy.ndarray</span><br><span class="line"></span><br><span class="line">a = np.arange(<span class="number">5</span>,<span class="number">25</span>).reshape(<span class="number">4</span>,<span class="number">5</span>)</span><br><span class="line"></span><br><span class="line">np.max(a)</span><br><span class="line">np.min(a)</span><br><span class="line"></span><br><span class="line">: <span class="number">24</span></span><br><span class="line">  <span class="number">5</span></span><br><span class="line"></span><br><span class="line">np.argmax(a)</span><br><span class="line">np.argmin(a)  <span class="comment"># Function 방식</span></span><br><span class="line">: <span class="number">19</span></span><br><span class="line">  <span class="number">0</span></span><br><span class="line"></span><br><span class="line">a.argmax()   <span class="comment"># Method 방식</span></span><br><span class="line">: <span class="number">19</span></span><br></pre></td></tr></table></figure>
+<br>
+
+<h3 id="Factory-Method"><a href="#Factory-Method" class="headerlink" title="Factory Method"></a>Factory Method</h3><blockquote>
+<p>객체를 만들어내는 부분을 서브 클래스로 위임해 캡슐화 하는 패턴 <br><br>타입에 따라 다르게 동작하고 싶을때 사용하는 패턴이다<br><br></p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">np.array([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>])</span><br><span class="line">: array([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>])</span><br><span class="line"></span><br><span class="line">np.array((<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>))   <span class="comment"># 메소드 방식(Factory Method)</span></span><br><span class="line">: np.array([<span class="string">'a'</span>, <span class="number">1</span>])</span><br><span class="line"></span><br><span class="line">np.ndarray([<span class="string">'a'</span>,<span class="number">1</span>]) <span class="comment"># 인스턴스 방식(Homogeneous한 타입의 mutable이기 때문에 타입이 다르면 에러가 난다)</span></span><br><span class="line">: TypeError</span><br><span class="line"></span><br><span class="line">np.ndarray(shape=(<span class="number">2</span>,<span class="number">2</span>), dtype=float, order=<span class="string">'F'</span>) <span class="comment"># 인스턴스 방식은 랜덤으로 값이 채워진다</span></span><br><span class="line">: array([[<span class="number">1.49769904e-311</span>, <span class="number">0.00000000e+000</span>],</span><br><span class="line">       [<span class="number">0.00000000e+000</span>, <span class="number">5.02034658e+175</span>]])</span><br></pre></td></tr></table></figure>
+<br>
+
+<h3 id="Endianness"><a href="#Endianness" class="headerlink" title="Endianness"></a>Endianness</h3><blockquote>
+<p>컴퓨터의 메모리와 같은 1차원 공간에 여러 개의 연속된 대상을 배열하는 방법 <br><br>여기서 바이트를 배열하는 방법을 Byte order라고 한다</p>
+</blockquote>
+<p><img src="https://user-images.githubusercontent.com/33630505/61672256-e510f600-ad25-11e9-8c01-b43f98be8de0.png" alt="endian"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">np.array([<span class="string">'a'</span>, <span class="number">1</span>]) <span class="comment"># little-endian</span></span><br><span class="line">: array([<span class="string">'a'</span>, <span class="string">'1'</span>], dtype=<span class="string">'&lt;U1'</span>)</span><br><span class="line"></span><br><span class="line">dt = np.dtype(<span class="string">"&gt;i4"</span>) <span class="comment"># big-endian</span></span><br><span class="line">dt.byteorder</span><br><span class="line">: <span class="string">'&gt;'</span></span><br><span class="line"></span><br><span class="line">a = np.array([<span class="string">'a'</span>, <span class="number">1</span>])</span><br><span class="line">a.flags</span><br><span class="line">: C_CONTIGUOUS : <span class="literal">True</span>  <span class="comment"># C 저장 방식</span></span><br><span class="line">  F_CONTIGUOUS : <span class="literal">True</span>  <span class="comment"># Fortran 저장 방식</span></span><br><span class="line">  OWNDATA : <span class="literal">True</span></span><br><span class="line">  WRITEABLE : <span class="literal">True</span></span><br><span class="line">  ALIGNED : <span class="literal">True</span></span><br><span class="line">  WRITEBACKIFCOPY : <span class="literal">False</span></span><br><span class="line">  UPDATEIFCOPY : <span class="literal">False</span></span><br><span class="line"></span><br><span class="line">b = np.array([[<span class="number">1</span>,<span class="number">2</span>],[<span class="number">3</span>,<span class="number">4</span>]], order = <span class="string">"C"</span>)</span><br><span class="line">b.flags</span><br><span class="line">: C_CONTIGUOUS : <span class="literal">True</span></span><br><span class="line">  F_CONTIGUOUS : <span class="literal">False</span></span><br><span class="line">  OWNDATA : <span class="literal">True</span></span><br><span class="line">  WRITEABLE : <span class="literal">True</span></span><br><span class="line">  ALIGNED : <span class="literal">True</span></span><br><span class="line">  WRITEBACKIFCOPY : <span class="literal">False</span></span><br><span class="line">  UPDATEIFCOPY : <span class="literal">False</span></span><br><span class="line"></span><br><span class="line">c = np.array([[<span class="number">1</span>,<span class="number">2</span>],[<span class="number">3</span>,<span class="number">4</span>]], order = <span class="string">"C"</span>)</span><br><span class="line">c.flags</span><br><span class="line">: C_CONTIGUOUS : <span class="literal">False</span></span><br><span class="line">  F_CONTIGUOUS : <span class="literal">True</span></span><br><span class="line">  OWNDATA : <span class="literal">True</span></span><br><span class="line">  WRITEABLE : <span class="literal">True</span></span><br><span class="line">  ALIGNED : <span class="literal">True</span></span><br><span class="line">  WRITEBACKIFCOPY : <span class="literal">False</span></span><br><span class="line">  UPDATEIFCOPY : <span class="literal">False</span></span><br></pre></td></tr></table></figure>
+<br>
+
+<h4 id="Big-endian"><a href="#Big-endian" class="headerlink" title="Big-endian"></a>Big-endian</h4><blockquote>
+<p>큰 단위가 앞에 오는 경우 <br><br>최상위 바이트 (MSB - Most Significant Byte)부터 차례로 저장하는 방식</p>
+</blockquote>
+<p><img src="https://user-images.githubusercontent.com/33630505/68069380-f8127800-fda2-11e9-8309-5ac9655162c4.JPG" alt="big_endian"><br><br></p>
+<h4 id="Little-endian"><a href="#Little-endian" class="headerlink" title="Little-endian"></a>Little-endian</h4><blockquote>
+<p>작은 단위가 앞에 오는 경우 <br><br>최하위 바이트 (LSB - Least Significant Byte)부터 차례로 저장하는 방식</p>
+</blockquote>
+<p><img src="https://user-images.githubusercontent.com/33630505/68069383-02cd0d00-fda3-11e9-98b6-bffa911e22d2.JPG" alt="little-endian"><br><br></p>
+<h3 id="Big-endian-VS-Little-endian"><a href="#Big-endian-VS-Little-endian" class="headerlink" title="Big-endian VS Little-endian"></a>Big-endian VS Little-endian</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">빅 엔디언은 사람이 숫자를 읽고 쓰는 방법과 같기 때문에 디버깅 과정에서 메모리의 값을 보기 편하다는 장점이 있다.</span><br><span class="line">ex) 0x12345678 &#x3D;&gt; 12 34 56 78로 표현</span><br><span class="line"></span><br><span class="line">리틀 엔디언은 메모리에 저장된 값의 하위 바이트들만 사용할 때 별도의 계산이 필요 없다는 장점이 있다.</span><br><span class="line">ex) 32비트 숫자인 0x2A(16진수)를 표현하면 2A 00 00 00 가 되는데, 하위 바이트를 사용하려고 한다면 앞의 한 바이트만 떼어 내면 된다.</span><br><span class="line">    (빅 엔디언에서는 하위 바이트를 얻기 위해서는 3바이트를 더해야 한다는 단점이 있다)    </span><br><span class="line"></span><br><span class="line">보통 변수의 첫 바이트를 그 변수의 주소로 삼기 때문에 이런 리틀 엔디언의 성질은 종종 프로그래밍을 편하게 해준다.</span><br><span class="line">또한 가산기가 덧셈을 하는 과정은 LSB로부터 시작하여 자리 올림을 계산해야 하므로 리틀 엔디언에서 가산기 설계가 조금 더 단순해진다.</span><br><span class="line">(오늘날의 프로세서는 여러개의 바이트를 동시에 읽어들여 동시에 덧셈을 수행하는 구조를 갖고 있어 사실상 차이가 없다)</span><br><span class="line"></span><br><span class="line">※ 엔디안 방식은 데이터를 전송하는 네트워크 층에서 중요하게 여겨진다.</span><br><span class="line">   서로 다른 방식의 데이터 저장방식을 갖고 통신을 하게되면 엉뚱한 값을 주고 받기 때문이다.</span><br><span class="line"></span><br><span class="line">빅 엔디언 &#x3D;&gt;  Unix의 Risc계열의 프로세서가 사용하는 바이트 오더링</span><br><span class="line">             네트워크에서 사용하는 바이트 오더링</span><br><span class="line">	     앞에서부터 스택에 PUSH</span><br><span class="line">	     비교연산에서 리틀 엔디언보다 속도가 빠르다</span><br><span class="line">리틀 엔디언 &#x3D;&gt; Intel 계열의 프로세서가 사용하는 바이트 오더링</span><br><span class="line">              뒤에서부터 스택에 PUSH</span><br><span class="line">	      계산연산에서 빅 엔디언 보다 속도가 빠르다</span><br></pre></td></tr></table></figure>
+<br>
+
+<p>출처: <a href="https://genesis8.tistory.com/37" target="_blank" rel="noopener">tistory</a>, &nbsp; <a href="https://ko.wikipedia.org/wiki/%EC%97%94%EB%94%94%EC%96%B8" target="_blank" rel="noopener">위키백과</a></p>
+<br>
+
+<h3 id="특수-행렬-만들기"><a href="#특수-행렬-만들기" class="headerlink" title="특수 행렬 만들기"></a>특수 행렬 만들기</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"><span class="comment"># 영행렬 만들기</span></span><br><span class="line">z = np.zeros([<span class="number">3</span>,<span class="number">3</span>])</span><br><span class="line">z</span><br><span class="line">: array([[<span class="number">0.</span>, <span class="number">0.</span>, <span class="number">0.</span>],</span><br><span class="line">       [<span class="number">0.</span>, <span class="number">0.</span>, <span class="number">0.</span>],</span><br><span class="line">       [<span class="number">0.</span>, <span class="number">0.</span>, <span class="number">0.</span>]])</span><br><span class="line"></span><br><span class="line"><span class="comment"># 단위행렬(항등행렬) 만들기</span></span><br><span class="line">y = np.eye(<span class="number">3</span>)</span><br><span class="line">y</span><br><span class="line">: array([[<span class="number">1.</span>, <span class="number">0.</span>, <span class="number">0.</span>],</span><br><span class="line">       [<span class="number">0.</span>, <span class="number">1.</span>, <span class="number">0.</span>],</span><br><span class="line">       [<span class="number">0.</span>, <span class="number">0.</span>, <span class="number">1.</span>]])</span><br><span class="line"></span><br><span class="line"><span class="comment"># 전치행렬 만들기</span></span><br><span class="line">t = np.array([[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],[<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>],[<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>]])</span><br><span class="line">t.T</span><br><span class="line">: array([[<span class="number">1</span>, <span class="number">4</span>, <span class="number">7</span>],</span><br><span class="line">       [<span class="number">2</span>, <span class="number">5</span>, <span class="number">8</span>],</span><br><span class="line">       [<span class="number">3</span>, <span class="number">6</span>, <span class="number">9</span>]])</span><br><span class="line"></span><br><span class="line"><span class="comment"># 일행렬 만들기</span></span><br><span class="line">o = np.ones((<span class="number">5</span>,<span class="number">4</span>))</span><br><span class="line">o</span><br><span class="line">: array([[<span class="number">1.</span>, <span class="number">1.</span>, <span class="number">1.</span>, <span class="number">1.</span>],</span><br><span class="line">       [<span class="number">1.</span>, <span class="number">1.</span>, <span class="number">1.</span>, <span class="number">1.</span>],</span><br><span class="line">       [<span class="number">1.</span>, <span class="number">1.</span>, <span class="number">1.</span>, <span class="number">1.</span>],</span><br><span class="line">       [<span class="number">1.</span>, <span class="number">1.</span>, <span class="number">1.</span>, <span class="number">1.</span>],</span><br><span class="line">       [<span class="number">1.</span>, <span class="number">1.</span>, <span class="number">1.</span>, <span class="number">1.</span>]])</span><br><span class="line"></span><br><span class="line"><span class="comment"># 원하는 숫자로 행렬 채우기</span></span><br><span class="line">f = np.full((<span class="number">3</span>,<span class="number">3</span>),<span class="number">3</span>)</span><br><span class="line">f</span><br><span class="line">: array([[<span class="number">3</span>, <span class="number">3</span>, <span class="number">3</span>],</span><br><span class="line">       [<span class="number">3</span>, <span class="number">3</span>, <span class="number">3</span>],</span><br><span class="line">       [<span class="number">3</span>, <span class="number">3</span>, <span class="number">3</span>]])</span><br><span class="line"></span><br><span class="line"><span class="comment"># 원하는 행렬 shape 복사해서 일행렬 만들기</span></span><br><span class="line">l = np.ones_like(f)</span><br><span class="line">l</span><br><span class="line">: array([[<span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>],</span><br><span class="line">       [<span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>],</span><br><span class="line">       [<span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>]])</span><br><span class="line"></span><br><span class="line"><span class="comment"># 대각행렬 만들기</span></span><br><span class="line"></span><br><span class="line">np.diagonal([[<span class="number">1</span>,<span class="number">2</span>],[<span class="number">3</span>,<span class="number">4</span>]])</span><br><span class="line">: array([<span class="number">1</span>, <span class="number">4</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment"># 상부 삼각행렬</span></span><br><span class="line"></span><br><span class="line">np.triu([[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],[<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>],[<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>],[<span class="number">10</span>,<span class="number">11</span>,<span class="number">12</span>]])</span><br><span class="line">: array([[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>],</span><br><span class="line">       	[<span class="number">0</span>, <span class="number">5</span>, <span class="number">6</span>],</span><br><span class="line">       	[<span class="number">0</span>, <span class="number">0</span>, <span class="number">9</span>],</span><br><span class="line">       	[<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>]])</span><br><span class="line"></span><br><span class="line"><span class="comment"># 하부 삼각행렬</span></span><br><span class="line"></span><br><span class="line">np.tri(<span class="number">4</span>)</span><br><span class="line">: array([[<span class="number">1.</span>, <span class="number">0.</span>, <span class="number">0.</span>, <span class="number">0.</span>],</span><br><span class="line">       	[<span class="number">1.</span>, <span class="number">1.</span>, <span class="number">0.</span>, <span class="number">0.</span>],</span><br><span class="line">       	[<span class="number">1.</span>, <span class="number">1.</span>, <span class="number">1.</span>, <span class="number">0.</span>],</span><br><span class="line">       	[<span class="number">1.</span>, <span class="number">1.</span>, <span class="number">1.</span>, <span class="number">1.</span>]])</span><br><span class="line"></span><br><span class="line">np.tril([[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],[<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>],[<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>],[<span class="number">10</span>,<span class="number">11</span>,<span class="number">12</span>]], <span class="number">-1</span>)</span><br><span class="line">: array([[ <span class="number">0</span>,  <span class="number">0</span>,  <span class="number">0</span>],</span><br><span class="line">       	[ <span class="number">4</span>,  <span class="number">0</span>,  <span class="number">0</span>],</span><br><span class="line">	[ <span class="number">7</span>,  <span class="number">8</span>,  <span class="number">0</span>],</span><br><span class="line">       	[<span class="number">10</span>, <span class="number">11</span>, <span class="number">12</span>]])</span><br><span class="line"></span><br><span class="line">np.linspace(<span class="number">0</span>,<span class="number">30</span>)</span><br><span class="line">: array([ <span class="number">0.</span>        ,  <span class="number">0.6122449</span> ,  <span class="number">1.2244898</span> ,  <span class="number">1.83673469</span>,  <span class="number">2.44897959</span>,</span><br><span class="line">          <span class="number">3.06122449</span>,  <span class="number">3.67346939</span>,  <span class="number">4.28571429</span>,  <span class="number">4.89795918</span>,  <span class="number">5.51020408</span>,</span><br><span class="line">          <span class="number">6.12244898</span>,  <span class="number">6.73469388</span>,  <span class="number">7.34693878</span>,  <span class="number">7.95918367</span>,  <span class="number">8.57142857</span>,</span><br><span class="line">          <span class="number">9.18367347</span>,  <span class="number">9.79591837</span>, <span class="number">10.40816327</span>, <span class="number">11.02040816</span>, <span class="number">11.63265306</span>,</span><br><span class="line">          <span class="number">12.24489796</span>, <span class="number">12.85714286</span>, <span class="number">13.46938776</span>, <span class="number">14.08163265</span>, <span class="number">14.69387755</span>,</span><br><span class="line">          <span class="number">15.30612245</span>, <span class="number">15.91836735</span>, <span class="number">16.53061224</span>, <span class="number">17.14285714</span>, <span class="number">17.75510204</span>,</span><br><span class="line">          <span class="number">18.36734694</span>, <span class="number">18.97959184</span>, <span class="number">19.59183673</span>, <span class="number">20.20408163</span>, <span class="number">20.81632653</span>,</span><br><span class="line">          <span class="number">21.42857143</span>, <span class="number">22.04081633</span>, <span class="number">22.65306122</span>, <span class="number">23.26530612</span>, <span class="number">23.87755102</span>,</span><br><span class="line">          <span class="number">24.48979592</span>, <span class="number">25.10204082</span>, <span class="number">25.71428571</span>, <span class="number">26.32653061</span>, <span class="number">26.93877551</span>,</span><br><span class="line">          <span class="number">27.55102041</span>, <span class="number">28.16326531</span>, <span class="number">28.7755102</span> , <span class="number">29.3877551</span> , <span class="number">30.</span>        ])</span><br><span class="line"></span><br><span class="line">np.logspace(<span class="number">1</span>,<span class="number">100</span>)</span><br><span class="line">: array([<span class="number">1.00000000e+001</span>, <span class="number">1.04811313e+003</span>, <span class="number">1.09854114e+005</span>, <span class="number">1.15139540e+007</span>,</span><br><span class="line">         <span class="number">1.20679264e+009</span>, <span class="number">1.26485522e+011</span>, <span class="number">1.32571137e+013</span>, <span class="number">1.38949549e+015</span>,</span><br><span class="line">         <span class="number">1.45634848e+017</span>, <span class="number">1.52641797e+019</span>, <span class="number">1.59985872e+021</span>, <span class="number">1.67683294e+023</span>,</span><br><span class="line">         <span class="number">1.75751062e+025</span>, <span class="number">1.84206997e+027</span>, <span class="number">1.93069773e+029</span>, <span class="number">2.02358965e+031</span>,</span><br><span class="line">         <span class="number">2.12095089e+033</span>, <span class="number">2.22299648e+035</span>, <span class="number">2.32995181e+037</span>, <span class="number">2.44205309e+039</span>,</span><br><span class="line">         <span class="number">2.55954792e+041</span>, <span class="number">2.68269580e+043</span>, <span class="number">2.81176870e+045</span>, <span class="number">2.94705170e+047</span>,</span><br><span class="line">         <span class="number">3.08884360e+049</span>, <span class="number">3.23745754e+051</span>, <span class="number">3.39322177e+053</span>, <span class="number">3.55648031e+055</span>,</span><br><span class="line">         <span class="number">3.72759372e+057</span>, <span class="number">3.90693994e+059</span>, <span class="number">4.09491506e+061</span>, <span class="number">4.29193426e+063</span>,</span><br><span class="line">         <span class="number">4.49843267e+065</span>, <span class="number">4.71486636e+067</span>, <span class="number">4.94171336e+069</span>, <span class="number">5.17947468e+071</span>,</span><br><span class="line">         <span class="number">5.42867544e+073</span>, <span class="number">5.68986603e+075</span>, <span class="number">5.96362332e+077</span>, <span class="number">6.25055193e+079</span>,</span><br><span class="line">         <span class="number">6.55128557e+081</span>, <span class="number">6.86648845e+083</span>, <span class="number">7.19685673e+085</span>, <span class="number">7.54312006e+087</span>,</span><br><span class="line">         <span class="number">7.90604321e+089</span>, <span class="number">8.28642773e+091</span>, <span class="number">8.68511374e+093</span>, <span class="number">9.10298178e+095</span>,</span><br><span class="line">         <span class="number">9.54095476e+097</span>, <span class="number">1.00000000e+100</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment"># Random</span></span><br><span class="line">np.empty((<span class="number">3</span>,<span class="number">3</span>))</span><br><span class="line">: array([[<span class="number">0.00000000e+000</span>, <span class="number">0.00000000e+000</span>, <span class="number">0.00000000e+000</span>],</span><br><span class="line">         [<span class="number">0.00000000e+000</span>, <span class="number">0.00000000e+000</span>, <span class="number">4.36754031e-321</span>],</span><br><span class="line">         [<span class="number">8.70018274e-313</span>, <span class="number">6.79038653e-313</span>, <span class="number">1.24610994e-306</span>]])</span><br></pre></td></tr></table></figure>
+
+<p><strong>array</strong> 는 몇차원 데이터인지 통칭하는 단어이다. 그리고 return 값에 array가 나오면 Numpy형태라는 뜻. 파이썬에서 사용하는 형태를 Numpy로 바꿔준다. 벡터를 만드는 방식이기도 하다</p>
+<h3 id="행렬-연산"><a href="#행렬-연산" class="headerlink" title="행렬 연산"></a>행렬 연산</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">a = np.array([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]) <span class="comment"># broadcasting</span></span><br><span class="line">a + <span class="number">3</span></span><br><span class="line">: array([<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>])</span><br><span class="line"></span><br><span class="line">a.dot(a) <span class="comment"># 내적</span></span><br><span class="line">: <span class="number">55</span></span><br><span class="line"></span><br><span class="line">np.sum(a)</span><br><span class="line">: <span class="number">15</span></span><br><span class="line"></span><br><span class="line">t = np.array([[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],[<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>],[<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>]])</span><br><span class="line">np.sum(t, axis = <span class="number">1</span>) <span class="comment"># 행연산</span></span><br><span class="line">: array([ <span class="number">6</span>, <span class="number">15</span>, <span class="number">24</span>])</span><br><span class="line"></span><br><span class="line">np.sum(t,axis=<span class="number">0</span>) <span class="comment"># 열연산</span></span><br><span class="line">:array([<span class="number">12</span>, <span class="number">15</span>, <span class="number">18</span>])</span><br><span class="line"></span><br><span class="line">A = np.array([[<span class="number">1</span>,<span class="number">2</span>],[<span class="number">3</span>,<span class="number">4</span>]])</span><br><span class="line">B = np.array([[<span class="number">1</span>,<span class="number">2</span>],[<span class="number">3</span>,<span class="number">4</span>]])</span><br><span class="line"></span><br><span class="line">A @ B  <span class="comment"># At sign 연산자 (행렬곱)</span></span><br><span class="line">: array([[ <span class="number">7</span>, <span class="number">10</span>],</span><br><span class="line">       [<span class="number">15</span>, <span class="number">22</span>]])</span><br></pre></td></tr></table></figure>
+<br>
+
+<h3 id="Python-Numpy-속도-비교"><a href="#Python-Numpy-속도-비교" class="headerlink" title="Python, Numpy 속도 비교"></a>Python, Numpy 속도 비교</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">%timeit np.sum(np.arange(<span class="number">10000000</span>))</span><br><span class="line">: <span class="number">24.6</span> ms ± <span class="number">2.2</span> ms per loop (mean ± std. dev. of <span class="number">7</span> runs, <span class="number">10</span> loops each)</span><br><span class="line"></span><br><span class="line">%timeit sum(range(<span class="number">10000000</span>))</span><br><span class="line">: <span class="number">352</span> ms ± <span class="number">6.34</span> ms per loop (mean ± std. dev. of <span class="number">7</span> runs, <span class="number">1</span> loop each)</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="데이터-정보-확인하는-방법"><a href="#데이터-정보-확인하는-방법" class="headerlink" title="데이터 정보 확인하는 방법"></a>데이터 정보 확인하는 방법</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1. dtype</span><br><span class="line">2. size</span><br><span class="line">3. shape</span><br><span class="line">4. ndim</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">a = np.arange(<span class="number">10</span>)</span><br><span class="line"></span><br><span class="line">a.dtype</span><br><span class="line">a.size</span><br><span class="line">a.shape</span><br><span class="line">a.ndim</span><br><span class="line"></span><br><span class="line">: dtype(<span class="string">'int32'</span>)</span><br><span class="line">  <span class="number">10</span></span><br><span class="line">  (<span class="number">10</span>,)</span><br><span class="line">  <span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h2 id="Stride"><a href="#Stride" class="headerlink" title="Stride"></a>Stride</h2><p><img src="https://user-images.githubusercontent.com/33630505/58012662-f2481380-7b2f-11e9-833e-4966c0e17241.JPG" alt="ndarray"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">a = np.array([[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],[<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>],[<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>]])</span><br><span class="line">a.dtype</span><br><span class="line">: dtype(<span class="string">'int32'</span>)</span><br><span class="line">a.strides</span><br><span class="line">: (<span class="number">12</span>, <span class="number">4</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 8bit = 1byte</span></span><br><span class="line"><span class="comment"># dtype에서 int 32bit라고 나왔기 때문에 byte로 바꾸면 4byte가 되는데</span></span><br><span class="line"><span class="comment"># 데이터 하나당 4byte를 차지한다고 보면된다</span></span><br><span class="line"><span class="comment"># 따라서 strides에서 맨 앞을 4byte로 나누어주면 그 갯수만큼 하나의 묶음으로 생각한다</span></span><br><span class="line"><span class="comment"># 즉, 한 행이 3개 데이터로 구성 되어 있다는 뜻</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>stride만 바꾸어 shape 자유자재로 바꾸기</strong><br></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">a = np.arange(<span class="number">10</span>).reshape(<span class="number">2</span>,<span class="number">5</span>)</span><br><span class="line">a</span><br><span class="line">: array([[<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>],</span><br><span class="line">       [<span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]])</span><br><span class="line"></span><br><span class="line">a = np.arange(<span class="number">10</span>).reshape(<span class="number">-1</span>,<span class="number">5</span>)</span><br><span class="line">a</span><br><span class="line">: array([[<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>],</span><br><span class="line">       [<span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]])</span><br><span class="line"><span class="comment"># -1은 자동으로 알아서 하라는 뜻 / 행렬의 크기를 모를때 유용</span></span><br></pre></td></tr></table></figure>
+<br>
+
+<h2 id="reshape-vs-resize"><a href="#reshape-vs-resize" class="headerlink" title="reshape vs resize"></a>reshape vs resize</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">a=np.array([[<span class="number">0</span>,<span class="number">1</span>],[<span class="number">2</span>,<span class="number">3</span>]])</span><br><span class="line"></span><br><span class="line"><span class="comment"># reshape</span></span><br><span class="line"></span><br><span class="line">a. reshape(<span class="number">4</span>,<span class="number">1</span>)</span><br><span class="line">: array([[<span class="number">0</span>],</span><br><span class="line">         [<span class="number">1</span>],</span><br><span class="line">         [<span class="number">2</span>],</span><br><span class="line">         [<span class="number">3</span>]])</span><br><span class="line"></span><br><span class="line">a. reshape(<span class="number">1</span>,<span class="number">4</span>)</span><br><span class="line">: array([[<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]])</span><br><span class="line"></span><br><span class="line"><span class="comment"># resize</span></span><br><span class="line"></span><br><span class="line">np.resize(a,(<span class="number">2</span>,<span class="number">3</span>))</span><br><span class="line">: array([[<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>],</span><br><span class="line">         [<span class="number">3</span>, <span class="number">0</span>, <span class="number">1</span>]])</span><br><span class="line"></span><br><span class="line">np.resize(a,(<span class="number">1</span>,<span class="number">4</span>))</span><br><span class="line">: array([[<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]])</span><br><span class="line"></span><br><span class="line">np.resize(a,(<span class="number">2</span>,<span class="number">4</span>))</span><br><span class="line">: array([[<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>],</span><br><span class="line">         [<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]])</span><br></pre></td></tr></table></figure>
+
+<h2 id="데이터-형태-변환하기"><a href="#데이터-형태-변환하기" class="headerlink" title="데이터 형태 변환하기"></a>데이터 형태 변환하기</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">a.astype(<span class="string">'float32'</span>)</span><br><span class="line">: array([[<span class="number">1.</span>, <span class="number">2.</span>, <span class="number">3.</span>],</span><br><span class="line">       [<span class="number">4.</span>, <span class="number">5.</span>, <span class="number">6.</span>],</span><br><span class="line">       [<span class="number">7.</span>, <span class="number">8.</span>, <span class="number">9.</span>]], dtype=float32)</span><br><span class="line"></span><br><span class="line">a.astype(<span class="string">'int64'</span>)       </span><br><span class="line">: array([[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>],</span><br><span class="line">       [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>],</span><br><span class="line">       [<span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]], dtype=int64)   </span><br><span class="line"></span><br><span class="line">a.astype(<span class="string">'bool'</span>)</span><br><span class="line">: array([[ <span class="literal">True</span>,  <span class="literal">True</span>,  <span class="literal">True</span>],</span><br><span class="line">       [ <span class="literal">True</span>,  <span class="literal">True</span>,  <span class="literal">True</span>],</span><br><span class="line">       [ <span class="literal">True</span>,  <span class="literal">True</span>,  <span class="literal">True</span>]])</span><br></pre></td></tr></table></figure>
+
+<br>
+
+
+<h2 id="array는-sequence-type"><a href="#array는-sequence-type" class="headerlink" title="array는 sequence type"></a>array는 sequence type</h2><blockquote>
+<p>sequence type은 indexing, slicing이 가능하다!</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">n = np.arange(<span class="number">10</span>).reshape(<span class="number">5</span>,<span class="number">2</span>)</span><br><span class="line">n</span><br><span class="line">: array([[<span class="number">0</span>, <span class="number">1</span>],</span><br><span class="line">       [<span class="number">2</span>, <span class="number">3</span>],</span><br><span class="line">       [<span class="number">4</span>, <span class="number">5</span>],</span><br><span class="line">       [<span class="number">6</span>, <span class="number">7</span>],</span><br><span class="line">       [<span class="number">8</span>, <span class="number">9</span>]])</span><br><span class="line"></span><br><span class="line">n[:,<span class="number">1</span>]</span><br><span class="line">: array([<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">9</span>])</span><br><span class="line"></span><br><span class="line">n[:][<span class="number">1</span>]</span><br><span class="line">: array([<span class="number">2</span>, <span class="number">3</span>])</span><br><span class="line"></span><br><span class="line">n[<span class="number">1</span>,:]</span><br><span class="line">: array([<span class="number">2</span>, <span class="number">3</span>])</span><br><span class="line"></span><br><span class="line">n[n&gt;<span class="number">3</span>]</span><br><span class="line">: array([<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>])</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="Numpy-Indexing"><a href="#Numpy-Indexing" class="headerlink" title="Numpy Indexing"></a>Numpy Indexing</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1. 일반 indexing</span><br><span class="line">2. 콤마</span><br><span class="line">3. Fancy indexing</span><br><span class="line">4. Masking</span><br><span class="line">5. 조건문 (where)</span><br></pre></td></tr></table></figure>
+
+<h3 id="예제"><a href="#예제" class="headerlink" title="예제"></a>예제</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">a = np.arange(<span class="number">25</span>).reshape(<span class="number">5</span>,<span class="number">5</span>)</span><br><span class="line">a</span><br><span class="line">: array([[ <span class="number">0</span>,  <span class="number">1</span>,  <span class="number">2</span>,  <span class="number">3</span>,  <span class="number">4</span>],</span><br><span class="line">         [ <span class="number">5</span>,  <span class="number">6</span>,  <span class="number">7</span>,  <span class="number">8</span>,  <span class="number">9</span>],</span><br><span class="line">         [<span class="number">10</span>, <span class="number">11</span>, <span class="number">12</span>, <span class="number">13</span>, <span class="number">14</span>],</span><br><span class="line">         [<span class="number">15</span>, <span class="number">16</span>, <span class="number">17</span>, <span class="number">18</span>, <span class="number">19</span>],</span><br><span class="line">         [<span class="number">20</span>, <span class="number">21</span>, <span class="number">22</span>, <span class="number">23</span>, <span class="number">24</span>]])  </span><br><span class="line"></span><br><span class="line"><span class="comment"># 일반 indexing</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">3</span>,<span class="number">5</span>):</span><br><span class="line">    <span class="keyword">for</span> y <span class="keyword">in</span> range(<span class="number">3</span>,<span class="number">5</span>):</span><br><span class="line">        print(a[x][y], end=<span class="string">" "</span>)</span><br><span class="line">    print()</span><br><span class="line">: <span class="number">18</span> <span class="number">19</span></span><br><span class="line">  <span class="number">23</span> <span class="number">24</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 콤마</span></span><br><span class="line"></span><br><span class="line">a[<span class="number">3</span>:,<span class="number">3</span>:]</span><br><span class="line">: array([[<span class="number">18</span>, <span class="number">19</span>],</span><br><span class="line">        [<span class="number">23</span>, <span class="number">24</span>]])</span><br><span class="line"></span><br><span class="line"><span class="comment"># Fancy indexing</span></span><br><span class="line"></span><br><span class="line">a[[<span class="number">3</span>,<span class="number">4</span>],<span class="number">3</span>:]</span><br><span class="line">: array([[<span class="number">18</span>, <span class="number">19</span>],</span><br><span class="line">         [<span class="number">23</span>, <span class="number">24</span>]])</span><br><span class="line"></span><br><span class="line"><span class="comment"># Masking</span></span><br><span class="line"></span><br><span class="line">a[(a &gt; <span class="number">17</span>) &amp; (a &lt; <span class="number">20</span>) + (a &gt; <span class="number">22</span>)].reshape(<span class="number">2</span>,<span class="number">2</span>)</span><br><span class="line">: array([[<span class="number">18</span>, <span class="number">19</span>],</span><br><span class="line">        [<span class="number">23</span>, <span class="number">24</span>]])</span><br><span class="line"></span><br><span class="line">b = np.array([[<span class="literal">False</span>,<span class="literal">False</span>,<span class="literal">False</span>,<span class="literal">False</span>,<span class="literal">False</span>],</span><br><span class="line">              [<span class="literal">False</span>,<span class="literal">False</span>,<span class="literal">False</span>,<span class="literal">False</span>,<span class="literal">False</span>],</span><br><span class="line">              [<span class="literal">False</span>,<span class="literal">False</span>,<span class="literal">False</span>,<span class="literal">False</span>,<span class="literal">False</span>],</span><br><span class="line">              [<span class="literal">False</span>,<span class="literal">False</span>,<span class="literal">False</span>,<span class="literal">True</span>,<span class="literal">True</span>],</span><br><span class="line">              [<span class="literal">False</span>,<span class="literal">False</span>,<span class="literal">False</span>,<span class="literal">True</span>,<span class="literal">True</span>]])</span><br><span class="line">a[b].reshape(<span class="number">2</span>,<span class="number">2</span>)</span><br><span class="line">: array([[<span class="number">18</span>, <span class="number">19</span>],</span><br><span class="line">        [<span class="number">23</span>, <span class="number">24</span>]])</span><br><span class="line"></span><br><span class="line"><span class="comment"># 조건문</span></span><br><span class="line">a[np.where((a &gt; <span class="number">17</span>) &amp; (a &lt; <span class="number">20</span>) + (a &gt; <span class="number">22</span>))].reshape(<span class="number">2</span>,<span class="number">2</span>)</span><br><span class="line">: array([[<span class="number">18</span>, <span class="number">19</span>],</span><br><span class="line">        [<span class="number">23</span>, <span class="number">24</span>]])</span><br></pre></td></tr></table></figure>
+
+<h3 id="nditer"><a href="#nditer" class="headerlink" title="nditer"></a>nditer</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">a = np.nditer([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>])</span><br><span class="line">next(a)</span><br><span class="line">: (array(<span class="number">1</span>), array(<span class="number">2</span>), array(<span class="number">3</span>))</span><br><span class="line"></span><br><span class="line">b = np.nditer([[<span class="number">1</span>,<span class="number">2</span>],[<span class="number">3</span>,<span class="number">4</span>]])</span><br><span class="line">next(b)</span><br><span class="line">: (array(<span class="number">1</span>), array(<span class="number">3</span>))</span><br><span class="line"></span><br><span class="line">c = np.array([[<span class="number">1</span>,<span class="number">2</span>],[<span class="number">3</span>,<span class="number">4</span>]])</span><br><span class="line">d = np.nditer(c)</span><br><span class="line">next(d)</span><br><span class="line">: array(<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+
+<p><code>복습 시간</code> 17시 40분 ~ 19시 / 총 1시간 20분</p>
+<p><a id = '13th'></a></p>
+<h1 id="2019년-5월-21일-화요일-13th"><a href="#2019년-5월-21일-화요일-13th" class="headerlink" title="2019년 5월 21일 화요일 13th"></a>2019년 5월 21일 화요일 13th</h1><h2 id="Masking"><a href="#Masking" class="headerlink" title="Masking"></a>Masking</h2><blockquote>
+<p>True, False를 활용해 인덱싱하는 방법</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">a = np.arange(<span class="number">10</span>)</span><br><span class="line"></span><br><span class="line">a &gt; <span class="number">3</span></span><br><span class="line">: array([<span class="literal">False</span>, <span class="literal">False</span>, <span class="literal">False</span>, <span class="literal">False</span>,  <span class="literal">True</span>,  <span class="literal">True</span>,  <span class="literal">True</span>,  <span class="literal">True</span>,  <span class="literal">True</span>,</span><br><span class="line">        <span class="literal">True</span>])</span><br><span class="line">a[a&gt;<span class="number">3</span>]</span><br><span class="line">: array([<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>])</span><br><span class="line"></span><br><span class="line">a[(a &gt; <span class="number">3</span>) &amp; (a &lt; <span class="number">8</span>)]</span><br><span class="line">: array([<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>])</span><br><span class="line"></span><br><span class="line">a[[<span class="literal">True</span>, <span class="literal">True</span>, <span class="literal">True</span>, <span class="literal">True</span>, <span class="literal">True</span>, <span class="literal">True</span>, <span class="literal">False</span>, <span class="literal">False</span>, <span class="literal">False</span>, <span class="literal">False</span>]]</span><br><span class="line">: array([<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>])</span><br></pre></td></tr></table></figure>
+
+<h2 id="ix"><a href="#ix" class="headerlink" title="ix_"></a>ix_</h2><p><span style="background-color:skyblue">Cartesian product 연산</span><br></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">h = np.arange(<span class="number">25</span>).reshape(<span class="number">5</span>,<span class="number">5</span>)</span><br><span class="line">h</span><br><span class="line">: array([[ <span class="number">0</span>,  <span class="number">1</span>,  <span class="number">2</span>,  <span class="number">3</span>,  <span class="number">4</span>],</span><br><span class="line">       [ <span class="number">5</span>,  <span class="number">6</span>,  <span class="number">7</span>,  <span class="number">8</span>,  <span class="number">9</span>],</span><br><span class="line">       [<span class="number">10</span>, <span class="number">11</span>, <span class="number">12</span>, <span class="number">13</span>, <span class="number">14</span>],</span><br><span class="line">       [<span class="number">15</span>, <span class="number">16</span>, <span class="number">17</span>, <span class="number">18</span>, <span class="number">19</span>],</span><br><span class="line">       [<span class="number">20</span>, <span class="number">21</span>, <span class="number">22</span>, <span class="number">23</span>, <span class="number">24</span>]])</span><br><span class="line">h[np.ix_([<span class="number">1</span>,<span class="number">3</span>],[<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>])]</span><br><span class="line">:</span><br><span class="line">array([[ <span class="number">5</span>,  <span class="number">6</span>,  <span class="number">7</span>,  <span class="number">8</span>,  <span class="number">9</span>],</span><br><span class="line">       [<span class="number">15</span>, <span class="number">16</span>, <span class="number">17</span>, <span class="number">18</span>, <span class="number">19</span>]])</span><br></pre></td></tr></table></figure>
+
+<h2 id="Namedtuple"><a href="#Namedtuple" class="headerlink" title="Namedtuple"></a>Namedtuple</h2><blockquote>
+<p>이름 있는 튜플 만들기<br>sequence tuple 처럼 사용 가능<br>클래스처럼 이름으로 접근가능</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> namedtuple</span><br><span class="line"></span><br><span class="line">t = namedtuped(<span class="string">'AttendanceSheet'</span>,[<span class="string">'name'</span>,<span class="string">'attendance'</span>])</span><br><span class="line">x=t(<span class="string">'jh'</span>,<span class="string">'yes'</span>)</span><br><span class="line">x[<span class="number">0</span>]</span><br><span class="line">x[<span class="number">1</span>]</span><br><span class="line">x.name</span><br><span class="line">x.attendance</span><br><span class="line">type(x)</span><br><span class="line"></span><br><span class="line">: jh</span><br><span class="line">  yes</span><br><span class="line">  jh</span><br><span class="line">  yes</span><br><span class="line">  __main__.AttendanceSheet</span><br></pre></td></tr></table></figure>
+
+<h2 id="broadcasting"><a href="#broadcasting" class="headerlink" title="broadcasting"></a>broadcasting</h2><blockquote>
+<p>벡터연산에서 자동으로 크기 맞춰주는 기법</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">a = np.arange(<span class="number">10</span>)</span><br><span class="line">a + <span class="number">1</span></span><br><span class="line"></span><br><span class="line">: array([ <span class="number">1</span>,  <span class="number">2</span>,  <span class="number">3</span>,  <span class="number">4</span>,  <span class="number">5</span>,  <span class="number">6</span>,  <span class="number">7</span>,  <span class="number">8</span>,  <span class="number">9</span>, <span class="number">10</span>])</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://user-images.githubusercontent.com/33630505/58095909-e717e500-7c0e-11e9-9adb-d916ca172bf2.JPG" alt="broadcasting"></p>
+<h2 id="ufunc-universal-function"><a href="#ufunc-universal-function" class="headerlink" title="ufunc(universal function)"></a>ufunc(universal function)</h2><blockquote>
+<p>범용적인 함수 즉, python, numpy 둘다 있는 함수 but 차이가 있다</p>
+</blockquote>
+<h3 id="1개의-배열에-대한-ufunc-함수"><a href="#1개의-배열에-대한-ufunc-함수" class="headerlink" title="1개의 배열에 대한 ufunc 함수"></a>1개의 배열에 대한 ufunc 함수</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">abs,fabs &#x3D;&gt; 절대값</span><br><span class="line">ceil &#x3D;&gt; 올림</span><br><span class="line">floor &#x3D;&gt; 내림</span><br><span class="line">modf &#x3D;&gt; 정수부분과 소수점 부분 분리</span><br><span class="line">rint &#x3D;&gt; 올림하거나 내림하거나 5를 기준으로</span><br><span class="line">log, log10, log2, log1p &#x3D;&gt; 로그 값 취하기</span><br><span class="line">exp &#x3D;&gt; exponential 지수함수 (정확히 어떻게 계산되는지는 모르겠음)</span><br><span class="line">sqrt &#x3D;&gt; 루트</span><br><span class="line">square &#x3D;&gt; 제곱</span><br><span class="line">isnan &#x3D;&gt; nan인지 체크</span><br><span class="line">isinfinite &#x3D;&gt; 유한한 수안자 체크</span><br><span class="line">logical_not &#x3D;&gt; 모르겠음</span><br><span class="line">sign &#x3D; &gt; 0을 제외하고 다 1로 반환 (사실 정확하지 않음)</span><br><span class="line">sin, cos, tan &#x3D;&gt; sin, cos, tan값 계산</span><br><span class="line">arcsin, arccos, arctan &#x3D;&gt; 역삼각함수 계산</span><br></pre></td></tr></table></figure>
+<h3 id="2개의-배열에-대한-ufunc-함수"><a href="#2개의-배열에-대한-ufunc-함수" class="headerlink" title="2개의 배열에 대한 ufunc 함수"></a>2개의 배열에 대한 ufunc 함수</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">add &#x3D;&gt; 각 요소 더하기</span><br><span class="line">subtract &#x3D;&gt; 각 요소 빼기</span><br><span class="line">multiply &#x3D;&gt; 각 요소 곱하기</span><br><span class="line">divide &#x3D;&gt; 각 요소 나눈 값</span><br><span class="line">floor_divide &#x3D;&gt; 각 요소 나눈 몫</span><br><span class="line">mod &#x3D;&gt; 각 요소 나눈 나머지</span><br><span class="line">power &#x3D;&gt; 승 계산 ex) 2,3 &#x3D;&gt; 2의 3 승 : 8</span><br><span class="line">maximum, fmax &#x3D;&gt; 더 큰 값</span><br><span class="line">minimum, fmin &#x3D;&gt; 더 작은 값</span><br><span class="line">greater &#x3D;&gt; 앞 값이 더 크면 True 작으면 False</span><br><span class="line">greater_equal &#x3D;&gt; 앞 값이 크거나 같으면 True 작으면 False</span><br><span class="line">less &#x3D;&gt; greater 반대</span><br><span class="line">less_equal &#x3D;&gt; greater_equal 반대</span><br><span class="line">equal &#x3D;&gt; 같으면 True</span><br><span class="line">not_equal &#x3D;&gt; 다르면 True</span><br><span class="line">copysign &#x3D;&gt; 모르겠음</span><br></pre></td></tr></table></figure>
+
+<h3 id="Python-Numpy-ufunc"><a href="#Python-Numpy-ufunc" class="headerlink" title="Python, Numpy ufunc"></a>Python, Numpy ufunc</h3><blockquote>
+<p>python에서는 동시에 사용 못하지만 numpy에서는 한꺼번에 연산 가능</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> math</span><br><span class="line">math.sqrt(<span class="number">4</span>)</span><br><span class="line">: <span class="number">2.0</span></span><br><span class="line"></span><br><span class="line">np.sqrt((<span class="number">4</span>,<span class="number">9</span>))</span><br><span class="line">: array([<span class="number">2.</span>, <span class="number">3.</span>])</span><br></pre></td></tr></table></figure>
+<hr>
+
+<p><img src="https://user-images.githubusercontent.com/33630505/58092007-052d1780-7c06-11e9-86ca-8b8a2dae0a74.JPG" alt="ufunc1"><br><img src="https://user-images.githubusercontent.com/33630505/58092009-065e4480-7c06-11e9-9dbc-eb9665801c3a.JPG" alt="ufunc2"><br><img src="https://user-images.githubusercontent.com/33630505/58092011-078f7180-7c06-11e9-826c-b477930b24a5.JPG" alt="ufunc3"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">np.sqrt([<span class="number">4</span>,<span class="number">9</span>])</span><br><span class="line">np.sqrt((<span class="number">4</span>,<span class="number">9</span>))</span><br><span class="line"></span><br><span class="line">둘다 가능</span><br></pre></td></tr></table></figure>
+<p><strong>Numpy Tip1</strong> mutable 성질이 중요하지 않으면 list, tuple 혼용 가능</p>
+<h3 id="배열-분할하기-붙이기"><a href="#배열-분할하기-붙이기" class="headerlink" title="배열 분할하기, 붙이기"></a>배열 분할하기, 붙이기</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># split (분할하기)</span></span><br><span class="line"></span><br><span class="line">a = np.arange(<span class="number">16</span>).reshape(<span class="number">4</span>,<span class="number">4</span>)</span><br><span class="line">a</span><br><span class="line">: array([[ <span class="number">0</span>,  <span class="number">1</span>,  <span class="number">2</span>,  <span class="number">3</span>],</span><br><span class="line">       [ <span class="number">4</span>,  <span class="number">5</span>,  <span class="number">6</span>,  <span class="number">7</span>],</span><br><span class="line">       [ <span class="number">8</span>,  <span class="number">9</span>, <span class="number">10</span>, <span class="number">11</span>],</span><br><span class="line">       [<span class="number">12</span>, <span class="number">13</span>, <span class="number">14</span>, <span class="number">15</span>]])</span><br><span class="line"></span><br><span class="line">np.hsplit(a,<span class="number">2</span>) <span class="comment"># 수평축으로 분할(세로, 사실상 수직) (np.split(a,2,axis=1))</span></span><br><span class="line">: [array([[ <span class="number">0</span>,  <span class="number">1</span>],</span><br><span class="line">        [ <span class="number">4</span>,  <span class="number">5</span>],</span><br><span class="line">        [ <span class="number">8</span>,  <span class="number">9</span>],</span><br><span class="line">        [<span class="number">12</span>, <span class="number">13</span>]]),</span><br><span class="line">   array([[ <span class="number">2</span>,  <span class="number">3</span>],</span><br><span class="line">        [ <span class="number">6</span>,  <span class="number">7</span>],</span><br><span class="line">        [<span class="number">10</span>, <span class="number">11</span>],</span><br><span class="line">        [<span class="number">14</span>, <span class="number">15</span>]])]</span><br><span class="line"></span><br><span class="line">np.hsplit(a,(<span class="number">1</span>,<span class="number">2</span>))</span><br><span class="line">: [array([[ <span class="number">0</span>],</span><br><span class="line">        [ <span class="number">4</span>],</span><br><span class="line">        [ <span class="number">8</span>],</span><br><span class="line">        [<span class="number">12</span>]]),</span><br><span class="line">   array([[ <span class="number">1</span>],</span><br><span class="line">        [ <span class="number">5</span>],</span><br><span class="line">        [ <span class="number">9</span>],</span><br><span class="line">        [<span class="number">13</span>]]),</span><br><span class="line">   array([[ <span class="number">2</span>,  <span class="number">3</span>],</span><br><span class="line">        [ <span class="number">6</span>,  <span class="number">7</span>],</span><br><span class="line">        [<span class="number">10</span>, <span class="number">11</span>],</span><br><span class="line">        [<span class="number">14</span>, <span class="number">15</span>]])]</span><br><span class="line"></span><br><span class="line">np.vsplit(a, <span class="number">2</span>)</span><br><span class="line">: [array([[<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>],</span><br><span class="line">        [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>]]),</span><br><span class="line">   array([[ <span class="number">8</span>,  <span class="number">9</span>, <span class="number">10</span>, <span class="number">11</span>],</span><br><span class="line">        [<span class="number">12</span>, <span class="number">13</span>, <span class="number">14</span>, <span class="number">15</span>]])]</span><br><span class="line"></span><br><span class="line">np.s_[a,b]</span><br><span class="line">: (array([<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]), array([<span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]))</span><br><span class="line"></span><br><span class="line">[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>][<span class="number">2</span>:<span class="number">5</span>]</span><br><span class="line">: [<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br><span class="line"></span><br><span class="line">[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>][slice(<span class="number">1</span>,<span class="number">5</span>)]</span><br><span class="line">: [<span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br><span class="line"></span><br><span class="line">np.arange(<span class="number">10</span>)[np.s_[<span class="number">2</span>:<span class="number">5</span>]]</span><br><span class="line">: array([<span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment"># stack (붙이기)</span></span><br><span class="line"></span><br><span class="line">a = np.arange(<span class="number">5</span>)</span><br><span class="line">b = np.arange(<span class="number">5</span>, <span class="number">10</span>)</span><br><span class="line"></span><br><span class="line">np.stack((a,b), axis=<span class="number">1</span>)</span><br><span class="line">: array([[<span class="number">0</span>, <span class="number">5</span>],</span><br><span class="line">         [<span class="number">1</span>, <span class="number">6</span>],</span><br><span class="line">         [<span class="number">2</span>, <span class="number">7</span>],</span><br><span class="line">         [<span class="number">3</span>, <span class="number">8</span>],</span><br><span class="line">         [<span class="number">4</span>, <span class="number">9</span>]])</span><br><span class="line"></span><br><span class="line">np.stack((a,b), axis=<span class="number">0</span>)</span><br><span class="line">: array([[<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>],</span><br><span class="line">         [<span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]])</span><br><span class="line"></span><br><span class="line">np.vstack((a,b))</span><br><span class="line">: array([[<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>],</span><br><span class="line">         [<span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]])</span><br><span class="line"></span><br><span class="line">np.hstack((a,b))</span><br><span class="line">: array([<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>])</span><br><span class="line"></span><br><span class="line">np.column_stack((a,b))   <span class="comment"># np.c_[a,b]</span></span><br><span class="line">: array([[<span class="number">0</span>, <span class="number">5</span>],</span><br><span class="line">         [<span class="number">1</span>, <span class="number">6</span>],</span><br><span class="line">         [<span class="number">2</span>, <span class="number">7</span>],</span><br><span class="line">         [<span class="number">3</span>, <span class="number">8</span>],</span><br><span class="line">         [<span class="number">4</span>, <span class="number">9</span>]])</span><br><span class="line"></span><br><span class="line">np.row_stack((a,b))      <span class="comment"># np.r_[a,b]랑 같음</span></span><br><span class="line">: array([[<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>],</span><br><span class="line">         [<span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]])</span><br></pre></td></tr></table></figure>
+
+
+
+<br>
+
+<h3 id="view-amp-copy"><a href="#view-amp-copy" class="headerlink" title="view &amp; copy"></a>view &amp; copy</h3><blockquote>
+<p>python은 기본적으로 shallow copy, numpy는 기본적으로 deep copy</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># python에서 deep copy하기</span></span><br><span class="line"><span class="keyword">import</span> copy</span><br><span class="line"></span><br><span class="line">a = [[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]]</span><br><span class="line">b = copy.deepcopy(a)</span><br><span class="line">a[<span class="number">0</span>][<span class="number">1</span>] = <span class="number">4</span></span><br><span class="line">b</span><br><span class="line">a</span><br><span class="line"></span><br><span class="line">: [[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]]</span><br><span class="line">  [[<span class="number">1</span>, <span class="number">4</span>, <span class="number">3</span>]]</span><br><span class="line"></span><br><span class="line"><span class="comment"># numpy는 기본적으로 deep copy</span></span><br><span class="line"></span><br><span class="line">a = np.array([[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],[<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]])</span><br><span class="line">b = a.copy()</span><br><span class="line">a[<span class="number">0</span>][<span class="number">0</span>] = <span class="number">4</span></span><br><span class="line">b</span><br><span class="line">a</span><br><span class="line"></span><br><span class="line">: array([[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>],</span><br><span class="line">       [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]])</span><br><span class="line">  array([[<span class="number">4</span>, <span class="number">2</span>, <span class="number">3</span>],</span><br><span class="line">       [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]])</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="ravel-amp-flatten"><a href="#ravel-amp-flatten" class="headerlink" title="ravel &amp; flatten"></a>ravel &amp; flatten</h3><blockquote>
+<p>Ravel - Bolero (클래식/디지몬 어드벤처 극장판에서 나오는 노래)<br>ravel은 몇 차원이건 간에 모두 1차원으로 만들어 준다<br>그리고 view 방식이기 때문에 원래 값을 바꾸기 때문에 주의 해야한다<br>flatten은 copy 방식</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a = np.arange(<span class="number">10</span>).reshape(<span class="number">2</span>,<span class="number">5</span>)</span><br><span class="line"></span><br><span class="line">a.ravel()</span><br><span class="line">a.flatten()</span><br><span class="line">: array([<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>])</span><br><span class="line">  array([<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>])</span><br></pre></td></tr></table></figure>
+
+<h3 id="newaxis"><a href="#newaxis" class="headerlink" title="newaxis"></a>newaxis</h3><blockquote>
+<p>return이 None이고 차원을 추가한다<br>곱하기 할때에도 활용하는 방법이다.(차원을 맞추어 계산해야 하기 때문)</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">a = np.array([[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],[<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]])</span><br><span class="line">a</span><br><span class="line">a.shape</span><br><span class="line">: array([[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>],</span><br><span class="line">       [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]])</span><br><span class="line">  (<span class="number">2</span>,<span class="number">3</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># z축에 추가</span></span><br><span class="line">b=a[:,:,np.newaxis]</span><br><span class="line">b</span><br><span class="line">b.shape</span><br><span class="line">: array([[[<span class="number">1</span>],</span><br><span class="line">        [<span class="number">2</span>],</span><br><span class="line">        [<span class="number">3</span>]],</span><br><span class="line"></span><br><span class="line">       [[<span class="number">4</span>],</span><br><span class="line">        [<span class="number">5</span>],</span><br><span class="line">        [<span class="number">6</span>]]])</span><br><span class="line">   (<span class="number">2</span>, <span class="number">3</span>, <span class="number">1</span>)	<span class="comment">## 평면 두개    </span></span><br><span class="line"></span><br><span class="line"><span class="comment"># y축에 추가</span></span><br><span class="line">c=a[:,np.newaxis]</span><br><span class="line">c</span><br><span class="line">c.shape</span><br><span class="line">: array([[[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]],</span><br><span class="line"></span><br><span class="line">       [[<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]]])</span><br><span class="line">  (<span class="number">2</span>, <span class="number">1</span>, <span class="number">3</span>)     <span class="comment">## 평면 두개</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># x축에 추가</span></span><br><span class="line">d=a[np.newaxis,:]</span><br><span class="line">d</span><br><span class="line">d.shape</span><br><span class="line">: array([[[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>],</span><br><span class="line">        [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]]])</span><br><span class="line">  (<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>)     <span class="comment">## 평면 한개</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="elementwise-product"><a href="#elementwise-product" class="headerlink" title="elementwise product"></a>elementwise product</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a = np.array([[<span class="number">1</span>,<span class="number">1</span>],[<span class="number">0</span>,<span class="number">1</span>]])</span><br><span class="line">b = np.array([[<span class="number">2</span>,<span class="number">0</span>],[<span class="number">3</span>,<span class="number">4</span>]])</span><br><span class="line"></span><br><span class="line">a*b</span><br><span class="line">: array([[<span class="number">2</span>, <span class="number">0</span>],</span><br><span class="line">       [<span class="number">0</span>, <span class="number">4</span>]])</span><br></pre></td></tr></table></figure>
+
+
+<p><code>복습 시간</code> 18시 30분 ~ 21시 / 총 2시간 30분</p>
+<p><a id = '14th'></a></p>
+<h1 id="2019년-5월-23일-목요일-14th"><a href="#2019년-5월-23일-목요일-14th" class="headerlink" title="2019년 5월 23일 목요일 14th"></a>2019년 5월 23일 목요일 14th</h1><h2 id="newaxis-정리"><a href="#newaxis-정리" class="headerlink" title="newaxis 정리"></a>newaxis 정리</h2><p><span style="color:orange">1차원: 방향이 없는 벡터(스칼라)형태의 데이터만 존재, [] 1개</span><br></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">a = np.array([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>])</span><br><span class="line">a.shape</span><br><span class="line"></span><br><span class="line">: (<span class="number">3</span>,)  <span class="comment"># 3개의 데이터가 하나로 묶여 있다고 생각</span></span><br></pre></td></tr></table></figure>
+<p><span style="color:orange">2차원 : 행렬, 평면, [] 2개</span> <br></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">a = np.array([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>])</span><br><span class="line">a[np.newaxis]     <span class="comment"># x축 추가 행기준으로 묶기</span></span><br><span class="line">a[np.newaxis].shape</span><br><span class="line"></span><br><span class="line">: array([[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]]) <span class="comment"># 가장 바깥 [] 소거하고 행갯수 세면 x축 데이터 갯수</span></span><br><span class="line">                   <span class="comment"># 그 다음 안 [] 소거하고 행갯수 세면 y축 데이터 갯수</span></span><br><span class="line">  (<span class="number">1</span>,<span class="number">3</span>)</span><br><span class="line">a[:,np.newaxis] <span class="comment"># y축 추가 열기준으로 묶기 (np.expand_dims(a, 1))</span></span><br><span class="line">a[:,np.newaxis].shape</span><br><span class="line"></span><br><span class="line">: array([[<span class="number">1</span>],      <span class="comment"># 가장 바깥 [] 소거하고 열갯수 세면 x축 데이터 갯수</span></span><br><span class="line">        [<span class="number">2</span>],       <span class="comment"># 그 다음 안 [] 소거하고 열갯수 세면 y축 데이터 갯수</span></span><br><span class="line">        [<span class="number">3</span>]])</span><br><span class="line">  (<span class="number">3</span>,<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+
+<p><span style="background-color:red">이 경우는 뭐지?</span> <br></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">a = np.array([[<span class="number">1</span>,<span class="number">2</span>],[<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]])</span><br><span class="line">a</span><br><span class="line">: array([list([<span class="number">1</span>, <span class="number">2</span>]), list([<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>])], dtype=object)</span><br><span class="line"></span><br><span class="line">a = np.arange(<span class="number">27</span>).reshape(<span class="number">3</span>,<span class="number">3</span>,<span class="number">3</span>)</span><br><span class="line"></span><br><span class="line">np.swapaxes(a, <span class="number">0</span>, <span class="number">2</span>)</span><br><span class="line">: array([[[ <span class="number">0</span>,  <span class="number">9</span>, <span class="number">18</span>],</span><br><span class="line">          [ <span class="number">3</span>, <span class="number">12</span>, <span class="number">21</span>],</span><br><span class="line">          [ <span class="number">6</span>, <span class="number">15</span>, <span class="number">24</span>]],</span><br><span class="line"></span><br><span class="line">         [[ <span class="number">1</span>, <span class="number">10</span>, <span class="number">19</span>],</span><br><span class="line">          [ <span class="number">4</span>, <span class="number">13</span>, <span class="number">22</span>],</span><br><span class="line">          [ <span class="number">7</span>, <span class="number">16</span>, <span class="number">25</span>]],</span><br><span class="line"></span><br><span class="line">         [[ <span class="number">2</span>, <span class="number">11</span>, <span class="number">20</span>],</span><br><span class="line">          [ <span class="number">5</span>, <span class="number">14</span>, <span class="number">23</span>],</span><br><span class="line">          [ <span class="number">8</span>, <span class="number">17</span>, <span class="number">26</span>]]])</span><br><span class="line"></span><br><span class="line">np.moveaxis(a, <span class="number">0</span>, <span class="number">2</span>)</span><br><span class="line">: array([[[ <span class="number">0</span>,  <span class="number">9</span>, <span class="number">18</span>],</span><br><span class="line">          [ <span class="number">1</span>, <span class="number">10</span>, <span class="number">19</span>],</span><br><span class="line">          [ <span class="number">2</span>, <span class="number">11</span>, <span class="number">20</span>]],</span><br><span class="line"></span><br><span class="line">         [[ <span class="number">3</span>, <span class="number">12</span>, <span class="number">21</span>],</span><br><span class="line">          [ <span class="number">4</span>, <span class="number">13</span>, <span class="number">22</span>],</span><br><span class="line">          [ <span class="number">5</span>, <span class="number">14</span>, <span class="number">23</span>]],</span><br><span class="line"></span><br><span class="line">         [[ <span class="number">6</span>, <span class="number">15</span>, <span class="number">24</span>],</span><br><span class="line">          [ <span class="number">7</span>, <span class="number">16</span>, <span class="number">25</span>],</span><br><span class="line">          [ <span class="number">8</span>, <span class="number">17</span>, <span class="number">26</span>]]])</span><br></pre></td></tr></table></figure>
+
+<p><span style="color:orange">3차원 : 행렬 중첩, 평면 겹쳐서 직육면체처럼 [] 3개 </span><br></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">a = np.array([[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],[<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]])</span><br><span class="line">a[np.newaxis]</span><br><span class="line">a[np.newaxis].shape</span><br><span class="line"></span><br><span class="line">: array([[[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>],</span><br><span class="line">        [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]]])   <span class="comment"># 가장 바깥 []소거하고 []x2인 행갯수 세면 x축 데이터 갯수</span></span><br><span class="line">                       <span class="comment"># [[1,2,3]] 이라는 평면 1개   </span></span><br><span class="line">  (<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>)              <span class="comment"># 그 다음 안 [] 소거하고 []x1인 행갯수 세면 y축 데이터 갯수</span></span><br><span class="line">                       <span class="comment"># 마지막 [] 소거하고 행갯수 세면 z축 데이터 갯수</span></span><br><span class="line"></span><br><span class="line">a[:,np.newaxis]</span><br><span class="line">a[np.newaxis].shape    <span class="comment"># 위와 동일</span></span><br><span class="line"></span><br><span class="line">: array([[[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]],</span><br><span class="line"></span><br><span class="line">       [[<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]]])</span><br><span class="line">  (<span class="number">2</span>,<span class="number">1</span>,<span class="number">3</span>)      </span><br><span class="line"></span><br><span class="line">a[:,:,np.newaxis]</span><br><span class="line">a[:,:,np.newaxis].shape <span class="comment">#</span></span><br><span class="line"></span><br><span class="line">: array([[[<span class="number">1</span>],</span><br><span class="line">         [<span class="number">2</span>],</span><br><span class="line">         [<span class="number">3</span>]]])</span><br><span class="line">(<span class="number">2</span>, <span class="number">3</span>, <span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="tile"><a href="#tile" class="headerlink" title="tile"></a>tile</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">a = np.array([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>])</span><br><span class="line"></span><br><span class="line">np.tile(a,<span class="number">3</span>)</span><br><span class="line">: array([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>])</span><br><span class="line"></span><br><span class="line">np,tile(a,(<span class="number">2</span>,<span class="number">3</span>))</span><br><span class="line">: array([[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>],</span><br><span class="line">       [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]])</span><br><span class="line"></span><br><span class="line">np.tile(a,[<span class="number">2</span>,<span class="number">3</span>])  <span class="comment"># duck typing</span></span><br><span class="line">: array([[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>],</span><br><span class="line">       [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]])</span><br></pre></td></tr></table></figure>
+
+<h2 id="파일-불러오기"><a href="#파일-불러오기" class="headerlink" title="파일 불러오기"></a>파일 불러오기</h2><h3 id="loadtxt-genfromtxt"><a href="#loadtxt-genfromtxt" class="headerlink" title="loadtxt, genfromtxt"></a>loadtxt, genfromtxt</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">%%writefile a.csv</span><br><span class="line"><span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span></span><br><span class="line"><span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span></span><br><span class="line"></span><br><span class="line">: Writing a.csv</span><br><span class="line"></span><br><span class="line">x = np.loadtxt(<span class="string">'a.csv'</span>, delimiter = <span class="string">','</span>)</span><br><span class="line">x</span><br><span class="line">: array([[<span class="number">1.</span>, <span class="number">2.</span>, <span class="number">3.</span>],</span><br><span class="line">       [<span class="number">4.</span>, <span class="number">5.</span>, <span class="number">6.</span>]])</span><br><span class="line"></span><br><span class="line">x = np.genfromtxt(<span class="string">'a.csv'</span>)</span><br><span class="line">: array([nan, nan])</span><br><span class="line"></span><br><span class="line"><span class="comment"># loadtxt는 delimiter를 이용해 문자열 구분을 하지 않으면 에러가 나지만</span></span><br><span class="line"><span class="comment"># getfromtxt는 nan이라는 출력값을 주고 에러를 발생시키지 않는다</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="fromfile"><a href="#fromfile" class="headerlink" title="fromfile"></a>fromfile</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">x = np.fromfile(<span class="string">'a.csv'</span>, sep=<span class="string">','</span>) <span class="comment"># \n을 만나면 종료</span></span><br><span class="line">x</span><br><span class="line"></span><br><span class="line">: array([<span class="number">1.</span>, <span class="number">2.</span>, <span class="number">3.</span>])</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="File"><a href="#File" class="headerlink" title="File"></a>File</h2><h3 id="Flat"><a href="#Flat" class="headerlink" title="Flat"></a>Flat</h3><blockquote>
+<p>구조가 있는 파일</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1. text file  </span><br><span class="line">&#x3D;&gt; 확장자 상관없이 열 수 있다.</span><br><span class="line">&#x3D;&gt; 데이터 교환시 유용함</span><br><span class="line">2. binary file</span><br><span class="line">&#x3D;&gt; 연결프로그램에 의존적</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">np.savez()</span><br><span class="line"></span><br><span class="line">np.save()</span><br></pre></td></tr></table></figure>
+
+<h3 id="Raw"><a href="#Raw" class="headerlink" title="Raw"></a>Raw</h3><blockquote>
+<p>구조가 없는 파일</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&#96;&#96;&#96;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## linear algebra</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#### WhyPythonIsSlow + open_with 내용 복습</span><br><span class="line"></span><br><span class="line">https:&#x2F;&#x2F;docs.scipy.org&#x2F;doc&#x2F;numpy&#x2F;user&#x2F;quickstart.html 복습</span><br><span class="line"></span><br><span class="line">### 설명 보기</span><br><span class="line"></span><br><span class="line">&#96;&#96;&#96;python</span><br><span class="line">import numpy as np</span><br><span class="line"></span><br><span class="line">np.lookfor(&#39;shape&#39;)</span><br><span class="line">: 설명 ~</span><br><span class="line">np.info(&#39;shape&#39;)</span><br><span class="line">: 설명 ~</span><br></pre></td></tr></table></figure>
+
+          
+        </div>
+        
+          <br>
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-12-29T12:24:01+09:00">
+  <a class='notlink'>
+    <i class="fas fa-clock" aria-hidden="true"></i>
+    <p>Dec 29, 2021</p>
+    <!-- __('post.updated') + ' ' +  -->
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/AI/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>AI</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Lecture/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>Lecture</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Numpy/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>Numpy</p></a></div>
+
+
+        
+      
+    </div>
+  </section>
+
+
+        
+
+        
+            <div class="prev-next">
+                
+                    <section class="prev">
+                        <span class="art-item-left">
+                            <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;prev</h6>
+                            <h4>
+                                <a href="/2019/04/29/AILecture_deeplearning/" rel="prev" title="AI 이노베이션 스퀘어 수업(기본반) - deeplearning">
+                                  
+                                      AI 이노베이션 스퀘어 수업(기본반) - deeplearning
+                                  
+                                </a>
+                            </h4>
+                            
+                                
+                                <h6 class="tags">
+                                    <a class="tag" href="/tags/AI/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> AI</a> <a class="tag" href="/tags/Lecture/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> Lecture</a> <a class="tag" href="/tags/Deep-Learning/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> Deep Learning</a>
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
+                
+                    <section class="next">
+                        <span class="art-item-right" aria-hidden="true">
+                            <h6>next&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
+                            <h4>
+                                <a href="/2019/04/29/AILecture_pandas/" rel="prev" title="AI 이노베이션 스퀘어 수업(기본반) - pandas">
+                                    
+                                        AI 이노베이션 스퀘어 수업(기본반) - pandas
+                                    
+                                </a>
+                            </h4>
+                            
+                                
+                                <h6 class="tags">
+                                    <a class="tag" href="/tags/AI/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> AI</a> <a class="tag" href="/tags/Lecture/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> Lecture</a> <a class="tag" href="/tags/Pandas/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> Pandas</a> <a class="tag" href="/tags/Data-Analysis/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> Data Analysis</a>
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
+            </div>
+        
+      </section>
+      <!-- Google AdSense -->
+      <!-- In post -->
+      <script data-ad-client="ca-pub-1288998211050792" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<!-- Google AdSense -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1288998211050792"
+     data-ad-slot="5437821794"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+    </article>
+  
+
+  
+    <!-- 显示推荐文章和评论 -->
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+  <script>
+    window.subData = {
+      title: 'AI 이노베이션 스퀘어 수업(기본반) - numpy',
+      tools: true
+    }
+  </script>
+
+
+  <div id="disqus_thread"></div>
+</div>
+<aside class='l_side'>
+  
+    
+    
+      
+        
+          <section class='widget blogger'>
+  <div class='content pure'>
+    
+      <div class='avatar'>
+        <img class='avatar' src='/jh.jpg'/>
+      </div>
+    
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="mailto:wlgur278@gmail.com"
+              class="social fas fa-envelope flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://github.com/Jungjihyuk"
+              class="social fab fa-github flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+      
+        
+      
+        
+          
+  <section class='widget toc-wrapper'>
+    <header class='pure'>
+  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Shortcuts</div>
+  
+    <!-- <div class='wrapper'><a class="s-toc rightBtn" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div> -->
+  
+</header>
+
+    <div class='content pure'>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#정보의-진화-단계"><span class="toc-text">정보의 진화 단계</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#인공지능의-시작과-배경"><span class="toc-text">인공지능의 시작과 배경</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#지능"><span class="toc-text">지능</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#인공지능"><span class="toc-text">인공지능</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#AI-Machine-learning-deep-learning"><span class="toc-text">AI, Machine learning, deep learning</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#인공지능-영역의-분류"><span class="toc-text">인공지능 영역의 분류</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#인공지능의-문제해결-전략"><span class="toc-text">인공지능의 문제해결 전략</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#파이썬은-연산속도가-느린데-도대체-왜-파이썬으로-AI를-하는가"><span class="toc-text">파이썬은 연산속도가 느린데 도대체 왜 파이썬으로 AI를 하는가?</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Numpy가-있기-때문에"><span class="toc-text">Numpy가 있기 때문에!</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Numpy"><span class="toc-text">Numpy</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Numpy-속도가-빠른-이유"><span class="toc-text">Numpy 속도가 빠른 이유</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Numpy는-벡터-기반이다"><span class="toc-text">Numpy는 벡터 기반이다</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#python-속도-개선을-위한-방법"><span class="toc-text">python 속도 개선을 위한 방법</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Vectorization"><span class="toc-text">Vectorization</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Python-문법으로-벡터화-하기-vs-Numpy"><span class="toc-text">Python 문법으로 벡터화 하기 vs Numpy</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Numpy-사용하기"><span class="toc-text">Numpy 사용하기</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Factory-Method"><span class="toc-text">Factory Method</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Endianness"><span class="toc-text">Endianness</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Big-endian"><span class="toc-text">Big-endian</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Little-endian"><span class="toc-text">Little-endian</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Big-endian-VS-Little-endian"><span class="toc-text">Big-endian VS Little-endian</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#특수-행렬-만들기"><span class="toc-text">특수 행렬 만들기</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#행렬-연산"><span class="toc-text">행렬 연산</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Python-Numpy-속도-비교"><span class="toc-text">Python, Numpy 속도 비교</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#데이터-정보-확인하는-방법"><span class="toc-text">데이터 정보 확인하는 방법</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Stride"><span class="toc-text">Stride</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#reshape-vs-resize"><span class="toc-text">reshape vs resize</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#데이터-형태-변환하기"><span class="toc-text">데이터 형태 변환하기</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#array는-sequence-type"><span class="toc-text">array는 sequence type</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Numpy-Indexing"><span class="toc-text">Numpy Indexing</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#예제"><span class="toc-text">예제</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#nditer"><span class="toc-text">nditer</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Masking"><span class="toc-text">Masking</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ix"><span class="toc-text">ix_</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Namedtuple"><span class="toc-text">Namedtuple</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#broadcasting"><span class="toc-text">broadcasting</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ufunc-universal-function"><span class="toc-text">ufunc(universal function)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1개의-배열에-대한-ufunc-함수"><span class="toc-text">1개의 배열에 대한 ufunc 함수</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2개의-배열에-대한-ufunc-함수"><span class="toc-text">2개의 배열에 대한 ufunc 함수</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Python-Numpy-ufunc"><span class="toc-text">Python, Numpy ufunc</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#배열-분할하기-붙이기"><span class="toc-text">배열 분할하기, 붙이기</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#view-amp-copy"><span class="toc-text">view &amp; copy</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ravel-amp-flatten"><span class="toc-text">ravel &amp; flatten</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#newaxis"><span class="toc-text">newaxis</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#elementwise-product"><span class="toc-text">elementwise product</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#newaxis-정리"><span class="toc-text">newaxis 정리</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#tile"><span class="toc-text">tile</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#파일-불러오기"><span class="toc-text">파일 불러오기</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#loadtxt-genfromtxt"><span class="toc-text">loadtxt, genfromtxt</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#fromfile"><span class="toc-text">fromfile</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#File"><span class="toc-text">File</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Flat"><span class="toc-text">Flat</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Raw"><span class="toc-text">Raw</span></a></li></ol></li></ol>
+    </div>
+  </section>
+
+
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+      
+        
+      
+        
+      
+        
+          
+  <section class='widget category'>
+    <header class='pure'>
+  <div><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;category</div>
+  
+    <a class="rightBtn"
+    
+      rel="external nofollow noopener noreferrer"
+    
+    
+      target="_self"
+    
+    href="/categories/"
+    title="categories/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class='content pure'>
+      <ul class="entry">
+        
+          <li><a class="flat-box" title="/categories/AI/" href="/categories/AI/"><div class='name'>AI</div><div class='badge'>(10)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/AI/Data-Analysis/" href="/categories/AI/Data-Analysis/"><div class='name'>Data Analysis</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/AI/Deep-Learning/" href="/categories/AI/Deep-Learning/"><div class='name'>Deep Learning</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/AI/Machine-Learning/" href="/categories/AI/Machine-Learning/"><div class='name'>Machine Learning</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/AI/Natural-Language-Processing/" href="/categories/AI/Natural-Language-Processing/"><div class='name'>Natural Language Processing</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/AI/Numpy/" href="/categories/AI/Numpy/"><div class='name'>Numpy</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/AI/Pandas/" href="/categories/AI/Pandas/"><div class='name'>Pandas</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/AI/Python/" href="/categories/AI/Python/"><div class='name'>Python</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/Algorithm/" href="/categories/Algorithm/"><div class='name'>Algorithm</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/Algorithm/Arrays/" href="/categories/Algorithm/Arrays/"><div class='name'>Arrays</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/Data-Structure/" href="/categories/Data-Structure/"><div class='name'>Data Structure</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/English/" href="/categories/English/"><div class='name'>English</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/Git/" href="/categories/Git/"><div class='name'>Git</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/IT-Terms/" href="/categories/IT-Terms/"><div class='name'>IT Terms</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/JSP-Servlet/" href="/categories/JSP-Servlet/"><div class='name'>JSP & Servlet</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/Language/" href="/categories/Language/"><div class='name'>Language</div><div class='badge'>(8)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/Language/Java/" href="/categories/Language/Java/"><div class='name'>Java</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/Language/Markup-Language/" href="/categories/Language/Markup-Language/"><div class='name'>Markup Language</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/Language/Python/" href="/categories/Language/Python/"><div class='name'>Python</div><div class='badge'>(6)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/Web/" href="/categories/Web/"><div class='name'>Web</div><div class='badge'>(5)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/Web/Bootstrap4/" href="/categories/Web/Bootstrap4/"><div class='name'>Bootstrap4</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/Web/Django/" href="/categories/Web/Django/"><div class='name'>Django</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/Web/Flask/" href="/categories/Web/Flask/"><div class='name'>Flask</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/Web/Object-Model/" href="/categories/Web/Object-Model/"><div class='name'>Object Model</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/Web/Objectoriented/" href="/categories/Web/Objectoriented/"><div class='name'>Objectoriented</div><div class='badge'>(1)</div></a></li>
+        
+      </ul>
+    </div>
+  </section>
+
+
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+      
+        
+      
+        
+      
+        
+      
+        
+          
+  <section class='widget tagcloud'>
+    <header class='pure'>
+  <div><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Keywords</div>
+  
+    <a class="rightBtn"
+    
+      rel="external nofollow noopener noreferrer"
+    
+    
+      target="_self"
+    
+    href="/tags/"
+    title="tags/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class='content pure'>
+      <a href="/tags/AI/" style="font-size: 22px; color: #636363">AI</a> <a href="/tags/Algorithm/" style="font-size: 14px; color: #999">Algorithm</a> <a href="/tags/CodeSignal/" style="font-size: 16px; color: #8b8b8b">CodeSignal</a> <a href="/tags/CodeSignal2/" style="font-size: 14px; color: #999">CodeSignal2</a> <a href="/tags/Data-Analysis/" style="font-size: 14px; color: #999">Data Analysis</a> <a href="/tags/Deep-Learning/" style="font-size: 16px; color: #8b8b8b">Deep Learning</a> <a href="/tags/Django/" style="font-size: 14px; color: #999">Django</a> <a href="/tags/EDA/" style="font-size: 14px; color: #999">EDA</a> <a href="/tags/Flask/" style="font-size: 14px; color: #999">Flask</a> <a href="/tags/FrontEnd/" style="font-size: 14px; color: #999">FrontEnd</a> <a href="/tags/Git/" style="font-size: 14px; color: #999">Git</a> <a href="/tags/Git-Flow/" style="font-size: 14px; color: #999">Git-Flow</a> <a href="/tags/Github/" style="font-size: 14px; color: #999">Github</a> <a href="/tags/Gitlab/" style="font-size: 14px; color: #999">Gitlab</a> <a href="/tags/IT/" style="font-size: 14px; color: #999">IT</a> <a href="/tags/Java/" style="font-size: 14px; color: #999">Java</a> <a href="/tags/Jsp/" style="font-size: 14px; color: #999">Jsp</a> <a href="/tags/Lecture/" style="font-size: 22px; color: #636363">Lecture</a> <a href="/tags/Machine-Learning/" style="font-size: 16px; color: #8b8b8b">Machine Learning</a> <a href="/tags/NLP/" style="font-size: 14px; color: #999">NLP</a> <a href="/tags/Numpy/" style="font-size: 14px; color: #999">Numpy</a> <a href="/tags/Pandas/" style="font-size: 14px; color: #999">Pandas</a> <a href="/tags/Programming/" style="font-size: 14px; color: #999">Programming</a> <a href="/tags/Python/" style="font-size: 16px; color: #8b8b8b">Python</a> <a href="/tags/Servlet/" style="font-size: 14px; color: #999">Servlet</a> <a href="/tags/Web/" style="font-size: 14px; color: #999">Web</a> <a href="/tags/algorithm/" style="font-size: 20px; color: #707070">algorithm</a> <a href="/tags/api/" style="font-size: 14px; color: #999">api</a> <a href="/tags/array/" style="font-size: 14px; color: #999">array</a> <a href="/tags/bom/" style="font-size: 14px; color: #999">bom</a> <a href="/tags/bootstrap/" style="font-size: 14px; color: #999">bootstrap</a> <a href="/tags/class/" style="font-size: 14px; color: #999">class</a> <a href="/tags/clean-code/" style="font-size: 14px; color: #999">clean code</a> <a href="/tags/coding-test/" style="font-size: 14px; color: #999">coding test</a> <a href="/tags/crawling/" style="font-size: 14px; color: #999">crawling</a> <a href="/tags/css/" style="font-size: 14px; color: #999">css</a> <a href="/tags/data-mining/" style="font-size: 14px; color: #999">data mining</a> <a href="/tags/database/" style="font-size: 16px; color: #8b8b8b">database</a> <a href="/tags/deep-learning/" style="font-size: 16px; color: #8b8b8b">deep learning</a> <a href="/tags/deque/" style="font-size: 14px; color: #999">deque</a> <a href="/tags/dom/" style="font-size: 14px; color: #999">dom</a> <a href="/tags/generator/" style="font-size: 14px; color: #999">generator</a> <a href="/tags/git/" style="font-size: 14px; color: #999">git</a> <a href="/tags/helper-function/" style="font-size: 14px; color: #999">helper function</a> <a href="/tags/iris/" style="font-size: 14px; color: #999">iris</a> <a href="/tags/javascript/" style="font-size: 14px; color: #999">javascript</a> <a href="/tags/js/" style="font-size: 14px; color: #999">js</a> <a href="/tags/json/" style="font-size: 14px; color: #999">json</a> <a href="/tags/neural-network/" style="font-size: 14px; color: #999">neural network</a> <a href="/tags/object/" style="font-size: 14px; color: #999">object</a> <a href="/tags/object-model/" style="font-size: 14px; color: #999">object model</a> <a href="/tags/page-rank/" style="font-size: 14px; color: #999">page rank</a> <a href="/tags/python/" style="font-size: 24px; color: #555">python</a> <a href="/tags/queue/" style="font-size: 14px; color: #999">queue</a> <a href="/tags/scraping/" style="font-size: 14px; color: #999">scraping</a> <a href="/tags/send/" style="font-size: 14px; color: #999">send</a> <a href="/tags/stack/" style="font-size: 14px; color: #999">stack</a> <a href="/tags/tensorflow/" style="font-size: 14px; color: #999">tensorflow</a> <a href="/tags/xml/" style="font-size: 14px; color: #999">xml</a> <a href="/tags/yield/" style="font-size: 14px; color: #999">yield</a> <a href="/tags/%EB%AA%85%EB%A0%B9%EC%96%B4/" style="font-size: 14px; color: #999">명령어</a> <a href="/tags/%EB%AC%B8%EB%B2%95/" style="font-size: 14px; color: #999">문법</a> <a href="/tags/%EB%B0%B1%EC%A4%80/" style="font-size: 14px; color: #999">백준</a> <a href="/tags/%EC%82%B0%ED%83%80-%ED%86%A0%EC%9D%B5/" style="font-size: 14px; color: #999">산타 토익</a> <a href="/tags/%EC%84%A4%EA%B3%84/" style="font-size: 14px; color: #999">설계</a> <a href="/tags/%EC%8B%9C%EC%9B%90%EC%8A%A4%EC%BF%A8/" style="font-size: 14px; color: #999">시원스쿨</a> <a href="/tags/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/" style="font-size: 14px; color: #999">알고리즘</a> <a href="/tags/%EC%98%81%EC%96%B4/" style="font-size: 16px; color: #8b8b8b">영어</a> <a href="/tags/%EC%9A%A9%EC%96%B4/" style="font-size: 14px; color: #999">용어</a> <a href="/tags/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/" style="font-size: 14px; color: #999">자료구조</a> <a href="/tags/%EC%9E%90%EC%97%B0%EC%96%B4-%EC%B2%98%EB%A6%AC/" style="font-size: 14px; color: #999">자연어 처리</a> <a href="/tags/%EC%A0%95%EB%A6%AC/" style="font-size: 18px; color: #7e7e7e">정리</a> <a href="/tags/%EC%BD%94%EB%94%A9%EC%97%B0%EC%8A%B5/" style="font-size: 18px; color: #7e7e7e">코딩연습</a> <a href="/tags/%ED%86%A0%EC%9D%B5/" style="font-size: 14px; color: #999">토익</a> <a href="/tags/%ED%95%9C%EB%88%88%EC%97%90-%EB%B3%B4%EA%B8%B0/" style="font-size: 16px; color: #8b8b8b">한눈에 보기</a> <a href="/tags/%ED%95%9C%EB%88%88%EC%97%90-%EC%A0%95%EB%A6%AC/" style="font-size: 14px; color: #999">한눈에 정리</a> <a href="/tags/%ED%98%91%EC%97%85/" style="font-size: 14px; color: #999">협업</a> <a href="/tags/%ED%9A%8C%ED%99%94/" style="font-size: 14px; color: #999">회화</a>
+    </div>
+  </section>
+
+
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+  
+  <!-- Google AdSense -->
+  <div style="margin-top: 16px;">
+
+  </div>
+  <script data-ad-client="ca-pub-1288998211050792" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<!-- Google AdSense -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1288998211050792"
+     data-ad-slot="7750297977"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+</aside>
+
+<footer class="clearfix">
+  
+    <div class="social-wrapper">
+      
+        
+          <a href="mailto:wlgur278@gmail.com"
+            class="social fas fa-envelope flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="https://github.com/Jungjihyuk"
+            class="social fab fa-github flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+    </div>
+  
+  <br>
+  <!-- <div><- markdown(__('footer.license')) </div> -->
+  <div>
+    <!-- <- __('footer.use')  -->
+    <!-- a href = "<- theme.info.docs " -->
+    <span>Copyright. </span>
+    <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" class="codename">Material-X</a>
+    <!-- <- theme.info.name    -->
+    <!-- <- __('footer.theme')  -->
+    <br>
+    
+    . 
+  </div>
+  
+</footer>
+<script>setLoadingBarProgress(80);</script>
+
+<script>
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://https-jungjihyuk-github-io.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a></noscript>
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+
+  <script>
+    
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/" || "/";
+    if (!ROOT.endsWith('/')) ROOT += '/';
+  </script>
+
+<script async src="//instant.page/1.2.2" type="module" integrity="sha384-2xV8M5griQmzyiY3CDqh1dn4z3llDVqZDqzjzcY+jCBCk/a5fXJmuZ/40JJAPeoU"></script>
+
+  <script async src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js"></script>
+  <script async src="https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.5/dist/scrollreveal.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      const $reveal = $('.reveal');
+      if ($reveal.length === 0) return;
+      const sr = ScrollReveal({ distance: 0 });
+      sr.reveal('.reveal');
+    });
+  </script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+
+
+
+  
+  
+  
+    <script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@20.2/js/backstretch.min.js"></script>
+    <script type="text/javascript">
+      $(function(){
+        if ('') {
+          $('').backstretch(
+          ["unsplash.jpg", "jonathan.jpg", "flower.jpg"],
+          {
+            duration: "6000",
+            fade: "2500"
+          });
+        } else {
+          $.backstretch(
+          ["unsplash.jpg", "jonathan.jpg", "flower.jpg"],
+          {
+            duration: "6000",
+            fade: "2500"
+          });
+        }
+      });
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+<script src="/js/app.js"></script>
+
+
+
+  
+<script src="/js/search.js"></script>
+
+
+
+  
+    
+<script src="/js/commentTyping.js"></script>
+
+  
+
+
+
+
+
+<!-- 复制 -->
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  let COPY_SUCCESS = "Copied";
+  let COPY_FAILURE = "Copy failed";
+  /*页面载入完成后，创建复制按钮*/
+  !function (e, t, a) {
+    /* code */
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '  <i class="fa fa-copy"></i><span>Copy</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+
+      clipboard.on('success', function(e) {
+        //您可以加入成功提示
+        console.info('Action:', e.action);
+        console.info('Text:', e.text);
+        console.info('Trigger:', e.trigger);
+        success_prompt(COPY_SUCCESS);
+        e.clearSelection();
+      });
+      clipboard.on('error', function(e) {
+        //您可以加入失败提示
+        console.error('Action:', e.action);
+        console.error('Trigger:', e.trigger);
+        fail_prompt(COPY_FAILURE);
+      });
+    }
+    initCopyCode();
+
+  }(window, document);
+
+  /**
+   * 弹出式提示框，默认1.5秒自动消失
+   * @param message 提示信息
+   * @param style 提示样式，有alert-success、alert-danger、alert-warning、alert-info
+   * @param time 消失时间
+   */
+  var prompt = function (message, style, time)
+  {
+      style = (style === undefined) ? 'alert-success' : style;
+      time = (time === undefined) ? 1500 : time*1000;
+      $('<div>')
+          .appendTo('body')
+          .addClass('alert ' + style)
+          .html(message)
+          .show()
+          .delay(time)
+          .fadeOut();
+  };
+
+  // 成功提示
+  var success_prompt = function(message, time)
+  {
+      prompt(message, 'alert-success', time);
+  };
+
+  // 失败提示
+  var fail_prompt = function(message, time)
+  {
+      prompt(message, 'alert-danger', time);
+  };
+
+  // 提醒
+  var warning_prompt = function(message, time)
+  {
+      prompt(message, 'alert-warning', time);
+  };
+
+  // 信息提示
+  var info_prompt = function(message, time)
+  {
+      prompt(message, 'alert-info', time);
+  };
+
+</script>
+
+
+<!-- fancybox -->
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  let LAZY_LOAD_IMAGE = "";
+  $(".article-entry").find("fancybox").find("img").each(function () {
+      var element = document.createElement("a");
+      $(element).attr("data-fancybox", "gallery");
+      $(element).attr("href", $(this).attr("src"));
+      /* 图片采用懒加载处理时,
+       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
+       * 那么此处将原本的属性名src替换为对应属性名data-original,
+       * 修改如下
+       */
+       if (LAZY_LOAD_IMAGE) {
+         $(element).attr("href", $(this).attr("data-original"));
+       }
+      $(this).wrap(element);
+  });
+</script>
+
+
+
+
+
+  <script>setLoadingBarProgress(100);</script>
+</body>
+</html>
