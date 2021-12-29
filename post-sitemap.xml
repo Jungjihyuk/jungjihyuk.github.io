@@ -80,7 +80,7 @@
     </url>
 
     <url>
-        <loc>http://jungjihyuk.github.io/2019/07/13/objectModel/</loc>
+        <loc>http://jungjihyuk.github.io/2020/02/04/python-skills/</loc>
         <lastmod>2021-12-29T03:24:01.868Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -88,7 +88,7 @@
     </url>
 
     <url>
-        <loc>http://jungjihyuk.github.io/2020/02/04/python-skills/</loc>
+        <loc>http://jungjihyuk.github.io/2019/07/13/objectModel/</loc>
         <lastmod>2021-12-29T03:24:01.868Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -128,14 +128,6 @@
     </url>
 
     <url>
-        <loc>http://jungjihyuk.github.io/2018/07/28/jspandservlet/</loc>
-        <lastmod>2021-12-29T03:24:01.867Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>http://jungjihyuk.github.io/2019/06/24/object/</loc>
         <lastmod>2021-12-29T03:24:01.867Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -144,8 +136,8 @@
     </url>
 
     <url>
-        <loc>http://jungjihyuk.github.io/2019/05/18/flask/</loc>
-        <lastmod>2021-12-29T03:24:01.866Z</lastmod>
+        <loc>http://jungjihyuk.github.io/2018/07/28/jspandservlet/</loc>
+        <lastmod>2021-12-29T03:24:01.867Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -160,7 +152,7 @@
     </url>
 
     <url>
-        <loc>http://jungjihyuk.github.io/2019/03/14/gitflow/</loc>
+        <loc>http://jungjihyuk.github.io/2019/05/18/flask/</loc>
         <lastmod>2021-12-29T03:24:01.866Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -176,15 +168,15 @@
     </url>
 
     <url>
-        <loc>http://jungjihyuk.github.io/2019/10/09/codesignal_class/</loc>
-        <lastmod>2021-12-29T03:24:01.865Z</lastmod>
+        <loc>http://jungjihyuk.github.io/2019/03/14/gitflow/</loc>
+        <lastmod>2021-12-29T03:24:01.866Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>http://jungjihyuk.github.io/2020/01/07/codesignal2/</loc>
+        <loc>http://jungjihyuk.github.io/2019/10/09/codesignal_class/</loc>
         <lastmod>2021-12-29T03:24:01.865Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -200,23 +192,15 @@
     </url>
 
     <url>
+        <loc>http://jungjihyuk.github.io/2020/01/07/codesignal2/</loc>
+        <lastmod>2021-12-29T03:24:01.865Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://jungjihyuk.github.io/2019/04/04/algorithm/</loc>
-        <lastmod>2021-12-29T03:24:01.864Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://jungjihyuk.github.io/2019/03/16/IT-Terms/</loc>
-        <lastmod>2021-12-29T03:24:01.864Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://jungjihyuk.github.io/2019/10/09/codesignal/</loc>
         <lastmod>2021-12-29T03:24:01.864Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -233,6 +217,22 @@
 
     <url>
         <loc>http://jungjihyuk.github.io/2019/08/07/bootstrap/</loc>
+        <lastmod>2021-12-29T03:24:01.864Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://jungjihyuk.github.io/2019/10/09/codesignal/</loc>
+        <lastmod>2021-12-29T03:24:01.864Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://jungjihyuk.github.io/2019/03/16/IT-Terms/</loc>
         <lastmod>2021-12-29T03:24:01.864Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
