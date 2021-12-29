@@ -8,6 +8,69 @@
     </url>
 
     <url>
+        <loc>http://jungjihyuk.github.io/categories/Git/</loc>
+        <lastmod>2021-12-29T04:02:46.890Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://jungjihyuk.github.io/categories/AI/Natural-Language-Processing/</loc>
+        <lastmod>2021-12-29T04:02:38.298Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://jungjihyuk.github.io/categories/AI/</loc>
+        <lastmod>2021-12-29T04:02:38.298Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://jungjihyuk.github.io/categories/AI/Machine-Learning/</loc>
+        <lastmod>2021-12-29T04:02:02.460Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://jungjihyuk.github.io/categories/English/</loc>
+        <lastmod>2021-12-29T04:01:29.724Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://jungjihyuk.github.io/categories/Algorithm/Arrays/</loc>
+        <lastmod>2021-12-29T04:01:16.460Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://jungjihyuk.github.io/categories/Algorithm/</loc>
+        <lastmod>2021-12-29T04:01:16.460Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://jungjihyuk.github.io/categories/AI/Data-Analysis/</loc>
+        <lastmod>2021-12-29T04:01:05.015Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://jungjihyuk.github.io/categories/AI/Deep-Learning/</loc>
+        <lastmod>2021-12-29T04:00:08.053Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>http://jungjihyuk.github.io/categories/Language/Markup-Language/</loc>
         <lastmod>2021-12-29T03:24:01.869Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -22,13 +85,6 @@
     </url>
 
     <url>
-        <loc>http://jungjihyuk.github.io/categories/Language/Python/</loc>
-        <lastmod>2021-12-29T03:24:01.868Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://jungjihyuk.github.io/categories/Web/Object-Model/</loc>
         <lastmod>2021-12-29T03:24:01.868Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -36,7 +92,7 @@
     </url>
 
     <url>
-        <loc>http://jungjihyuk.github.io/categories/English/</loc>
+        <loc>http://jungjihyuk.github.io/categories/Language/Python/</loc>
         <lastmod>2021-12-29T03:24:01.868Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -44,20 +100,6 @@
 
     <url>
         <loc>http://jungjihyuk.github.io/categories/Web/</loc>
-        <lastmod>2021-12-29T03:24:01.868Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://jungjihyuk.github.io/categories/AI/Deep-Learning/</loc>
-        <lastmod>2021-12-29T03:24:01.868Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://jungjihyuk.github.io/categories/AI/</loc>
         <lastmod>2021-12-29T03:24:01.868Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -78,21 +120,7 @@
     </url>
 
     <url>
-        <loc>http://jungjihyuk.github.io/categories/AI/Natural-Language-Processing/</loc>
-        <lastmod>2021-12-29T03:24:01.867Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://jungjihyuk.github.io/categories/JSP-Servlet/</loc>
-        <lastmod>2021-12-29T03:24:01.867Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://jungjihyuk.github.io/categories/AI/Machine-Learning/</loc>
         <lastmod>2021-12-29T03:24:01.867Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -108,20 +136,6 @@
     <url>
         <loc>http://jungjihyuk.github.io/categories/Web/Django/</loc>
         <lastmod>2021-12-29T03:24:01.866Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://jungjihyuk.github.io/categories/Git/</loc>
-        <lastmod>2021-12-29T03:24:01.866Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://jungjihyuk.github.io/categories/AI/Data-Analysis/</loc>
-        <lastmod>2021-12-29T03:24:01.865Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
@@ -148,21 +162,7 @@
     </url>
 
     <url>
-        <loc>http://jungjihyuk.github.io/categories/Algorithm/</loc>
-        <lastmod>2021-12-29T03:24:01.864Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://jungjihyuk.github.io/categories/AI/Python/</loc>
-        <lastmod>2021-12-29T03:24:01.863Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://jungjihyuk.github.io/categories/Algorithm/Arrays/</loc>
         <lastmod>2021-12-29T03:24:01.863Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
