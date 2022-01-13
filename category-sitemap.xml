@@ -8,6 +8,27 @@
     </url>
 
     <url>
+        <loc>http://jungjihyuk.github.io/categories/Language/Python/</loc>
+        <lastmod>2022-01-13T13:25:13.968Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://jungjihyuk.github.io/categories/Language/</loc>
+        <lastmod>2022-01-13T13:25:13.968Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://jungjihyuk.github.io/categories/Algorithm/</loc>
+        <lastmod>2022-01-12T05:16:43.628Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>http://jungjihyuk.github.io/categories/AI/Natural-Language-Processing/</loc>
         <lastmod>2021-12-29T04:05:03.652Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -43,20 +64,6 @@
     </url>
 
     <url>
-        <loc>http://jungjihyuk.github.io/categories/Algorithm/Arrays/</loc>
-        <lastmod>2021-12-29T04:01:16.460Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://jungjihyuk.github.io/categories/Algorithm/</loc>
-        <lastmod>2021-12-29T04:01:16.460Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://jungjihyuk.github.io/categories/AI/Data-Analysis/</loc>
         <lastmod>2021-12-29T04:01:05.015Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -73,20 +80,6 @@
     <url>
         <loc>http://jungjihyuk.github.io/categories/Language/Markup-Language/</loc>
         <lastmod>2021-12-29T03:24:01.869Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://jungjihyuk.github.io/categories/Language/</loc>
-        <lastmod>2021-12-29T03:24:01.869Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://jungjihyuk.github.io/categories/Language/Python/</loc>
-        <lastmod>2021-12-29T03:24:01.868Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
