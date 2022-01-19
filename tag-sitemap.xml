@@ -3,14 +3,42 @@
 
 
     <url>
-        <loc>http://jungjihyuk.github.io/tags/algorithm/</loc>
-        <lastmod>2022-01-18T11:13:12.662Z</lastmod>
+        <loc>http://jungjihyuk.github.io/tags/dundu/</loc>
+        <lastmod>2022-01-19T10:56:55.596Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://jungjihyuk.github.io/tags/special-method/</loc>
+        <lastmod>2022-01-19T10:56:55.596Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://jungjihyuk.github.io/tags/magic-method/</loc>
+        <lastmod>2022-01-19T10:56:55.596Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://jungjihyuk.github.io/tags/method/</loc>
+        <lastmod>2022-01-19T10:56:55.596Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://jungjihyuk.github.io/tags/python/</loc>
+        <lastmod>2022-01-19T10:56:55.596Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://jungjihyuk.github.io/tags/algorithm/</loc>
         <lastmod>2022-01-18T11:13:12.662Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -26,34 +54,6 @@
     <url>
         <loc>http://jungjihyuk.github.io/tags/CodeSignal/</loc>
         <lastmod>2022-01-18T11:13:12.662Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://jungjihyuk.github.io/tags/dundu/</loc>
-        <lastmod>2022-01-18T08:40:54.998Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://jungjihyuk.github.io/tags/special-method/</loc>
-        <lastmod>2022-01-18T08:40:54.998Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://jungjihyuk.github.io/tags/magic-method/</loc>
-        <lastmod>2022-01-18T08:40:54.998Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://jungjihyuk.github.io/tags/method/</loc>
-        <lastmod>2022-01-18T08:40:54.998Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
