@@ -3,22 +3,29 @@
 
 
     <url>
-        <loc>http://jungjihyuk.github.io/tags/Data-Structure/</loc>
-        <lastmod>2022-02-04T15:03:02.941Z</lastmod>
+        <loc>http://jungjihyuk.github.io/tags/Queue/</loc>
+        <lastmod>2022-02-05T15:03:54.181Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://jungjihyuk.github.io/tags/Stack/</loc>
-        <lastmod>2022-02-04T15:03:02.941Z</lastmod>
+        <loc>http://jungjihyuk.github.io/tags/Data-Structure/</loc>
+        <lastmod>2022-02-05T15:03:54.181Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://jungjihyuk.github.io/tags/Python/</loc>
-        <lastmod>2022-02-04T15:03:02.941Z</lastmod>
+        <lastmod>2022-02-05T15:03:54.181Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://jungjihyuk.github.io/tags/Stack/</loc>
+        <lastmod>2022-02-05T14:57:13.933Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

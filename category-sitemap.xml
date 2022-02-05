@@ -8,6 +8,13 @@
     </url>
 
     <url>
+        <loc>http://jungjihyuk.github.io/categories/Data-Structure/</loc>
+        <lastmod>2022-02-05T15:03:54.181Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>http://jungjihyuk.github.io/categories/Language/Python/</loc>
         <lastmod>2022-01-24T14:24:35.419Z</lastmod>
         <changefreq>weekly</changefreq>

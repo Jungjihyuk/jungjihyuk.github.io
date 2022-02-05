@@ -8,8 +8,16 @@
     </url>
 
     <url>
+        <loc>http://jungjihyuk.github.io/2022/02/05/queue/</loc>
+        <lastmod>2022-02-05T15:03:54.181Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://jungjihyuk.github.io/2022/02/04/stack/</loc>
-        <lastmod>2022-02-04T15:03:02.941Z</lastmod>
+        <lastmod>2022-02-05T14:57:13.933Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
