@@ -397,6 +397,10 @@
 <br>
 
 <h3 id="Array와-Stack"><a href="#Array와-Stack" class="headerlink" title="Array와 Stack"></a>Array와 Stack</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Stack</span>:</span> </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span> </span><br><span class="line">        <span class="comment"># 데이터 저장을 위한 리스트 준비 </span></span><br><span class="line">        self.data = [] </span><br><span class="line">		</span><br><span class="line">		<span class="function"><span class="keyword">def</span> <span class="title">push</span><span class="params">(self, val)</span>:</span> </span><br><span class="line">        <span class="comment"># 가장 마지막에 값 추가 </span></span><br><span class="line">        self.data.append(val) </span><br><span class="line">		</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">pop</span><span class="params">(self)</span>:</span> </span><br><span class="line">        <span class="keyword">try</span>: </span><br><span class="line">		        <span class="comment"># 데이터가 있으면 가장 마지막 값 읽기 </span></span><br><span class="line">		        <span class="keyword">return</span> self.data.pop() </span><br><span class="line">		    <span class="keyword">except</span> IndexError: </span><br><span class="line">		        <span class="comment"># 데이터가 없으면 인덱스에러 발생</span></span><br><span class="line">            print(<span class="string">"Stack is empty"</span>) </span><br><span class="line">		</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__len__</span><span class="params">(self)</span>:</span> </span><br><span class="line">		    <span class="comment"># len()로 호출하면 stack의 data 수 반환 </span></span><br><span class="line">		    <span class="keyword">return</span> len(self.data) </span><br><span class="line">		</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">isEmpty</span><span class="params">(self)</span>:</span> </span><br><span class="line">        <span class="comment"># 스택이 현재 비어 있는지 확인 </span></span><br><span class="line">		    <span class="keyword">return</span> self.__len__() == <span class="number">0</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+
+<h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> https://cotak.tistory.com/<span class="number">69</span></span><br><span class="line"><span class="number">2.</span> https://ratsgo.github.io/data%<span class="number">20</span>structure&amp;algorithm/<span class="number">2017</span>/<span class="number">10</span>/<span class="number">11</span>/stack/</span><br><span class="line"><span class="number">3.</span> https://data-marketing-bk.tistory.com/<span class="number">15</span></span><br><span class="line"><span class="number">4.</span> https://medium.com/@jch9537/stack-queue-linked-list<span class="number">-63</span>ff4d54ec7d</span><br></pre></td></tr></table></figure>
           
         </div>
         
@@ -408,10 +412,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2022-02-05T23:57:13+09:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2022-02-08T16:49:47+09:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>Feb 5, 2022</p>
+    <p>Feb 8, 2022</p>
     <!-- __('post.updated') + ' ' +  -->
   </a>
 </div>
@@ -596,7 +600,7 @@
 </header>
 
     <div class='content pure'>
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Stack-overflow-underflow"><span class="toc-text">Stack overflow, underflow</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#예시"><span class="toc-text">예시</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Factorial과-stack"><span class="toc-text">Factorial과 stack</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Array와-Stack"><span class="toc-text">Array와 Stack</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Stack-overflow-underflow"><span class="toc-text">Stack overflow, underflow</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#예시"><span class="toc-text">예시</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Factorial과-stack"><span class="toc-text">Factorial과 stack</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Array와-Stack"><span class="toc-text">Array와 Stack</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Reference"><span class="toc-text">Reference</span></a></li></ol>
     </div>
   </section>
 
