@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
-  <title>Category: Markup Language | 지혁&#39;s Blog</title>
+  <title>Deque (Data Structure) | 지혁&#39;s Blog</title>
   
   
 
@@ -19,7 +19,7 @@
   
 
   <!-- Auto Canonical -->
-  <link rel="canonical" href="http://jungjihyuk.github.io/categories/language/markup-language/"/>
+  <link rel="canonical" href="http://jungjihyuk.github.io/2022/02/09/deque/"/>
 
   <!-- link -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
@@ -68,7 +68,7 @@
   
   
   <div class="cover-wrapper">
-    <cover class='cover  half'>
+    <cover class='cover post half'>
       
         
   <h1 class='title'>Imitation, Imagination, Integration</h1>
@@ -251,25 +251,12 @@
 
   <div class="l_body">
     <div class='body-wrapper'>
-      
-<div class='l_main'>
+      <div class='l_main'>
   
-    
-      
-  <section class="post-list">
-    
-      
-        
-          
-        
-      
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <article class="post reveal ">
+
   
+    <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
+      
 
 
   <section class='meta'>
@@ -278,11 +265,13 @@
     <div class="meta" id="header-meta">
       
         
-  <h2 class="title">
-    <a href="/2019/07/10/xmlandjson/">
-      XML & JSON
-    </a>
-  </h2>
+  
+    <h1 class="title">
+      <a href="/2022/02/09/deque/">
+        Deque (Data Structure)
+      </a>
+    </h1>
+  
 
 
       
@@ -310,7 +299,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2019-07-10</p>
+    <p>2022-02-09</p>
   </a>
 </div>
 
@@ -320,11 +309,18 @@
             
   
   <div class='new-meta-item category'>
-    <a href='/categories/Language/Markup-Language/' rel="nofollow">
+    <a href='/categories/Data-Structure/' rel="nofollow">
       <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>Language&nbsp;/&nbsp;Markup Language</p>
+      <p>Data Structure</p>
     </a>
   </div>
+
+
+          
+        
+          
+            
+  
 
 
           
@@ -342,49 +338,167 @@
   </section>
 
 
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      XML과 JSON에 대한 이해 그리고 오픈 api 불러오기
-      
-        <div class="button readmore">
-          <a href="/2019/07/10/xmlandjson/" class="flat-box">
-            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-            Read More
-          </a>
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          <p><span style="font-size: 30px; color: rgb(75,163,123); padding: 2px;">Deque</span> <br></p>
+<blockquote>
+<p>덱은 스택과 큐 연산을 모두 지원하는 자료 구조이고, 양쪽에서 삽입 삭제가 가능하다 (Double - Ended Queue)</p>
+</blockquote>
+<br>
+
+<p><span style="font-size: 23px; color: rgb(75,75,75); padding: 2px;">덱의 연산</span></p>
+<p><img src="https://user-images.githubusercontent.com/33630505/153198431-5e113229-3c70-421d-90d5-e84bc212f456.gif" alt="deque"></p>
+<br>
+
+<ul>
+<li>addFront : 앞부분에 데이터를 삽입 </li>
+<li>addRear : 뒷부분에 데이터를 삽입 </li>
+<li>deleteFront : 앞부분의 데이터를 삭제 </li>
+<li>deleteRear : 뒷부분의 데이터를 삭제 </li>
+<li>getFront : 앞부분의 데이터를 가져옴 </li>
+<li>getRear : 뒷부분의 데이터를 가져옴 </li>
+<li>isFull : 덱이 가득 찼는지 </li>
+</ul>
+<br>
+
+
+<p><span style="font-size: 23px; color: rgb(75,75,75); padding: 2px;">덱의 종류</span></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> 스크롤(Scroll) : 입력이 한쪽 끝으로만 가능하도록 제한된 덱 </span><br><span class="line"><span class="number">2.</span> 셀프(Shelf) : 출력이 한쪽 끝으로만 가능하도록 제한된 덱</span><br></pre></td></tr></table></figure>
+
+<br>
+
+
+<p><span style="font-size: 23px; color: rgb(103, 143, 133); padding: 2px;">덱의 장단점</span></p>
+<p><em>장점</em> </p>
+<ul>
+<li>데이터의 삽입, 삭제가 빠르다 (시간복잡도 1)</li>
+<li>크기가 가변적이다 </li>
+<li>새로운 데이터 삽입시 메모리를 재할당 또는 복사하지 않고 새로운 단위의 메모리 블록을 할당하여 삽입한다 </li>
+<li>탐색은 인덱스를 통해 가능하기 때문에 시간복잡도 1을 가진다 </li>
+</ul>
+<br>
+
+<p><em>단점</em></p>
+<ul>
+<li>자료구조 중간에 있는 삽입, 삭제가 비교적 어렵다 </li>
+<li>스택, 큐에 비해 구현이 어렵다 </li>
+</ul>
+<br>
+
+<p><span style="font-size: 23px; color: rgb(75,75,75); padding: 2px;">파이썬으로 구현하기</span></p>
+<h3 id="Deque"><a href="#Deque" class="headerlink" title="Deque"></a>Deque</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> deque</span><br><span class="line"></span><br><span class="line">d = deque()</span><br><span class="line"></span><br><span class="line">d.append(<span class="number">4</span>)</span><br><span class="line">d.append(<span class="number">3</span>)</span><br><span class="line">d.append(<span class="number">5</span>)</span><br><span class="line">d.append(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">d</span><br><span class="line">:deque([<span class="number">4</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">1</span>])</span><br><span class="line"></span><br><span class="line">d.pop()</span><br><span class="line">:<span class="number">1</span> </span><br><span class="line"></span><br><span class="line">d.popleft()</span><br><span class="line">:<span class="number">4</span></span><br><span class="line"></span><br><span class="line">d</span><br><span class="line">:deque([<span class="number">3</span>, <span class="number">5</span>])</span><br></pre></td></tr></table></figure>
+
+
+
+<br>
+
+
+<h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> https://cotak.tistory.com/<span class="number">69</span></span><br><span class="line"><span class="number">2.</span> https://velog.io/@nnnyeong/자료구조-스택-Stack-큐-Queue-덱-Deque</span><br><span class="line"><span class="number">3.</span> https://gusdnd852.tistory.com/<span class="number">242</span></span><br></pre></td></tr></table></figure>
+          
         </div>
+        
+          <br>
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2022-02-09T21:31:59+09:00">
+  <a class='notlink'>
+    <i class="fas fa-clock" aria-hidden="true"></i>
+    <p>Feb 9, 2022</p>
+    <!-- __('post.updated') + ' ' +  -->
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Python/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>Python</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Data-Structure/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>Data Structure</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Deque/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>Deque</p></a></div>
+
+
+        
       
     </div>
-    
-      <div class="full-width auto-padding tags">
-        
-          <a href="/tags/xml/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> xml</a>
-        
-          <a href="/tags/json/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> json</a>
-        
-          <a href="/tags/api/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> api</a>
-        
-      </div>
-    
   </section>
-</article>
 
-          </div>
+
         
-      
-    
-  </section>
+
+        
+            <div class="prev-next">
+                
+                
+                    <section class="next">
+                        <span class="art-item-right" aria-hidden="true">
+                            <h6>next&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
+                            <h4>
+                                <a href="/2022/02/05/queue/" rel="prev" title="Queue (Data Structure)">
+                                    
+                                        Queue (Data Structure)
+                                    
+                                </a>
+                            </h4>
+                            
+                                
+                                <h6 class="tags">
+                                    <a class="tag" href="/tags/Python/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> Python</a> <a class="tag" href="/tags/Data-Structure/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> Data Structure</a> <a class="tag" href="/tags/Queue/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> Queue</a>
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
+            </div>
+        
+      </section>
+      <!-- Google AdSense -->
+      <!-- In post -->
+      <script data-ad-client="ca-pub-1288998211050792" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<!-- Google AdSense -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1288998211050792"
+     data-ad-slot="5437821794"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+    </article>
   
-    
-    <!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
-    
-    
+
+  
+    <!-- 显示推荐文章和评论 -->
+
+
 
   
 
 
-    
   
 
+
+
+
+
+
+
+  <script>
+    window.subData = {
+      title: 'Deque (Data Structure)',
+      tools: true
+    }
+  </script>
+
+
+  <div id="disqus_thread"></div>
 </div>
 <aside class='l_side'>
   
@@ -451,97 +565,37 @@
         
       
         
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-          <section class='widget grid'>
-  <header class='pure'>
-  <div><i class="fas fa-map-signs fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Menu</div>
+          
+  <section class='widget toc-wrapper'>
+    <header class='pure'>
+  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Shortcuts</div>
+  
+    <!-- <div class='wrapper'><a class="s-toc rightBtn" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div> -->
   
 </header>
 
-  <div class='content pure'>
-    <ul class="grid navgation">
-      
-        <li><a class="flat-box" title="/" href="/"
-          
-          
-          id="home">
-          
-            <i class="fas fa-clock fa-fw" aria-hidden="true"></i>
-          
-          Home
-        </a></li>
-      
-        <li><a class="flat-box" title="/archives/" href="/archives/"
-          
-            rel="external nofollow noopener noreferrer"
-          
-          
-            target="_self"
-          
-          id="archives">
-          
-            <i class="fas fa-archive fa-fw" aria-hidden="true"></i>
-          
-          Archives
-        </a></li>
-      
-        <li><a class="flat-box" title="/projects/" href="/projects/"
-          
-          
-          id="projects">
-          
-            <i class="fas fa-code-branch fa-fw" aria-hidden="true"></i>
-          
-          Projects
-        </a></li>
-      
-        <li><a class="flat-box" title="https://xaoxuu.com/wiki/material-x/" href="https://xaoxuu.com/wiki/material-x/"
-          
-            rel="external nofollow noopener noreferrer"
-          
-          
-            target="_blank"
-          
-          id="https:xaoxuu.comwikimaterial-x">
-          
-            <i class="fas fa-book fa-fw" aria-hidden="true"></i>
-          
-          material-x
-        </a></li>
-      
-        <li><a class="flat-box" title="/about/" href="/about/"
-          
-            rel="external nofollow noopener noreferrer"
-          
-          
-            target="_self"
-          
-          id="about">
-          
-            <i class="fas fa-info-circle fa-fw" aria-hidden="true"></i>
-          
-          About
-        </a></li>
-      
-    </ul>
-  </div>
-</section>
+    <div class='content pure'>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Deque"><span class="toc-text">Deque</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Reference"><span class="toc-text">Reference</span></a></li></ol>
+    </div>
+  </section>
 
+
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
         
       
         
@@ -754,6 +808,16 @@
 </footer>
 <script>setLoadingBarProgress(80);</script>
 
+<script>
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://https-jungjihyuk-github-io.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a></noscript>
 
       <script>setLoadingBarProgress(60);</script>
     </div>
