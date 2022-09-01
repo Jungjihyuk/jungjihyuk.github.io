@@ -9,7 +9,7 @@
 
     <url>
         <loc>http://jungjihyuk.github.io/2020/01/07/codesignal2/</loc>
-        <lastmod>2022-03-31T11:52:49.432Z</lastmod>
+        <lastmod>2022-03-31T12:12:29.954Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -33,7 +33,7 @@
 
     <url>
         <loc>http://jungjihyuk.github.io/2022/02/09/deque/</loc>
-        <lastmod>2022-02-09T12:31:59.249Z</lastmod>
+        <lastmod>2022-02-09T12:53:17.163Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -65,7 +65,7 @@
 
     <url>
         <loc>http://jungjihyuk.github.io/2022/01/12/codesignal3/</loc>
-        <lastmod>2022-01-18T11:13:12.662Z</lastmod>
+        <lastmod>2022-01-19T10:49:57.965Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -152,6 +152,14 @@
     </url>
 
     <url>
+        <loc>http://jungjihyuk.github.io/2019/07/13/objectModel/</loc>
+        <lastmod>2021-12-29T03:24:01.868Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://jungjihyuk.github.io/2020/02/04/python-skills/</loc>
         <lastmod>2021-12-29T03:24:01.868Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -161,14 +169,6 @@
 
     <url>
         <loc>http://jungjihyuk.github.io/2020/02/03/python-yield-send/</loc>
-        <lastmod>2021-12-29T03:24:01.868Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://jungjihyuk.github.io/2019/07/13/objectModel/</loc>
         <lastmod>2021-12-29T03:24:01.868Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -216,7 +216,7 @@
     </url>
 
     <url>
-        <loc>http://jungjihyuk.github.io/2019/03/14/gitflow/</loc>
+        <loc>http://jungjihyuk.github.io/2018/11/04/grammer/</loc>
         <lastmod>2021-12-29T03:24:01.866Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -224,7 +224,7 @@
     </url>
 
     <url>
-        <loc>http://jungjihyuk.github.io/2018/11/04/grammer/</loc>
+        <loc>http://jungjihyuk.github.io/2019/03/14/gitflow/</loc>
         <lastmod>2021-12-29T03:24:01.866Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -240,7 +240,7 @@
     </url>
 
     <url>
-        <loc>http://jungjihyuk.github.io/2019/08/07/bootstrap/</loc>
+        <loc>http://jungjihyuk.github.io/2019/01/13/baekjoon-algorithm/</loc>
         <lastmod>2021-12-29T03:24:01.864Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -248,7 +248,7 @@
     </url>
 
     <url>
-        <loc>http://jungjihyuk.github.io/2019/01/13/baekjoon-algorithm/</loc>
+        <loc>http://jungjihyuk.github.io/2019/08/07/bootstrap/</loc>
         <lastmod>2021-12-29T03:24:01.864Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -272,7 +272,7 @@
     </url>
 
     <url>
-        <loc>http://jungjihyuk.github.io/2019/04/29/AILecture_numpy/</loc>
+        <loc>http://jungjihyuk.github.io/2019/04/29/AILecture_machineLearning/</loc>
         <lastmod>2021-12-29T03:24:01.862Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -280,7 +280,7 @@
     </url>
 
     <url>
-        <loc>http://jungjihyuk.github.io/2019/04/29/AILecture_machineLearning/</loc>
+        <loc>http://jungjihyuk.github.io/2019/04/29/AILecture_numpy/</loc>
         <lastmod>2021-12-29T03:24:01.862Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
