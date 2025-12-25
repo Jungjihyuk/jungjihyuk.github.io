@@ -1,0 +1,59 @@
+---
+title: Git-Flow
+date: 2019-03-14
+draft: false
+description: Git을 이용한 협업 구조
+categories:
+- Git
+tags:
+- 협업
+- Git
+- Github
+- Gitlab
+- Git-Flow
+slug: gitflow
+---
+
+## Git-Flow
+
+### Git Repository 구성
+Repository는 Upstream Remote Repository, Origin Remote Repository, Local Repository 이렇게 세가지로
+구성됩니다. <br>
+<span style="background-color: #fdbb5d" >Upstream은개발자들이 공유하는 저장소로 최신 소스코드가 저장되어 있는 원격 저장소입니다.</span><br>
+<span style="background-color: #fdbb5d">Origin은 Upstream을 Fork한 원격 개인 저장소 입니다.</span><br>
+<span style="background-color: #fdbb5d">Local은 내 컴퓨터에 저장되어 있는 개인 저장소입니다.</span><br>
+
+![gitflow](https://user-images.githubusercontent.com/33630505/54355204-cde93a00-469b-11e9-9586-17f99fe88b8e.JPG)
+
+위 그림을 보면 Local에서 각자 맡은 일을 하고 작업 브랜치를 Origin으로 push합니다. 그리고 다시 Origin에서
+Upstream으로 merge하는 Pull Request를 생성합니다. Pull Request가 발생하면 팀원과 코드리뷰를 거친후 merge합니다. 그리고 다시 작업을 시작하기 전 <span style="background-color:#fdbb5b">Upstream을 pull</span>하여 작업을 하면 됩니다.
+
+### 작업할 때 지켜야할 약속
+1. 작업을 시작하기전 꼭 Upstream에서 pull을 한다.
+2. reset명령어는 Local에서만 사용한다.
+3. 약속한 commit 규칙을 따른다
+4. 서로 공유하는 브랜치의 커밋 그래프는 함부로 변경하지 않는다.
+5. 자신의 Pull Request는 스스로 merge 한다.
+
+### Git-Flow 개발 흐름
+Git-Flow를 사용했을 때 작업을 어떻게 하는지 살펴보기 전에 먼저 5가지 종류의 브랜치를 소개하겠습니다.<br>
+항상 유지되는 메인 브랜치들(master, develop)과 일정 기간동안만 유지되는 보조 브랜치들(feature, release, hotfix)이 있습니다.<br>
+- master: 제품으로 출시될 수 있는 브랜치
+- develop: 다음 출시 버전을 개발하는 브랜치
+- feature: 기능을 개발하는 브랜치
+- release: 이번 출시 버전을 준비하는 브랜치
+- hotfix: 출시 버전에서 발생한 버그를 수정하는 브랜치
+
+![branch](https://user-images.githubusercontent.com/33630505/54407122-f6b31300-471f-11e9-8112-f23321771f3e.png)
+
+#### 우아한 형제들's blog (위 글 출처)
+[출처 바로가기](http://woowabros.github.io/experience/2017/10/30/baemin-mobile-git-branch-strategy.html)
+
+#### 생활코딩 유튜브 강의
+[출처 바로가기](https://www.youtube.com/watch?v=_kxjzlH34xc)
+
+#### Git을 이용한 다양한 협업 워크플로우
+[출처 바로가기](https://lhy.kr/git-workflow)
+
+#### SSH-Key 생성후 Gitlab에 등록하기
+[출처 ](https://m.blog.naver.com/PostView.nhn?blogId=semidex37&logNo=220951282334&proxyReferer=https%3A%2F%2Fwww.google.co.kr%2F)

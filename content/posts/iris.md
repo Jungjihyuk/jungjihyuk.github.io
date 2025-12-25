@@ -1,0 +1,528 @@
+---
+title: Iris Data로 전처리부터 기계학습, 딥러닝까지
+date: 2019-09-11
+draft: false
+description: 나만의 전처리 방식과 여러가지 알고리즘 비교 분석
+categories:
+- AI
+- Machine Learning
+tags:
+- iris
+- EDA
+- Machine Learning
+- Deep Learning
+slug: iris
+---
+
+
+# Pipeline
+
+```
+0. Data 수집
+   - File Download
+   - API
+   - Crawling & Scraping
+1. 도메인 지식 확보
+   - Docs를 읽어본다 (주어 졌을때만)
+   - 이미 내가 알고 있는 전문 분야를 활용한다
+   - 구글링
+   - 책
+2. Data 불러오기
+   - Pandas Dataframe으로 불러오기
+   - (비정형 데이터인 경우는 찾아봐야함..)
+3. Data 파악하기
+   - head로 대략적인 데이터 살피기
+   - Tidy Data인지 확인하기
+   - info로 데이터 정보 확인하기
+   - missing data 확인하기
+   - dtype 확인하기
+4. Data 조작하기   
+   - Wide Format인 경우 melt 하기
+   - missing data 처리하기
+   - dtype 확인하고 encoding 하기
+   - train - test set 분리하기
+   - 부적절한 data 값 수정하기
+5. Data 분석하기 (EDA)
+   - describe로 대략적인 값의 특성 확인하기
+   - 그래프 그려 보기
+   - 왜도, 첨도 확인하기
+   - 데이터의 숨겨진 의미 파악하기
+   - 데이터 양이 충분한지 파악하기 (중심 극한 정리)  
+   - Feature 갯수가 데이터의 양에 비해 많은지 확인하기 (오캄의 면도날)
+6. Data 전처리하기
+   - Feature Selection
+   - Feature Scaling
+   - Dimensionality Reduction
+7. 모델링 하기
+   - 기계학습 or 딥러닝
+   - 지도학습 or 비지도학습 or 강화학습
+   - 자연어 or 이미지 or 음성 처리
+   - 모델링 순서
+   - 알고리즘 비교하기
+   - 하이퍼 파라미터 찾기 (GridSearchCV)
+8. 성능 테스트
+```
+
+<hr>
+<br>
+
+## 도메인 지식 확보하기
+
+> 1. Data를 내려받아 쓰는 경우 Docs가 있다면 잘 읽어보고 데이터를 이해한다 <br>
+> 2. Docs가 없고 도메인 지식이 없을 경우 구글링을 하거나 책을 통해 공부한다 <br>
+> 3. 웬만하면 내가 관심있는 분야를 선정한다 <br>
+
+<br>
+
+## 데이터 불러오기
+
+> Pandas DataFrame에 맞게 불러온다
+
+<br>
+
+### seaborn에서 불러올 때
+
+```python
+import pandas as pd
+import seaborn as sns
+
+iris = sns.load_dataset('iris')
+```
+
+<br>
+
+### file에서 불러올 때
+
+```python
+import pandas as pd
+
+iris = pd.read_csv('iris.csv', engine='python')  # 필요에 따라 옵션이 달라질 수 있다.
+```
+
+<br>
+
+## Data 파악하기
+
+### HEAD
+
+```python
+import pandas as pd
+import seaborn as sns
+
+iris = sns.load_dataset('iris')
+
+iris.head(5)
+```
+
+![head](https://user-images.githubusercontent.com/33630505/64856526-20141380-d65d-11e9-9953-e1ee87c3f7b3.JPG)
+
+<br>
+
+## Tidy Data인지 확인하기
+
+> 데이터 양에 비해 Wide Format인지 아직 판단하기 이르지만 <br>
+> 언뜻 봐서 melt할만한 Column은 없어보인다. <br>
+
+**Wide Format** 데이터의 양에 비해 Column이 많은 DataFrame, 즉 가로로 넓은 형태의 데이터 형태를 말한다.
+
+<br>
+
+## info로 데이터 정보 확인하기
+
+```python
+import pandas as pd
+import seaborn as sns
+
+iris = sns.load_dataset('iris')
+
+iris.info()
+```
+
+![info](https://user-images.githubusercontent.com/33630505/65045477-cdf32b00-d999-11e9-9e55-a91c88aa1fa1.JPG)
+
+<br>
+
+<span style="font-size: 20px; font-color: orange;"> info로 알 수 있는 것들 </span>
+
+```
+1. 데이터 갯수  => 150개 (데이터 양이 적다. 하지만 예제 데이터이니 일단 한번 끝까지 해보자)
+2. Feature 갯수 => 4개 (Data 150개에 4개 Feature면 적당한가? 아직 모름)
+3. Dtype  => Feature 4개 모두 float64 , target data인 species는 object (기계학습 할때 int나 float형으로 바꿔야 겠다)
+4. Memory size => 6.0+KB (작다. 불러오는데 큰 문제 없음. memory size가 몇 이하여야 하는지는 잘 모름)
+5. Missing Data => 없음
+```
+
+<br>
+
+## 미싱데이터 시각화 하기
+
+> info로 미싱데이터를 확인 했지만 혹시 어정쩡하게 미싱 데이터가 있거나 <br>
+> 미싱데이터의 분포를 쉽게 확인하려면 그래프를 그리자
+
+
+```python
+import missingno as mino
+import pandas as pd
+import seaborn as sns
+
+iris = sns.load_dataset('iris')
+mino.matrix(iris)
+```
+
+![mino](https://user-images.githubusercontent.com/33630505/65046346-6807a300-d99b-11e9-8cac-22dfd78dc068.JPG)
+
+
+
+<br>
+
+## Label Encoding
+
+> info를 확인 했을 때 species data를 숫자형으로 바꿔야 된다고 판단 했었고 target 데이터의 값이 문자이면 <br>
+> 학습을 할 수 없기 때문에 숫자로 인코딩 해준다 (인코딩과 동시에 dtype 자동변경)
+
+### Scikit LabelEncoder 활용하기
+```python
+import pandas as pd
+import seaborn as sns
+from sklearn.preprocessing import LabelEncoder
+
+iris = sns.load_dataset('iris')
+target = iris.iloc[:,-1]
+
+le = LabelEncoder()
+le.fit_transform(target)
+: array([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+         0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+         1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+         1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
+         2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
+         2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2])
+target = pd.DataFrame(le.fit_transform(target))         
+target.rename({0:'target'}, axis=1, inplace=True)
+```
+
+<br>
+
+### Replace 활용하기
+
+```python
+import pandas as pd
+import seaborn as sns
+
+iris = sns.load_dataset('iris')
+target = iris.iloc[:,-1]
+
+target.replace({'setosa':0,'versicolor':1,'virginica':2}, inplace=True)
+```
+
+<br>
+
+
+## Train-Test Set 분리하기
+
+> Train, Test set을 분리할 때는 보유한 데이터의 숫자를 감안해서 쪼갠다 <br>
+> 데이터의 갯수가 만개 이하일 때는 보통 Train : Test 비율 80 : 20 또는 75 : 25로 분할한다 <br>
+> 그러나 그 이상으로 데이터가 많을 경우 최대한 Train 데이터 비율을 늘려 사용한다.
+
+출처: [Brunch](https://brunch.co.kr/@coolmindory/31)
+<br>
+
+```python
+from sklearn.model_selection import train_test_split
+
+# 관례상 행렬은 대문자, 벡터는 소문자로 표기
+X_train, X_test, y_train, y_test = train_test_split(data, target)
+
+len(X_train)
+: 112
+len(X_test)
+: 38
+```
+
+## 데이터 분석하기
+
+> 데이터의 숨은 의미를 찾아보자!
+
+
+<br>
+
+### 수치로 데이터 형태, 분포, 경향 확인하기
+
+```python
+import pandas as pd
+import seaborn as sns
+
+iris = sns.load_dataset('iris')
+
+data = iris.iloc[:,:-1]
+data.describe()
+```
+![describe](https://user-images.githubusercontent.com/33630505/65370041-9fbe6580-dc8f-11e9-963c-a0d0b861663e.JPG)
+<br>
+
+### describe 그래프로 보기
+
+> describe는 숫자로 나오기 때문에 한눈에 파악하기 힘들다 <br>
+> 따라서 그래프로 확인!
+
+```python
+import pandas as pd
+import seaborn as sns
+
+iris = sns.load_dataset('iris')
+
+data = iris.iloc[:,:-1]
+
+data.boxplot()
+```
+![boxplot](https://user-images.githubusercontent.com/33630505/65370155-adc0b600-dc90-11e9-8074-f1d5158d80ae.JPG)
+
+> sepal_width 데이터에서 outlier, 즉 소수의 데이터가 데이터 분포에서 멀리 떨어져 있는 경우가 포착되었다. <br>
+> 하지만 데이터의 갯수도 적고 크게 벗어난 갖이 아니므로 그냥 냅두자
+
+<br>
+
+### 데이터간 산점도 그래프 그리기
+
+```python
+import pandas as pd
+import seaborn as sns
+
+iris = sns.load_dataset('iris')
+
+ # hue는 색상 => 보통 target data를 서로 다른 색을 구분지어 칠하고 싶을때 사용
+sns.pairplot(iris, hue='species')
+```
+![pairplot2](https://user-images.githubusercontent.com/33630505/65370247-9209df80-dc91-11e9-8711-315e88c30d81.JPG)
+
+<br>
+
+### 왜도, 첨도 그래프 그리기
+
+```python
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+iris = sns.load_dataset('iris')
+data = iris.iloc[:,:-1]
+
+data.skew() # 왜도
+: sepal_length    0.314911
+  sepal_width     0.318966
+  petal_length   -0.274884
+  petal_width    -0.102967
+  dtype: float64
+
+data.kurt() # 첨도
+: sepal_length   -0.552064
+  sepal_width     0.228249
+  petal_length   -1.402103
+  petal_width    -1.340604
+  dtype: float64  
+
+f, axes = plt.subplots(2, 2, figsize=(7, 7), sharex=True)
+sns.distplot(data.iloc[:,0], color="skyblue", ax=axes[0,0])
+sns.distplot(data.iloc[:,1], color="olive", ax=axes[0,1])
+sns.distplot(data.iloc[:,2], color="gold", ax=axes[1,0])
+sns.distplot(data.iloc[:,3], color="teal", ax=axes[1,1])
+for i, ax in enumerate(axes.reshape(-1)):
+    ax.text(x=0.97, y=0.97, transform=ax.transAxes, s="Skewness: %f" % data.iloc[:,i].skew(),\
+        fontweight='demibold', fontsize=10, verticalalignment='top', horizontalalignment='right',\
+        backgroundcolor='white', color='xkcd:poo brown')
+    ax.text(x=0.97, y=0.91, transform=ax.transAxes, s="Kurtosis: %f" % data.iloc[:,i].kurt(),\
+        fontweight='demibold', fontsize=10, verticalalignment='top', horizontalalignment='right',\
+        backgroundcolor='white', color='xkcd:dried blood')
+plt.tight_layout()
+```
+![skewkurt](https://user-images.githubusercontent.com/33630505/65370431-98995680-dc93-11e9-994a-fed1c711a965.JPG)
+<br>
+
+**왜도** 왜도는 데이터가 대칭이 아닌 정도를 나타낸다. 만약 왜도의 값이 음수이면 오른쪽으로 치우친 정도를 나타내고 왜도의 값이 양수이면 왼쪽으로 치우친 정도를 나타낸다.
+
+**첨도** 첨도는 데이터가 중간값 분포의 정도를 나타낸다. 보통 첨도의 값이 3보다 작으면 완만한 분포를 나타내고 첨도의 값이 3보다 크면 뾰족한 분포를 나타낸다. 지금 데이터에서는 음수면 완만 양수면 뾰족이라고 생각하면 된다.
+
+<br>
+
+## Data 전처리하기
+
+> 연습용 데이터라 딱히 전처리할게 없음.. 그래도 학습용으로 추후에 추가할 것.
+
+<br>
+
+## 모델링 하기
+
+> iris data는 정형데이터에 target data 갯수가 유한개 이므로 classification 방법 중 <br>
+> 가장 무난한 logistic regression으로 분류를 시작해보자
+
+<br>
+
+### Scikit으로 기계학습 하는 순서
+
+```
+1. 활용할 모델 이름 import
+2. 인스턴스화
+3. fit
+4. predict
+```
+<br>
+
+
+### LogisticRegression
+
+```python
+from sklearn.linear_model import LogisticRegression
+
+lr = LogisticRegression()
+lr.fit(X_train, y_train)
+
+: LogisticRegression(C=1.0, class_weight=None, dual=False, fit_intercept=True,
+                   intercept_scaling=1, l1_ratio=None, max_iter=100,
+                   multi_class='warn', n_jobs=None, penalty='l2',
+                   random_state=None, solver='warn', tol=0.0001, verbose=0,
+                   warm_start=False)
+```
+
+<br>
+
+### 성능 검사하기
+
+> Cross_val_score를 통해 대략적인 성능을 확인해보자
+
+<br>
+
+### Cross_val_score
+
+```python
+from sklearn.model_selection import cross_val_score
+
+cross_val_score(lr, X_test, y_test, cv=10).mean()
+
+: 0.835  # Accuracy
+```
+
+**결과 분석** Logistic regression으로 분류하고 cross_val_score를 확인해본 결과 0.835라는 정확도가
+나왔기 때문에 iris data는 앞으로 도전해볼 모델도 분류 모델임을 먼저 시도해보는 것이 좋을 것이라고 판단된다.
+
+<br>
+
+### K-Means
+
+```python
+from sklearn.neighbors import KNeighborsClassifier
+
+knn = KNeighborsClassifier()
+knn.fit(X_train, y_train)
+
+: KNeighborsClassifier(algorithm='auto', leaf_size=30, metric='minkowski',
+                     metric_params=None, n_jobs=None, n_neighbors=5, p=2,
+                     weights='uniform')
+
+cross_val_score(knn, X_test, y_test, cv=10).mean()    
+
+: 1
+```
+
+<br>
+
+### SVM
+
+```python
+from sklearn.svm import SVC
+
+svc = SVC()
+svc.fit(X_train, y_train)
+
+: SVC(C=1.0, cache_size=200, class_weight=None, coef0=0.0,
+    decision_function_shape='ovr', degree=3, gamma='auto_deprecated',
+    kernel='rbf', max_iter=-1, probability=False, random_state=None,
+    shrinking=True, tol=0.001, verbose=False)
+
+cross_val_score(svc, X_test, y_test, cv=10).mean()
+: 0.9800000000000001
+```
+
+<br>
+
+### Naive Bayes
+
+```python
+from sklearn.naive_bayes import GaussianNB
+
+gnb = GaussianNB()
+gnb.fit(X_train, y_train)
+
+: GaussianNB(priors=None, var_smoothing=1e-09)
+
+cross_val_score(gnb, X_test, y_test, cv=10).mean()
+: 0.96
+```
+
+<br>
+
+### 학습 모델로 새로운 값 예측 해보기
+
+```python
+# 학습된 값들  
+lr.predict([[5.1, 3.5, 1.4, 0.2]]) # setosa
+: array([0], dtype=int64)
+lr.predict([[6.7, 3.1, 4.7, 1.5]]) # versicolor
+: array([1], dtype=int64)
+lr.predict([[7.7, 2.8, 6.7, 2.]]) # virginica
+: array([2], dtype=int64)
+
+
+# 새로운 값으로 예측하기
+
+lr.predict([[4, 3, 1, 0.1]])  
+: array([0], dtype=int64)
+
+lr.predict([[6, 3, 5, 1]])
+: array([1], dtype=int64)
+
+lr.predict([[7, 1, 5, 3]])
+: array([2], dtype=int64)
+```
+
+<br>
+
+### Train - Test - split으로 정확도 보기
+
+```python
+import seaborn as sns
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import confusion_matrix
+
+iris = sns.load_dataset('iris')
+iris.species = iris.species.map({'setosa': 0, 'versicolor':1,'virginica':2})
+
+knn = KNeighborsClassifier()
+iris_data = iris[iris.columns[:-1]]
+iris['species']
+
+knn.fit(iris_data, iris['species'])
+
+X_train, X_test, y_train , y_test = train_test_split(iris[iris.columns[:-1]], iris.species)
+
+knn.fit(X_train, y_train)
+knn.predict(X_test)
+
+: array([1, 1, 2, 2, 0, 1, 1, 1, 2, 1, 0, 0, 2, 0, 0, 1, 1, 2, 0, 2, 1, 2,
+       1, 1, 0, 1, 0, 0, 0, 2, 2, 0, 1, 0, 2, 2, 0, 2], dtype=int64)
+
+knn.predict(X_test) == y_test.values
+
+: array([ True,  True,  True,  True,  True,  True,  True,  True,  True,
+        True,  True,  True, False,  True,  True,  True,  True,  True,
+        True,  True,  True,  True,  True,  True,  True,  True,  True,
+        True,  True,  True,  True,  True,  True,  True,  True,  True,
+        True,  True])
+
+confusion_matrix(y_test, knn.predict(X_test))
+
+: array([[13,  0,  0],
+       [ 0, 13,  1],
+       [ 0,  0, 11]], dtype=int64)
+```

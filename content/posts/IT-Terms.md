@@ -1,0 +1,294 @@
+---
+title: IT 용어 정리
+date: 2019-03-16
+draft: false
+description: 정보처리기사 실기 및 알아두면 좋은 용어들
+categories:
+- IT Terms
+tags:
+- IT
+- 용어
+- 정리
+slug: IT-Terms
+---
+
+### 정보처리기사 실기를 위한 용어
+
+1. Data warehouse
+- 정보에 입각한 의사 결정을 내릴 수 있도록 분석 가능한 정보의 중앙 저장소  [DW vs DM](https://middleware.tistory.com/entry/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%9B%A8%EC%96%B4%ED%95%98%EC%9A%B0%EC%8A%A4Data-Warehouse-%EB%B0%8F-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EB%A7%88%ED%8A%B8Data-Mart)
+2. Big data
+- 의사결정에 필요한 아주 방대한 데이터들 그리고 데이터를 활용하는 기술
+- [Data warehose vs Big data](https://www.educba.com/big-data-vs-data-warehouse)
+3. Data mining
+- Data warehouse에 저장된 데이터 집합에서 사용자의 요구에 따라 유용하고 가능성 있는   
+  정보를 발견할 수 있도록 해주는 기술
+4. Triger
+- 입력, 갱신, 삭제 등의 이벤트가 발생할 때마다 자동적으로 수행되는 사용자 정의 프로시저
+5. DSMS(Data Stream Management System)
+- 무선 센서 네트워크나 인터넷 같은 통신사에서 발생하는 대량의 스트림 데이터를 처리하고 관리하는 시스템.
+6. DC(Dublin Core)
+- ISO 15836으로 표준화된 메타데이터 요소 집합, 네트워크 환경에서 각종 전자 정보를 기술하는 메타데이터.
+7. MDR(Meta Data Registry)
+- 메타 데이터의 등록과 인증을 통해 메타 데이터를 유지, 관리하며 메타 데이터의 명세를 공유하는 레지스트리.
+8. Database Tuning
+- 데이터베이스 시스템을 최적화하는 방안, DB application, OS, DB 등의 조정을 통하여 DB System 성능 향상.
+9. EA(Enterprise Architecture)
+- 정보화를 체계적으로 추진하기 위해 조직 및 업무 활동, 정보화 종합설계도[EA](https://m.blog.naver.com/PostView.nhn?blogId=jvioonpe&logNo=220227180562&prxyRefere=https%3A%2F%2Fwww.google.co.kr%2F)
+10. ERP(Enterprise Resource Planning)
+- 인사, 재무, 생산 등 기업의 전 부문을 하나의 통합 시스템으로 재구축함으로써 생산성 극대화 기법.
+11. EAI(Enterprise Application Integration)
+- DW나 ERP등 기업에서 운영하는 서로 다른 어플리케이션을 통합하여 업무의 효율성을 높이려는 시도.
+12. DRM(Digital Rights Management or Digital Restrictions Managment)
+- 출판자 또는 저작권자가 그들이 배포한 디지털 자료나 하드웨어의 사용을 제어하고 이를 의도한 용도로만 사용하도록 제한하는 모든 기술.
+13. OLAP(Online Analytic Processing)
+- 의사결정 지원 시스템. DW로 부터 정보를 추출하여 온라인으로 다차원 분석을 하는 기술 [OLAP](https://docs.microsoft.com/ko-kr/system-center/scsm/olap-cubes-overview?view=sc-sm-2019)
+14. OLTP(Online Transaction Processing)
+- 주 컴퓨터와 통신 회선으로 접속되어 있는 복수의 사용자 단말에서 발생한 트랜잭션을 주 컴퓨터에서 처리하여 그 결과를 즉석에서 사용자 단말 측으로 되돌려 보내 주는 처리 형태. [OLAP vs OLTP](https://m.blog.naver.com/PostView.nhn?blogId=skygrab&logNo=30102437276&proxyReferer=https%3A%2F%2Fwww.google.com%2F)
+15. 시간복잡도(Big-O)
+- 알고리즘이 수행되는 시간
+16. 공간복잡도
+- 프로그램 실행후 종료시까지 필요로하는 자원공간의 양(메모리)
+17. as-is
+- 현재 업무 프로세스 분석
+18. to-be
+- 미래 업무 프로세스 분석
+19. AR(Augmented reality)
+- 증강현실, 실제 존재하는 환경에 가상의 사물이나 정보를 합성하여 마치 원래의 환경에 존재하는 사물처럼 보이도록 하는 컴퓨터 그래픽 기법 ex) 포켓몬고
+20. 임계영역
+- 공유자원에 접근하는 프로세스의 영역
+21. 상호배제
+- 동시에 실행되는 프로세스들이 임계영역에 동시에 들어가지 않도록 하는 것 ex) 파일이 열려 있으므로 이 작업을 완료할 수 없습니다
+22. bi-modal
+- 혁신을 추진하는 특별팀을 만드는 동시에 기존 핵심 시스템도 잘 유지해야 한다
+23. CRM(Customer Relationship management)
+- 소비자들을 자신의 고객으로 만들고, 이를 장기간 유지하고자 하는 경영 방식
+24. CUI(Conversational user interfaces)
+- 인공지능 대화형 인터페이스
+25. 스마트 캠퍼스
+- 인간-기기가 상호작용하여 시스템을 통해 대학의 구성원이 더 몰일할 수 있고 자동화된 경험을 만들어낸다
+26. 넛지기술
+- 클라우드와 모바일, 소셜, 데이터 관련 기술의 모음, 개인화된 소통을 통해 서비스 제공 ex)aws 쇼핑몰 홈페이지, 쳇봇
+27. BYOD(Bring your own device)
+- 컴퓨터나 모바일 기기 속 자료를 프로젝터 같은 유선 기기 연결 없이 무선 네트워크를 사용해 스크린에 보여줄 수 있다
+28. HIP(Hybrid integration platform)
+- 기존의 IT 환경들을 통합하여 환경 구축 ex)software ag
+29. SLA(Service Level Agreement)
+- 서비스를 제공함에 있어서 공급자와 사용자간에 서비스에 대하여 측정지표와 목표등에 대한 협약서
+30. PaaS(Platform as a Service)
+- 클라우드 컴퓨팅 서비스중 하나, 앱 개발에 필요한 인프라 대여 플랫폼 ex)aws, 공개 API, 구글의 앱 엔진
+31. SaaS(Software as a Service)
+- 기존의 ASP를 확장한 개념으로 소프트웨어 및 관련 데이터는 중앙에 호스팅되고 사용자는 웹 브라우저 등의 클라이언트를 통해 접속하는 형태의 소프트웨어 전달 모델 (주문형 소프트웨어) ex) CRMKorea
+32. IaaS(Infrastructure as a Service)
+- 서버, 스토리지, 네트워크를 가상화 환경으로 만들어, 필요에 따라 인프라 자원을 사용할 수 있게 서비스를 제공한다 ex) aws's EC2, microsoft azure
+33. ASP(Application Service Provider)
+- 네트워크 인프라를 이용하여 다양한 정보화 솔루션을 사용할 수 있는 애플리케이션 임대 서비스, SaaS와 유사하지만 동적으로 컴퓨팅 자원을 할당하는 분산처리 등과 같은 기술 제공이 제한적이다는 면에서 차이가 있다
+34. APaaS / DPaaS / IPaaS
+- PaaS에서 파생된 것들
+35. BCI(Brain-Computer Interface)
+- 컴퓨터 방식을 이용해 정보를 추출한 후 뇌에 다시 자극을 적용하는 것 및 손상된 청각, 시각 및 운동을 복원하는 것을 목표로 하는 신경기능 대체 분야에 초점을 맞추고 있다
+36. Ad-hoc
+- 무선 통신 및 네트워킹 능력을 갖춘 두 개 이상의 장비로 구성된 네트워크, 별도의 AP(Access point) or Infrastructure 없이 모바일 디바이스만으로 구성가능하다
+37. WPAN(Wireless Personal Area Network)
+- 무선 개인지역망, 블루투스 등의 개인 디바이스
+38. WLAN(Wireless Local Area Network)
+- 무선 근거리 통신망, 802.11 프로토콜 통신을 하며 와이파이가 이에 해당한다
+39. WMAN(Wireless Metropolitan Area Network)
+- 무선 도시지역망, 와이브로가 이에 해당한다, 그 지역 내부에서 어디든지 인터넷이 잘 되지만 다소 느리다는 단점이 있다
+40. WWAN(Wireless Wide Area Network)
+- 무선 광대역 통신망, 휴대폰이 이에 해당한다, 일부 지역을 제외하고 어디서든 통신이 가능하다는점, 2G~4G
+41. 스마트 카(Smart car) or 커넥티드 카(COnnected car)
+- 자동차와 IT 기술을 융합하여 인터넷 접속이 가능항 자동차
+42. 크라우드 소싱(Crowd Sourcing)
+- 인터넷을 통해 일반 대중이 기업 내부 인력을 대체하는 것을 의미
+43. SAN(Storage Area Network)
+- '광저장장치영역 네트워크'라고 불린다, 특수 목적용 고속 네트워크로서 대규모 네트워크 사용자들을 위하여 이기종 간의 데이터 저장장치를 관련 데이터 서버와 함께 연결해 별도의 네트워크를 구성해 관리한다
+44. 지그비(ZigBee)
+- 버튼 하나의 동작으로 집안 어느 곳에서나 전등 제어 및 홈 보안 시스템을 제어 관리할 수 있고 인터넷을 통한 전화 접속으로 가정 자동화를 더욱 편리하게 달성하려는 것에서부터 출발한 기술, Ad-hoc 방식 네트워크, 낮은 수준의 전송 속도만 필요로 하면서 긴 베터리 수명과 보안성을 요구하는 분야에서 사용
+45. 멀웨어(Malware)
+- 악성 소프트웨어, 사용자가 멀웨어를 설치하게되면 컴퓨터에 대한 액세스 권한을 얻도록 설계되어 컴퓨터에서 액세스한 내용을 추적할 수 있으며 사용자가 인식하지 못 할 수도 있는 피해를 일으킬 수도 있다(키로거, 바이러스, 웜, 스파이웨어)
+46. 랜섬웨어(Ransomware)
+- 컴퓨터 시스템을 감염시켜 접근을 제한하고 일종의 몸값을 요구하는 악성 소프트웨어의 한 종류이다
+47. MC-Finder
+- 악성코드 은닉 사이트 탐지 프로그램
+48. MOTP(Moblie One Time Password)
+- 모바일 일회용 비밀번호
+49. Network Neutrality
+- 통신망 제공사업자는 모든 콘텐츠를 동등하고 차별 없이 다뤄야 한다는 원칙
+50. ICP(Internet Contents Provider)
+- 인터넷 콘텐츠 서비스 업체 ex) 네이버, 구글, 페이스북
+51. ISP(Internet Service Provider)
+- 인터넷 서비스 업체 ex) SKT, KT, LG
+52. VPN(Virtual Private Network)
+- 가상 사설망, 사용자의 인터넷 트래픽을 암호화하여 망 제공자로부터 안전하게 인터넷을 사용할 수 있도록 해준다
+53. Smishing(SMS phishing)
+- 문자메시지를 이용한 피싱, 신뢰할 수 있는 사람 또는 기업이 보낸 것처럼 가장하여 개인비밀정보를 요구하거나 휴대폰 소액 결제를 유도한다
+54. Sniffing
+- 패킷 가로채기 공격, 네트워크 상에 떠돌아다니는 패킷이나 데이터 등을 훔쳐보는 것, 암호화 되지 않은 패킷들을 수집하여 순서대로 재조합 후 중요한 정보를 유출하는 수동적인 형태의 공격
+55. Snooping
+- 네트워크 상의 정보를 염탐하여 불법적으로 얻는 것
+56. Spoofing
+- 네트워크 트래픽 흐름을 임의로 변경하고 시스템 권한 탈취 등의 공격, 그 대상은 MAC, IP, Port 주소가 될 수 있다
+57. ICMP Sweep
+- 해당 네트워크를 탐색하면서 살아있는 호스트, 포트를 찾는다, 목표 네트워크나 시스템에 ICMP Echo_Request 패킷을 순차적으로 전송한 후, 응답 패킷을 기반으로 해당 시스템의 동작 여부와 운영체제 종류 등을 파악한다
+58. Scanning
+- 시스템의 상태, 사용하는 서비스 등을 찾아 취약점을 찾는 사전 주비 단계
+59. ICMP(Internet Control Message Protocol)
+- 호스트 서버와 인터넷 게이트 웨이 사이에서 메시지를 제어 하고 에러를 알려주는 프로토콜
+60. 트로이 목마
+- 정상적인 프로그램으로 위장한 악성코드, 트로이 목마의 99.99%는 불법 파일이나 프로그램 다운시 전파된다, 트로이 목마는 개인정보 유출, 운영체제 파괴, 속도 느려짐, 시스템 파일 삭제, 부팅 오류, 컴퓨터 하드웨어 자체를 먹통으로 만들 정도로 손상시키기도 한다, 포멧을 해도 복구가 불가능할 수도 있다
+61. Tvishing
+- 스마트 TV의 약점을 이용하여 몰래 악성코드를 심어 TV 기능을 악용하는 피싱 방법
+62. Pharming
+- 웹 브라우저에서 정확한 웹 페이지 주소를 입력해도 가짜 웹 페이지에 접속하게 하여 개인 정보를 훔치거나 금전적 피해를 입히게 하는 피싱방법
+63. USIM(Universal Subscriber Identity Module)
+- 휴대전화에 끼워서 쓰는 일종의 스마크카드, 3G, 4G, WiBro, 데이터 쉐어링 기기를 사용하고 있다면 기기에 하나 씩 들어 있다, 보통 개인 정보를 담고 있어 보안에 신경써야 한다
+64. ISP(Information Strategy Planning)
+- 정보 시스템 구축의 출발점인 계획 단계
+65. SCM(Supply Chain Management)
+- 공급망 관리, 고객이 사용하고자 하는 시점에 원하는 제품을, 원하는 수량만큼 공급하는 것을 목표로함
+66. Balanced Scorecard(균형 성과표)
+- 얼마나 돈을 벌었냐보다, 여러가지 기준을 추가해서 업무의 성과를 판단함
+67. BPR(Business Process Reengineering)
+- 기업 경영 내용이나, 경영 과정을 분석하여 경영 목표 달성에 가장 적합하도록 재설계하고, 그 설계에 따라 기업 형태, 사업 내용, 조직을 재구성 하는 것
+68. Strategic Information System(전략적 정보 시스템)
+- 이전의 정보 시스템이 업무의 합리화나 효율성에 초점을 두었던 것에 반하여, 기업이 경쟁에서 승리하여 살아남기 위한 필수적인 시스템
+69. Point of Sale(판매 시점)
+- 물품 거래가 완료되는 장소, 판매와 관련된 데이터를 일괄적으로 관리하고, 고객 정보를 수집하여 부가 가치를 향사시키는 시스템
+70. Decision Support System(결정 지원 시스템)
+- 회사의 경영층의 의사결정자의 계산 부담을 줄여주고, 정보를 도식화 하여 분석모형과 데이터를 제공함으로써 의사결정자의 의사 결정을 보다 효율적으로 도와주는 응용프로그램
+71. Executive Information System(경영 정보 시스템)
+- DSS의 일종으로 최고 경영진에게 전략적인 의사 결정에 필요한 정보를 제공하는 체계를 일컫는 사업 용어
+72. Product Data Management(제품 데이터 관리)
+- 소프트웨어나 다른 툴을 이용하여 특정 제품과 관련된 데이터를 추적하고 관리하는 것을 지칭한다
+73. Chief Knowledge Officer(지식 총괄 책임자)
+- 지식의 보존을 통해 기업 가치가 최대로 되도록 하는 책임자를 일컫는다
+74. Six Sigma
+- 기업 내에서 전략적으로 완벽에 가까운 제품이나 서비스를 개발하고 제공하려는 목적으로 정립된 품질 관리 기법
+75. 5-Forces
+- 기존 경쟁자 간의 경쟁 정도, 공급자들의 교섭력, 구매자들의 교섭력, 잠재적 진입자들의 위협, 대체제의 위협 이 다섯 가지 요소들의 강약에 의해 산업 내 잠재적 이윤의 수준이 결정되며 산업 분석을 이용하면 전반적 산업의 경쟁강도 파악이 가능하며 특히 산업 내 어느 부분에서 경쟁이 일어나는지 파악 할 수 있다
+76. 7S
+- 조직 개발 측면에서 꼭 필요하다고 생각한 일곱가지 요인 Strategy, Structure, Systems, Staff, Shared Value, Skills, Style
+77. Community of Practice
+- 열정과 지식을 공유하는 학습 공동체
+78. Work Breakdown Structure(작업 분해도)
+- 프로젝트의 범위와 최종산출물을 세부 요소로 분할한 계층적 구조
+79. Corporate Performance Management(기업 성과 관리)
+- 경영계획-성과분석- 예측- 전략분석- 시뮬레이션 / 예측 경영을 통한 최적의 의사 결정을 내릴 수 있게 해주는 시스템
+80. Groupware
+- 집단으로 서의 작업을 지원하기 위해 만들어진 소프트웨어
+81. Business Process Management(생애 주기)
+- 프로세스 설계-시뮬레이션-구현-실행-모니터링-최적화
+82. @anywhere(앳애니웨어)
+- 뉴욕타임즈 같은 언론사나 야후 같은 유명 사이트와 제휴를 해서 트위터 사이트로 이동하지 않고도 해당 사이트상에서 최근의 트위터 글을 바로 확인할 수 있는 새로운 플랫폼
+83. 5G 네트워크 슬라이싱
+- 5G의 핵심 기술인 네트워크 슬라이싱, 하나의 물리적 '코어 네트워크'를 독립된 다수 가상 네트워크로 분리한 뒤 고객 맞춤형 서비스를 제공한다
+84. 아이엠티 2020(International Mobile Telecommunications-2020,IMT-2020)
+- 5G 이동통신, 이용자에게 초당 최고 20Gbps의 데이터 전송 속도를 제공할 것을 규정한다, 최고 전송속도 20Gbps, 사용자 체감 전송속도 100Mbps, 전송 지연 시간 1ms 등...
+85. EMBB(enhanced Mobile BroadBand)
+- 초광대역 이동 통신
+86. URLLC(Ultra-Reliable and Low Latency Communications)
+- 초고신뢰 저지연 통신
+87. mMTC(massive Machine Type Communications)
+- 대규모 사물통신
+88. 4C 분석
+- Customer, Competitor, Company, Channel (고객, 경쟁사, 자사, 유통)
+89. ERM(Enterprise Risk Management)
+- 기업이 직면하고 있는 주요 위험들을 식별하고 관리하기 위한 위험 관리 방식
+90. PLM(Product Lifecycle Management)
+- 기업이 제품의 원가를 낮추고 부가가치를 높일 수 있도록 기획부터 설계, 생산, 서비스, 폐기에 이르는 수명주기를 관리하는 것
+91. MDM(Master Data Management)
+- 기업의 내, 외부에 산재해 있는 마스터 데이터의 단일화를 통해 활용도를 높이고 오류를 줄이기 위한 모든 활동
+92. VRM(Vendor Relationship Management)
+- 개인이 기업에게 제공할 개인정보, 선호도, 패턴 등을 관리하는 기술로, 기업이 고객의 정보를 분석 및 통합하여 관리하는 CRM에 반대되는 개념, 개인이 기업에 제공할 정보와 선호도를 관리, 보안이 중요시됨. [VRM vs CRM](https://i-bada.blogspot.com/2012/05/vrmvendor-relationship-management.html)
+93. Escrow 서비스
+- 전자상거래 시 판매자와 구매자의 거래가 문제없이 이루어질 수 있도록 제 3자가 도와주는 매매 보호 서비스
+94. OPE(Order Preserving Encryption)
+- 암호화된 수치 데이터들이 원본 수치 데이터와 동일한 순서로 정렬될 수 있도록 해주는 암호화 기술
+95. QKD(Quantum Key Distribution)
+- 양자 통신을 위해 비밀키를 분배하고 관리하는 기술
+96. 마이핀
+- 법적 근거 없는 주민번호 수집이 금지되면서 도입된 13자리의 무작위 번호로 온라인상에서 사용되는 아이핀과 달리 오프라인 상에서 주민번호를 대신한다, 유출시 폐기 가능하며 5회까지 변경이 가능하고 유효기간은 3년이다
+97. CAPTCHA(Completely Automated Public Turing test to tell Computers and Humans Apart)
+- 자동 계정 생성 방지 기술은 웹 페이지에서 악의적으로 회원가입을 하거나 스팸 메시지를 보내기 위해 사용되는 프로그램인 봇을 차단하기 위해 만들어졌다.
+98. 독싱(dropping docs)
+- '문서를 떨어뜨리다'에서 파생된 용어로, 특정 개인이나 조직을 해킹하여 빼낸 정보를 온라인에 공개하는 행위
+99. 독스웨어
+- 독스와 랜섬웨어의 합성어
+100. 스파이웨어
+- 적절한 사용자 동의 없이 사용자 정보를 수집하는 프로그램
+101. 웜
+- 네트워크를 통해 연속적으로 자신을 복제하여 시스템의 부하를 높임으로써 결국 시스템을 다운시키는 바이러스
+102. 크래킹
+- 어떤 목적을 가지고 타인의 시스템에 불법으로 침입하여 정보를 파괴하거나 정보의 내용을 자신의 이익에 맞게 변경하는 행위
+103. 혹스
+- 악성코드인척하는 소프트웨어, 실제로 악성코드로 행동하지 않음
+104. 버퍼 오버플로 공격
+- 버퍼의 크기보다 많은 데이터를 입력하여 프로그램이 비정상적으로 동작하도록 만드는 것
+105. NR(New Radio)
+- 5세대 이동통신의 실현을 위한 무선 접속 기술
+106. Force Touch
+- 애플에서 개발한 트랙패드와 터치스크린에 적용되는 기술로, 패털에 가해지는 힘의 강도를 감지한다
+107. GNSS(Global Navigation Satellite System)
+- 인공위성을 이용하여 위치를 파악하는 항법 시스템. ex) GPS, GLONASS, 갈릴레오, Compass
+108. SBAS(Satellite-Based Augmentation System)
+- GNSS의 위치 오차를 보정한 정보를 위성을 통해 사용자에게 전달하는 광역의 위성 항법 보정 시스템.
+109. SNG(Satellite News Gathering)
+- 현장에서 촬영한 영상을 위성을 통해 방송사로 전송하는 방식
+110. MNG(Mobile News Gathering)
+- 야외에서 촬영한 영상을 3G, LTE, WiBro, Wi-Fi 등 다양한 무선망 접속 장비를 이용해 전송하는 방식
+111. ENG(Electronic News Gathering)
+- 카메라와 녹화부가 탑재된 일체형 카메라 시스템을 말한다.
+112. Brute force attack(무작위 대입 공격)
+- 특정한 암호를 풀기 위해 가능한 모든 값을 대입하는 것을 의미한다
+113. DES(Data Encryption Standard)
+- 56비트를 사용하는 키
+114. Backdoor
+- os나 프로그램 등을 만들 때 정상적인 인증 과정을 거치지 않고 접근할 수 있도록 만든 일종의 뒷구멍 같은 개념,네트워크에 허가받지 않고도 들어갈 수 있을 만큼 허술한 부분, 의도적으로 만들어진 보안구멍, 프로그래머의 실수로 만들어진 취약점(익스플로잇)
+115. RPO(Recovery Point Objective)
+- 목표 복구 시점, 허용할 수 있는 데이터의 손실양과 관계가 있다
+116. RTO(Recovery Time Objective)
+- 목표 복구 시간, 최대 허용 다운타임
+117. NAS(Network Attached Storage)
+- 네트워크 결합 스토리지, LAN으로 연결하는 외장 하드디스크 ex) Github
+118. DAS(Direct Attached Storage)
+- 직접 연결 저장장치, ex) 하드디스크
+119. HA(High Availability)
+- 고가용성, 서버와 네트워크, 프로그램 등의 정보 시스템이 상당히 오랜 기간 동안 지속적으로 정상 운영이 가능한 성질, 가용성이 높다는 뜻은 오류가 거의 없고 고장이 잘 안나는 상태를 의미한다
+120. ISO 20000
+- IT 서비스를 제공하는 기업들이 고객에게 IT 서비스를 제공하고 관리하기 위한 통합된 관리체계를 적용하고 고객에게 적절한 통제, 개선된 효과성 및 개선의 기회를 제공하게 하는 규격, IT 서비스의 수준을 객관적으로 평가하고 서비스 중심의 프로세스, 견고하고 통합화된 프로세스 프레임 워크를 제공하기 위해 만들어졌다
+121. 디지털 프로슈머
+- 생산자와 소비자의 합성어, 생산자인 동시에 소비자이고 소비자이면서 생산을 하는 사람들, ex) Github블로그를 운영하면서 광고로 수익을 얻는 사람
+122. ITSM(IT Service Management)
+- 고객에게 제공하는 정보기술 서비스들을 계획, 설계, 전달, 운영하기 위해 단체에 의해 수행되는 활동 전반을 가리킨다
+123. ITIL(IT Infrastructure Library)
+- IT 서비스 관리에 대한 프레임워크 구현을 돕기 위한 문서들의 집합
+124. SYN(Synchronization)
+- 연결요청플래그, 신호를 전달하는 플래그
+125. SDN(Software Defined network)
+- 소프트웨어 정의 네트워크, 소프트웨어 프로그래밍을 통해 네트워크 경로 설정과 제어 및 복잡한 운용관리를 편하게 처리할 수 있는 차세대 네트워킹 기술 [설명](https://bloter.net/archives/267815)
+126. QoS(Quality of Service)
+- 다른 응용 프로그램, 사용자, 데이터 흐름 등에 우선 순위를 정하여, 데이터 전송에 특정 수준의 성능을 보장하기 위한 능력을 말한다, 통신 서비스 품질,
+127. KMS(Knowledge Management System)
+- 지식 관리 시스템, 조직 내의 지식을 관리하는 분산 하이퍼미디어 시스템, 분산되어 있는 다양한 데이터를 효과적으로 저장, 관리, 활용하여 관리자의 의사결정을 지원하는 정보시스템, OLAP, 데이터마이닝 기술을 이용한다
+128. SOA(Service Oriented Architecture)
+- 서비스 지향 아키텍쳐, 업무상의 일처리에 해당하는 소프트웨어 기능을 네트워크 상에 연동하여 시스템 전체를 구축해 나가는 방법론 [EAI & SOA](https://bcho.tistory.com/372)
+129. Data Mart
+- DW 환경에서 정의된 접근계층으로, DW에서 데이터를 꺼내 사용자에게 제공하는 역할을 한다, 특정 사용자가 관심을 갖는 데이터들을 담은 비교적 작은 규모의 DW
+130. Ontology
+- 사람이 인식하고 있는 사물을 기술한 것, 컴퓨터는 온톨로지로 표현된 개념을 이해하고 지식처리를 할 수 있다, 일종의 규칙이라고 생각하면 된다, 컴퓨터는 온톨로지를 토대로 판단을 할 수가 있다.
+131. Semantic Web
+- 컴퓨터가 이해하는 웹, 정보와 자원 사이의 관계-의미 정보를 기계가 처리할 수 있는 온톨로지 형태로 표현하고 이를 자동화된 기계가 처리하도록 하는 프레임워크이자 기술 [시맨틱웹과 온톨로지](https://mnworld.co.kr/401)
+132. GAN(Generative Adversarial Network)
+- 생성적 적대 신경망, 비지도 학습에 사용되는 인공지능 알고리즘, 제로섬 게임 틀 안에서 서로 경쟁하는 두 개의 신경 네트워크 시스템에 의해 구현된다(제로 섬 게임: 게임이나 경제이론에서 여러 사람이 서로 영향을 받는 상황에서 모든 이득의 총합이 항상 제로 또는 그 상태를 말한다)
+133. Deepfake
+- 인공지능 기술을 활용해 기존에 있던 인물의 얼굴이나, 특정한 부위를 영화의 CG 처럼 합성한 영상편집물
+134. DeepMind
+- 영국의 AI 프로그램 개발 회사, 구글이 인수하여 구글 딥마인드가 되었다, 심층 인공지능 기술인 '심층 큐 네트워크'를 독자적으로 개발하였다. 이 기술은 Deep Neural Network와 Q-Learning을 조합한 기술이다. 규칙을 알지 못하는 상태에서 점수와 픽셀 디스플레이 정보를 활용하여 최고점을 만들기 위해 이전 게임 세션으로부터 학습하는 능력만을 갖추었다. 알파고를 만든 회사이기도 하다
+
+TTA 정보통신용어 => [신기술 용어](https://terms.tta.or.kr/main.do)<br>
+2018년 1차 정처기 실기 => [blog](https://bactoria.me/post/17)<br>
+2018년 2차 정처기 실기 => [blog](https://blog.naver.com/PostView.nhn?blogId=owen989&logNo=221311141874)<br>
+2018년 3차 정처기 실기 => [blog](https://blog.naver.com/PostView.nhn?blogId=seungp916&logNo=221372731489&categoryNo=220&parentCategoryNo=190&viewDate=&currentPage=&postListTopCurrentPage=&isAfterWrite=true
+)<br>
+이동통신 => [1~5G](https://m.blog.naver.com/PostView.nhn?blogId=wlsthfkim&logNo=220710581614&proxyReferer=https%3A%2F%2Fwww.google.co.kr%2F)<br>
+정처기 실기 기출 정리 블로그 => [blog](https://m.blog.naver.com/PostView.nhn?blogId=qkfldkeh&logNo=220739131448&proxyReferer=https%3A%2F%2Fwww.google.co.kr%2F)<br>

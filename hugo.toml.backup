@@ -1,0 +1,181 @@
+# Base Configuration
+baseURL = "https://jungjihyuk.github.io/"
+title = "지혁's Blog"
+languageCode = "ko-kr"
+defaultContentLanguage = "ko"
+theme = "stack"
+
+# Hugo settings
+enableRobotsTXT = true
+enableGitInfo = false
+enableEmoji = true
+
+# Pagination (updated for Hugo v0.128.0+)
+[pagination]
+  pagerSize = 10
+  path = "page"
+
+# Permalinks - Match Hexo structure exactly
+[permalinks]
+  posts = "/:year/:month/:day/:title/"
+
+# Taxonomy
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+
+# Output formats
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+  section = ["HTML", "RSS"]
+
+# RSS Configuration
+[outputFormats.RSS]
+  mediaType = "application/rss+xml"
+  baseName = "feed"  # Creates feed.xml instead of index.xml
+
+# Site Params
+[params]
+  description = "공부한거 기록하는 블로그"
+  author = "Jihyuk Jung"
+
+  # Stack 테마 메인 섹션
+  mainSections = ["posts"]
+
+  # 이미지 처리
+  imageProcessing.cover.enabled = true
+  imageProcessing.content.enabled = true
+
+  # Favicon
+  favicon = "/favicon.ico"
+
+  # 사이드바 설정
+  [params.sidebar]
+    emoji = "📚"
+    subtitle = "AI, ML, Algorithm 학습 기록"
+
+    # 아바타 (선택사항)
+    [params.sidebar.avatar]
+      enabled = false
+      local = true
+      src = "img/avatar.png"
+
+  # 위젯 설정 (Tistory 스타일 사이드바)
+  [params.widgets.homepage]
+  [params.widgets.page]
+
+  # 글 관련 설정
+  [params.article]
+    math = false
+    toc = true
+    readingTime = true
+    license.enabled = false
+
+    # 관련 포스트 (포스트 간 연결성)
+    [params.article.related]
+      enabled = true
+      count = 5
+
+  # 댓글 시스템 (선택사항)
+  [params.comments]
+    enabled = false
+    provider = "giscus"
+
+  # 푸터
+  [params.footer]
+    since = 2019
+    customText = ""
+
+  # 색상 테마
+  [params.colorScheme]
+    toggle = true
+    default = "auto"
+
+  # 검색 설정
+  [params.search]
+    enable = true
+    type = "fuse"
+
+    [params.search.fuse]
+      isCaseSensitive = false
+      minMatchCharLength = 2
+      threshold = 0.3
+
+# Markup configuration
+[markup]
+  defaultMarkdownHandler = "goldmark"
+
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true  # Allow HTML in markdown (needed for existing posts)
+    [markup.goldmark.parser]
+      autoHeadingID = true
+      autoHeadingIDType = "github"
+
+  [markup.highlight]
+    anchorLineNos = false
+    codeFences = true
+    guessSyntax = true
+    lineNos = true
+    lineNumbersInTable = true
+    noClasses = false
+    style = "monokai"
+    tabWidth = 4
+
+  [markup.tableOfContents]
+    endLevel = 3
+    ordered = false
+    startLevel = 2
+
+# Menu configuration
+[menu]
+  [[menu.main]]
+    identifier = "home"
+    name = "Home"
+    url = "/"
+    weight = 1
+
+  [[menu.main]]
+    identifier = "posts"
+    name = "Posts"
+    url = "/posts/"
+    weight = 2
+
+  [[menu.main]]
+    identifier = "categories"
+    name = "Categories"
+    url = "/categories/"
+    weight = 3
+
+  [[menu.main]]
+    identifier = "tags"
+    name = "Tags"
+    url = "/tags/"
+    weight = 4
+
+  [[menu.main]]
+    identifier = "about"
+    name = "About"
+    url = "/about/"
+    weight = 5
+
+# Privacy
+[privacy]
+  [privacy.googleAnalytics]
+    disable = false
+    anonymizeIP = true
+    respectDoNotTrack = true
+
+  [privacy.x]
+    enableDNT = true
+
+  [privacy.youtube]
+    privacyEnhanced = true
+
+# Language settings
+[languages]
+  [languages.ko]
+    languageName = "한국어"
+    weight = 1
+    [languages.ko.params]
+      description = "공부한거 기록하는 블로그"

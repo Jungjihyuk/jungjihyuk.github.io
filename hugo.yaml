@@ -1,0 +1,200 @@
+baseURL: https://jungjihyuk.github.io/
+languageCode: ko-kr
+theme: stack
+title: 지혁's Blog
+copyright: Jihyuk Jung
+
+# Theme i18n support
+DefaultContentLanguage: ko
+
+# Set hasCJKLanguage to true for Korean
+hasCJKLanguage: true
+
+# Hugo settings
+enableRobotsTXT: true
+enableGitInfo: false
+enableEmoji: true
+
+# Pagination
+pagination:
+  pagerSize: 10
+
+# Permalinks - Match Hexo structure exactly
+permalinks:
+  posts: /:year/:month/:day/:title/
+
+# Taxonomy
+taxonomies:
+  tag: tags
+  category: categories
+
+# Output formats
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+  section:
+    - HTML
+    - RSS
+
+outputFormats:
+  RSS:
+    mediaType: application/rss+xml
+    baseName: feed
+
+# Site Params
+params:
+  mainSections:
+    - posts
+  featuredImageField: image
+  rssFullContent: true
+  favicon: /favicon.ico
+  description: 공부한거 기록하는 블로그
+
+  footer:
+    since: 2019
+    customText: ""
+
+  dateFormat:
+    published: 2006-01-02
+    lastUpdated: 2006-01-02 15:04 MST
+
+  sidebar:
+    emoji: 📚
+    subtitle: AI, ML, Algorithm 학습 기록
+    avatar:
+      enabled: false
+      local: true
+      src: img/avatar.png
+
+  article:
+    math: false
+    toc: true
+    readingTime: true
+    license:
+      enabled: false
+
+  comments:
+    enabled: false
+    provider: giscus
+
+  widgets:
+    homepage:
+      - type: search
+      - type: archives
+        params:
+          limit: 5
+      - type: categories
+        params:
+          limit: 10
+      - type: tag-cloud
+        params:
+          limit: 10
+    page:
+      - type: toc
+
+  opengraph:
+    twitter:
+      site:
+      card: summary_large_image
+
+  defaultImage:
+    opengraph:
+      enabled: false
+      local: false
+      src:
+
+  colorScheme:
+    toggle: true
+    default: auto
+
+  imageProcessing:
+    cover:
+      enabled: true
+    content:
+      enabled: true
+
+# Custom menu
+menu:
+  main:
+    - identifier: home
+      name: Home
+      url: /
+      weight: 1
+
+    - identifier: posts
+      name: Posts
+      url: /posts/
+      weight: 2
+
+    - identifier: categories
+      name: Categories
+      url: /categories/
+      weight: 3
+
+    - identifier: tags
+      name: Tags
+      url: /tags/
+      weight: 4
+
+    - identifier: about
+      name: About
+      url: /about/
+      weight: 5
+
+  social: []
+
+# Related posts configuration
+related:
+  includeNewer: true
+  threshold: 60
+  toLower: false
+  indices:
+    - name: tags
+      weight: 100
+    - name: categories
+      weight: 200
+
+# Markup configuration
+markup:
+  goldmark:
+    renderer:
+      unsafe: true  # Allow HTML in markdown (needed for existing posts)
+    parser:
+      autoHeadingID: true
+      autoHeadingIDType: github
+  tableOfContents:
+    endLevel: 3
+    ordered: false
+    startLevel: 2
+  highlight:
+    anchorLineNos: false
+    codeFences: true
+    guessSyntax: true
+    lineNos: true
+    lineNumbersInTable: true
+    noClasses: false
+    style: monokai
+    tabWidth: 4
+
+# Privacy
+privacy:
+  googleAnalytics:
+    disable: false
+    anonymizeIP: true
+    respectDoNotTrack: true
+  x:
+    enableDNT: true
+  youtube:
+    privacyEnhanced: true
+
+# Language settings
+languages:
+  ko:
+    languageName: 한국어
+    weight: 1
+    params:
+      description: 공부한거 기록하는 블로그
+      sidebar:
+        subtitle: AI, ML, Algorithm 학습 기록

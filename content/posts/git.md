@@ -1,0 +1,273 @@
+---
+title: git 명령어 정리
+date: 2019-03-12
+draft: false
+description: learngitbranching.js.org 사이트 정리
+categories:
+- Git
+tags:
+- git
+- 명령어
+slug: git
+---
+## Git을 이용한 프로젝트 생성
+```
+(1) 로컬에서 시작할 때
+1. 프로젝트 폴더로 이동
+2. git init  => 앞으로 이 폴더에 있는 모든 파일들을 git 프로그램으로 추적 하겠다, 버전 관리하겠다.
+3. 작업하기 (파일 생성, 수정, 삭제 등..) => 코딩
+4. git add => 작업 파일이 추가되었음 알리기, source tree 같은 경우 스테이지 올리기.
+5. git commit => add되어 있는 파일들의 버전생성, 작업 단위, 커밋은 자주 해주는 것이 좋다. (커밋 규칙을 만들어둘 것)
+6. git config --global user.name " " => 버전관리시 사용할 이름.
+7. git config --global user.email " " => 이메일
+# git config 명령어는 한번만 수행한다.
+8. git remote add origin https://github.com/Jungjihyuk/JH_Life.git => 원격저장소와 로컬저장소 연결(origin 뒤 주소는 본인 주소로)
+9. git push -u origin master(git push --set-upstream origin master) => 로컬저장소의 변경내용들(커밋) 원격저장소에 업데이트 하기.
+(2) 원격저장소에서 clone하고 시작할 때
+1. git clone https://github.com/Jungjihyuk/JH_Life.git => clone 뒤 주소는 클론할 주소입력
+2. 작업하기
+3. git add
+4. git commit
+5. git config --global user.name " "
+6. git config --global user.email " "
+7. git push -u origin master
+```
+
+<br>
+
+## 기타 Git 사용시 유용한 명령어
+```
+1. vim 파일명 => vim 프로그램으로 파일 열기 및 생성
+2. rm -r .git => git파일 삭제
+3. git remote remove origin => 원격저장소 해제
+4. cat 파일명 => 파일내용 보기
+5. cp file1 file2 => file1 파일을 file2 이름의 파일로 복사
+6. git log -p => 이전상태 상세내용 확인
+7. git log --reverse => 맨처음 커밋부터 보기
+8. git log --decorate --graph => 커밋 내용을 좀 더 시각적으로 보기
+9. git log --decorate --all --online => 모든 브랜치에 대한 로그를 한줄로 자세히 보여주기
+10. git log --branches --graph --decorate --oneline => 브랜치 정보 확인
+11. ctrl + insert => commit 고유번호 복사할때
+12. shift + insert => 붙여넣기 할때
+13. git diff 고유번호1..고유번호2 => 고유번호1,2는 commit고유번호/ 1과 2 차이점 보여주기
+14. git diff => 전에 작업한 것과 지금 작업한 것의 차이 보여주기
+15. git commit --amend => 커밋 내용을 정정한다.
+16. git config --unset --global user.name => 사용자 이름 삭제
+17. git config --unset --global user.email => 사용자 이메일 삭제
+18. git config --list => 사용자 리스트 확인
+19. git status => 현재 상태 확인
+20. git remove -v => 원격저장소 연결url 확인
+21. git tag -a xxx -m " " => 특정 커밋 지점까지 무슨 버전인지 태그를 달아준다. (xxx는 버전 숫자를 " "사이에는 버전 정보)
+```
+
+<br>
+
+## Git 명령어
+```
+1. commit
+2. branch
+3. checkout
+4. merge
+5. reset
+6. revert
+7. cherry-pick
+8. rebase
+```
+
+<br>
+
+### Commit
+<span style="background-color: #fdbb5d">커밋은 git 저장소에 여러분의 디렉토리에 있는 모든 파일에 대한 스냅샷을 기록하는 것입니다.</span><br>
+<span style="background-color: #fdbb5d">각 커밋은 저장소의 이전 버전과 다음 버전의 변경내역을 저장합니다.</span><br>
+<span style="background-color: #fdbb5d">그래서 대부분의 커밋이 그 커밋 위의 부모 커밋을 가리킵니다.</span><br>
+<span style="background-color: #fdbb5d">쉽게 말해 어떠한 작업을 마치고 변경된 파일 내용을 작업 단위별로 관리하기 위해 기록하는 행위 입니다.</span><br>
+
+> 커밋하기
+
+  (1) git commit -m "index.html 수정"<br>
+
+  [d27b]
+  commit d27b8bb4d1f1949594592agbaskdjwkldsf<br>
+  Author: JH <wlgur278@gmail.com><br>
+  Date: Sun Mar 10 11:32:17 2019 +0900<br>
+       index.html 수정<br>
+> (2) git commit -m "main.html 추가"<br>
+
+  [d482]
+  commit d4828s8c89v9b999v0990cv9d9b900ds09d<br>
+  Author: JH <wlgur278@gmail.com><br>
+  Date: Sun Mar 10 11:33:34 2019 +09000<br>
+  	main.html 추가
+
+* d482 커밋의 부모 커밋은 d27b가 된다.
+
+<br>
+
+### Branch
+<span style="background-color: #fdbb5d">브랜치는 특정 커밋에 대한 참조에 지나지 않는다.</span><br>
+<span style="background-color: #fdbb5d">브랜치를 많이 만들어도 메모리나 디스크 공간에 부담이 되지 않기 때문에,</span><br>
+<span style="background-color: #fdbb5d">여러분의 작업을 커다란 브랜치로 만들기 보다, 작은 단위로 잘게 나누는 것이 좋습니다.</span><br>
+<span style="background-color: #fdbb5d">단순히 브랜치를 '하나의 커밋과 그 부모 커밋들을 포함하는 작업 내역'이라고 생각하면 됩니다.</span><br>
+
+> 브랜치 생성 및 삭제
+
+  git branch bugFix (현재 HEAD는 master)<br>
+  => 생성<br>
+  git checkout -b bugFix<br>
+  => 생성과 동시에 HEAD옮기기<br>
+  git branch --delete bugFix
+  => 삭제<br>
+  git branch -D bugFix <br>
+  => 브랜치에 commit이 남아 있을때 강제 삭제<br>
+  git push origin :bugFix<br>
+  => 원격저장소의 브랜치 삭제<br>
+
+<br>
+
+### bugFix 브랜치
+![merge](https://user-images.githubusercontent.com/33630505/54259376-df9de500-45a8-11e9-9b89-b067db379e75.JPG)
+
+<br>
+
+### Checkout
+<span style="background-color: #fdbb5d">HEAD 이동</span>
+* HEAD는 현재 작업중인 커밋을 가리킨다.
+  일반적으로 HEAD는 브랜치의 이름을 가리키고 있지만 특정 커밋을 가르키도록 이동시킬 수 있다.
+
+> git checkout 브랜치명
+
+<br>
+
+### Merge
+<span style="background-color: #fdbb5d">두 개의 브랜치를 합치는 작업을 merge라고 한다.</span>
+
+> bugFix 브랜치를 master 브랜치에 merge
+
+  (현재 HEAD위치 master)<br>
+  git merge bugFix<br>
+
+> master 브랜치에 bugFix를 merge
+
+  (현재 HEAD위치 bugFix)<br>
+  git merge master<br>
+
+<br>
+
+### bugFix 브랜치를 master 브랜치에 merge   
+![merge3](https://user-images.githubusercontent.com/33630505/54261601-87b6ac80-45af-11e9-9a07-83371b7f05b3.JPG)
+
+<br>
+
+### Merge 그림
+![merge123](https://user-images.githubusercontent.com/33630505/54265430-a1a8bd00-45b8-11e9-81d6-26ac10c16f75.JPG)
+
+<br>
+
+### Rebase
+<span style="background-color: #fdbb5d">브랜치 접목의 또다른 방법.</span><br>
+<span style="background-color: #fdbb5d">커밋들을 모아서 복사한 뒤, 다른 곳에 떨궈 놓는 것.</span><br>
+<span style="background-color: #fdbb5d">커밋들의 흐름을 보기 좋게 한 줄로 만들 수 있다는 장점이 있다.</span><br>
+<span style="background-color: #fdbb5d">저장소의 커밋 로그와 이력이 한결 깨끗해진다.</span><br>
+
+> bugFix 브랜치를 master 브랜치에 merge
+
+  (현재 HEAD 위치 bugFix)<br>
+  git rebase master<br>
+
+> master 브랜치를 bugFix 브랜치에 merge
+
+  (현재 HEAD 위치 master)<br>
+  git rebase bugFix<br>
+
+ ![rebase11](https://user-images.githubusercontent.com/33630505/54265059-cc464600-45b7-11e9-82e4-3095ac867f02.JPG)
+
+<br>
+
+### Merge vs Rebase
+
+<br>
+
+### Merge
+![merge456](https://user-images.githubusercontent.com/33630505/54266778-66f45400-45bb-11e9-8bcf-53967155f9cf.jpg)
+
+<br>
+
+### Rebase
+![rebase123](https://user-images.githubusercontent.com/33630505/54265497-c8ff8a00-45b8-11e9-96ca-c2be55e1c6b7.JPG)
+
+* 상대 참조
+```
+(1) 커밋의 해시를 사용하는 방법.
+    ex)
+    fed2dkakdfladsfjkl34k234lkjlksfkl23k 라는 커밋해시가 있다고 했을 때
+    fed2만 입력해도 인식한다.
+(2) ^
+    한번에 한 커밋 위로 움직인다.
+    ex)
+    git checkout master^
+(3) ~num
+    한번에 여러 커밋 위로 올라가는
+    git checkout HEAD~2
+    git branch -f master HEAD~3 => 브랜치 강제 옮기기 (HEAD에서 세번 뒤로 옮겨짐)
+```
+
+<br>
+
+### Reset
+<span style="background-color: #fdbb5d">브랜치로 하여금 예전의 커밋을 가리키도록 이동시키는 방식으로 변경 내용을 되돌립니다.</span><br>
+<span style="background-color: #fdbb5d">애초에 커밋을 하지 않은 것처럼 예전 커밋으로 브랜치를 옮기는 것.</span><br>
+<span style="background-color: #fdbb5d">각자의 컴퓨터에서 작업하는 로컬 브랜치의 경우 리셋을 잘 쓸 수 있다.</span><br>
+<span style="background-color: #dc143c">하지만 다른 사람이 작업하는 리모트 브랜치에는 사용할 수 없다. </span><br>
+
+<br>
+
+### Revert
+<span style="background-color: #fdbb5d">변경분을 되돌리고, 이 되돌린 내용을 다른 사람들과 공유하기 위해서는 revert를 사용한다.</span><br>
+
+<br>
+
+### Cherry-pick
+<span style="background-color: #fdbb5d">합치고 싶은 커밋만 합친다.</span><br>
+<span style="background-color: #fdbb5d">합치고 싶은 커밋의 해시값을 알때 유용하다.</span><br>
+
+> git cherry-pick <commit1><commit2>....
+
+<br>
+
+### Interactive rebase
+<span style="background-color: #fdbb5d">합치고 싶은 커밋의 해시값을 모를때 유용하다.</span><br>
+
+> git rebase -i HEAD~4
+
+<br>
+
+### Pull vs Fetch
+
+
+<br>
+
+### Git 사용시 여러가지 에러
+
+1. git add 에러
+
+```
+$ git add .
+warning: LF will be replaced by CRLF in [xxx.txt or xxx.xml 등...]
+The file will have its original line endings in your working directory.
+```
+CR(Carriage-Return)과 LF(Line Feed)<br>
+=> 윈도우는 CRLF<br>
+   CR=> 현재라인에서 커서의 위치를 맨 앞으로 옮기는 동작<br>
+   LF => 커서의 위치는 그대로 두고 종이를 한 라인 위로 올리는 동작<br>
+=> Mac과 Linux는 LF문자만 사용<br>.
+=> Git은 커밋할 때 자동으로 CRLF를 LF로 변환해주고 반대로 CheckOut할 때 LF를 CRLF로 변환해 주는 기능이 있다.<br>
+
+git config --global core.autocrlf (true/input/false) <br>
+위 명령어로 에러 해결! <br>
+자세한 내용은 밑 url 참고<br>
+
+[출처](http://handam.tistory.com/127)<br>
+
+<hr>
+
+Git 이해하는데 도움되는 : [Git](https://learngitbranching.js.org/)

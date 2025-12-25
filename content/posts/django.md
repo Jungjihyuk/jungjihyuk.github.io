@@ -1,0 +1,227 @@
+---
+title: Django
+date: 2019-03-25
+draft: false
+description: Two scoops of Django 책 정리 및 구글링 정보
+categories:
+- Web
+- Django
+tags:
+- Django
+- 정리
+slug: django
+---
+
+
+# Two scoops of Django
+
+
+## Django Structure
+
+![django structure](https://user-images.githubusercontent.com/33630505/51454555-a4412000-1d88-11e9-9b8d-f1d279cdac6e.JPG)
+
+[출처 바로가기](https://www.stechstar.com/user/wordpress/python-django-개요-다이어그램)<br>
+
+## Django Project 시작전 환경 세팅 (최적화된 장고 환경을 꾸미자)
+
+1. python3 설치 (python 3.1.4v 이후 버전은 pip가 내장되어 있다)
+- pip는 python 패키지를 가져오는 도구
+- pip upgrade => python -m pip install --upgrade pip
+- python2를 사용하는 경우 easy_install을 이용하여 pip 설치
+2. virtualenv 설치
+- virtualenv는 python package 의존성을 유지할 수 있게 독립된 python 환경을 제공하는 도구
+- pip install virtualenv
+3. virtualenvwrapper 설치(virtualenv 사용을 더 편하게 해주는 도구)
+- pip install virtualenvwrapper-win
+- windows virtualenv-wrapper install: [tistory](https://technerd.tistory.com/52)
+- node.js 개발자의 python 도전기: [blog](https://blog.outsider.ne.kr/1324)
+4. mkvirtualenv 가상환경 이름
+- ex) mkvirtualenv myvenv
+5. 앞으로 생성할 가상환경을 위한 환경설정
+- setx WORKON_HOME 경로
+- ex) setx WORKON_HOME C:\dev\project
+6. 개인 프로젝트를 위한 가상환경 설치
+- mkvirtualenv myvenv
+- ex) (myvenv) C:\dev\project\myvenv
+7. 가상환경 나오기
+- deactivate
+8. 가상환경 들어가기
+- workon 가상환경 이름
+- ex) workon myvenv
+- git bash에서 켜기: source Scripts/activate
+9. python packgage 확인
+- pip list
+10. Django 설치하기 (가상환경 안에서)
+- pip install django~=버전
+- ex) pip install django~=2.0.0
+11. root directory 생성
+- mkdir root_dir_name
+- ex) mkdir mysite
+12. requirements.txt 파일 생성
+- pip freeze > requirements.txt
+13. 프로젝트 생성
+- django-admin.py startproject
+14. 쿠키커터 설치
+- pip install cookiecutter
+- cookiecutter https://github.com/pydanny/cookiecutter-django
+- 쿠키커터 설치 방법 => [Tistory](https://new93helloworld.tistory.com/327)
+- 쿠키커터 설정 => [settings](https://medium.com/@jsh901220/django%EC%99%80-cookiecutter-django-%EA%B0%84%EB%8B%A8-%EC%84%A4%EB%AA%85-898d063d38ff)
+
+`Cookiecutter란?` 유연한 확장성과 편의를 추구하기위해 만들어진 프로젝트 템플릿 ,
+어플리케이션 사이즈가 계속해서 커지면 곤란한 상황이 올수 있는데 이를 방지할 수 있다고 한다.
+Cookiecutter의 어떤점 때문인지는 확실하지 않기 때문에 더 찾아보자
+
+Django와 Cookiecutter 설명: [blog](https://medium.com/@jsh901220/django%EC%99%80-cookiecutter-django-%EA%B0%84%EB%8B%A8-%EC%84%A4%EB%AA%85-898d063d38ff)
+<hr>
+
+## Django Application Structure
+> git bash tree command on windows <br>
+cmd //c tree
+
+```
+$ tree
+
+└─── My_Awesome_Project           # [repository_root]
+     ├── .gitignore
+     ├── .gitattributes
+     ├── .pylintrc
+     ├── .coveragerc
+     ├── .editorconfig
+     ├── README.rst
+     ├── docs
+     ├── manage.py
+     ├── requirements
+     │   ├── base.txt
+     │   ├── local.txt
+     │   └── production.txt
+     ├── config                   # [configuration_root]   
+     │   ├── __init__.py
+     │   ├── urls.py
+     │   ├── wsgi.py
+     │   └── settings
+     │        ├── __init__.py
+     │        ├── base.py
+     │        ├── local.py
+     │        ├── production.py
+     │        └── test.py
+     ├── docs
+     │   ├── __init__.py
+     │   ├── conf.py
+     │   ├── index.rst
+     │   ├── Makefile
+     │   └── make.bat
+     ├── locale
+     │   └── README.rst
+     ├── utility
+     └── My_Awesome_Project_App   # [django_project_root]
+         ├── __init__.py
+         ├── conftest.py
+         ├── contrib
+         │   ├── __init__.py
+         │   ├── sites
+         │   │   ├── __init__.py
+         │   │   └── migrations
+         ├── templates
+         │   ├── account
+         │   ├── pages
+         │   ├── users
+         │   ├── base.html
+         │   ├── 404.html
+         │   └── 500.html
+         ├── static
+         │   ├── css
+         │   ├── fonts
+         │   ├── images
+         │   ├── js
+         │   └── sass
+         └── users
+             ├── __init__.py
+             ├── admin.py
+             ├── forms.py
+             ├── models.py
+             ├── urls.py
+             ├── views.py
+             ├── apps.py
+             ├── adapters.py
+             ├── migrations
+             └── tests
+```
+
+<hr>
+## Field manual of Coding style
+
+Refactoring => [tistory](https://codereview.tistory.com/3)
+
+<hr>
+
+## Postgresql 설치 및 사용법
+
+user 생성 및 수정, 삭제: [user](http://www.gurubee.net/lecture/2939)<br>
+postgresql 비밀번호를 모를 때: [stackoverflow](https://stackoverflow.com/questions/10845998/i-forgot-the-password-i-entered-during-postgres-installation)<br>
+postgresql user 삭제: [wiki](https://zetawiki.com/wiki/PostgreSQL_%EA%B3%84%EC%A0%95_%EC%82%AD%EC%A0%9C) <br>
+postgresql 자동로그인: [tistory](https://dd00oo.tistory.com/entry/postgreSQL-%EC%9E%90%EB%8F%99-%EB%A1%9C%EA%B7%B8%EC%9D%B8%EC%9D%84-%EC%9C%84%ED%95%9C-%EC%95%94%ED%98%B8%ED%8C%8C%EC%9D%BC)<br>
+Tablespace 개념: [blog](https://blogger.pe.kr/504)<br>
+
+<hr>
+
+## makemigrations vs migrate
+
+<kbd>makemigrations</kbd>: models.py에서 적용한 변경사항이나 추가된 혹은 삭제된 사항들을 감지하여 파일로 생성 <br>
+<kbd>migrate</kbd>: 적용되지 않은 migratinos(설정값)들을 적용시키는 역할 <br>
+<br>
+<span style="color: orange"><kbd>makemigrations</kbd>는 장고에서 제공하는 모델의 변경사항들을 감지하고 기록하는 역할을 하며 <kbd>migrate</kbd>는 그러한 기록된 파일들과 설정값들을 읽어서 그 변경사항을 db에 저장하는 역할을 한다</span>
+
+**참고** 모델 수정후 migrations을 해주지 않고 admin page에 접속하게 되면 오류가 난다 {: .notice}  
+
+
+
+
+
+
+## Django 개발 순서
+
+```
+1. Settings.py를 이용해 기본 세팅하기
+2. Models.py를 이용해 필요한 model 만들기
+3. 변경된 model migration, migrate하기
+4. Model 생성후 superuser 등록하기  => 한번만
+5. Url.py를 이용하여 경로 설정하기
+6. Views.py를 이용하여 데이터 받고 처리하기
+7. Templates 만들기
+8. Form.py를 이용해 사용자 데이터 입력받아 저장하는 경우 만들기
+9. 서버 켜서 확인하기
+```
+
+## Django Rest Framework
+
+
+Django Rest Framework란?: &nbps; [tistory](https://yunhookim.tistory.com/7)
+
+## Googling Info
+
+Django structure: [blog](https://timmyomahony.com/blog/updated-django-project-structure-or-folder-layout)<br>
+Django install: [tistory](https://godrjsmgl.tistory.com/32)<br>
+Django Tutorial: [Djangoproject](https://docs.djangoproject.com/en/1.8/intro/tutorial01)<br>
+Django with Machine Learning: [codementor](https://www.codementor.io/jadianes/build-data-products-django-machine-learning-clustering-user-preferences-du107s5mk)<br>
+Django with MongoDB: [Djongo github](https://github.com/nesdis/djongo)<br>
+NoSQL DB의 종류: [incodom](https://www.incodom.kr/NoSQL_DB_의_종류)<br>
+Django 공부내용 정리: [wikiDocs](https://wikidocs.net/book/837)<br>
+Postgresql 연동: [tistory1](https://it-tutorial.tistory.com/141?category=1011041), &nbsp;[tistory2](https://seulcode.tistory.com/111)<br>
+Django 참고하기 좋은 글: [hannal](https://blog.hannal.com)<br>
+Django admin 계정 패스워드 리셋하는 방법: [blog](https://antilibrary.org/666)<br>
+<hr>
+
+### 공부하다가 모르는 용어, 개념 정리
+
+1. 하드코딩
+- 복잡하고 정리되지 않은 코드??
+2. 개발 환경/스테이징 환경/테스트 환경/운영 환경 구체적인 차이와 실제 예시로 이해하기
+3. 쿠키커터가 템플릿 그 이상의 기능이 있는지 찾기
+4. 쿠키커터 vs 삼단 저장소 구조(root/project/conf)
+5. virtualenv, pipenv 차이
+6. Django + Postgresql + MongoDB 구조 가능?? 관계형 DB와 문서형 DB 동시 연동
+7. 절대적 임포트, 명시적 상대, 암묵적 상대 비교, 이해하기
+8. 환경변수 정확하게 이해하기
+9. 앱 하나에 모델이 많을 때 일어나는 일, 부작용등을 알아보자
+10. 앱 분리하는 방법 터득
+11. 모델 상속

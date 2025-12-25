@@ -1,0 +1,308 @@
+---
+title: NLP(자연어 처리)
+date: 2019-07-20
+draft: false
+description: 은근 재미있는 자연어 처리를 공부해보자
+categories:
+- AI
+- Natural Language Processing
+tags:
+- NLP
+- 자연어 처리
+slug: nlp
+---
+
+# NLP(Natural Language Processing)
+
+> 사람들이 사용하는 언어의 의미를 분석해서 컴퓨터가 처리할 수 있도록 하는 일 <br>
+> 한국어는 특히나 단어가 형태소로 이루어져 있기 때문에 컴퓨터에 학습시키가 쉽지 않다 <br>
+> 예를 들어 '눈'이라는 단어는 내리는 눈, 사람의 눈, 사물을 보고 판단하는 힘, 태풍의 중심 등 여러가지 의미가 있기 때문에 문장간의 문맥도 파악 할 수 있어야 한다
+
+<span style="color: orange; font-size: 25px;">따라서 같은 데이터임에도 다양한 의미를 내포하기 때문에 NLP에서는 Data를 Corpus라고 부른다</span><br>
+
+<br>
+
+## Corpus
+
+> 말뭉치, 언어 데이터를 한데 모은 것 <br>
+> corpus는 단순히 Big language data가 아니다
+
+<br>
+
+### Corpus가 되기 위한 조건
+
+```
+1. 언어의 특성을 잘 담아 낼 수 있도록 다양한 패턴의 데이터가 필요하다
+2. 여러가지 상황에서 쓰이는 균형잡힌 데이터여야 한다
+3. 구어체를 포함해야 한다
+4. 데이터가 유의미한 규모로 확보되어야 하고 그 데이터가 대표성을 지녀야 한다
+5. 데이터 수집시 원형을 유지했다라는 보장이 있어야 한다
+```
+
+출처: [위키피디아](https://ko.wikipedia.org/wiki/%EB%A7%90%EB%AD%89%EC%B9%98_%EC%96%B8%EC%96%B4%ED%95%99), &nbsp; [tistory](https://corpora.tistory.com/3?category=705254)
+<br>
+<br>
+
+### Corpus의 종류
+
+```
+1. 용도에 따라 : 균형 말뭉치(balanced/core corpus), 학습 말뭉치(training corpus), 학습자 말뭉치(learner's corpus), 방언 말뭉치(dialect corpus)
+2. 가공 정도에 따라 : 원시 말뭉치(raw corpus), 주석 말뭉치(tagged/annotated corpus), 분석 말뭉치(analyzed corpus)
+3. 시대에 따라 : 공시적 말뭉치(synchronic corpus), 역사 말뭉치(historical/diachronic corpus)
+4. 변화여부에 따라 : 정적 말뭉치(static corpus), 동적 말뭉치(dynamic/monitor corpus
+```
+
+<br>
+
+**Corpus 생성 Tip** 단어 입력시 다양한 문장 생성해주는 사이트 : https://www.english-corpora.org/coca/
+
+<br>
+
+## 언어 형태학
+
+![words](https://user-images.githubusercontent.com/33630505/61575807-67719e00-ab0b-11e9-98a7-f85796840033.JPG)
+
+<br>
+
+## NLTK(Natural Language Tool Kit)
+
+> 자연어 처리를 위한 파이썬 패키지
+
+<br>
+
+### NLTK 설치
+
+```python
+!pip install nltk  # jupyter notebook에서 설치시
+
+import nltk
+nltk.download()  # nltk의 기능을 제대로 사용하기 위해서는 nltk data를 추가적으로 설치해야 한다  
+                 # 해당 코드가 에러가 난다면 깃허브 페이지에 가서 수동 설치 해야함
+                 # https://github.com/nltk/nltk_data
+nltk.download("punkt")  # tokenize를 사용하기 위해서 설치해야 한다
+```
+
+<br>
+
+### Tokenization
+
+
+
+NLP 공부할때 참고: [wikidocs](https://wikidocs.net/21694), &nbsp; [lovit blog](https://lovit.github.io/nlp/2018/04/02/wpm/)<br>
+
+### Lemmatization
+
+### Stemming
+
+### Normalization
+
+### Cleaning
+
+### Stopword
+
+### Bag of words
+
+### Word Cloud
+
+### TF-IDF
+
+## 한국어 자연어 처리를 위한 파이썬 라이브러리(대표적인 5가지)
+
+```
+1. Twitter
+2. Komoran
+3. Hannanum
+4. Mecab
+5. Kkma
+```
+
+<br>
+
+## Konlpy를 활용한 영화 리뷰 감정 분석
+
+```python
+from konlpy.tag import Kkma, Hannanum,Komoran, Twitter, Okt
+from konlpy.utils import pprint
+
+kkma = Kkma()
+han = Hannanum()
+kom = Komoran()
+tw = Twitter()
+okt = Okt()
+
+# nlp 라이브러리의 특성을 공부하고 잘 분석해서 상황에 맞는 nlp를 하기 위해 라이브러리를 선별한다.
+# 보통 Kkma가 성능이 대체적으로 좋다.
+
+pprint(kkma.sentences(u"네 안녕하세요. 반갑습니다."))
+: ['네 안녕하세요.', '반갑습니다.']
+
+# Kkma는 나는 => '날'로 제대로 토큰화가 되는걸 확인할 수 있다.
+pprint(kkma.pos(u"하늘을 나는 자동차")) # 품사
+: [('하늘', 'NNG'), ('을', 'JKO'), ('날', 'VV'), ('는', 'ETD'), ('자동차', 'NNG')]
+
+print(han.analyze(u"아버지가 방에 들어가신다. 안녕하세요. 하늘을 나는 자동차"))
+: [[[('아버지', 'ncn'), ('가', 'jcc')], [('아버지', 'ncn'), ('가', 'jcs')]], [[('방', 'nbu'), ('에', 'jca')], [('방', 'ncn'), ('에',
+'jca')]], [[('들', 'pvg'), ('어', 'ecx'), ('가', 'px'), ('시', 'ep'), ('ㄴ다', 'ef')], [('듣', 'pvg'), ('어', 'ecx'), ('가', 'px'),
+('시', 'ep'), ('ㄴ다', 'ef')], [('들어가', 'pvg'), ('시', 'ep'), ('ㄴ다', 'ef')]], [[('.', 'sf')], [('.', 'sy')]], [], [[('안녕',
+'ncps'), ('하세', 'ncpa'), ('요', 'ncn')], [('안녕', 'ncps'), ('하', 'xsms'), ('세요', 'ef')], [('안녕', 'ncps'), ('하', 'xsms'), ('세',
+'ef'), ('요', 'jxf')]], [[('.', 'sf')], [('.', 'sy')]], [], [[('하늘', 'ncn'), ('을', 'jco')]], [[('나', 'ncn'), ('는', 'jxc')], [('나',
+'npp'), ('는', 'jxc')], [('나', 'pvg'), ('는', 'etm')], [('나', 'px'), ('는', 'etm')], [('나', 'pvg'), ('아', 'ecs'), ('는', 'jxc')
+[('나', 'pvg'), ('아', 'ef'), ('는', 'etm')], [('나', 'px'), ('아', 'ecs'), ('는', 'jxc')], [('나', 'px'), ('아', 'ef'), ('는', 'etm')],
+[('날', 'pvg'), ('는', 'etm')]], [[('자동차', 'ncn')], [('자동', 'ncn'), ('차', 'ncn')]]]
+
+print(han.morphs(u"아버지가 방에 들어가신다. 안녕하세요. 하늘을 나는 자동차")) # 형태소 분석
+: ['아버지', '가', '방', '에', '들', '어', '가', '시ㄴ다', '.', '안녕', '하', '세', '요', '.', '하늘', '을', '나', '는', '자동차']
+
+print(kom.pos(u"아버지가 방에 들어가신다. 안녕하세요. 하늘을 나는 자동차"))
+: [('아버지', 'NNG'), ('가', 'JKS'), ('방', 'NNG'), ('에', 'JKB'), ('들어가', 'VV'), ('시', 'EP'), ('ㄴ다', 'EF'), ('.', 'SF'), ('안녕
+세요', 'NNP'), ('.', 'SF'), ('하늘', 'NNG'), ('을', 'JKO'), ('나', 'NP'), ('는', 'JX'), ('자동차', 'NNG')]
+
+# 파일을 읽어와 Corpus를 만드는 함수
+def read_data(filename, encoding):
+    data = []
+    with open(filename, encoding=encoding) as f:
+        data = [line.split('\t') for line in f.read().splitlines()]
+        data = data[1:]
+    return data
+
+# train_data와 test_data를 나누어 준다. (train, test data가 서로 분리 되어 저장 되어 있었음)    
+train_data = read_data("ratings_train.txt", 'utf-8')
+test_data = read_data("ratings_test.txt", 'utf-8')    
+
+import json
+import os
+
+# 데이터가 너무 많아 만개 데이터만 학습 시키기 위해 데이터 split.
+train_data = train_data[:10000]
+test_data = test_data[:1000]
+
+# 토큰화 함수 (토큰과 품사 정보 합치기)
+def tokenize(doc):
+    return ['/'.join(t) for t in okt.pos(doc, norm=True, stem=True)]
+
+# json file 형태로 저장 이미 있으면 불러와 train_docs, test_docs 변수에 저장
+if os.path.isfile("train_docs.json"):
+    with open("train_docs.json", encoding='utf-8') as f:
+        train_docs = json.load(f)
+    with open("test_docs.json", encoding='utf-8') as f:
+        test_docs = json.load(f)
+else:
+    train_docs = [(tokenize(row[1]), row[2]) for row in train_data]
+    test_docs = [(tokenize(row[1]), row[2]) for row in test_data]
+    with open("train_docs.json", 'w', encoding='utf-8') as make_file:
+        json.dump(train_docs, make_file, ensure_ascii=False, indent='\t')
+    with open("test_docs.json", 'w', encoding='utf-8') as make_file:
+        json.dump(test_docs, make_file, ensure_ascii=False, indent='\t')
+
+train_docs[0]
+: [['아/Exclamation',
+  '더빙/Noun',
+  '../Punctuation',
+  '진짜/Noun',
+  '짜증나다/Adjective',
+  '목소리/Noun'],
+ '0']
+
+tokens = [t for d in train_docs for t in d[0]]
+tokens[0]
+: '아/Exclamation'
+
+import nltk
+
+text = nltk.Text(tokens, name='NMSC') # 문서를 편리하게 탐색할 수 있는 기능을 제공
+
+text.vocab().most_common(10)
+: [('./Punctuation', 4791),
+   ('영화/Noun', 3368),
+   ('하다/Verb', 2829),
+   ('이/Josa', 2624),
+   ('보다/Verb', 2576),
+   ('의/Josa', 2123),
+   ('../Punctuation', 1949),
+   ('가/Josa', 1789),
+   ('에/Josa', 1771),
+   ('을/Josa', 1587)]
+
+# bag of words 만들기
+selected_words = [f[0] for f in text.vocab().most_common(10000)]   
+
+# 문서마다 bag of words에 포함된 단어가 있는지 카운트 해주는 함수
+def term_frequency(doc):
+    return [doc.count(word) for word in selected_words]
+
+# 학습 시킬 수 있는 형태의 train, test corpus 만들기
+train_x = [term_frequency(d) for d, _ in train_docs]
+train_y = [c for _, c in train_docs]
+
+test_x = [term_frequency(d) for d, _ in test_docs]
+train_y = [c for _, c in train_docs]
+
+import numpy as np
+
+x_train = np.asarray(train_x).astype('float32')
+x_test = np.asarray(test_x).astype('float32')
+
+y_train = np.asarray(train_y).astype('float32')
+y_test = np.asarray(test_y).astype('float32')
+
+# 모델 만들기
+
+from tensorflow.keras import models, layers, optimizers, losses, metrics
+
+model = models.Sequential()
+model.add(layers.Dense(64, 'relu', 10000))
+model.add(layers.Dense(64, activation='relu'))
+model.add(layers.Dense(1, activation='sigmoid'))
+
+model.compile(optimizer=optimizers.RMSprop(lr=0.001), loss=losses.binary_crossentropy, metrics=[metrics.binary_accuracy])
+model.fit(x_train, y_train, epochs=10, batch_size=512)
+
+results = model.evaluate(x_test, y_test)
+: 1000/1000 [==============================] - 0s 114us/sample - loss: 0.7367 - binary_accuracy: 0.7940
+
+# 리뷰 긍정/부정 추측하는 함수  
+def predict_pos_neg(review):
+    token=tokenize(review)
+    tf = term_frequency(token)
+    data = np.expand_dims(np.asarray(tf).astype('float32'), axis=0)
+    score = float(model.predict(data))
+    if(score > 0.5):
+        print("[{}]는 {:.2f}% 확률로 긍정 리뷰이지 않을까 추측해봅니다.^^\n".format(review,score*100))
+    else:
+        print("[{}]는 {:.2f}% 확률로 부정 리뷰이지 않을까 추측해봅니다.^^\n".format(review,(1-score)*100))
+
+# 예측        
+predict_pos_neg("올해 최고의 영화! 세번 넘게 봐도 질리지가 않네요.")
+: [올해 최고의 영화! 세번 넘게 봐도 질리지가 않네요.]는 99.99% 확률로 긍정 리뷰이지 않을까 추측해봅니다.^^
+
+predict_pos_neg('노잼')
+: [노잼]는 96.37% 확률로 부정 리뷰이지 않을까 추측해봅니다.^^
+
+predict_pos_neg("대박 재미있음")
+: [대박 재미있음]는 98.86% 확률로 긍정 리뷰이지 않을까 추측해봅니다.^^
+
+predict_pos_neg("대박 재미없음")
+: [대박 재미없음]는 73.68% 확률로 부정 리뷰이지 않을까 추측해봅니다.^^
+
+# 예측이 잘 되지 않는 문장
+predict_pos_neg("음악이 몰입에 방해가 됩니다")
+: [음악이 몰입에 방해가 됩니다]는 54.90% 확률로 긍정 리뷰이지 않을까 추측해봅니다.^^
+
+# 다시 학습하고 나서 예측이 바뀜
+predict_pos_neg("음악이 몰입에 방해가 됩니다")
+: [음악이 몰입에 방해가 됩니다]는 58.53% 확률로 부정 리뷰이지 않을까 추측해봅니다.^^
+```
+
+## 궁금한점
+
+```
+1. 다양한 문장을 학습하지 않았거나 신조어로 이루어진 문장으로 예측하려 할때는
+   처음 본 문장에 대해서는 어떻게 예측을 하는 걸까?
+
+# nlp외에 궁금한점    
+2. iris 데이터로 모델을 만들었을 때 iris에서 나올수 없는 관측치를 대입해도 output 결과로
+   어떠한 꽃일 것이라 예측을 하는 경우가 있는데 라벨이 유한개인 classification인 경우에
+   한해 절대 나올 수 없는 아웃라이어 관측치는 예외처리를 해줘야 하는 것인가?
+   아니면 학습한 모델이 알아서 정해진 라벨중에 그나마 근접한 정답으로 정확도가 낮음에도
+   output을 주는 것인가..?
+```

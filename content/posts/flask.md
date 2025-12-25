@@ -1,0 +1,536 @@
+---
+title: Flask
+date: 2019-05-18
+draft: false
+description: Flask로 파이썬 웹 프로그래밍하기 & 선박사님 멘토링 공부내용 정리
+categories:
+- Web
+- Flask
+tags:
+- Flask
+- Python
+- Web
+- Programming
+slug: flask
+---
+
+# 2019-05-18 1st
+
+## 웹
+
+> World Wide Web의 줄임말로 인터넷 상에서 이루어지는 서비스 중 하나로써, 공유 목적으로 개발되었다
+
+Web: [naver blog](https://m.blog.naver.com/PostView.nhn?blogId=hot1455&logNo=60124258172&proxyReferer=https%3A%2F%2Fwww.google.com%2F)
+<br>
+## HTTP
+
+> 웹 상에서 정보를 주고받을 수 있는 프로토콜, 이때 정보는 보통 HTML문서나, 이미지, 영상 등을 포함합니다  
+
+HTTP: [MDN](https://developer.mozilla.org/ko/docs/Web/HTTP/Overview)
+<br>
+HTTP란? : [zerocho](https://www.zerocho.com/category/HTTP/post/5b344f3af94472001b17f2da)<br>
+
+### HTTP protocol 특징
+
+Statusless | Connectless
+--------|-------
+HTTP 프로토콜은 상태가 없다 | HTTP 프로토콜은 상태에 대한 지속적인 연결이 없다
+이전에 했던 작업, 지금한 작업에 대한 정보를 갖고 있지 않다 | 웹 브라우저의 요청에 대한 응답을 하면 클라이언트와의 접속이 끊긴다
+
+
+<span style="color: orange">연결이 계속되어 있으면 좋을텐데 왜 귀찮게 비연결방식으로 하고 쿠키라는 방식으로 저장을하는거야?</span><br>
+
+```
+HTTP는 인터넷 상에서 불특정 다수의 통신환경을 기반으로 설계되었다는 점이 포인트입니다
+만약 불특정 다수의 클라이언트와 Google이라는 하나의 서버가 지속적으로 연결을 유지한다면
+많은 리소스가 발생하게 됩니다. 따라서 리소스 낭비를 줄여 더 많은 연결을 위해 비연결 지향으로 설계하게 된 것입니다
+```
+
+<span style="color: orange">많은 클라이언트와의 연결이 원활해지는 장점이 있다면 비연결 지향으로 생기는 단점도 있지 않을까?</span><br>
+
+```
+첫번째로 위에서 언급했듯이 쿠키라는 것을 따로 두고 클라이언트 정보를 임시로 저장하는 방법을 채용해야한다
+그리고 두번째로 동일한 클라이언트의 모든 요청에 대해, 매번 새로운 연결시도/해제의 과정을 거쳐야 하므로
+연결/해제에 대한 오버헤드가 발생한다는 단점이 있습니다
+
+이에 대한 해결책으로 HTTP연결을 새로 생성할 때마다 발생되는 오버헤드를 줄이기 위해
+HTTP 1.1 부터 지원하는 기능인 KeepAlive 속성을 사용할 수 있습니다
+
+그러나 KeepAlive 속성을 on상태로 바꾼다 해도, 서버가 나쁜 환경에서는 프로세스수가 기하급수적으로 늘어나기 때문에
+메모리를 많이 사용하게 되므로 주의해야 합니다
+```
+
+HTTP Protocol : [tistory1](https://codedragon.tistory.com/5930), &nbsp; [tistory2](https://victorydntmd.tistory.com/286)
+
+### Cookie
+
+> HTTP의 특성인 Connectless, Stateless의 문제점을 보완한 것이 바로 Cookie!
+
+Connectionless로 인해 서버는 클라이언트의 요청에 대한 응답을 한 후 연결을 끊기 때문에 <br>
+다른 페이지로 이동하고 싶을 경우 서버에 재요청을 해야합니다. <br>
+재요청시 서버는 클라이언트를 식별할 수가 없는 Stateless특징이 있기 때문에 <br>
+같은 브라우저에서 요청을해도 서버는 같은 브라우저인지 알 수가 없고, 로그인과 같이 <br>
+서버가 클라이언트를 기억해야 할 경우에 클라이언트 정보를 저장하지 못한다면  <br>
+페이지 이동시을 하거나 리로딩같은 재요청을 하는 경우에 계속해서 로그인을 해야 하는 불편함이 있습니다.<br>
+
+<span style="background-color:orange">이러한 불편함을 해결하기 위해 쿠키라는 것을 저장해서 서버가 클라이언트를 식별할 수 잇도록 합니다</span><br>
+
+쿠키는 서버에서 생성하여, 클라이언트에서 보낸 특정 정보를 저장합니다. <br>
+그리고 쿠키의 속성값은 서버에 요청할 때마다 참조 또는 변경하여 데이터 상태를 관리합니다.<br>
+
+![cookie](https://user-images.githubusercontent.com/33630505/58149184-c5fdd580-7c9c-11e9-8371-4ad522105f38.JPG)
+
+cookie : [github blog](https://nesoy.github.io/articles/2017-03/Session-Cookie)
+
+### Session
+
+> Cookie의 단점을 보완하기 위해 생긴 Session! Session은 서버단에서 사용자 정보를 기록할 수 있는 방법입니다
+
+
+#### Session?
+HTTP session id를 식별자로 구별하여 데이터를 사용자의 브라우저에 쿠키형태가 아닌 접속한 DB에 정보를 저장합니다 <br>
+클라이언트는 HTTP session id를 쿠키로 메모리 저장된 형태로 가지고 있습니다<br>
+메모리에 저장하기 때문에 브라우저가 종료되면 사라지게 됩니다<br>
+
+#### Session 절차
+
+```
+1. 클라이언트가 서버에 Resource를 요청합니다
+2. 서버에서는 HTTP Request를 통해 쿠키에서 Session id를 확인 후
+   없으면 set-cookie를 통해 새로 발행한 session-id를 보냅니다
+3. 새로 부여 받은 session-id를 클라이언트 쪽에서 HTTP request에 포함하여 원하는
+   Resource를 요청합니다
+4. 서버는 session id를 통해 해당 세션을 찾아 클라이언트 상태 정보를 유지하며
+   적절한 응답을 합니다
+```
+
+<span style="color: orange">뭐야 쿠키만 있음되지 세션은 또 뭐야?</span><br>
+
+```
+쿠키에 대한 정보를 HTTP Header에 추가하여 보내기 때문에 상당한 트래픽을 발생시키는 문제가 있습니다
+또한 결제정보, 개인정보등을 쿠키에 저장했을때 쿠키가 유출되면 보안에 문제가 발생할 수도 있습니다
+
+따라서 클라이언트측에 저장하는것이 아니라 서버 DB에 저장하는 방법을 사용해서 문제를 해결!
+```
+
+![session](https://user-images.githubusercontent.com/33630505/58149406-c8146400-7c9d-11e9-9554-fa047a4bb388.JPG)
+
+### Token
+
+> 세션은 서버의 메모리를 차지하고 있기 때문에 동시 접속자 수가 많은 웹 사이트일 경우 서버 과부화의 원인이 되고, 세션 정보가 중간에 탈취 당할 수도 있기 때문에 완벽하다고 볼수는 없습니다. 그래서 쿠키와 세션의 문제점을 보완하기 위해 Token(토큰) 인증 방식 도입!
+
+<span style="background-color:orange">Token 인증방식은 보호할 데이터를 토큰으로 치환하여 원본 데이터 대신 토큰을 사용하는 기술</span><br>
+```
+토큰 방식 이외에 어떤 새로운 기술이 또 생길지 모릅니다
+그렇지만 현존하는 기술중 Token 방식이 가장 안전하다고해서 무조건 Token 방식을 써야 하는 가?
+꼭 그렇지만은 않아 보인다. 어떤 웹 서버를 운영할 것인가에 따라 해당 서버를 이용할 이용자의 숫자에 따라
+어떤 서비스를 제공할 것이냐에 따라 적절하게 사용해야 한다고 봅니다
+```
+
+### HTTPs
+
+![https](https://user-images.githubusercontent.com/33630505/58152246-02ceca00-7ca7-11e9-8d2e-7c9ee23fcfb1.JPG)
+
+
+HTTPS: [tistory](https://sjh836.tistory.com/81)
+
+### HTTP message
+
+**서버와 클라이언트가 HTTP 통신을 할때 주고 받는 메시지** <br>
+
+```
+클라이언트 --> 서버 : Request Message
+서버 --> 클라이언트 : Response Message
+```
+
+#### Request Message
+
+![request message](https://user-images.githubusercontent.com/33630505/57967936-59828e00-799f-11e9-8673-cbdb4db516ae.JPG)
+
+```
+요청라인: url
+         HTTP Method
+         protocol version
+요청헤더: User-Agent(브라우저)
+         Accept(수신되는 데이터중 브라우저가 처리가능한 데이터 타입)
+         Cookie(유저 정보 임시 기억)
+         Host(요청 도메인 정보)
+         Referer(현재 페이지 접속 전 어느 사이트 경유했는지에 대한 정보)
+         Connection     # ex) keep-alive
+공백라인
+메시지 본문
+```
+
+#### Response Message
+
+![response message](https://user-images.githubusercontent.com/33630505/57968025-31dff580-79a0-11e9-9a83-0db6cd09117d.JPG)
+
+```
+상태라인: HTTP version
+         Status code
+         Reason-phrase
+응답헤더: Date  
+         Server           # ex) Apache
+         Last-Modified
+         Content-Encoding
+         Content-Length
+         Content-Type     # ex) text/html; charset=utf-8
+공백라인
+메시지 본문
+```
+
+### HTTP Request method
+
+Request Method | Explanation
+--------|-------
+Get | 요청라인을 통해 자원 요청(url에 데이터 표시)
+Post | 메시지 본문을 통해서 자원 요청(url에서 데이터 숨김)
+Put | URL에서 자원을 생성
+Delete | URL에서 자원을 삭제
+Options | 응답 가능한 HTTP Method 요청
+Head | HTTP Header 정보만 수신
+Trace | Request의 loop back 테스트
+Connect | 터널링의 목적으로 연결 요청
+
+
+### Client, Server
+
+![clientserver](https://user-images.githubusercontent.com/33630505/57967447-1114a180-799a-11e9-94d3-d0826dd1700e.JPG)
+
+클라이언트(Request)  --->  서버(Response) <br>
+브라우저에서 문서확인 <---  문서(요청에 대한 응답) ex) html, json, jpg...
+
+
+### HTTP Status
+
+```
+200 (OK): 성공적인 응답, 오류 없이 전송 성공
+201 (Created): 요청이 성공적으로 처리되어 리소스가 만들어졌음을 의미
+202 (Accepted): 요청이 받아들여졌지만 처리되지 않았음을 의미
+301 (Moved Permanently): 요청한 정보가 새로운 주소로 영구적으로 옮겨 갔음을 의미
+302 (Found) : 요청한 정보가 새로운 주소로 일시적으로 옮겨 갔음을 의미
+304 (Not Modified): 브라우저에 캐시되어 있는 버전을 쓴다
+400 (Bad Request): 요청 자체가 잘못 되었을때 사용하는 코드
+401 (Unauthorized): 인증이 필요한 리소스에 인증 없이 접근할 경우 발생
+403 (Forbidden): 서버가 요청을 거부할때 발생. 관리자에 의해 사용자를 차단했거나 서버에 index.html이 없는 경우 발생
+404 (Not Found): 에러는 파일의 확장자가 제대로 입력이 되지 않았거나 주소를 잘못 쳤을 경우(존재하지 않는 url 요청을 했을 경우) 발생하는 에러이다
+408 (Request Timeout): 요청 중 시간이 초과되었을때 사용하는 코드
+500 (Internal Server Error): 요청한 주소의 서버에 관리상 문제가 있을 경우 발생하는 에러, 서버측 파일에 소스코드 자체에 오류가 있을 경우 즉, 컴파일이 불가능한 경우에 발생할 수 있다
+503 (Service Temporarily Unavailable): 서버를 현재 일시적으로 사용할 수 없을 때 발생, 유지보수중이거나 서버가 터졌을 때 발생
+```
+
+HTTP 심화 학습 : [ston](https://ston.readthedocs.io/ko/latest/admin/handling_http_requests.html)<br>
+
+<br>
+
+### 301 redirect vs 302 redirect
+
+
+
+
+## Resource
+
+> 일반적으로 리소스란, 사용될 수 있는 어떤 항목을 말한다
+프린터나 디스크 드라이브와 같은 장치들이 리소스가 될 수 있으며, 메모리도 마찬가지 이다
+
+**쉽게 말해** 프로그램을 실행시키기 위해 사용되야 할 자원들, 항목들을 총칭해서 리소스라고 한다
+{: .notice}
+
+
+Resource : [naver blog1](https://m.blog.naver.com/PostView.nhn?blogId=pwhite1004q&logNo=20197683310&proxyReferer=https%3A%2F%2Fwww.google.com%2F), [naver blog2](https://m.blog.naver.com/PostView.nhn?blogId=singerjyy&logNo=100048035655&proxyReferer=https%3A%2F%2Fwww.google.com%2F)<br>
+
+Resource 확인하는 법: [naver post](https://m.post.naver.com/viewer/postView.nhn?volumeNo=8346642&memberNo=1834)<br>
+
+## ORM
+
+
+## Virtual Environment
+
+
+
+## Template language
+
+
+
+#### 익혀야할 부분
+
+1. 자주쓰는 단축키 손에 익히기
+- Declaration
+- Implementation
+- Type Declaration
+2. Jinja2
+
+
+# 2019-05-23 2nd
+
+## SQLalchemy
+
+> SQLarlchemy는 Python 언어를 위한 ORM이다. <br>
+> SQL문법을 사용하지 않고 Python class로 스키마를 작성하면 Create table을 한것 처럼 DB table을 생성해준다.
+
+
+### Type
+
+#### SQLarlchemy 일반 데이터 타입
+
+1. 정수형
+- BigInteger
+- SmallInteger
+- Integer  
+2. 실수형
+- Float
+3. 논리형
+- Boolean
+4. 문자형
+- String
+- Text
+- Unicode : 유니코드
+- UnicodeText :
+5. 기간형(시간, 날짜)
+- Date  : yyyy.mm.dd
+- DateTime : Date + Time
+- Time : hh:mm:ss
+- Interval : 기간
+6. 열거형
+- Enum
+7. 이진데이터형
+- LargeBinary
+8. MatchType
+9. Numeric
+
+#### 타사의 데이터 타입
+
+1. 정수형
+- Integer
+- Int
+- BigInt
+- SmallInt
+2. 실수형
+- Float
+- Real
+3. 문자형
+- Char : 고정 문자열
+- Varchar : 가변 문자열(메모리를 효율적으로 사용할 수 있다)
+- ex) varchar(10)일 때 test를 저장하면 4byte 영역만 차지한다
+- nChar : 고정 문자열 + 유니코드 문자열 (char의 2배공간 사용)
+- nVarchar : 가변 문자열 + 유니코드 문자열
+4. 이진데이터형
+- Binary
+- VarBinary
+5. 기간형(시간,날짜)
+- Date
+- DateTime
+- TimeStamp
+6. 파일형
+- BLOB
+- CLOB
+- JSON
+7. 리스트형(배열)
+- Array
+
+
+## WTForms
+
+> 클라이언트로부터 입력받을 Form을 제공하는 API. <br>
+> 필드의 정의, 유효성 검사, 입력 가져오기, 오류 집계를 포함하는 기능을 제공한다.
+
+### Field
+
+> 일반적으로 데이터베이스 테이블에서 타입을 지정해주는 열을 말한다. <br>
+> 입력 받는 값의 타입.
+
+
+### 기본 필드
+
+1. 숫자 필드
+- FloatField : 실수를 받는 필드
+- IntegerField : 정수를 받는 필드
+
+2. 문자 필드
+- StringField : 문자열을 받는 필드
+
+3. 논리형 필드
+- BooleanField : True, False를 받는 필드
+
+4. 파일 필드
+- FileField : 파일을 받는 필드
+- MutipleFileField : 여러 파일을 받을 수 있는 필드
+
+5. 날짜 필드
+- DateField : 날짜를 받는 필드
+- DatetimeField : 날짜, 시간을 같이 받는 필드
+
+6. 선택형 필드
+- RadioField : SelectField와 비슷하지만, 라디오 버튼을의 목록을 보여준다.
+- SelectField : 값과 레이블로 이루어진 선택들을 쌍으로 가진다. 값은 어떤것이 와도 된다.
+- SelectMultipleField : SelectField와 같지만 여러 선택을 가질 수 있다.
+
+7. 버튼형 필드
+- SubmitField : Submit 버튼이 눌리는 것을 체크하는 필드
+
+8. DecimalField
+
+
+### 편리한 필드
+HiddenField : 입력 폼이 보이지 않는 필드 <br>
+PasswordField : 비밀번호를 입력할때 값이 보이지 않도록 하는 필드 <br>
+TextAreaField : 텍스트를 자유롭고 길게 받을 수 있는 필드 <br>
+
+### Field Enclosures
+FormField : Form을 받는 필드 <br>
+FieldList : 필드의 인스턴스를 list형태로 받는 필드 <br>
+
+### 커스텀 필드
+필요시 직접 필드를 수정해서 사용한다
+
+
+
+# 2019-06-08 3rd
+
+## flask_security
+
+> admin 페이지에 login 화면 추가
+
+
+### 과제
+
+1. admin + flask_security + login.html 방법 찾아보기
+2. 로그인 controller 로직 상세 구현하기
+3. 출석부 만들기
+
+
+
+# 2019-06-09 4th
+
+## app.py 분석하기
+
+```python
+# -*- coding: utf-8 -*-   
+```
+> 해당 파일은 utf-8 인코딩 방식을 사용할 것임을 명시해준다.
+
+<hr>
+
+```python
+from flask import Flask
+```
+> Flask Project 생성시 만든 가상환경 'Flask_venv'에 포함된 flask 모듈안에 있는 app.py 내 선언된 Flask 클래스 를 사용하겠다.
+
+<hr>
+
+```python
+app = Flask(__name__)
+```
+> 모듈 하나만 사용한다면 __ name__ 이름으로 parameter를 주면 현재 작업하는 파일을 flask 인스턴스로 활용하겠다는 의미. flask 프레임워크를 사용하여 서버 페이지를 작성하겠다, flask로 나만의 app을 만들겠다. 등등 의미로 생각하면 됨.
+
+<hr>
+
+```python
+@app.route('/')
+def app_start():
+   return 'You can run your web app'
+```
+
+> 위에서 app이라는 이름으로 flask를 인스턴스화 했기 때문에 이제 app을 이용하여 flask에 있는 기능을 사용할 수 있게 됐음.
+
+> 그 중에 route함수는 호출 요청을 분석한 후에 원하는 uri를 처리하는 기능을 담당한다. 따라서 특정 uri로 요청이 들어오면 요청에 알맞은 처리를 담당하는 뷰함수를 실행할 수 있게 route가 매핑을 해준다.
+
+> 로컬에서 실행하는 경우 'localhost:port/' 로 요청했을 때 route 데코레이터가 app_start라는 뷰함수에 연결해주어 app_start 함수실행 결과를 return 해주게 된다.
+
+<hr>
+
+```python
+if __name__ = '__main__':
+   app.run()
+```
+
+> 현재 파일이 메인모듈 파일에서 실행하는 건지 import 모듈에 의해 실행되는건지 확인하는 조건문이다. <br>
+> 만약 메인모듈에서 실행하는 거라면 로컬 서버를 실행해라 라는 뜻.
+
+**URL & URI** URL은 Uniform Resource Locator(파일 식별자), URI는 Uniform Resource Identifier(통합 자원 식별자)이다. url은 특정 서버의 원하는 리소스의 위치 주소이고, uri는 실제 리소스의 위치가 아닌 rewrite 기술이 적용되어 리소스의 위치 이름을 식별자로서 역할을 할 수 있게 변경된 주소 이름이라고 생각하면 된다.
+{: .notice}
+
+
+### In Flask class Default configuration parameters
+
+```python
+#: Default configuration parameters.
+    default_config = ImmutableDict({
+        'ENV':                                  None,
+        'DEBUG':                                None,
+        'TESTING':                              False,
+        'PROPAGATE_EXCEPTIONS':                 None,
+        'PRESERVE_CONTEXT_ON_EXCEPTION':        None,
+        'SECRET_KEY':                           None,
+        'PERMANENT_SESSION_LIFETIME':           timedelta(days=31),
+        'USE_X_SENDFILE':                       False,
+        'SERVER_NAME':                          None,
+        'APPLICATION_ROOT':                     '/',
+        'SESSION_COOKIE_NAME':                  'session',
+        'SESSION_COOKIE_DOMAIN':                None,
+        'SESSION_COOKIE_PATH':                  None,
+        'SESSION_COOKIE_HTTPONLY':              True,
+        'SESSION_COOKIE_SECURE':                False,
+        'SESSION_COOKIE_SAMESITE':              None,
+        'SESSION_REFRESH_EACH_REQUEST':         True,
+        'MAX_CONTENT_LENGTH':                   None,
+        'SEND_FILE_MAX_AGE_DEFAULT':            timedelta(hours=12),
+        'TRAP_BAD_REQUEST_ERRORS':              None,
+        'TRAP_HTTP_EXCEPTIONS':                 False,
+        'EXPLAIN_TEMPLATE_LOADING':             False,
+        'PREFERRED_URL_SCHEME':                 'http',
+        'JSON_AS_ASCII':                        True,
+        'JSON_SORT_KEYS':                       True,
+        'JSONIFY_PRETTYPRINT_REGULAR':          False,
+        'JSONIFY_MIMETYPE':                     'application/json',
+        'TEMPLATES_AUTO_RELOAD':                None,
+        'MAX_COOKIE_SIZE': 4093,
+    })
+```
+
+
+### Fatal error in launcher: Unable to create process using ...
+
+> pip list 명령어를 쳤을때 떳던 에러
+
+#### 해결
+```shell
+python.exe -m pip install --upgrade pip
+```
+
+# 2019-06-30 5th
+
+## flask - mysql 연동하기
+
+
+## 'mysql.h' No such file or directory 오류
+
+> 위 오류가 난 상황 : pip install flask-mysqldb 설치할때 <br>
+> 오류 명 그대로 mysql.h 파일이 없다는 뜻이다. <br>
+
+
+
+### 해결
+
+```
+1. https://www.lfd.uci.edu/~gohlke/pythonlibs/#mysqlclient.Then 사이트 들어가서
+   내가 사용중인 python 버전에 맞는 파일을 다운로드 한다
+2. flask site-packages폴더에 저장하고 pip 명령어를 입력한다
+   pip install mysqlclient-1.4.2-cp37-cp37m-win32.whl (파일명)
+3. 오류가 날 경우 python 버전과 whl파일과 호환이 되는 파일인지 체크한다
+   참고로 cp37이라고 써있으면 python 3.7버전이라는 뜻이다
+4. pip install flask-mysqldb 명령어를 입력한다
+```
+
+
+출처: [tistory](https://lemontia.tistory.com/756), &nbsp; [stackoverflow](https://stackoverflow.com/questions/51228228/cannot-install-flask-mysqldb)<br>
+
+
+<br>
+
+
+# 2019년 8월 21일 6th
+
+## 기존 DB를 Flask-SQLAlchemy ORM Model로 사용하기
+
+출처: [github blog](https://beomi.github.io/2017/10/20/DB-To-SQLAlchemy-Model/)
