@@ -11,6 +11,7 @@ tags:
 - Lecture
 - Deep Learning
 slug: AILecture_deeplearning
+image: deeplearning.png
 ---
 
 

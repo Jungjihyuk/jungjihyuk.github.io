@@ -11,6 +11,7 @@ tags:
 - Lecture
 - Machine Learning
 slug: AILecture_machineLearning
+image: machinelearning.png
 ---
 
 <a id = '21th'></a>

@@ -10,6 +10,7 @@ tags:
 - Data Structure
 - Python
 slug: deque
+image: deque.png
 ---
 
 <span style="font-size: 30px; color: rgb(75,163,123); padding: 2px;">Deque</span> <br>

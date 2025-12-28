@@ -11,6 +11,7 @@ tags:
 - Lecture
 - Numpy
 slug: AILecture_numpy
+image: numpy.png
 ---
 
 

@@ -11,6 +11,7 @@ tags:
 - Data Structure
 - Python
 slug: search_algorithm
+image: dfs_bfs.png
 ---
 
 <span style="font-size: 30px; color: rgb(75,163,123); padding: 2px;">DFS/BFS(탐색 알고리즘)</span> <br>

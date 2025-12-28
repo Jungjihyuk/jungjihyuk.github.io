@@ -1,0 +1,154 @@
+{{- $context := .Context -}}
+{{- $totalPosts := len $context.Site.RegularPages -}}
+
+<section class="widget category-menu">
+    <div class="widget-icon">
+        {{ partial "helper/icon" "archives" }}
+    </div>
+    <h2 class="widget-title section-title">카테고리</h2>
+
+    <div class="category-menu-list">
+        <!-- 전체보기 -->
+        <div class="category-item all-posts">
+            <a href="{{ $context.Site.BaseURL }}/posts/" class="category-name">
+                <span class="category-text">전체보기</span>
+                <span class="category-count">({{ $totalPosts }})</span>
+            </a>
+        </div>
+
+        {{- $categories := $context.Site.Taxonomies.categories -}}
+
+        <!-- AI 카테고리 그룹 -->
+        {{- $aiCount := 0 -}}
+        {{- $aiCategories := slice "AI" "Machine Learning" "Deep Learning" -}}
+        {{- range $aiCategories -}}
+            {{- with $categories.Get . -}}
+                {{- $aiCount = add $aiCount .Count -}}
+            {{- end -}}
+        {{- end -}}
+
+        {{- if gt $aiCount 0 -}}
+        <div class="category-group">
+            <div class="category-item parent">
+                <a href="{{ $context.Site.BaseURL }}/categories/ai/" class="category-name">
+                    <span class="category-text">AI</span>
+                    <span class="category-count">({{ $aiCount }})</span>
+                </a>
+            </div>
+            <div class="category-children">
+                {{- range $aiCategories -}}
+                    {{- with $categories.Get . -}}
+                        <div class="category-item child">
+                            <a href="{{ .Page.RelPermalink }}" class="category-name">
+                                <span class="category-text">{{ .Page.Title }}</span>
+                                <span class="category-count">({{ .Count }})</span>
+                            </a>
+                        </div>
+                    {{- end -}}
+                {{- end -}}
+            </div>
+        </div>
+        {{- end -}}
+
+        <!-- Data Structure 카테고리 -->
+        {{- with $categories.Get "Data Structure" -}}
+        <div class="category-group">
+            <div class="category-item parent">
+                <a href="{{ .Page.RelPermalink }}" class="category-name">
+                    <span class="category-text">Data Structure</span>
+                    <span class="category-count">({{ .Count }})</span>
+                </a>
+            </div>
+        </div>
+        {{- end -}}
+
+        <!-- Python 카테고리 -->
+        {{- with $categories.Get "Python" -}}
+        <div class="category-group">
+            <div class="category-item parent">
+                <a href="{{ .Page.RelPermalink }}" class="category-name">
+                    <span class="category-text">Python</span>
+                    <span class="category-count">({{ .Count }})</span>
+                </a>
+            </div>
+        </div>
+        {{- end -}}
+
+        <!-- Algorithm 카테고리 -->
+        {{- with $categories.Get "Algorithm" -}}
+        <div class="category-group">
+            <div class="category-item parent">
+                <a href="{{ .Page.RelPermalink }}" class="category-name">
+                    <span class="category-text">Algorithm</span>
+                    <span class="category-count">({{ .Count }})</span>
+                </a>
+            </div>
+        </div>
+        {{- end -}}
+
+        <!-- Web 카테고리 그룹 -->
+        {{- $webCount := 0 -}}
+        {{- $webCategories := slice "Web" "Django" "Flask" -}}
+        {{- range $webCategories -}}
+            {{- with $categories.Get . -}}
+                {{- $webCount = add $webCount .Count -}}
+            {{- end -}}
+        {{- end -}}
+
+        {{- if gt $webCount 0 -}}
+        <div class="category-group">
+            <div class="category-item parent">
+                <span class="category-name">
+                    <span class="category-text">Web</span>
+                    <span class="category-count">({{ $webCount }})</span>
+                </span>
+            </div>
+            <div class="category-children">
+                {{- range $webCategories -}}
+                    {{- with $categories.Get . -}}
+                        <div class="category-item child">
+                            <a href="{{ .Page.RelPermalink }}" class="category-name">
+                                <span class="category-text">{{ .Page.Title }}</span>
+                                <span class="category-count">({{ .Count }})</span>
+                            </a>
+                        </div>
+                    {{- end -}}
+                {{- end -}}
+            </div>
+        </div>
+        {{- end -}}
+
+        <!-- Language 카테고리 -->
+        {{- with $categories.Get "Language" -}}
+        <div class="category-group">
+            <div class="category-item parent">
+                <a href="{{ .Page.RelPermalink }}" class="category-name">
+                    <span class="category-text">Language</span>
+                    <span class="category-count">({{ .Count }})</span>
+                </a>
+            </div>
+        </div>
+        {{- end -}}
+
+        <!-- 기타 카테고리들 -->
+        {{- $displayedCategories := slice "AI" "Machine Learning" "Deep Learning" "Data Structure" "Python" "Algorithm" "Web" "Django" "Flask" "Language" -}}
+        {{- range $categories.ByCount -}}
+            {{- $isDisplayed := false -}}
+            {{- range $displayedCategories -}}
+                {{- if eq . $.Page.Title -}}
+                    {{- $isDisplayed = true -}}
+                {{- end -}}
+            {{- end -}}
+            {{- if not $isDisplayed -}}
+                <div class="category-group">
+                    <div class="category-item parent">
+                        <a href="{{ .Page.RelPermalink }}" class="category-name">
+                            <span class="category-text">{{ .Page.Title }}</span>
+                            <span class="category-count">({{ .Count }})</span>
+                        </a>
+                    </div>
+                </div>
+            {{- end -}}
+        {{- end -}}
+    </div>
+</section>

@@ -12,6 +12,7 @@ tags:
 - Machine Learning
 - Deep Learning
 slug: iris
+image: iris.jpeg
 ---
 
 

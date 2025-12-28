@@ -11,6 +11,7 @@ tags:
 - Lecture
 - Python
 slug: AILecture_python
+image: python.png
 ---
 
 <a id = '1st'></a>

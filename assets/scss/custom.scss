@@ -1,0 +1,443 @@
+/* 커스텀 카테고리 메뉴 스타일 */
+.widget.category-menu {
+    background: var(--card-background);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    margin-bottom: 20px;
+
+    .widget-title {
+        font-size: 2.08rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+        color: var(--card-text-color-main);
+        border-bottom: 2px solid var(--accent-color);
+        padding-bottom: 10px;
+    }
+
+    .category-menu-list {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .category-group {
+        margin-bottom: 6px;
+    }
+
+    .category-item {
+        position: relative;
+        line-height: 1.6;
+
+        &.all-posts {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--card-separator-color);
+
+            .category-name {
+                font-weight: 700;
+                font-size: 1.68rem;
+                color: var(--accent-color);
+
+                &:hover {
+                    color: var(--accent-color-darker);
+                }
+            }
+        }
+
+        &.parent {
+            .category-name {
+                font-weight: 600;
+                font-size: 1.6rem;
+                color: var(--card-text-color-main);
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 6px 10px;
+                border-radius: 6px;
+                transition: all 0.2s ease;
+
+                &:hover {
+                    background: var(--accent-color-lighter, rgba(var(--accent-color-rgb), 0.1));
+                    color: var(--accent-color);
+                }
+            }
+        }
+
+        &.child {
+            padding-left: 20px;
+            position: relative;
+
+            &::before {
+                content: "−";
+                position: absolute;
+                left: 8px;
+                color: var(--card-text-color-tertiary);
+                font-size: 1.44rem;
+            }
+
+            .category-name {
+                font-weight: 400;
+                font-size: 1.52rem;
+                color: var(--card-text-color-secondary);
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 4px 8px;
+                border-radius: 4px;
+                transition: all 0.2s ease;
+
+                &:hover {
+                    background: var(--body-background);
+                    color: var(--card-text-color-main);
+                }
+            }
+        }
+    }
+
+    .category-children {
+        margin-top: 4px;
+        margin-bottom: 8px;
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+    }
+
+    .category-name {
+        text-decoration: none;
+        display: block;
+        cursor: pointer;
+
+        .category-text {
+            flex: 1;
+        }
+
+        .category-count {
+            font-size: 1.36rem;
+            color: var(--card-text-color-tertiary);
+            font-weight: 400;
+            margin-left: 8px;
+        }
+    }
+
+    a.category-name:hover .category-count {
+        color: var(--accent-color);
+    }
+}
+
+/* 다크 모드 대응 */
+[data-scheme="dark"] {
+    .widget.category-menu {
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .widget.category-menu {
+        padding: 15px;
+
+        .widget-title {
+            font-size: 1.92rem;
+        }
+
+        .category-item {
+            &.parent .category-name {
+                font-size: 1.52rem;
+            }
+
+            &.child .category-name {
+                font-size: 1.44rem;
+            }
+        }
+    }
+}
+
+/* 추가 개선: 호버 효과 */
+.widget.category-menu {
+    .category-item.parent .category-name,
+    .category-item.child .category-name {
+        position: relative;
+        overflow: hidden;
+
+        &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-color);
+            transition: width 0.3s ease;
+        }
+
+        &:hover::after {
+            width: 100%;
+        }
+    }
+}
+
+/* ========================================
+   포스트 상세 페이지 - 읽기 모드 최적화
+   ======================================== */
+
+/* TOC (목차) - Sticky + 접기/펼치기 */
+.widget.toc {
+    background: var(--card-background);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    margin-bottom: 20px;
+
+    /* Sticky 효과 */
+    position: sticky;
+    top: 20px;
+    max-height: calc(100vh - 100px);
+    overflow-y: auto;
+
+    /* 스크롤바 스타일 */
+    &::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: var(--card-separator-color);
+        border-radius: 3px;
+
+        &:hover {
+            background: var(--accent-color);
+        }
+    }
+
+    .widget-title {
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin-bottom: 15px;
+        color: var(--card-text-color-main);
+        border-bottom: 2px solid var(--accent-color);
+        padding-bottom: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    /* TOC 목록 */
+    #TableOfContents {
+        font-size: 0.95rem;
+        line-height: 1.8;
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 0;
+
+            li {
+                margin: 6px 0;
+
+                a {
+                    color: var(--card-text-color-secondary);
+                    text-decoration: none;
+                    padding: 4px 10px;
+                    display: block;
+                    border-left: 2px solid transparent;
+                    transition: all 0.2s ease;
+                    border-radius: 4px;
+
+                    &:hover {
+                        color: var(--accent-color);
+                        background: var(--accent-color-lighter, rgba(var(--accent-color-rgb), 0.1));
+                        border-left-color: var(--accent-color);
+                    }
+
+                    /* 현재 위치 강조 */
+                    &.active {
+                        color: var(--accent-color);
+                        font-weight: 600;
+                        background: var(--accent-color-lighter, rgba(var(--accent-color-rgb), 0.15));
+                        border-left-color: var(--accent-color);
+                    }
+                }
+
+                /* 중첩된 목록 (하위 제목) */
+                ul {
+                    padding-left: 15px;
+                    margin-top: 4px;
+
+                    li a {
+                        font-size: 0.9rem;
+                        padding: 3px 10px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* 포스트 상세 페이지 - 검색 위젯 간소화 */
+.article-page {
+    .left-sidebar {
+        .widget.search {
+            /* 검색만 간결하게 유지 */
+            padding: 15px;
+        }
+    }
+}
+
+/* 읽기 영역 넓히기 */
+.article-page .main-content {
+    max-width: 100%;
+
+    article {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+}
+
+/* 다크 모드 - TOC */
+[data-scheme="dark"] {
+    .widget.toc {
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+}
+
+/* 반응형 - TOC */
+@media (max-width: 1200px) {
+    .widget.toc {
+        position: relative;
+        top: 0;
+        max-height: none;
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .widget.toc {
+        padding: 15px;
+
+        .widget-title {
+            font-size: 1.1rem;
+        }
+
+        #TableOfContents {
+            font-size: 0.9rem;
+
+            ul li a {
+                padding: 3px 8px;
+            }
+        }
+    }
+}
+
+/* 스크롤 시 TOC 하이라이트 (JavaScript 연동) */
+.toc-highlight-active #TableOfContents a.active {
+    animation: tocPulse 0.3s ease;
+}
+
+@keyframes tocPulse {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(5px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* ========================================
+   브레드크럼 네비게이션
+   ======================================== */
+
+.breadcrumb {
+    margin-bottom: 30px;
+    padding: 15px 20px;
+    background: var(--card-background);
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+
+    .breadcrumb-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 8px;
+        font-size: 0.9rem;
+    }
+
+    .breadcrumb-item {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+
+        a {
+            color: var(--card-text-color-secondary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 8px;
+            border-radius: 4px;
+            transition: all 0.2s ease;
+
+            svg {
+                width: 14px;
+                height: 14px;
+            }
+
+            &:hover {
+                color: var(--accent-color);
+                background: var(--accent-color-lighter, rgba(var(--accent-color-rgb), 0.1));
+            }
+        }
+
+        &.active {
+            color: var(--card-text-color-main);
+            font-weight: 600;
+
+            span {
+                max-width: 400px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+        }
+    }
+
+    .breadcrumb-separator {
+        color: var(--card-text-color-tertiary);
+        user-select: none;
+    }
+}
+
+/* 다크 모드 - 브레드크럼 */
+[data-scheme="dark"] {
+    .breadcrumb {
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+    }
+}
+
+/* 반응형 - 브레드크럼 */
+@media (max-width: 768px) {
+    .breadcrumb {
+        padding: 12px 15px;
+
+        .breadcrumb-list {
+            font-size: 0.85rem;
+            gap: 6px;
+        }
+
+        .breadcrumb-item {
+            &.active span {
+                max-width: 200px;
+            }
+        }
+    }
+}

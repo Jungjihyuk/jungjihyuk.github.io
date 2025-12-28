@@ -10,6 +10,7 @@ tags:
 - Data Structure
 - Python
 slug: stack
+image: stack.jpg
 ---
 
 

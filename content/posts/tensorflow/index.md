@@ -11,6 +11,7 @@ tags:
 - tensorflow
 - neural network
 slug: tensorflow
+image: tensorflow.png
 ---
 
 

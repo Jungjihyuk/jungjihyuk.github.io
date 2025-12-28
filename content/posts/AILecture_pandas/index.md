@@ -12,6 +12,7 @@ tags:
 - Pandas
 - Data Analysis
 slug: AILecture_pandas
+image: pandas.png
 ---
 
 <a id = '15th'></a>
